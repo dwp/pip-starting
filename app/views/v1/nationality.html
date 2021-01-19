@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Nationality
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  <a href="contact-details" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="working-living-abroad">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                What is their nationality?
+              </h1>
+            </legend>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nationality" name="nationality" type="radio" value="british">
+                <label class="govuk-label govuk-radios__label" for="nationality">
+                  British
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nationality-2" name="nationality" type="radio" value="irish">
+                <label class="govuk-label govuk-radios__label" for="nationality-2">
+                  Irish
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nationality-3" name="nationality" type="radio" value="eea">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                  A nationalityof European Economic Area (EAA)
+                </label>
+              </div> <!-- govuk-radios__item -->
+              <!-- <p>Or</p> -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="nationality-4" name="nationality" type="radio" value="another">
+                <label class="govuk-label govuk-radios__label" for="nationality-4">
+                  Another nationality
+                </label>
+              </div> <!-- govuk-radios__item -->
+            </div> <!-- govuk-radios -->
+
+          </fieldset>
+        </div> <!-- govuk-form-group -->
+
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </form>
+
+{% endblock %}
