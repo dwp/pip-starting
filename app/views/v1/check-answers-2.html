@@ -1,0 +1,167 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check you answers
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  <a href="working-living-abroad" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <form id="form" method="post" action="#">
+
+        <div class="govuk-width-container">
+            <main class="govuk-main-wrapper " id="main-content" role="main">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+
+                  <h1 class="govuk-heading-l">Check your answers</h1>
+
+                  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Name
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        John Johns
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> name</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        National Insurance number
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        AA111111A
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> national insurance number</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Date of birth
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        01/01/1999
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> date of birth</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Address
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        13 The street<br>
+                        Townville<br>
+                        Leeds<br>
+                        LS2 7UA
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> address</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Can we write to them at this address?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Yes
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> safe address</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+            <!--        <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Have they lived in England, Scotland or Wales for at least 2 of the last 3 years?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Yes
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> where they live</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+            <!--        <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Have they lived in England, Scotland or Wales for at least 2 of the last 3 years?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Yes
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> where they live</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+            <!--        <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Have they lived in England, Scotland or Wales for at least 2 of the last 3 years?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Yes
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> where they live</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+              <!--      <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Have they lived in England, Scotland or Wales for at least 2 of the last 3 years?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Yes
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> where they live</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+              <!--      <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Have they lived in England, Scotland or Wales for at least 2 of the last 3 years?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Yes
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> where they live</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                  </dl>
+
+                  <input type="submit" class="govuk-button" value="Confirm and submit" id="submit">
+                </div> <!-- govuk-grid-column-two-thirds-from-desktop -->
+              </div> <!-- govuk-grid-row -->
+
+            </main>
+        </div> <!-- govuk-width-container -->
+
+  </form>
+
+{% endblock %}
