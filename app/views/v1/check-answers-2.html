@@ -27,7 +27,7 @@
                         First name
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        John
+                        {{ data['first-name'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
@@ -40,7 +40,7 @@
                         Last name
                       </dt>
                       <dd class="govuk-summary-list__value">
-                      Johns
+                      {{ data['last-name'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
@@ -53,7 +53,7 @@
                         National Insurance number
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        AA111111A
+                        {{ data['nino'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
@@ -66,7 +66,7 @@
                         Date of birth
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        01/01/1999
+                        Yes
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
@@ -79,10 +79,10 @@
                         Address
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        13 The street<br>
-                        Townville<br>
-                        Leeds<br>
-                        LS2 7UA
+                        {{ data['address-line-1'] }}<br>
+                        {{ data['address-line-2'] }}<br>
+                        {{ data['address-county'] }}<br>
+                        {{ data['address-postcode'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
@@ -95,7 +95,7 @@
                         Can we write to them at this address?
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        Yes
+                        {{ data['safe-address'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
@@ -110,7 +110,7 @@
                         Phone number
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        07777777777
+                        {{ data['phone-number'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
@@ -123,7 +123,7 @@
                         Contact preference
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        Phone
+                        {{ data['contact-preference'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
@@ -136,7 +136,7 @@
                         Do they need another communication format E.G. Braille, large print or CS audio?
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        No
+                        {{ data['communication-preference'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
@@ -149,7 +149,7 @@
                         Nationality
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        British
+                        {{ data['nationality'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
@@ -162,7 +162,7 @@
                         Which country do they normally live in?
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        Wales
+                        {{ data['country'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
@@ -175,7 +175,7 @@
                         Have they been abroad for more than 4 weeks at a time in the last 3 years?
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        No
+                        {{ data['outside-britain'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
