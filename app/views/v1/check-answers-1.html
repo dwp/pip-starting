@@ -11,6 +11,7 @@
 
 {% block content %}
   <form id="form" method="post" action="eligible">
+    <input type="hidden" name="where-lived" value="{{ data['where-lived'] }}">
 
         <div class="govuk-width-container">
             <main class="govuk-main-wrapper " id="main-content" role="main">
@@ -25,10 +26,10 @@
                         Do you want to claim under the Special Rules for Terminaslly Ill people?
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        No
+                        {{ data['terminally-ill'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="#">
+                        <a class="govuk-link" href="special-rules">
                           Change<span class="govuk-visually-hidden"> special rules</span>
                         </a>
                       </dd>
@@ -38,7 +39,7 @@
                         Are you applying on behalf of someone else?
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        Yes, helping someone with their application
+                        {{ data['someone-else'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
@@ -51,7 +52,7 @@
                       Are they over 16 but under State Pension age?
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        Yes
+                        {{ data['over-16'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
@@ -64,7 +65,7 @@
                         Do they have a health condition or disability that affects their daily living or mobility?
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        Yes
+                        {{ data['condition'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
@@ -77,7 +78,7 @@
                         Have they lived in England, Scotland or Wales for at least 2 of the last 3 years?
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        Yes
+                        {{ data['where-lived'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
