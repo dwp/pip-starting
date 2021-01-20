@@ -11,6 +11,10 @@
 
 {% block content %}
   <form id="form" method="post" action="eligible">
+
+    <input type="hidden" name="special-rules" value="{{ data['special-rules'] }}">
+    <input type="hidden" name="over-16" value="{{ data['over-16'] }}">
+    <input type="hidden" name="condition" value="{{ data['condition'] }}">
     <input type="hidden" name="where-lived" value="{{ data['where-lived'] }}">
 
         <div class="govuk-width-container">
