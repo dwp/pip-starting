@@ -41,12 +41,24 @@
                 </label>
               </div> <!-- govuk-radios__item -->
               <div class="govuk-radios__divider">or</div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="nationality-4" name="nationality" type="radio" value="Another nationality">
-                <label class="govuk-label govuk-radios__label" for="nationality-4">
-                  Another nationality
-                </label>
-              </div> <!-- govuk-radios__item -->
+
+
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="cnationality-4" name="nationality" type="radio" value="Another nationality" data-aria-controls="conditional-nationality">
+                  <label class="govuk-label govuk-radios__label" for="contact">
+                    Another nationaility
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-nationality">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-email">
+                      Tell us which nationality
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="nationality-extra" name="nationality-extra" type="text" spellcheck="false"></div>
+
+                </div>
+
             </div> <!-- govuk-radios -->
 
           </fieldset>

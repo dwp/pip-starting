@@ -6,7 +6,7 @@
 
 {% block beforeContent %}
   {% include "includes/phase-banner.html" %}
-  <a href="date-of-birth" class="govuk-back-link">Back</a>
+  <a href="address" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -18,7 +18,7 @@
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  What is their address?
+                  What address can we write to?
                 </h1>
               </legend>
 
@@ -56,32 +56,6 @@
                 </label>
                 <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
               </div> <!-- govuk-form-group -->
-
-            </fieldset>
-          </div> <!-- govuk-form-group -->
-
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h1 class="govuk-fieldset__heading">
-                  Can we write to them at this address?
-                </h1>
-              </legend>
-
-              <div class="govuk-radios govuk-radios--inline">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="safe-address-1" name="safe=address" type="radio" value="Yes">
-                  <label class="govuk-label govuk-radios__label" for="safe-address-1">
-                    Yes
-                  </label>
-                </div> <!-- govuk-radios__item -->
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="safe-address-2" name="safe-address" type="radio" value="No">
-                  <label class="govuk-label govuk-radios__label" for="safe-address-2">
-                    No
-                  </label>
-                </div> <!-- govuk-radios__item -->
-              </div> <!-- govuk-radios govuk-radios--inline -->
 
             </fieldset>
           </div> <!-- govuk-form-group -->

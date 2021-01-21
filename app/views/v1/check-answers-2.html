@@ -133,10 +133,10 @@
                     </div> <!-- govuk-summary-list__row -->
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        Do they need another communication format E.G. Braille, large print or CS audio?
+                        Do they need another communication format E.G. Braille, large print or CD audio?
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {{ data['communication-preference'] }}
+                        {{ data['communication-format'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
@@ -146,7 +146,20 @@
                     </div> <!-- govuk-summary-list__row -->
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        Nationality
+                        What format do they need communications in?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['format-type'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> other communication format</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        What is their nationality?
                       </dt>
                       <dd class="govuk-summary-list__value">
                         {{ data['nationality'] }}
@@ -154,6 +167,19 @@
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
                           Change<span class="govuk-visually-hidden"> nationality</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Which nationality are they?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['nationality-extra'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden">  another nationality</span>
                         </a>
                       </dd>
                     </div> <!-- govuk-summary-list__row -->
