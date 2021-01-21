@@ -73,31 +73,55 @@
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 <h1 class="govuk-fieldset__heading">
                   Do they need communications in another format?
                 </h1>
               </legend>
-              <div id="dob-hint" class="govuk-hint">
-                Such as braille, large print or audio CD
+              <div id="contact-hint" class="govuk-hint">
+                Such a braille, large print or audio CD.
               </div>
-
-              <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios govuk-radios--conditional govuk-radios--inline" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="communication-preference" name="communication-preference" type="radio" value="Yes">
-                  <label class="govuk-label govuk-radios__label" for="communication-preference">
+                  <input class="govuk-radios__input" id="communication-format-1" name="communication-format" type="radio" value="email" data-aria-controls="communication-format">
+                  <label class="govuk-label govuk-radios__label" for="communication-format-1">
                     Yes
                   </label>
                 </div> <!-- govuk-radios__item -->
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="communication-format">
+                  <div class="govuk-radios govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="fomat-type-1" name="format-type" type="radio" value="Braille">
+                      <label class="govuk-label govuk-radios__label" for="format-type-1">
+                        Braille
+                      </label>
+                    </div> <!-- govuk-radios__item -->
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="format-type-2" name="format-type" type="radio" value="Large print">
+                      <label class="govuk-label govuk-radios__label" for="format-type-2">
+                        Large print
+                      </label>
+                    </div> <!-- govuk-radios__item -->
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="fomat-type-3" name="format-type" type="radio" value="Audio CD">
+                      <label class="govuk-label govuk-radios__label" for="format-type-3">
+                        Audio CD
+                      </label>
+                    </div> <!-- govuk-radios__item -->
+                  </div> <!-- govuk-radios govuk-radios -->
+
+                </div> <!-- govuk-radios__conditional govuk-radios__conditional--hidden -->
+
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="communication-preference-2" name="communication-preference" type="radio" value="No">
-                  <label class="govuk-label govuk-radios__label" for="communication-preference-2">
+                  <input class="govuk-radios__input" id="communication-format-2" name="communication-format" type="radio" value="Audio CD" data-aria-controls="communication-format-2">
+                  <label class="govuk-label govuk-radios__label" for="contact-2">
                     No
                   </label>
                 </div> <!-- govuk-radios__item -->
-              </div> <!-- govuk-radios govuk-radios--inline -->
 
+              </div> <!-- govuk-radios govuk-radios--conditional govuk-radios--inline -->
             </fieldset>
           </div> <!-- govuk-form-group -->
 
