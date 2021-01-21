@@ -3,6 +3,8 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
+// ROUTES V1 START
+
 router.post('/v1/eligible', (req, res, next) => {
   const whereLived = req.session.data['where-lived'];
   if (whereLived === 'No') {
@@ -25,5 +27,7 @@ router.post('/v1/eligible', (req, res, next) => {
     next();
   }
 });
+
+// ROUTES V1 END
 
  module.exports = router
