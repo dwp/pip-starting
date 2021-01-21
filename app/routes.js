@@ -26,7 +26,9 @@ router.post('/v1/eligible', (req, res, next) => {
   } else {
     next();
   }
+});
 
+router.post('/v1/address', (req, res, next) => {
   const safeAddress = req.session.data['safe-address'];
   if (safeAddress === 'No') {
     res.redirect('/v1/address-other');
