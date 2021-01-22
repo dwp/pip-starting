@@ -29,13 +29,14 @@ router.post('/v1/eligible', (req, res, next) => {
 });
 
 router.post('/v1/address', (req, res, next) => {
-  const safeAddress = req.session.data['safe-address'];
-  if (safeAddress === 'No') {
-    res.redirect('/v1/address-other');
-  } else {
-    next();
-  }
-});
+  console.log(req.session.data)
+ const safeAddress = req.session.data['safe-address'];
+ if (safeAddress === 'No') {
+   res.redirect('/v1/address-other');
+ } else {
+   res.redirect('/v1/contact-details');
+ }
+ });
 
 // ROUTES V1 END
 
