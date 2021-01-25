@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check you answers
+  Check your answers
 {% endblock %}
 
 {% block beforeContent %}
@@ -103,6 +103,26 @@
                         </a>
                       </dd>
                     </div> <!-- govuk-summary-list__row -->
+
+                  <!--  {% if data['safe-address'] === 'No' %} -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Address
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['other-address-line-1'] }}<br>
+                        {{ data['other-address-line-2'] }}<br>
+                        {{ data['other-address-county'] }}<br>
+                        {{ data['other-address-postcode'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> address</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                  <!--  {% endif %} -->
+
                     <h2 class="govuk-heading-s">Contact details</h2>
 
                     <div class="govuk-summary-list__row">
@@ -151,7 +171,7 @@
                         What format do they need communications in?
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {{ data['format-type'] }}
+                        {{ data['communication-format']['format-type'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">

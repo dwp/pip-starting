@@ -3,41 +3,40 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
-// ROUTES V1 START
+// ROUTES POC START
 
-router.post('/v1/eligible', (req, res, next) => {
+router.post('/poc/eligible', (req, res, next) => {
   const whereLived = req.session.data['where-lived'];
   if (whereLived === 'No') {
-    res.redirect('/v1/not-eligible');
+    res.redirect('/poc/not-eligible');
   } else {
     next();
   }
 
   const condition = req.session.data['condition'];
   if (condition === 'No') {
-    res.redirect('/v1/not-eligible');
+    res.redirect('/poc/not-eligible');
   } else {
     next();
   }
 
   const over16 = req.session.data['over-16'];
   if (over16 === 'No') {
-    res.redirect('/v1/not-eligible');
+    res.redirect('/poc/not-eligible');
   } else {
     next();
   }
 });
 
-router.post('/v1/address', (req, res, next) => {
-  console.log(req.session.data)
+router.post('/poc/contact-details', (req, res, next) => {
  const safeAddress = req.session.data['safe-address'];
  if (safeAddress === 'No') {
-   res.redirect('/v1/address-other');
+   res.redirect('/poc/address-other');
  } else {
-   res.redirect('/v1/contact-details');
+   res.redirect('/poc/contact-details');
  }
  });
 
-// ROUTES V1 END
+// ROUTES poc END
 
  module.exports = router
