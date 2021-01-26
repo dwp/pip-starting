@@ -41,6 +41,15 @@ router.post('/poc/contact-details', (req, res, next) => {
 
 // ROUTES V0-1 START
 
+// router.post('/v0-1/apply-for-someone-else', (req, res, next) => {
+//  const someoneElse = req.session.data['someone-else'];
+// if (someoneElse === 'No') {
+//    res.redirect('/v0-1/over-16');
+//  } else {
+//    res.redirect('/v0-1/apply-for-someone-else/over-16'over-16');
+//  }
+//});
+
 router.post('/v0-1/eligible', (req, res, next) => {
   const whereLived = req.session.data['where-lived'];
   if (whereLived === 'No') {
