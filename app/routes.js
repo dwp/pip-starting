@@ -41,9 +41,9 @@ router.post('/poc/contact-details', (req, res, next) => {
 
 // ROUTES V0-1 START
 
-// router.post('/v0-1/apply-for-someone-else', (req, res, next) => {
+// router.post('/v0-1/over-16', (req, res, next) => {
 //  const someoneElse = req.session.data['someone-else'];
-// if (someoneElse === 'No') {
+// if (someoneElse === 'Yes') {
 //    res.redirect('/v0-1/over-16');
 //  } else {
 //    res.redirect('/v0-1/apply-for-someone-else/over-16'over-16');
@@ -68,6 +68,15 @@ router.post('/v0-1/eligible', (req, res, next) => {
   const over16 = req.session.data['over-16'];
   if (over16 === 'No') {
     res.redirect('/v0-1/not-eligible');
+  } else {
+    next();
+  }
+});
+
+router.post('/v0-1/where-you-live', (req, res, next) => {
+  const healthCondition = req.session.data['condition'];
+  if (healthCondition === 'Yes') {
+    res.redirect('/v0-1/over-3-months');
   } else {
     next();
   }
