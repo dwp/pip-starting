@@ -20,8 +20,7 @@
                   <h1 class="govuk-heading-l">Check your answers</h1>
 
                   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                    <h2 class="govuk-heading-s">Name</h2>
-
+                    
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
                         First name
@@ -92,7 +91,7 @@
                     </div> <!-- govuk-summary-list__row -->
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        Can we write to them at this address?
+                        Can we write to you at this address?
                       </dt>
                       <dd class="govuk-summary-list__value">
                         {{ data['safe-address'] }}
@@ -123,8 +122,6 @@
                     </div> <!-- govuk-summary-list__row -->
                   <!--  {% endif %} -->
 
-                    <h2 class="govuk-heading-s">Contact details</h2>
-
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
                         Phone number
@@ -153,7 +150,7 @@
                     </div> <!-- govuk-summary-list__row -->
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        Do they need another communication format E.G. Braille, large print or CD audio?
+                        Do you need another communication format E.G. Braille, large print or CD audio?
                       </dt>
                       <dd class="govuk-summary-list__value">
                         {{ data['communication-format'] }}
@@ -168,7 +165,7 @@
                     {% if data['communication-format'] === 'Yes' %}
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        What format do they need communications in?
+                        What format do you need communications in?
                       </dt>
                       <dd class="govuk-summary-list__value">
                         {{ data['communication-format']['format-type'] }}
@@ -183,7 +180,7 @@
 
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        What is their nationality?
+                        What is your nationality?
                       </dt>
                       <dd class="govuk-summary-list__value">
                         {{ data['nationality'] }}
@@ -198,7 +195,7 @@
                     {% if data['nationality'] === 'Another nationality' %}
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        Which nationality are they?
+                        Which nationality are you?
                       </dt>
                       <dd class="govuk-summary-list__value">
                         {{ data['nationality-extra'] }}
@@ -213,20 +210,20 @@
 
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        Which country do they normally live in?
+                        Which country do you normally live in?
                       </dt>
                       <dd class="govuk-summary-list__value">
                         {{ data['country'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
-                          Change<span class="govuk-visually-hidden"> where they live</span>
+                          Change<span class="govuk-visually-hidden"> where you live</span>
                         </a>
                       </dd>
                     </div> <!-- govuk-summary-list__row -->
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        Have they been abroad for more than 4 weeks at a time in the last 3 years?
+                        Have you been abroad for more than 4 weeks at a time in the last 3 years?
                       </dt>
                       <dd class="govuk-summary-list__value">
                         {{ data['outside-britain'] }}
