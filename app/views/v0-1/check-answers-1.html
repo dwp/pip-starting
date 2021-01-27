@@ -66,7 +66,7 @@
                     </div> <!-- govuk-summary-list__row -->
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        Do you have a health condition or disability that affects your daily living or mobility?
+                        Do you find it hard to do daily activities or get around because of a health condition?
                       </dt>
                       <dd class="govuk-summary-list__value">
                         {{ data['condition'] }}
@@ -77,6 +77,36 @@
                         </a>
                       </dd>
                     </div> <!-- govuk-summary-list__row -->
+
+                    {% if data ['condition'] === 'Yes'%}
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Have you had the health condition or disability for more than 3 months?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['over-3-months'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> condition over 3 months</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Is the health condition or disability expected to last at least another 9 months?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['over-9-months'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">
+                          Change<span class="govuk-visually-hidden"> condition over 3 months</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    {% endif %}
+
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
                         Have you lived in England, Scotland or Wales for at least 2 of the last 3 years?
