@@ -85,6 +85,15 @@ router.post('/v0-1/health-condition', (req, res, next) => {
   }
 });
 
+router.post('/v0-1/apply-for-someone/health-condition', (req, res, next) => {
+  const healthCondition = req.session.data['afse-condition'];
+  if (healthCondition === 'Yes') {
+    res.redirect('/v0-1/apply-for-someone/over-3-months');
+  } else {
+    res.redirect('/v0-1/apply-for-someone/where-you-live');
+  }
+});
+
 router.post('/v0-1/address', (req, res, next) => {
  const safeAddress = req.session.data['safe-address'];
  if (safeAddress === 'No') {
@@ -93,6 +102,15 @@ router.post('/v0-1/address', (req, res, next) => {
    res.redirect('/v0-1/contact-details');
  }
  });
+
+router.post('/v0-1/apply-for-someone/address', (req, res, next) => {
+  const safeAddress = req.session.data['afse-safe-address'];
+  if (safeAddress === 'No') {
+    res.redirect('/v0-1/apply-for-someone/address-other');
+  } else {
+    res.redirect('/v0-1/apply-for-someone/contact-details');
+  }
+});
  // ROUTES V0-1 END
 
  module.exports = router
