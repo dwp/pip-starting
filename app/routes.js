@@ -90,7 +90,7 @@ router.post('/v0-1/apply-for-someone/health-condition', (req, res, next) => {
   if (healthCondition === 'Yes') {
     res.redirect('/v0-1/apply-for-someone/over-3-months');
   } else {
-    res.redirect('/v0-1/apply-for-someone/where-you-live');
+    res.redirect('/v0-1/apply-for-someone/where-they-live');
   }
 });
 
