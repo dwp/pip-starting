@@ -53,6 +53,24 @@ module.exports = function (router) {
             res.redirect('/v0-2/not-eligible');
         }
     });
+    router.post('/v0-2/over-3-months', (req, res, next) => {
+        const over3months = req.session.data['over-3-months'];
+        if (over3months === 'Yes') {
+            res.redirect('/v0-2/over-9-months');
+        } else {
+            req.session.data = req.session.data.destination = 'over-9-months'
+            res.redirect('/v0-2/not-eligible');
+        }
+    });
+    router.post('/v0-2/over-9-months', (req, res, next) => {
+        const over9months = req.session.data['over-9-months'];
+        if (over9months === 'Yes') {
+            res.redirect('/v0-2/where-you-live');
+        } else {
+            req.session.data = req.session.data.destination = 'over-9-months'
+            res.redirect('/v0-2/not-eligible');
+        }
+    });
     router.post('/v0-2/apply-for-someone/health-condition', (req, res, next) => {
         const healthCondition = req.session.data['afse-condition'];
         if (healthCondition === 'Yes') {
@@ -90,6 +108,12 @@ module.exports = function (router) {
         if (destination === 'health-condition') {
             delete req.session.data.destination
             res.redirect('/v0-2/health-condition');
+        } else if (destination === 'over-3-months') {
+            delete req.session.data.destination
+            res.redirect('/v0-2/over-9-months');
+        } else if (destination === 'over-3-months') {
+            delete req.session.data.destination
+            res.redirect('/v0-2/over-9-months');    
         } else if (destination === 'where-you-live') {
             delete req.session.data.destination
             res.redirect('/v0-2/where-you-live');
