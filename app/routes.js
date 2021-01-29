@@ -152,6 +152,7 @@ router.post('/v0-2/over-16', (req, res, next) => {
   if (over16 === 'Yes') {
     res.redirect('/v0-2/health-condition');
   } else {
+    req.session.data.destination = 'health-condition'
     res.redirect('/v0-2/not-eligible');
   }
 });
@@ -170,6 +171,7 @@ router.post('/v0-2/health-condition', (req, res, next) => {
   if (healthCondition === 'Yes') {
     res.redirect('/v0-2/over-3-months');
   } else {
+    req.session.data = req.session.data.destination = 'where-you-live'
     res.redirect('/v0-2/not-eligible');
   }
 });
@@ -207,6 +209,20 @@ router.post('/v0-2/apply-for-someone/address', (req, res, next) => {
     res.redirect('/v0-2/apply-for-someone/address-other');
   } else {
     res.redirect('/v0-2/apply-for-someone/contact-details');
+  }
+});
+
+router.post('/v0-2/not-eligible', (req, res, next) => {
+  const destination = req.session.data['destination'];
+  if (destination === 'health-condition') {
+    delete req.session.data.destination
+    res.redirect('/v0-2/health-condition');
+  } else if (destination === 'where-you-live') {
+    delete req.session.data.destination
+    res.redirect('/v0-2/where-you-live');
+  } else {
+    delete req.session.data.destination
+    res.redirect('/v0-2/check-answers-1');
   }
 });
 
