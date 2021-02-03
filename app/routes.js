@@ -1,11 +1,16 @@
 const express = require('express')
 const router = express.Router()
+
+// ROUTES REDIRECT START
 const poc = require('./routes/poc')
 const v01 = require('./routes/v0-1')
 const v02 = require('./routes/v0-2')
-//ROUTES V0-2 START
+// ROUTES REDIRECT END
+
+// ROUTER LIST START
 poc(router);
 v01(router);
 v02(router);
-// ROUTES V0-2 END
+// ROUTER LIST END
+
 module.exports = router
