@@ -5,7 +5,7 @@ const router = express.Router()
 const poc = require('./routes/poc')
 const v01 = require('./routes/v0-1')
 const v02 = require('./routes/v0-2')
-const v02 = require('./routes/v1')
+const v1 = require('./routes/v1')
 // ROUTES REDIRECT END
 
 // ROUTER LIST START
