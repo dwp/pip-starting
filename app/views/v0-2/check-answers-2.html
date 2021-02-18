@@ -20,7 +20,7 @@
                   <h1 class="govuk-heading-l">Check your answers</h1>
 
                   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                    
+
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
                         First name
@@ -30,7 +30,7 @@
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
-                          Change<span class="govuk-visually-hidden">  fisrt name</span>
+                          Change<span class="govuk-visually-hidden"> first name</span>
                         </a>
                       </dd>
                     </div> <!-- govuk-summary-list__row -->
@@ -56,7 +56,7 @@
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="#">
-                          Change<span class="govuk-visually-hidden"> national insurance number</span>
+                          Change<span class="govuk-visually-hidden"> National Insurance number</span>
                         </a>
                       </dd>
                     </div> <!-- govuk-summary-list__row -->
@@ -150,7 +150,7 @@
                     </div> <!-- govuk-summary-list__row -->
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        Do you need another communication format E.G. Braille, large print or CD audio?
+                        Do you need another communication format such as Braille, large print or CD audio?
                       </dt>
                       <dd class="govuk-summary-list__value">
                         {{ data['communication-format'] }}
@@ -165,7 +165,7 @@
                     {% if data['communication-format'] === 'Yes' %}
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        What format do you need communications in?
+                        What communication format do you need?
                       </dt>
                       <dd class="govuk-summary-list__value">
                         {{ data['communication-format']['format-type'] }}
