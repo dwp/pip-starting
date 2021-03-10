@@ -1,4 +1,14 @@
 module.exports = function (router) {
+    router.post('/v1a/special-rules', (req, res, next) => {
+        const specialRules = req.session.data['terminally-ill'];
+        if (specialRules === 'Yes') {
+            res.redirect('/v1a/special-rules-eligible');
+        } else {
+            res.redirect('/v1a/health-condition');
+        }
+    });
+    
+    
     router.post('/v1a/health-condition', (req, res, next) => {
         const healthCondition = req.session.data['condition'];
         if (healthCondition === 'No') {
@@ -8,9 +18,11 @@ module.exports = function (router) {
         }
     });
    
-    router.post('/v1a/under-spa', (req, res, next) => {
-        const underSpa = req.session.data['underspa'];
-        if (underSpa === 'Yes') {
+    router.post('/v1a/over-16', (req, res, next) => {
+        const over16 = req.session.data['over-16'];
+        if (over16 === 'Answer 1') {
+            res.redirect('/v1a/not-eligible');
+        } else if (over16 === 'Answer 2'){
             res.redirect('/v1a/where-you-live');
         } else {
             res.redirect('/v1a/over-spa');
@@ -26,10 +38,19 @@ module.exports = function (router) {
         }
     });
 
+    router.post('/v1a/where-you-live', (req, res, next) => {
+        const whereLived = req.session.data['where-live'];
+        if (whereLived === 'Yes') {
+            res.redirect('/v1a/living-in-gb');
+        } else {
+            res.redirect('/v1a/living-in-gb-further-question');
+        }
+    });
+
     router.post('/v1a/living-in-gb', (req, res, next) => {
-        const livingGb = req.session.data['outside-britain'];
+        const livingGb = req.session.data['gb'];
         if (livingGb === 'Yes') {
-            res.redirect('/v1a/not-eligible');
+            res.redirect('/v1a/eligible');
         } else {
             res.redirect('/v1a/living-in-gb-further-question');
         }

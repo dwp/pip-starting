@@ -10,23 +10,22 @@
 {% endblock %}
 
 {% block content %}
-  <form id="form" method="get" action="health-condition">
+  <form id="form" method="post" action="#">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-xl">
-          Special rules for terminally ill people
-        </h1>
+       <!-- <h1 class="govuk-heading-xl">Does a doctor or a medical professional think you might not live longer than 6 months?</h1> -->
 
-        <p>We have special rules for people who are terminally ill. This means people with a progressive disease who are not expected to live longer than another 6 months.</p>
+        <!-- <p>We have special rules for people who are terminally ill. This means people with a progressive disease who are not expected to live longer than another 6 months.</p> -->
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="terminally-ill">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <h2 class="govuk-fieldset__heading">
-                Question content
+                Does a doctor or a medical professional think you might not live longer than 6 months?
               </h2>
             </legend>
+            <p>Hint text to add here</p>
             <div class="govuk-radios govuk-radios--inline">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="terminall-ill-1" name="terminally-ill" type="radio" value="Yes">
