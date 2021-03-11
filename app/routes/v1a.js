@@ -2,13 +2,22 @@ module.exports = function (router) {
     router.post('/v1a/special-rules', (req, res, next) => {
         const specialRules = req.session.data['terminally-ill'];
         if (specialRules === 'Yes') {
-            res.redirect('/v1a/special-rules-eligible');
+            res.redirect('/v1a/special-rules-ds1500');
         } else {
             res.redirect('/v1a/health-condition');
         }
     });
-    
-    
+
+    router.post('/v1a/special-rules-ds1500', (req, res, next) => {
+        const specialRules = req.session.data['terminally-ill'];
+        if (specialRules === 'Yes') {
+            res.redirect('/v1a/special-rules-eligible');
+        } else {
+            res.redirect('/v1a/special-rules-eligible');
+        }
+    });
+
+
     router.post('/v1a/health-condition', (req, res, next) => {
         const healthCondition = req.session.data['condition'];
         if (healthCondition === 'No') {
@@ -17,7 +26,7 @@ module.exports = function (router) {
             res.redirect('/v1a/over-3-months');
         }
     });
-   
+
     router.post('/v1a/over-16', (req, res, next) => {
         const over16 = req.session.data['over-16'];
         if (over16 === 'Answer 1') {
@@ -65,7 +74,7 @@ module.exports = function (router) {
 //             res.redirect('/v1/over-3-months');
 //         } else if (destination === 'over-9-months') {
 //             delete req.session.data.destination
-//             res.redirect('/v1/over-9-months');    
+//             res.redirect('/v1/over-9-months');
 //         } else if (destination === 'where-you-live') {
 //             delete req.session.data.destination
 //             res.redirect('/v1/where-you-live');
