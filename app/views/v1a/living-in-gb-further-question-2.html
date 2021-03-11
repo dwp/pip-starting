@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Living in Great Britain
+  Living in Great Britain for question
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-  <form id="form" method="post" action="">
+  <form id="form" method="post" action="next-page">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
@@ -20,25 +20,25 @@
             <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
-                  Have you lived in England, Scotland or Wales for at least 2 of the last 3 years?
+                  Are you subject to immigration control or do you have a visa that says ‘no recourse to public funds’? 
                 </h1>
               </legend>
                 <div class="govuk-radios govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="gb-1" name="gb" type="radio" value="Yes">
-                    <label class="govuk-label govuk-radios__label" for="gb">
+                    <input class="govuk-radios__input" id="immigration-control-1" name="immigration-control-2" type="radio" value="Yes">
+                    <label class="govuk-label govuk-radios__label" for="immigration-control-1">
                       Yes
                     </label>
                   </div> <!-- govuk-radios__item -->
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="gb-2" name="gb" type="radio" value="No">
-                    <label class="govuk-label govuk-radios__label" for="gb-2">
+                    <input class="govuk-radios__input" id="immigration-control-2" name="immigration-control-2" type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="immigration-control-2">
                       No
                     </label>
                   </div> <!-- govuk-radios__item -->
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="gb-3" name="gb" type="radio" value="Not sure">
-                    <label class="govuk-label govuk-radios__label" for="gb-3">
+                    <input class="govuk-radios__input" id="immigration-control-3" name="immigration-control-2" type="radio" value="Not sure">
+                    <label class="govuk-label govuk-radios__label" for="immigration-control-3">
                       I'm not sure
                     </label>
                   </div> <!-- govuk-radios__item -->
