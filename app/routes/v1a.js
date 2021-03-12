@@ -8,6 +8,14 @@ module.exports = function (router) {
         }
     });
 
+    router.post('/v1a/special-rules-ds1500', (req, res, next) => {
+        res.redirect('/v1a/special-rules-eligible');
+});
+
+    router.post('/v1a/special-rules-eligible', (req, res, next) => {
+        res.redirect('/v1a/over-16');
+});
+
 //    router.post('/v1a/special-rules-ds1500', (req, res, next) => {
 //         const specialRules = req.session.data['terminally-ill'];
 //         if (specialRules === 'Yes') {
@@ -27,6 +35,14 @@ module.exports = function (router) {
         }
     });
 
+    router.post('/v1a/not-eligible-health-condition', (req, res, next) => {
+            res.redirect('/v1a/over-16');
+    });
+
+    router.post('/v1a/over-3-months', (req, res, next) => {
+        res.redirect('/v1a/over-9-months');
+    });
+
     router.post('/v1a/over-9-months', (req, res, next) => {
         const overMonths = req.session.data['over-9-months'];
         if (overMonths === 'No') {
@@ -34,6 +50,10 @@ module.exports = function (router) {
         } else {
             res.redirect('/v1a/not-eligible-health-condition-9-months');
         }
+    });
+
+    router.post('/v1a/not-eligible-health-condition-9-months', (req, res, next) => {
+        res.redirect('/v1a/over-16');
     });
 
     router.post('/v1a/over-16', (req, res, next) => {
@@ -47,6 +67,10 @@ module.exports = function (router) {
         }
     });
 
+    router.post('/v1a/not-eligible-under-16', (req, res, next) => {
+        res.redirect('/v1a/where-you-live');
+    });
+
     router.post('/v1a/over-spa', (req, res, next) => {
         const overSpa = req.session.data['overspa'];
         if (overSpa === 'Yes') {
@@ -54,6 +78,14 @@ module.exports = function (router) {
         } else {
             res.redirect('/v1a/not-eligible-over-spa');
         }
+    });
+
+    router.post('/v1a/over-spa-payment-question', (req, res, next) => {
+        res.redirect('/v1a/where-you-live');
+    });
+
+    router.post('/v1a/not-eligible-over-spa', (req, res, next) => {
+        res.redirect('/v1a/where-you-live');
     });
 
     router.post('/v1a/where-you-live', (req, res, next) => {
@@ -90,6 +122,10 @@ module.exports = function (router) {
         } else {
             res.redirect('/v1a/not-eligible-immigration');
         }
+    });
+
+    router.post('/v1a/not-eligible-immigration', (req, res, next) => {
+        res.redirect('/v1a/next-page');
     });
 
  };
