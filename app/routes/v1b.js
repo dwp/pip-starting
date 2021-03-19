@@ -47,8 +47,7 @@ module.exports = function (router) {
             res.redirect('/v1b/not-eligible-over-spa');
         }
     });
-    
-    
+        
     router.post('/v1b/health-condition', (req, res, next) => {
         const healthCondition = req.session.data['condition'];
         if (healthCondition === 'Yes') {
