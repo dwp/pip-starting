@@ -7,6 +7,8 @@ const v01 = require('./routes/v0-1')
 const v02 = require('./routes/v0-2')
 const v1 = require('./routes/v1')
 const v1a = require('./routes/v1a')
+const v1b = require('./routes/v1a')
+
 // ROUTES REDIRECT END
 
 // ROUTER LIST START
@@ -15,6 +17,7 @@ v01(router);
 v02(router);
 v1(router);
 v1a(router);
+v1b(router);
 // ROUTER LIST END
 
 module.exports = router
