@@ -52,14 +52,14 @@ module.exports = function (router) {
     router.post('/v1b/health-condition', (req, res, next) => {
         const healthCondition = req.session.data['condition'];
         if (healthCondition === 'Yes') {
-            res.redirect('/v1b/over-3-months');
+            res.redirect('/v1b/over-9-months');
         } else {
             res.redirect('/v1b/not-eligible-health-condition');
         }
     });
 
     router.post('/v1b/not-eligible-health-condition', (req, res, next) => {
-            res.redirect('/v1b/over-16');
+            res.redirect('/v1b/where-you-live');
     });
 
     router.post('/v1b/over-3-months', (req, res, next) => {
@@ -68,15 +68,15 @@ module.exports = function (router) {
 
     router.post('/v1b/over-9-months', (req, res, next) => {
         const overMonths = req.session.data['over-9-months'];
-        if (overMonths === 'No') {
-            res.redirect('/v1b/over-16');
+        if (overMonths === 'Over 9 months') {
+            res.redirect('/v1b/where-you-live');
         } else {
             res.redirect('/v1b/not-eligible-health-condition-9-months');
         }
     });
 
     router.post('/v1b/not-eligible-health-condition-9-months', (req, res, next) => {
-        res.redirect('/v1b/over-16');
+        res.redirect('/v1b/where-you-live');
     });
 
     router.post('/v1b/over-spa-payment-question', (req, res, next) => {
