@@ -62,10 +62,6 @@ module.exports = function (router) {
             res.redirect('/v1b/where-you-live');
     });
 
-    router.post('/v1b/over-3-months', (req, res, next) => {
-        res.redirect('/v1b/over-9-months');
-    });
-
     router.post('/v1b/over-9-months', (req, res, next) => {
         const overMonths = req.session.data['over-9-months'];
         if (overMonths === 'Over 9 months') {
@@ -101,6 +97,10 @@ module.exports = function (router) {
         }
     });
 
+    router.post('/v1b/not-eligible-immigration', (req, res, next) => {
+        res.redirect('/v1b/living-in-gb');
+    });
+
     router.post('/v1b/living-in-gb', (req, res, next) => {
         const livingGb = req.session.data['gb'];
         if (livingGb === 'Yes') {
@@ -115,11 +115,11 @@ module.exports = function (router) {
         if (immigrationControl2 === 'No') {
             res.redirect('/v1b/next-page');
         } else {
-            res.redirect('/v1b/not-eligible-immigration');
+            res.redirect('/v1b/not-eligible-immigration-2');
         }
     });
 
-    router.post('/v1b/not-eligible-immigration', (req, res, next) => {
+    router.post('/v1b/not-eligible-immigration-2', (req, res, next) => {
         res.redirect('/v1b/next-page');
     });
 
