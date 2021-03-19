@@ -11,6 +11,14 @@ module.exports = function (router) {
         }
     });
 
+    router.post('/v1b/not-eligible-under-16', (req, res, next) => {
+        res.redirect('/v1b/health-condition');
+    });
+
+    router.post('/v1b/not-eligible-over-spa', (req, res, next) => {
+        res.redirect('/v1b/health-condition');
+    });
+
     router.post('/v1b/over-spa', (req, res, next) => {
         const overSpa = req.session.data['overspa'];
         if (overSpa === 'Yes PIP') {
@@ -22,6 +30,25 @@ module.exports = function (router) {
         }
     });
 
+    router.post('/v1b/over-spa-pip-payment-question', (req, res, next) => {
+        const pipEnd = req.session.data['pip-claim-end'];
+        if (pipEnd === 'Less than 12 months ago') {
+            res.redirect('/v1b/health-condition');
+        } else {
+            res.redirect('/v1b/not-eligible-over-spa');
+        }
+    });
+
+    router.post('/v1b/over-spa-dla-payment-question', (req, res, next) => {
+        const dlaEnd = req.session.data['dla-claim-end'];
+        if (dlaEnd === 'Less than 12 months ago') {
+            res.redirect('/v1b/health-condition');
+        } else {
+            res.redirect('/v1b/not-eligible-over-spa');
+        }
+    });
+    
+    
     router.post('/v1b/health-condition', (req, res, next) => {
         const healthCondition = req.session.data['condition'];
         if (healthCondition === 'Yes') {
@@ -52,19 +79,7 @@ module.exports = function (router) {
         res.redirect('/v1b/over-16');
     });
 
-    
-
-    router.post('/v1b/not-eligible-under-16', (req, res, next) => {
-        res.redirect('/v1b/where-you-live');
-    });
-
-    
-
     router.post('/v1b/over-spa-payment-question', (req, res, next) => {
-        res.redirect('/v1b/where-you-live');
-    });
-
-    router.post('/v1b/not-eligible-over-spa', (req, res, next) => {
         res.redirect('/v1b/where-you-live');
     });
 
