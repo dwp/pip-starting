@@ -73,11 +73,7 @@ module.exports = function (router) {
     router.post('/v1b/not-eligible-health-condition-9-months', (req, res, next) => {
         res.redirect('/v1b/where-you-live');
     });
-
-    router.post('/v1b/over-spa-payment-question', (req, res, next) => {
-        res.redirect('/v1b/where-you-live');
-    });
-
+    
     router.post('/v1b/where-you-live', (req, res, next) => {
         const whereLived = req.session.data['where-live'];
         if (whereLived === 'Yes') {
@@ -103,7 +99,7 @@ module.exports = function (router) {
     router.post('/v1b/living-in-gb', (req, res, next) => {
         const livingGb = req.session.data['gb'];
         if (livingGb === 'Yes') {
-            res.redirect('/v1b/next-page');
+            res.redirect('/v1b/name');
         } else {
             res.redirect('/v1b/living-in-gb-further-question-2');
         }
@@ -112,14 +108,43 @@ module.exports = function (router) {
     router.post('/v1b/living-in-gb-further-question-2', (req, res, next) => {
         const immigrationControl2 = req.session.data['immigration-control-2'];
         if (immigrationControl2 === 'No') {
-            res.redirect('/v1b/next-page');
+            res.redirect('/v1b/name');
         } else {
             res.redirect('/v1b/not-eligible-immigration-2');
         }
     });
 
     router.post('/v1b/not-eligible-immigration-2', (req, res, next) => {
-        res.redirect('/v1b/next-page');
+        res.redirect('/v1b/name');
+    });
+
+    router.post('/v1b/name', (req, res, next) => {
+        res.redirect('/v1b/nino');
+    });
+
+    router.post('/v1b/nino', (req, res, next) => {
+        res.redirect('/v1b/date-of-birth');
+    });
+
+    router.post('/v1b/date-of-birth', (req, res, next) => {
+        res.redirect('/v1b/address');
+    });
+
+    router.post('/v1b/address', (req, res, next) => {
+        const immigrationControl2 = req.session.data['safe-address'];
+        if (immigrationControl2 === 'No') {
+            res.redirect('/v1b/address-other');
+        } else {
+            res.redirect('/v1b/contact-details');
+        }
+    });
+
+    router.post('/v1b/address-other', (req, res, next) => {
+        res.redirect('/v1b/contact-details');
+    });
+
+    router.post('/v1b/contact-details', (req, res, next) => {
+        res.redirect('/v1b/check-answers');
     });
 
  };
