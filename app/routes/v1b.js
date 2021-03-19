@@ -73,11 +73,7 @@ module.exports = function (router) {
     router.post('/v1b/not-eligible-health-condition-9-months', (req, res, next) => {
         res.redirect('/v1b/where-you-live');
     });
-
-    router.post('/v1b/over-spa-payment-question', (req, res, next) => {
-        res.redirect('/v1b/where-you-live');
-    });
-
+    
     router.post('/v1b/where-you-live', (req, res, next) => {
         const whereLived = req.session.data['where-live'];
         if (whereLived === 'Yes') {
@@ -134,13 +130,21 @@ module.exports = function (router) {
         res.redirect('/v1b/address');
     });
 
-    router.post('/v1b/adress', (req, res, next) => {
+    router.post('/v1b/address', (req, res, next) => {
         const immigrationControl2 = req.session.data['safe-address'];
         if (immigrationControl2 === 'No') {
-            res.redirect('/v1b/adress-other');
+            res.redirect('/v1b/address-other');
         } else {
             res.redirect('/v1b/contact-details');
         }
+    });
+
+    router.post('/v1b/address-other', (req, res, next) => {
+        res.redirect('/v1b/contact-details');
+    });
+
+    router.post('/v1b/contact-details', (req, res, next) => {
+        res.redirect('/v1b/check-answers');
     });
 
  };
