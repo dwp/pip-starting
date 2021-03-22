@@ -1,5 +1,7 @@
 module.exports = function (router) {
 
+    // ELIGIBILITY QUESTIONS
+
     router.post('/v1b/over-16', (req, res, next) => {
         const over16 = req.session.data['over-16'];
         if (over16 === 'Answer 1') {
@@ -93,7 +95,7 @@ module.exports = function (router) {
     });
 
     router.post('/v1b/not-eligible-immigration', (req, res, next) => {
-        res.redirect('/v1b/living-in-gb');
+        res.redirect('/v1b/we-need-to-get-in-touch');
     });
 
     router.post('/v1b/living-in-gb', (req, res, next) => {
@@ -113,6 +115,8 @@ module.exports = function (router) {
             res.redirect('/v1b/not-eligible-immigration-2');
         }
     });
+
+    // PERSONAL INFORMATION QUESTIONS
 
     router.post('/v1b/not-eligible-immigration-2', (req, res, next) => {
         res.redirect('/v1b/name');
@@ -145,6 +149,28 @@ module.exports = function (router) {
 
     router.post('/v1b/contact-details', (req, res, next) => {
         res.redirect('/v1b/check-answers');
+    });
+
+    // COMPLEX APPLICATION CONTACT DETAILS
+
+    router.post('/v1b/we-need-to-get-in-touch', (req, res, next) => {
+        res.redirect('/v1b/complex_contact_details/complex-contact-name');
+    });
+
+    router.post('/v1b/complex_contact_details/complex-contact-name', (req, res, next) => {
+        res.redirect('/v1b/complex_contact_details/complex-contact-nino');
+    });
+
+    router.post('/v1b/complex_contact_details/complex-contact-nino', (req, res, next) => {
+        res.redirect('/v1b/complex_contact_details/complex-contact-date-of-birth');
+    });
+
+    router.post('/v1b/complex_contact_details/complex-contact-date-of-birth', (req, res, next) => {
+        res.redirect('/v1b/complex_contact_details/complex-contact-details');
+    });
+
+    router.post('/v1b/complex_contact_details/complex-contact-details', (req, res, next) => {
+        res.redirect('/v1b/complex_contact_details/complex-contact-check-answers');
     });
 
  };
