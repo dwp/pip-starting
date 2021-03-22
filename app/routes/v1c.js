@@ -151,6 +151,14 @@ module.exports = function (router) {
     });
 
     router.post('/v1c/contact-details', (req, res, next) => {
+        res.redirect('/v1c/nationality');
+    });
+
+    router.post('/v1c/nationality', (req, res, next) => {
+        res.redirect('/v1c/working-living-abroad');
+    });
+
+    router.post('/v1c/working-living-abroad', (req, res, next) => {
         res.redirect('/v1c/check-answers');
     });
 
