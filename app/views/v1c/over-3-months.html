@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Over State Pension age
+  Health condition for over 3 months
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,34 +14,34 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
+
+
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <h1 class="govuk-fieldset__heading">
-                Have you previously received any disability benefits in the last 12 months? 
+                When did you start finding it hard to do everyday tasks or get around?
               </h1>
             </legend>
-            
-            <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="over-spa-1" name="overspa" type="radio" value="Yes PIP">
-                <label class="govuk-label govuk-radios__label" for="over-spa-1">
-                  Yes, I previously received Personal Independence Payment (PIP)
+                <input class="govuk-radios__input" id="over-3-months-1" name="over-3-months" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="over-3-months-1">
+                  Less than 3 months ago
                 </label>
               </div> <!-- govuk-radios__item -->
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="over-spa-2" name="overspa" type="radio" value="Yes DLA">
-                <label class="govuk-label govuk-radios__label" for="over-spa-2">
-                  Yes, I previously received Disability Living Allowance (DLA)
+                <input class="govuk-radios__input" id="over-3-months-2" name="over-3-months" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="over-3-months-2">
+                  3 months or more ago
                 </label>
               </div> <!-- govuk-radios__item -->
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="over-spa-3" name="overspa" type="radio" value="No">
-                <label class="govuk-label govuk-radios__label" for="over-spa-3">
-                  No, I haven't previously received DLA or PIP
+                <input class="govuk-radios__input" id="over-3-months-3" name="over-3-months" type="radio" value="Not sure">
+                <label class="govuk-label govuk-radios__label" for="condition-3">
+                  I’m not sure
                 </label>
               </div> <!-- govuk-radios__item -->
-              
             </div> <!-- govuk-radios govuk-radios -->
           </fieldset>
         </div> <!-- govuk-form-group -->

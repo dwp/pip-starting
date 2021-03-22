@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Over State Pension age
+  Where you live
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-  <form id="form" method="post" action="#">
+  <form id="form" method="post" action="">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
@@ -18,30 +18,23 @@
           <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <h1 class="govuk-fieldset__heading">
-                Have you previously received any disability benefits in the last 12 months? 
+                Do you currently live in England, Scotland or Wales? 
               </h1>
             </legend>
-            
+
             <div class="govuk-radios govuk-radios--inline">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="over-spa-1" name="overspa" type="radio" value="Yes PIP">
-                <label class="govuk-label govuk-radios__label" for="over-spa-1">
-                  Yes, I previously received Personal Independence Payment (PIP)
+                <input class="govuk-radios__input" id="where-live" name="where-live" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="where-live">
+                  Yes
                 </label>
               </div> <!-- govuk-radios__item -->
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="over-spa-2" name="overspa" type="radio" value="Yes DLA">
-                <label class="govuk-label govuk-radios__label" for="over-spa-2">
-                  Yes, I previously received Disability Living Allowance (DLA)
+                <input class="govuk-radios__input" id="where-live-2" name="where-live" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="where-live-2">
+                  No
                 </label>
               </div> <!-- govuk-radios__item -->
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="over-spa-3" name="overspa" type="radio" value="No">
-                <label class="govuk-label govuk-radios__label" for="over-spa-3">
-                  No, I haven't previously received DLA or PIP
-                </label>
-              </div> <!-- govuk-radios__item -->
-              
             </div> <!-- govuk-radios govuk-radios -->
           </fieldset>
         </div> <!-- govuk-form-group -->

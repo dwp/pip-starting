@@ -151,6 +151,10 @@ module.exports = function (router) {
         res.redirect('/v1b/check-answers');
     });
 
+    router.post('/v1b/check-answers', (req, res, next) => {
+        res.redirect('/v1b/next-page');
+    });
+
     // COMPLEX APPLICATION CONTACT DETAILS
 
     router.post('/v1b/we-need-to-get-in-touch', (req, res, next) => {
@@ -171,6 +175,10 @@ module.exports = function (router) {
 
     router.post('/v1b/complex_contact_details/complex-contact-details', (req, res, next) => {
         res.redirect('/v1b/complex_contact_details/complex-contact-check-answers');
+    });
+
+    router.post('/v1b/complex_contact_details/complex-contact-check-answers', (req, res, next) => {
+        res.redirect('/v1b/complex_contact_details/complex-contact-confirmation');
     });
 
  };
