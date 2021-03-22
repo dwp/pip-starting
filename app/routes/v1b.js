@@ -148,8 +148,16 @@ module.exports = function (router) {
     });
 
     router.post('/v1b/contact-details', (req, res, next) => {
-        res.redirect('/v1b/check-answers');
+        res.redirect('/v1b/nationality');
     });
+
+    router.post('/v1b/nationality', (req, res, next) => {
+        res.redirect('/v1b/working-living-abroad');
+    });
+
+    router.post('/v1b/working-living-abroad', (req, res, next) => {
+        res.redirect('/v1b/check-answers');
+    });    
 
     router.post('/v1b/check-answers', (req, res, next) => {
         res.redirect('/v1b/next-page');
