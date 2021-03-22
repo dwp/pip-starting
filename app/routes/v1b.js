@@ -116,11 +116,11 @@ module.exports = function (router) {
         }
     });
 
-    // PERSONAL INFORMATION QUESTIONS
-
     router.post('/v1b/not-eligible-immigration-2', (req, res, next) => {
-        res.redirect('/v1b/name');
+        res.redirect('/v1b/we-need-to-get-in-touch');
     });
+
+    // PERSONAL DEATILS ROUTES
 
     router.post('/v1b/name', (req, res, next) => {
         res.redirect('/v1b/nino');

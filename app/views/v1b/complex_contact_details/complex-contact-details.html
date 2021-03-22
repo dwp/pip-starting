@@ -47,82 +47,14 @@
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h1 class="govuk-fieldset__heading">
-                  How would you prefer to be contacted?
-                </h1>
-              </legend>
-
-              <div class="govuk-radios govuk-radios--inline">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="contact-preference" name="complex-contact-preference" type="radio" value="By letter">
-                  <label class="govuk-label govuk-radios__label" for="contact-preference">
-                    By letter
-                  </label>
-                </div> <!-- govuk-radios__item -->
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="contact-preference-2" name="complex-contact-preference" type="radio" value="By phone">
-                  <label class="govuk-label govuk-radios__label" for="contact-preference-2">
-                    By phone
-                  </label>
-                </div> <!-- govuk-radios__item -->
-              </div> <!-- govuk-radios govuk-radios--inline -->
-
-            </fieldset>
-          </div> <!-- govuk-form-group -->
-
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h1 class="govuk-fieldset__heading">
-                  Do you need communications in another format?
-                </h1>
-              </legend>
-              <div id="contact-hint" class="govuk-hint">
-                Such a braille, large print or audio CD.
-              </div>
-              <div class="govuk-radios govuk-radios--conditional govuk-radios--inline" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="communication-format-1" name="complex-contact-communication-format" type="radio" value="Yes" data-aria-controls="communication-format">
-                  <label class="govuk-label govuk-radios__label" for="communication-format-1">
-                    Yes
-                  </label>
-                </div> <!-- govuk-radios__item -->
-
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="communication-format">
-                  <div class="govuk-radios govuk-radios">
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="format-type-1" name="complex-contact-format-type" type="radio" value="Braille">
-                      <label class="govuk-label govuk-radios__label" for="format-type-1">
-                        Braille
-                      </label>
-                    </div> <!-- govuk-radios__item -->
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="format-type-2" name="complex-contact-format-type" type="radio" value="Large print">
-                      <label class="govuk-label govuk-radios__label" for="format-type-2">
-                        Large print
-                      </label>
-                    </div> <!-- govuk-radios__item -->
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="format-type-3" name="complex-contact-format-type" type="radio" value="Audio CD">
-                      <label class="govuk-label govuk-radios__label" for="format-type-3">
-                        Audio CD
-                      </label>
-                    </div> <!-- govuk-radios__item -->
-                  </div> <!-- govuk-radios govuk-radios -->
-
-                </div> <!-- govuk-radios__conditional govuk-radios__conditional--hidden -->
-
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="communication-format-2" name="complex-contact-communication-format" type="radio" value="Audio CD" data-aria-controls="communication-format-2">
-                  <label class="govuk-label govuk-radios__label" for="communication-format-2">
-                    No
-                  </label>
-                </div> <!-- govuk-radios__item -->
-
-              </div> <!-- govuk-radios govuk-radios--conditional govuk-radios--inline -->
-            </fieldset>
+            <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="call-times">
+                When is the best time to call you?
+              </label>
+            </h1>
+            <div id="call-times-hint" class="govuk-hint">
+              You will be called in the nest few days between the hours of 08:00 and 20:00 (8am and 8pm) Monday to Friday. Enter times when you you will not be available.
+            </div>
+            <input class="govuk-input govuk-!-width-full" id="call-times" name="call-tinmes" type="text" aria-describedby="call-times-hint">
           </div> <!-- govuk-form-group -->
 
         <input type="submit" class="govuk-button" value="Continue" id="submit">
