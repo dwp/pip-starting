@@ -17,38 +17,10 @@ module.exports = function (router) {
         res.redirect('/v1c/health-condition');
     });
 
-    router.post('/v1c/not-eligible-over-spa', (req, res, next) => {
-        res.redirect('/v1c/health-condition');
-    });
-
     router.post('/v1c/over-spa', (req, res, next) => {
-        const overSpa = req.session.data['overspa'];
-        if (overSpa === 'Yes PIP') {
-            res.redirect('/v1c/over-spa-pip-payment-question');
-        } else if (overSpa === 'Yes DLA'){
-            res.redirect('/v1c/over-spa-dla-payment-question');
-        } else {
             res.redirect('/v1c/health-condition');
-        }
     });
-
-    router.post('/v1c/over-spa-pip-payment-question', (req, res, next) => {
-        res.redirect('/v1c/health-condition');
-    });
-
-//    router.post('/v1c/over-spa-pip-payment-question', (req, res, next) => {
-//         const pipEnd = req.session.data['pip-claim-end'];
-//         if (pipEnd === 'Less than 12 months ago') {
-//             res.redirect('/v1c/health-condition');
-//         } else {
-//             res.redirect('/v1c/not-eligible-over-spa');
-//         }
-//     });
-
-    router.post('/v1c/over-spa-dla-payment-question', (req, res, next) => {
-        res.redirect('/v1c/health-condition');
-    });
-        
+ 
     router.post('/v1c/health-condition', (req, res, next) => {
         const healthCondition = req.session.data['condition'];
         if (healthCondition === 'Yes') {
@@ -62,23 +34,6 @@ module.exports = function (router) {
         res.redirect('/v1c/where-you-live');
     });
 
-    // router.post('/v1c/not-eligible-health-condition', (req, res, next) => {
-    //         res.redirect('/v1c/where-you-live');
-    // });
-
-    // router.post('/v1c/over-9-months', (req, res, next) => {
-    //     const overMonths = req.session.data['over-9-months'];
-    //     if (overMonths === 'Over 9 months') {
-    //         res.redirect('/v1c/where-you-live');
-    //     } else {
-    //         res.redirect('/v1c/not-eligible-health-condition-9-months');
-    //     }
-    // });
-
-    // router.post('/v1c/not-eligible-health-condition-9-months', (req, res, next) => {
-    //     res.redirect('/v1c/where-you-live');
-    // });
-    
     router.post('/v1c/where-you-live', (req, res, next) => {
         const whereLived = req.session.data['where-live'];
         if (whereLived === 'Yes') {
@@ -102,12 +57,24 @@ module.exports = function (router) {
     });
 
     router.post('/v1c/living-in-gb', (req, res, next) => {
-        const livingGb = req.session.data['gb'];
+        let eligible = true;
+        if (req.session.data['overspa'] === 'No' 
+        || req.session.data['condition'] === 'No' 
+        || req.session.data['condition'] === 'Not sure' 
+        || req.session.data['over-9-months'] === 'Less than 9 months'
+        || req.session.data['over-9-months'] === 'Not sure')  
+        {eligible = false;
+        }
+        if (eligible === true){
+            const livingGb = req.session.data['gb'];
         if (livingGb === 'Yes') {
             res.redirect('/v1c/name');
         } else {
             res.redirect('/v1c/living-in-gb-further-question-2');
         }
+        } else {
+            res.redirect('/v1c/not-eligible')
+        }        
     });
 
     router.post('/v1c/living-in-gb-further-question-2', (req, res, next) => {
@@ -117,6 +84,10 @@ module.exports = function (router) {
         } else {
             res.redirect('/v1c/not-eligible-immigration-2');
         }
+    });
+
+    router.post('/v1c/not-eligible', (req, res, next) => {
+        res.redirect('/v1c/name');
     });
 
     router.post('/v1c/not-eligible-immigration-2', (req, res, next) => {
