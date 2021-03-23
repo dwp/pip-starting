@@ -69,7 +69,9 @@ module.exports = function (router) {
             const livingGb = req.session.data['gb'];
         if (livingGb === 'Yes') {
             res.redirect('/v1c/name');
-        } else {
+        } else if (livingGb === 'No'){
+            res.redirect('/v1c/living-in-gb-further-question-2');
+        } else if (livingGb === 'Not sure');{
             res.redirect('/v1c/living-in-gb-further-question-2');
         }
         } else {
