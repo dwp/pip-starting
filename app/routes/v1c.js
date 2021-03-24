@@ -1,12 +1,16 @@
 module.exports = function (router) {
-
+    function isEligible (req) {
+        return !(req.session.data['overspa'] === 'No' 
+        || req.session.data['condition'] === 'No' 
+        || req.session.data['over-9-months'] === 'Less than 9 months');
+        }
     // ELIGIBILITY QUESTIONS
 
     router.post('/v1c/over-16', (req, res, next) => {
         const over16 = req.session.data['over-16'];
         if (over16 === 'Under 16') {
             res.redirect('/v1c/not-eligible-under-16');
-        } else if (over16 === 'Over 16 below State Pension age'){
+        } else if (over16 === 'Over 16 below State Pension age') {
             res.redirect('/v1c/health-condition');
         } else {
             res.redirect('/v1c/over-spa');
@@ -18,9 +22,9 @@ module.exports = function (router) {
     });
 
     router.post('/v1c/over-spa', (req, res, next) => {
-            res.redirect('/v1c/health-condition');
+        res.redirect('/v1c/health-condition');
     });
- 
+
     router.post('/v1c/health-condition', (req, res, next) => {
         const healthCondition = req.session.data['condition'];
         if (healthCondition === 'Yes') {
@@ -57,30 +61,36 @@ module.exports = function (router) {
     // });
 
     router.post('/v1c/living-in-gb', (req, res, next) => {
-        let eligible = true;
-        if (req.session.data['overspa'] === 'No' 
-        || req.session.data['condition'] === 'No' 
-        || req.session.data['over-9-months'] === 'Less than 9 months')     
-        {eligible = false;
+        if (req.session.data['overspa'] === 'Not sure') {
+            return res.redirect('/v1c/we-need-to-get-in-touch');
         }
-        if (eligible === true){
-            const livingGb = req.session.data['gb'];
+        
+        const livingGb = req.session.data['gb'];
         if (livingGb === 'Yes') {
-            res.redirect('/v1c/name');
-        } else if (livingGb === 'No'){
+            const eligible = isEligible(req);
+            if (eligible === false) {
+                res.redirect('/v1c/not-eligible')
+            } else {
+                res.redirect('/v1c/name');
+            }
+            
+        } else if (livingGb === 'No') {
             res.redirect('/v1c/we-need-to-get-in-touch');
-        } else if (livingGb === 'Not sure');{
+        } else if (livingGb === 'Not sure'); {
             res.redirect('/v1c/living-in-gb-further-question-2');
         }
-        } else {
-            res.redirect('/v1c/not-eligible')
-        }        
+
     });
 
     router.post('/v1c/living-in-gb-further-question-2', (req, res, next) => {
         const immigrationControl2 = req.session.data['immigration-control-2'];
         if (immigrationControl2 === 'No') {
-            res.redirect('/v1c/name');
+            const eligible = isEligible(req);
+            if (eligible === false) {
+                res.redirect('/v1c/not-eligible')
+            } else {
+                res.redirect('/v1c/name');
+            }
         } else {
             res.redirect('/v1c/we-need-to-get-in-touch');
         }
@@ -163,4 +173,4 @@ module.exports = function (router) {
         res.redirect('/v1c/complex_contact_details/complex-contact-confirmation');
     });
 
- };
+};
