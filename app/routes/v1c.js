@@ -4,9 +4,9 @@ module.exports = function (router) {
 
     router.post('/v1c/over-16', (req, res, next) => {
         const over16 = req.session.data['over-16'];
-        if (over16 === 'Answer 1') {
+        if (over16 === 'Under 16') {
             res.redirect('/v1c/not-eligible-under-16');
-        } else if (over16 === 'Answer 2'){
+        } else if (over16 === 'Over 16 below State Pension age'){
             res.redirect('/v1c/health-condition');
         } else {
             res.redirect('/v1c/over-spa');
@@ -48,21 +48,19 @@ module.exports = function (router) {
         if (immigrationControl === 'No') {
             res.redirect('/v1c/living-in-gb');
         } else {
-            res.redirect('/v1c/not-eligible-immigration');
+            res.redirect('/v1c/we-need-to-get-in-touch');
         }
     });
 
-    router.post('/v1c/not-eligible-immigration', (req, res, next) => {
-        res.redirect('/v1c/we-need-to-get-in-touch');
-    });
+    // router.post('/v1c/not-eligible-immigration', (req, res, next) => {
+    //     res.redirect('/v1c/we-need-to-get-in-touch');
+    // });
 
     router.post('/v1c/living-in-gb', (req, res, next) => {
         let eligible = true;
         if (req.session.data['overspa'] === 'No' 
         || req.session.data['condition'] === 'No' 
-        || req.session.data['condition'] === 'Not sure' 
-        || req.session.data['over-9-months'] === 'Less than 9 months'
-        || req.session.data['over-9-months'] === 'Not sure')  
+        || req.session.data['over-9-months'] === 'Less than 9 months')     
         {eligible = false;
         }
         if (eligible === true){
@@ -70,7 +68,7 @@ module.exports = function (router) {
         if (livingGb === 'Yes') {
             res.redirect('/v1c/name');
         } else if (livingGb === 'No'){
-            res.redirect('/v1c/living-in-gb-further-question-2');
+            res.redirect('/v1c/we-need-to-get-in-touch');
         } else if (livingGb === 'Not sure');{
             res.redirect('/v1c/living-in-gb-further-question-2');
         }
@@ -84,7 +82,7 @@ module.exports = function (router) {
         if (immigrationControl2 === 'No') {
             res.redirect('/v1c/name');
         } else {
-            res.redirect('/v1c/not-eligible-immigration-2');
+            res.redirect('/v1c/we-need-to-get-in-touch');
         }
     });
 
