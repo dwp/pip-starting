@@ -76,7 +76,7 @@ module.exports = function (router) {
             
         } else if (livingGb === 'No') {
             res.redirect('/v1c/we-need-to-get-in-touch');
-        } else if (livingGb === 'Not sure'); {
+        } else if (livingGb === 'Not sure') {
             res.redirect('/v1c/living-in-gb-further-question-2');
         }
 
