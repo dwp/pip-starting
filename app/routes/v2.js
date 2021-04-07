@@ -1,25 +1,36 @@
 module.exports = function (router) {
     function isEligible (req) {
-        return !(req.session.data['overspa'] === 'No' 
+        return !(req.session.data['over-16'] === 'Under 16' 
+        ||req.session.data['overspa'] === 'No' 
         || req.session.data['condition'] === 'No' 
         || req.session.data['over-9-months'] === 'Less than 9 months');
         }
     // ELIGIBILITY QUESTIONS
 
+    // router.post('/v2/over-16', (req, res, next) => {
+    //     const over16 = req.session.data['over-16'];
+    //     if (over16 === 'Under 16') {
+    //         res.redirect('/v2/not-eligible-under-16');
+    //     } else if (over16 === 'Over 16 below State Pension age') {
+    //         res.redirect('/v2/health-condition');
+    //     } else {
+    //         res.redirect('/v2/over-spa');
+    //     }
+    // });
+
+
     router.post('/v2/over-16', (req, res, next) => {
         const over16 = req.session.data['over-16'];
-        if (over16 === 'Under 16') {
-            res.redirect('/v2/not-eligible-under-16');
-        } else if (over16 === 'Over 16 below State Pension age') {
-            res.redirect('/v2/health-condition');
-        } else {
+        if (over16 === 'Over State Pension age') {
             res.redirect('/v2/over-spa');
+        } else {
+            res.redirect('/v2/health-condition');
         }
     });
 
-    router.post('/v2/not-eligible-under-16', (req, res, next) => {
-        res.redirect('/v2/health-condition');
-    });
+    // router.post('/v2/not-eligible-under-16', (req, res, next) => {
+    //     res.redirect('/v2/health-condition');
+    // });
 
     router.post('/v2/over-spa', (req, res, next) => {
         res.redirect('/v2/health-condition');
@@ -79,7 +90,7 @@ module.exports = function (router) {
         } else if (livingGb === 'Not sure') {
             res.redirect('/v2/living-in-gb-further-question-2');
         }
-
+        
     });
 
     router.post('/v2/living-in-gb-further-question-2', (req, res, next) => {
@@ -96,9 +107,9 @@ module.exports = function (router) {
         }
     });
 
-    router.post('/v2/not-eligible', (req, res, next) => {
-        res.redirect('/v2/name');
-    });
+    // router.post('/v2/not-eligible', (req, res, next) => {
+    //     res.redirect('/v2/name');
+    // });
 
     router.post('/v2/not-eligible-immigration-2', (req, res, next) => {
         res.redirect('/v2/we-need-to-get-in-touch');
@@ -143,9 +154,9 @@ module.exports = function (router) {
         res.redirect('/v2/check-answers');
     });
 
-    router.post('/v2/check-answers', (req, res, next) => {
-        res.redirect('/v2/next-page');
-    });
+    // router.post('/v2/check-answers', (req, res, next) => {
+    //     res.redirect('/v2/next-page');
+    // });
 
     // COMPLEX APPLICATION CONTACT DETAILS
 
