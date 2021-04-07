@@ -20,7 +20,7 @@
                   <h1 class="govuk-heading-l">Check your answers</h1>
 
                   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                    
+
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
                         First name
@@ -103,7 +103,7 @@
                       </dd>
                     </div> <!-- govuk-summary-list__row -->
 
-                    {% if data['safe-address'] === 'No' %} 
+                    {% if data['safe-address'] === 'No' %}
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
                         Address
@@ -120,7 +120,7 @@
                         </a>
                       </dd>
                     </div> <!-- govuk-summary-list__row -->
-                    {% endif %} 
+                    {% endif %}
 
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
@@ -150,7 +150,7 @@
                     </div> <!-- govuk-summary-list__row -->
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        Do you need another communication format E.G. Braille, large print or CD audio?
+                        Do you need another communication format such as Braille, large print or CD audio?
                       </dt>
                       <dd class="govuk-summary-list__value">
                         {{ data['communication-format'] }}
