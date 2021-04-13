@@ -23,6 +23,7 @@ v1a(router);
 v1b(router);
 v1c(router);
 v2(router);
+v2a(router);
 // ROUTER LIST END
 
 module.exports = router
