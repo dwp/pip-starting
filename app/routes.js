@@ -10,6 +10,7 @@ const v1a = require('./routes/v1a')
 const v1b = require('./routes/v1b')
 const v1c = require('./routes/v1c')
 const v2 = require('./routes/v2')
+const v2a = require('./routes/v2a')
 
 // ROUTES REDIRECT END
 
