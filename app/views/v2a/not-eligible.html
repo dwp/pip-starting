@@ -25,7 +25,7 @@
       <ul class="govuk-list govuk-list">
 
         {% if data['over-16'] == 'Under 16' %}
-        <li>This because you're under 16 years old.</li>
+        <p>This because you're under 16 years old.</p>
         <p>You might be eligible for Disability Living Allowance for children instead. This is for children who may need may help with the extra costs of looking after.</p>
         <a href="https://www.gov.uk/disability-living-allowance-children" role="button" draggable="false" class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
           Apply for Disability Living Allowance for children
@@ -42,20 +42,23 @@
 
         {% if data['condition'] == 'No' %}
         <p>This is because you do not have a health condition.</p>
+        <p>PIP is for people with a long term physical or mental health condition or disability to help with some of the extra costs you may have.</p>
         <a href="https://www.gov.uk/browse/benefits/disability" role="button" draggable="false" class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
           See what other benefits are available
         </a>
         {% endif %}
 
         {% if data['condition'] == 'Not sure' %}
-        <li>This is because you told us you're not sure if you have a health condition that affects your ability to do everyday tasks or get around.</li>
+        <p>This is because you told us you're not sure if you have a health condition that affects your ability to do everyday tasks or get around.</p>
+        <p>PIP is for people with a long term physical or mental health condition or disability to help with some of the extra costs you may have.</p>
         <a href="https://www.gov.uk/browse/benefits/disability" role="button" draggable="false" class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
           See what other benefits are available
         </a> 
         {% endif %}
 
         {% if data['over-9-months'] == 'Less than 9 months' %}
-        <li>This is because you told us you do not expect your ability to do everyday tasks or get around to be affected for at least another 9 months.</li>
+        <p>This is because you told us you do not expect your ability to do everyday tasks or get around to be affected for at least another 9 months.</p>
+        <p>PIP is for people with a long term physical or mental health condition or disability to help with some of the extra costs you may have.</p>
         <a href="https://www.gov.uk/browse/benefits/disability" role="button" draggable="false" class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
           See what other benefits are available
         </a> 
