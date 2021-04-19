@@ -67,6 +67,8 @@ module.exports = function (router) {
         res.redirect('/v2a/health-condition');
     });
 
+    // HEALTH CONDITION FLOW
+
     router.post('/v2a/health-condition', (req, res, next) => {
         const healthCondition = req.session.data['condition'];
         if (healthCondition === 'Yes') {
@@ -79,6 +81,42 @@ module.exports = function (router) {
     router.post('/v2a/over-9-months', (req, res, next) => {
         res.redirect('/v2a/about_your_health/condition');
     });
+
+    router.post('/v2a/about_your_health/condition', (req, res, next) => {
+        res.redirect('/v2a/about_your_health/another');
+    });
+
+    router.post('/v2a/about_your_health/another', (req, res, next) => {
+        const conditionAnother = req.session.data['condition2'];
+        if (conditionAnother === 'Yes') {
+            res.redirect('/v2a/about_your_health/condition-2');
+        } else {
+            res.redirect('/v2a/where-you-live');
+        }
+    });
+
+    router.post('/v2a/about_your_health/condition-2', (req, res, next) => {
+        res.redirect('/v2a/about_your_health/another-2');
+    });
+
+    router.post('/v2a/about_your_health/another-2', (req, res, next) => {
+        const conditionAnother2 = req.session.data['condition3'];
+        if (conditionAnother2 === 'Yes') {
+            res.redirect('/v2a/about_your_health/condition-3');
+        } else {
+            res.redirect('/v2a/where-you-live');
+        }
+    });
+
+    router.post('/v2a/about_your_health/condition-3', (req, res, next) => {
+        res.redirect('/v2a/about_your_health/another-3');
+    });
+
+    router.post('/v2a/about_your_health/another-3', (req, res, next) => {
+        res.redirect('/v2a/where-you-live');
+    });
+
+    //HEALTH CONDITION FLOE END
 
     router.post('/v2a/where-you-live', (req, res, next) => {
         const whereLived = req.session.data['where-live'];

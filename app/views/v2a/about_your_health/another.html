@@ -20,7 +20,7 @@
         <br><strong>{{ data['condition-name-1'] | capitalize }}</strong>
       </p>
 
-      <form action="/v2a/about-your-health/condition-2" method="post" novalidate>
+      <form id="form" method="post" action="#">
 
         {{ govukRadios({
           idPrefix: "condition2",
@@ -29,7 +29,7 @@
             legend: {
               text: "Do you have another condition or disability?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              classes: "govuk-fieldset__legend--xl"
             }
           },
           items: [
@@ -45,7 +45,7 @@
         }) }}
 
         {{ govukButton({
-          text: "Save and continue"
+          text: "Continue"
         }) }}
 
       </form>
