@@ -77,7 +77,7 @@ module.exports = function (router) {
     });
 
     router.post('/v2a/over-9-months', (req, res, next) => {
-        res.redirect('/v2a/where-you-live');
+        res.redirect('/v2a/about_your_health/condition');
     });
 
     router.post('/v2a/where-you-live', (req, res, next) => {
