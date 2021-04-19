@@ -7,17 +7,52 @@ module.exports = function (router) {
         }
     // ELIGIBILITY QUESTIONS
 
-    // router.post('/v2aa/over-16', (req, res, next) => {
-    //     const over16 = req.session.data['over-16'];
-    //     if (over16 === 'Under 16') {
-    //         res.redirect('/v2a/not-eligible-under-16');
-    //     } else if (over16 === 'Over 16 below State Pension age') {
-    //         res.redirect('/v2a/health-condition');
-    //     } else {
-    //         res.redirect('/v2a/over-spa');
-    //     }
+    router.post('/v2a/add-support', (req, res, next) => {
+        const addSupport = req.session.data['add-support'];
+        if (addSupport === 'Yes') {
+            res.redirect('/v2a/add-support-help');
+        } else {
+            res.redirect('/v2a/add-support-communicating');
+        }
+    });  
+    
+    router.post('/v2a/add-support-help', (req, res, next) => {
+        const addsupportHelp = req.session.data['add-support-help'];
+        if (addsupportHelp === 'Yes') {
+            res.redirect('/v2a/add-support-name');
+        } else {
+            res.redirect('/v2a/add-support-communicating');
+        }
+    });  
+
+    router.post('/v2a/add-support-name', (req, res, next) => {
+        res.redirect('/v2a/add-support-address');
+    });
+
+    // router.post('/v2a/add-support-address', (req, res, next) => {
+    //     res.redirect('/v2a/add-support-contact-details');
     // });
 
+    router.post('/v2a/add-support-address', (req, res, next) => {
+        const addsupportAddress = req.session.data['add-support-safe-address'];
+        if (addsupportAddress === 'No') {
+            res.redirect('/v2a/add-support-address-other');
+        } else {
+            res.redirect('/v2a/add-support-contact-details');
+        }
+    }); 
+
+    router.post('/v2a/add-support-address-other', (req, res, next) => {
+        res.redirect('/v2a/add-support-contact-details');
+    });
+
+    router.post('/v2a/add-support-contact-details', (req, res, next) => {
+        res.redirect('/v2a/add-support-communicating');
+    });
+
+    router.post('/v2a/add-support-communicating', (req, res, next) => {
+        res.redirect('/v2a/over-16');
+    });
 
     router.post('/v2a/over-16', (req, res, next) => {
         const over16 = req.session.data['over-16'];
@@ -27,10 +62,6 @@ module.exports = function (router) {
             res.redirect('/v2a/health-condition');
         }
     });
-
-    // router.post('/v2a/not-eligible-under-16', (req, res, next) => {
-    //     res.redirect('/v2a/health-condition');
-    // });
 
     router.post('/v2a/over-spa', (req, res, next) => {
         res.redirect('/v2a/health-condition');
@@ -153,10 +184,6 @@ module.exports = function (router) {
     router.post('/v2a/working-living-abroad', (req, res, next) => {
         res.redirect('/v2a/check-answers');
     });
-
-    // router.post('/v2a/check-answers', (req, res, next) => {
-    //     res.redirect('/v2a/next-page');
-    // });
 
     // COMPLEX APPLICATION CONTACT DETAILS
 
