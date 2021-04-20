@@ -46,13 +46,14 @@ module.exports = function (router) {
         if (healthCondition === 'Yes') {
             res.redirect('/v2a/over-9-months');
         } else {
-            res.redirect('/v2a/where-you-live');
+            res.redirect('/v2a/over-16');
         }
     });
 
     router.post('/v2a/over-9-months', (req, res, next) => {
         res.redirect('/v2a/over-16');
     });
+    // HEALTH CONDITION QUESTIONS END
     
     // ELIGIBILITY QUESTIONS 
     router.post('/v2a/over-16', (req, res, next) => {
@@ -133,10 +134,8 @@ module.exports = function (router) {
     router.post('/v2a/not-eligible-immigration-2', (req, res, next) => {
         res.redirect('/v2a/we-need-to-get-in-touch');
     });
-
+    // ELIGIBILITY QUESTIONS END
    
-
-
     // ADDITIONAL SUPPORT QUESTIONS
     router.post('/v2a/add-support', (req, res, next) => {
         const addSupport = req.session.data['add-support'];
@@ -184,6 +183,7 @@ module.exports = function (router) {
     router.post('/v2a/add-support-communicating', (req, res, next) => {
         res.redirect('/v2a/name');
     });
+    // ADDITIONAL SUPPORT QUESTIONS END
 
     // PERSONAL DETAILS QUESTIONS
     router.post('/v2a/name', (req, res, next) => {
@@ -220,8 +220,17 @@ module.exports = function (router) {
     });
 
     router.post('/v2a/working-living-abroad', (req, res, next) => {
+        res.redirect('/v2a/in-hospital');
+    });
+
+    router.post('/v2a/in-hospital', (req, res, next) => {
+        res.redirect('/v2a/in-care-home');
+    });
+
+    router.post('/v2a/in-care-home', (req, res, next) => {
         res.redirect('/v2a/check-answers');
     });
+    // PERSONAL QUESTIONS END
 
     // COMPLEX APPLICATION CONTACT DETAILS
 
@@ -250,3 +259,4 @@ module.exports = function (router) {
     });
 
 };
+    // COMPLEX APPLICATION CONTACT DETAILS END
