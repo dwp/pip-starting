@@ -5,11 +5,12 @@ module.exports = function (router) {
         || req.session.data['condition'] === 'No'
         || req.session.data['over-9-months'] === 'Less than 9 months');
         }
-    // ELIGIBILITY QUESTIONS
+    
+        // ADDITIONAL SUPPORT QUESTIONS
 
     router.post('/v2a/add-support', (req, res, next) => {
         const addSupport = req.session.data['add-support'];
-        if (addSupport === 'Yes') {
+        if (addSupport === 'Yes, all of the time or sometimes') {
             res.redirect('/v2a/add-support-help');
         } else {
             res.redirect('/v2a/add-support-communicating');
@@ -54,33 +55,22 @@ module.exports = function (router) {
         res.redirect('/v2a/over-16');
     });
 
+    // ELIGIBILITY QUESTIONS 
+
     router.post('/v2a/over-16', (req, res, next) => {
         const over16 = req.session.data['over-16'];
         if (over16 === 'Over State Pension age') {
             res.redirect('/v2a/over-spa');
         } else {
-            res.redirect('/v2a/health-condition');
+            res.redirect('/v2a/about_your_health/condition');
         }
     });
 
     router.post('/v2a/over-spa', (req, res, next) => {
-        res.redirect('/v2a/health-condition');
-    });
-
-    // HEALTH CONDITION FLOW
-
-    router.post('/v2a/health-condition', (req, res, next) => {
-        const healthCondition = req.session.data['condition'];
-        if (healthCondition === 'Yes') {
-            res.redirect('/v2a/over-9-months');
-        } else {
-            res.redirect('/v2a/where-you-live');
-        }
-    });
-
-    router.post('/v2a/over-9-months', (req, res, next) => {
         res.redirect('/v2a/about_your_health/condition');
     });
+
+    // HEALTH CONDITION QUESTIONS
 
     router.post('/v2a/about_your_health/condition', (req, res, next) => {
         res.redirect('/v2a/about_your_health/another');
@@ -91,7 +81,7 @@ module.exports = function (router) {
         if (conditionAnother === 'Yes') {
             res.redirect('/v2a/about_your_health/condition-2');
         } else {
-            res.redirect('/v2a/where-you-live');
+            res.redirect('/v2a/health-condition');
         }
     });
 
@@ -104,7 +94,7 @@ module.exports = function (router) {
         if (conditionAnother2 === 'Yes') {
             res.redirect('/v2a/about_your_health/condition-3');
         } else {
-            res.redirect('/v2a/where-you-live');
+            res.redirect('/v2a/health-condition');
         }
     });
 
@@ -113,10 +103,25 @@ module.exports = function (router) {
     });
 
     router.post('/v2a/about_your_health/another-3', (req, res, next) => {
+        res.redirect('/v2a/health-condition');
+    });
+      
+    router.post('/v2a/health-condition', (req, res, next) => {
+        const healthCondition = req.session.data['condition'];
+        if (healthCondition === 'Yes') {
+            res.redirect('/v2a/over-9-months');
+        } else {
+            res.redirect('/v2a/where-you-live');
+        }
+    });
+
+    router.post('/v2a/over-9-months', (req, res, next) => {
         res.redirect('/v2a/where-you-live');
     });
 
-    //HEALTH CONDITION FLOE END
+    // HEALTH CONDITION FLOW END
+
+    // ELIGIBILITY QUESTIONS CONTINUED
 
     router.post('/v2a/where-you-live', (req, res, next) => {
         const whereLived = req.session.data['where-live'];
@@ -184,7 +189,7 @@ module.exports = function (router) {
         res.redirect('/v2a/we-need-to-get-in-touch');
     });
 
-    // PERSONAL DEATILS ROUTES
+    // PERSONAL DETAILS QUESTIONS
 
     router.post('/v2a/name', (req, res, next) => {
         res.redirect('/v2a/nino');
