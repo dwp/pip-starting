@@ -43,7 +43,7 @@ module.exports = function (router) {
       
     router.post('/v2a/health-condition', (req, res, next) => {
         const healthCondition = req.session.data['condition'];
-        if (healthCondition === 'Yes') {
+        if (healthCondition === 'Yes, all of the time or sometimes') {
             res.redirect('/v2a/over-9-months');
         } else {
             res.redirect('/v2a/over-16');
