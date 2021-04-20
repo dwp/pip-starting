@@ -6,72 +6,7 @@ module.exports = function (router) {
         || req.session.data['over-9-months'] === 'Less than 9 months');
         }
     
-        // ADDITIONAL SUPPORT QUESTIONS
-
-    router.post('/v2a/add-support', (req, res, next) => {
-        const addSupport = req.session.data['add-support'];
-        if (addSupport === 'Yes, all of the time or sometimes') {
-            res.redirect('/v2a/add-support-help');
-        } else {
-            res.redirect('/v2a/add-support-communicating');
-        }
-    });  
-    
-    router.post('/v2a/add-support-help', (req, res, next) => {
-        const addsupportHelp = req.session.data['add-support-help'];
-        if (addsupportHelp === 'Yes') {
-            res.redirect('/v2a/add-support-name');
-        } else {
-            res.redirect('/v2a/add-support-communicating');
-        }
-    });  
-
-    router.post('/v2a/add-support-name', (req, res, next) => {
-        res.redirect('/v2a/add-support-address');
-    });
-
-    // router.post('/v2a/add-support-address', (req, res, next) => {
-    //     res.redirect('/v2a/add-support-contact-details');
-    // });
-
-    router.post('/v2a/add-support-address', (req, res, next) => {
-        const addsupportAddress = req.session.data['add-support-safe-address'];
-        if (addsupportAddress === 'No') {
-            res.redirect('/v2a/add-support-address-other');
-        } else {
-            res.redirect('/v2a/add-support-contact-details');
-        }
-    }); 
-
-    router.post('/v2a/add-support-address-other', (req, res, next) => {
-        res.redirect('/v2a/add-support-contact-details');
-    });
-
-    router.post('/v2a/add-support-contact-details', (req, res, next) => {
-        res.redirect('/v2a/add-support-communicating');
-    });
-
-    router.post('/v2a/add-support-communicating', (req, res, next) => {
-        res.redirect('/v2a/over-16');
-    });
-
-    // ELIGIBILITY QUESTIONS 
-
-    router.post('/v2a/over-16', (req, res, next) => {
-        const over16 = req.session.data['over-16'];
-        if (over16 === 'Over State Pension age') {
-            res.redirect('/v2a/over-spa');
-        } else {
-            res.redirect('/v2a/about_your_health/condition');
-        }
-    });
-
-    router.post('/v2a/over-spa', (req, res, next) => {
-        res.redirect('/v2a/about_your_health/condition');
-    });
-
     // HEALTH CONDITION QUESTIONS
-
     router.post('/v2a/about_your_health/condition', (req, res, next) => {
         res.redirect('/v2a/about_your_health/another');
     });
@@ -116,12 +51,22 @@ module.exports = function (router) {
     });
 
     router.post('/v2a/over-9-months', (req, res, next) => {
-        res.redirect('/v2a/where-you-live');
+        res.redirect('/v2a/over-16');
+    });
+    
+    // ELIGIBILITY QUESTIONS 
+    router.post('/v2a/over-16', (req, res, next) => {
+        const over16 = req.session.data['over-16'];
+        if (over16 === 'Over State Pension age') {
+            res.redirect('/v2a/over-spa');
+        } else {
+            res.redirect('/v2a/where-you-live');
+        }
     });
 
-    // HEALTH CONDITION FLOW END
-
-    // ELIGIBILITY QUESTIONS CONTINUED
+    router.post('/v2a/over-spa', (req, res, next) => {
+        res.redirect('/v2a/where-you-live');
+    });
 
     router.post('/v2a/where-you-live', (req, res, next) => {
         const whereLived = req.session.data['where-live'];
@@ -156,7 +101,7 @@ module.exports = function (router) {
             if (eligible === false) {
                 res.redirect('/v2a/not-eligible')
             } else {
-                res.redirect('/v2a/name');
+                res.redirect('/v2a/add-support');
             }
 
         } else if (livingGb === 'No') {
@@ -174,7 +119,7 @@ module.exports = function (router) {
             if (eligible === false) {
                 res.redirect('/v2a/not-eligible')
             } else {
-                res.redirect('/v2a/name');
+                res.redirect('/v2a/add-support');
             }
         } else {
             res.redirect('/v2a/we-need-to-get-in-touch');
@@ -189,8 +134,58 @@ module.exports = function (router) {
         res.redirect('/v2a/we-need-to-get-in-touch');
     });
 
-    // PERSONAL DETAILS QUESTIONS
+   
 
+
+    // ADDITIONAL SUPPORT QUESTIONS
+    router.post('/v2a/add-support', (req, res, next) => {
+        const addSupport = req.session.data['add-support'];
+        if (addSupport === 'Yes, all of the time or sometimes') {
+            res.redirect('/v2a/add-support-help');
+        } else {
+            res.redirect('/v2a/add-support-communicating');
+        }
+    });  
+    
+    router.post('/v2a/add-support-help', (req, res, next) => {
+        const addsupportHelp = req.session.data['add-support-help'];
+        if (addsupportHelp === 'Yes') {
+            res.redirect('/v2a/add-support-name');
+        } else {
+            res.redirect('/v2a/add-support-communicating');
+        }
+    });  
+
+    router.post('/v2a/add-support-name', (req, res, next) => {
+        res.redirect('/v2a/add-support-address');
+    });
+
+    // router.post('/v2a/add-support-address', (req, res, next) => {
+    //     res.redirect('/v2a/add-support-contact-details');
+    // });
+
+    router.post('/v2a/add-support-address', (req, res, next) => {
+        const addsupportAddress = req.session.data['add-support-safe-address'];
+        if (addsupportAddress === 'No') {
+            res.redirect('/v2a/add-support-address-other');
+        } else {
+            res.redirect('/v2a/add-support-contact-details');
+        }
+    }); 
+
+    router.post('/v2a/add-support-address-other', (req, res, next) => {
+        res.redirect('/v2a/add-support-contact-details');
+    });
+
+    router.post('/v2a/add-support-contact-details', (req, res, next) => {
+        res.redirect('/v2a/add-support-communicating');
+    });
+
+    router.post('/v2a/add-support-communicating', (req, res, next) => {
+        res.redirect('/v2a/name');
+    });
+
+    // PERSONAL DETAILS QUESTIONS
     router.post('/v2a/name', (req, res, next) => {
         res.redirect('/v2a/nino');
     });
