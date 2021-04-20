@@ -2,7 +2,7 @@ module.exports = function (router) {
     function isEligible (req) {
         return !(req.session.data['over-16'] === 'Under 16'
         ||req.session.data['overspa'] === 'No'
-        || req.session.data['condition'] === 'No'
+        || req.session.data['condition'] === 'No, never'
         || req.session.data['over-9-months'] === 'Less than 9 months');
         }
     
