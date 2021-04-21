@@ -10,6 +10,7 @@ const v1a = require('./routes/v1a')
 const v1b = require('./routes/v1b')
 const v1c = require('./routes/v1c')
 const v2 = require('./routes/v2')
+const v2idv = require('./routes/v2idv')
 const v2a = require('./routes/v2b')
 const v2b = require('./routes/v2b')
 
@@ -24,6 +25,7 @@ v1a(router);
 v1b(router);
 v1c(router);
 v2(router);
+v2idv(router);
 v2a(router);
 v2b(router);
 // ROUTER LIST END
