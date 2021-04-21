@@ -102,7 +102,7 @@ module.exports = function (router) {
             if (eligible === false) {
                 res.redirect('/v2a/not-eligible')
             } else {
-                res.redirect('/v2a/add-support');
+                res.redirect('/v2a/name');
             }
 
         } else if (livingGb === 'No') {
@@ -120,7 +120,7 @@ module.exports = function (router) {
             if (eligible === false) {
                 res.redirect('/v2a/not-eligible')
             } else {
-                res.redirect('/v2a/add-support');
+                res.redirect('/v2a/name');
             }
         } else {
             res.redirect('/v2a/we-need-to-get-in-touch');
@@ -181,7 +181,7 @@ module.exports = function (router) {
     });
 
     router.post('/v2a/add-support-communicating', (req, res, next) => {
-        res.redirect('/v2a/name');
+        res.redirect('/v2a/check-answers');
     });
     // ADDITIONAL SUPPORT QUESTIONS END
 
@@ -228,7 +228,7 @@ module.exports = function (router) {
     });
 
     router.post('/v2a/in-care-home', (req, res, next) => {
-        res.redirect('/v2a/check-answers');
+        res.redirect('/v2a/add-support');
     });
     // PERSONAL QUESTIONS END
 
