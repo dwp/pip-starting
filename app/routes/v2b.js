@@ -1,11 +1,9 @@
 module.exports = function (router) {
-    function isEligible (req) {
+    function isEligible(req) {
         return !(req.session.data['over-16'] === 'Under 16'
-        ||req.session.data['overspa'] === 'No'
-        || req.session.data['condition'] === 'No, never'
-        || req.session.data['over-9-months'] === 'Less than 9 months');
-        }
-    
+            || req.session.data['overspa'] === 'No')
+    }
+
     // HEALTH CONDITION QUESTIONS
     router.post('/v2b/about_your_health/condition', (req, res, next) => {
         res.redirect('/v2b/about_your_health/another');
@@ -40,21 +38,48 @@ module.exports = function (router) {
     router.post('/v2b/about_your_health/another-3', (req, res, next) => {
         res.redirect('/v2b/health-condition');
     });
-      
+
+    // router.post('/v2b/health-condition', (req, res, next) => {
+    //     const healthCondition = req.session.data['condition'];
+    //     if (healthCondition === 'Yes, all of the time or sometimes') {
+    //         res.redirect('/v2b/over-9-months');
+    //     } else {
+    //         res.redirect('/v2b/over-16');
+    //     }
+    // });
+
     router.post('/v2b/health-condition', (req, res, next) => {
         const healthCondition = req.session.data['condition'];
         if (healthCondition === 'Yes, all of the time or sometimes') {
-            res.redirect('/v2b/over-9-months');
-        } else {
-            res.redirect('/v2b/over-16');
+            res.redirect('/v2b/over-9-months')
+        } else if (healthCondition === 'No, never'){
+            res.redirect('/v2b/not-eligible');
+        } else if (healthCondition === 'Not sure'){
+            res.redirect('/v2b/about_your_health/condition');
         }
     });
 
     router.post('/v2b/over-9-months', (req, res, next) => {
-        res.redirect('/v2b/over-16');
+        const eligible = isEligible(req); 
+        const over9months = req.session.data['over-9-months'];
+        if (over9months === 'Less than 9 months') {
+            res.redirect('/v2b/not-eligible')
+        } else if (over9months === 'At least 9 months'){
+            if (eligible){
+                res.redirect('/v2b/about_your_health/condition')
+            } else {
+                res.redirect('/v2b/not-eligible');
+            }
+        } else if (over9months === 'Not sure'){
+            if (eligible){
+                res.redirect('/v2b/about_your_health/condition')
+            } else {
+                res.redirect('/v2b/not-eligible');
+            }
+        }
     });
     // HEALTH CONDITION QUESTIONS END
-    
+
     // ELIGIBILITY QUESTIONS 
     router.post('/v2b/over-16', (req, res, next) => {
         const over16 = req.session.data['over-16'];
@@ -92,25 +117,12 @@ module.exports = function (router) {
     // });
 
     router.post('/v2b/living-in-gb', (req, res, next) => {
-        if (req.session.data['overspa'] === 'Not sure') {
-            return res.redirect('/v2b/we-need-to-get-in-touch');
-        }
-
         const livingGb = req.session.data['gb'];
         if (livingGb === 'Yes') {
-            const eligible = isEligible(req);
-            if (eligible === false) {
-                res.redirect('/v2b/not-eligible')
-            } else {
-                res.redirect('/v2b/name');
-            }
-
-        } else if (livingGb === 'No') {
+            res.redirect('/v2b/health-condition');
+        } else {
             res.redirect('/v2b/we-need-to-get-in-touch');
-        } else if (livingGb === 'Not sure') {
-            res.redirect('/v2b/living-in-gb-further-question-2');
         }
-
     });
 
     router.post('/v2b/living-in-gb-further-question-2', (req, res, next) => {
@@ -135,7 +147,7 @@ module.exports = function (router) {
         res.redirect('/v2b/we-need-to-get-in-touch');
     });
     // ELIGIBILITY QUESTIONS END
-   
+
     // ADDITIONAL SUPPORT QUESTIONS
     router.post('/v2b/add-support', (req, res, next) => {
         const addSupport = req.session.data['add-support'];
@@ -144,8 +156,8 @@ module.exports = function (router) {
         } else {
             res.redirect('/v2b/add-support-communicating');
         }
-    });  
-    
+    });
+
     router.post('/v2b/add-support-help', (req, res, next) => {
         const addsupportHelp = req.session.data['add-support-help'];
         if (addsupportHelp === 'Yes') {
@@ -153,7 +165,7 @@ module.exports = function (router) {
         } else {
             res.redirect('/v2b/add-support-communicating');
         }
-    });  
+    });
 
     router.post('/v2b/add-support-name', (req, res, next) => {
         res.redirect('/v2b/add-support-address');
@@ -170,7 +182,7 @@ module.exports = function (router) {
         } else {
             res.redirect('/v2b/add-support-contact-details');
         }
-    }); 
+    });
 
     router.post('/v2b/add-support-address-other', (req, res, next) => {
         res.redirect('/v2b/add-support-contact-details');
