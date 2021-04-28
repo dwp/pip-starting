@@ -174,18 +174,23 @@ module.exports = function (router) {
     });
 
     router.post('/v3/in-care-home', (req, res, next) => {
-        res.redirect('/v3/add-support');
+        res.redirect('/v3/add-support-communicating');
     });
     // PERSONAL QUESTIONS END
 
 
     // ADDITIONAL SUPPORT QUESTIONS
+
+    router.post('/v3/add-support-communicating', (req, res, next) => {
+        res.redirect('/v3/add-support');
+    });
+
     router.post('/v3/add-support', (req, res, next) => {
         const addSupport = req.session.data['add-support'];
         if (addSupport === 'Yes, all of the time or sometimes') {
             res.redirect('/v3/add-support-help');
         } else {
-            res.redirect('/v3/add-support-communicating');
+            res.redirect('/v3/check-answers');
         }
     });
 
@@ -194,7 +199,7 @@ module.exports = function (router) {
         if (addsupportHelp === 'Yes') {
             res.redirect('/v3/add-support-name');
         } else {
-            res.redirect('/v3/add-support-communicating');
+            res.redirect('/v3/check-answers');
         }
     });
 
@@ -216,12 +221,9 @@ module.exports = function (router) {
     });
 
     router.post('/v3/add-support-contact-details', (req, res, next) => {
-        res.redirect('/v3/add-support-communicating');
-    });
-
-    router.post('/v3/add-support-communicating', (req, res, next) => {
         res.redirect('/v3/check-answers');
     });
+
     // ADDITIONAL SUPPORT QUESTIONS END
 
     // COMPLEX APPLICATION CONTACT DETAILS
