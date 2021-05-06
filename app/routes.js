@@ -14,6 +14,7 @@ const v2idv = require('./routes/v2idv')
 const v2a = require('./routes/v2a')
 const v2b = require('./routes/v2b')
 const v3 = require('./routes/v3')
+const v3b = require('./routes/v3')
 
 // ROUTES REDIRECT END
 
@@ -30,6 +31,7 @@ v2idv(router);
 v2a(router);
 v2b(router);
 v3(router);
+v3b(router);
 // ROUTER LIST END
 
 module.exports = router
