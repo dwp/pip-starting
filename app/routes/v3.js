@@ -226,6 +226,10 @@ module.exports = function (router) {
 
     // ADDITIONAL SUPPORT QUESTIONS END
 
+    router.post('/v3/check-answers', (req, res, next) => {
+        res.redirect('https://dth-prototype.herokuapp.com/auth/v8/register/start?service-name=Apply%20for%20Personal%20Independence%20Payment%20(PIP)');
+    });
+
     // COMPLEX APPLICATION CONTACT DETAILS
 
     router.post('/v3/we-need-to-get-in-touch', (req, res, next) => {
