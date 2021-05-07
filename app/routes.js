@@ -14,7 +14,7 @@ const v2idv = require('./routes/v2idv')
 const v2a = require('./routes/v2a')
 const v2b = require('./routes/v2b')
 const v3 = require('./routes/v3')
-const v3b = require('./routes/v3')
+const v3b = require('./routes/v3b')
 
 // ROUTES REDIRECT END
 
