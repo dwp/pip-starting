@@ -86,6 +86,10 @@ router.post('/idv/hmrciv/voiceId', (req, res) => {
   res.redirect("/carers/voice-id");
 })
 
+router.post('/idv/hmrciv/success', (req, res) => { 
+  res.redirect("/v3b/address");
+})
+
 
 router.use((req, res, next) => {
   idvReset(req);

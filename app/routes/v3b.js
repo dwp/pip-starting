@@ -105,7 +105,7 @@ module.exports = function (router) {
         if (conditionAnother === 'Yes') {
             res.redirect('/v3b/about_your_health/condition-2');
         } else {
-            res.redirect('/v3b/name');
+            res.redirect('/auth/dev-ready/register/start');
         }
     });
 
@@ -118,7 +118,7 @@ module.exports = function (router) {
         if (conditionAnother2 === 'Yes') {
             res.redirect('/v3b/about_your_health/condition-3');
         } else {
-            res.redirect('/v3b/name');
+            res.redirect('/auth/dev-ready/register/start');
         }
     });
 
@@ -127,9 +127,15 @@ module.exports = function (router) {
     });
 
     router.post('/v3b/about_your_health/another-3', (req, res, next) => {
-        res.redirect('/v3b/name');
+        res.redirect('/auth/dev-ready/register/start');
     });
     // HEALTH CONDITION QUESTIONS END
+
+    // IDV CHECK
+    // router.post('idv/hmrciv/success', (req, res, next) => {
+    //     res.redirect('/v3b/address');
+    // });
+    // IDV CHECK END
 
     // PERSONAL DETAILS QUESTIONS
     router.post('/v3b/name', (req, res, next) => {
