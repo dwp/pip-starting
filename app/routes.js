@@ -15,7 +15,7 @@ const v2a = require('./routes/v2a')
 const v2b = require('./routes/v2b')
 const v3 = require('./routes/v3')
 const v3b = require('./routes/v3b')
-const v4 = require('./routes/4')
+const v4 = require('./routes/v4')
 const authRoutes = require('./routes/auth')
 const idvRoutes = require('./routes/idv')
 
