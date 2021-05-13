@@ -26,7 +26,7 @@ Payslip question
                     Payslip question
                 </span>
 
-                <h1 class="govuk-heading-xl">
+                <!--<h1 class="govuk-heading-xl">
                     Enter the amount of tax deducted on a payslip
                 </h1>
 
@@ -44,7 +44,26 @@ Payslip question
                         type="text" aria-describedby="amount-currency">
                 </div>
 
-                </fieldset>
+                </fieldset>-->
+                <div class="govuk-form-group govuk-body govuk-!-margin-bottom-6">
+                    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="benefit-amount">
+                        Enter the amount of tax deducted on a payslip
+                      </label>
+                    </h1>
+                    <div id="benefit-amount-hint" class="govuk-hint">
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li>Use a payslip dated after May 20, 2020</li>
+                            <li>Get the figure from the 'Deductions' section. It may be called 'PAYE' or 'Income Tax'</li>
+                            <li>Do not use the 'Year To Date' figure</li>
+                        </ul>
+                    </div>
+                    <div class="govuk-input__wrapper">
+                      <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                      <input class="govuk-input govuk-input--width-5" id="benefit-amount" name="benefit-amount" type="text" spellcheck="false">
+                     
+                    </div>
+                </div>
+
             </div>
 
             <a class="govuk-button" href={% if tcKbv === "true" %} "./tax-credits-question-1"

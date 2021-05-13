@@ -25,7 +25,7 @@ Your pay
                     Your pay
                 </span>
 
-                <h1 class="govuk-heading-xl">
+               <!-- <h1 class="govuk-heading-xl">
                     How much total pay is shown on your P60? Use one P60 from 2018/19
                 </h1>
 
@@ -33,12 +33,27 @@ Your pay
                     <p>Enter the exact amount, including pence. For example 22000.00</p>
                 </div>
                 <div class="currency-input">
-                    <div class="currency-input__symbol" aria-hidden="true">£</div>
+                    <div class="govuk-input__prefix" aria-hidden="true">£</div>
                     <input class="govuk-input govuk-input--width-10" id="benefit-amount" name="benefit-amount"
                         type="text" aria-describedby="amount-currency">
                 </div>
 
                 </fieldset>
+            </div> -->
+
+            <div class="govuk-form-group govuk-body govuk-!-margin-bottom-6">
+                <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="benefit-amount">
+                    How much total pay is shown on your P60? Use one P60 from 2018/19
+                  </label>
+                </h1>
+                <div id="benefit-name-hint" class="govuk-hint">
+                    <p>Enter the exact amount, including pence. For example 22000.00</p>
+                </div>
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-5" id="benefit-amount" name="benefit-amount" type="text" spellcheck="false">
+                 
+                </div>
             </div>
 
             <a class="govuk-button" href={% if tcKbv === "true" %} "./p60-question-2?tcKbv=true"
