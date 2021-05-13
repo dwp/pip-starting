@@ -105,7 +105,7 @@ module.exports = function (router) {
         if (conditionAnother === 'Yes') {
             res.redirect('/v4/about_your_health/condition-2');
         } else {
-            res.redirect('/auth/dev-ready/register/start');
+            res.redirect('/v4/auth/dev-ready/register/start');
         }
     });
 
@@ -118,7 +118,7 @@ module.exports = function (router) {
         if (conditionAnother2 === 'Yes') {
             res.redirect('/v4/about_your_health/condition-3');
         } else {
-            res.redirect('/auth/dev-ready/register/start');
+            res.redirect('/v4/auth/dev-ready/register/start');
         }
     });
 
@@ -127,7 +127,7 @@ module.exports = function (router) {
     });
 
     router.post('/v4/about_your_health/another-3', (req, res, next) => {
-        res.redirect('/auth/dev-ready/register/start');
+        res.redirect('/v4/auth/dev-ready/register/start');
     });
     // HEALTH CONDITION QUESTIONS END
 
