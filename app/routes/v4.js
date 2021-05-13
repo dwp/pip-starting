@@ -132,9 +132,9 @@ module.exports = function (router) {
     // HEALTH CONDITION QUESTIONS END
 
     // IDV CHECK
-    // router.post('idv/hmrciv/success', (req, res, next) => {
-    //     res.redirect('/v4/address');
-    // });
+    router.post('/v4/idv/hmrciv/success', (req, res, next) => {
+        res.redirect('/v4/address');
+    });
     // IDV CHECK END
 
     // PERSONAL DETAILS QUESTIONS
