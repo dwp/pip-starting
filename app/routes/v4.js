@@ -132,23 +132,109 @@ module.exports = function (router) {
     // HEALTH CONDITION QUESTIONS END
 
     // IDV CHECK
-    router.post('/v4/idv/hmrciv/success', (req, res, next) => {
-        res.redirect('/v4/address');
-    });
+    
+    router.post('/v4/idv/hmrciv/idvselection', (req, res) => {
+        const passportConsent = req.session.data['passport-consent'];
+        const payslipOrP60 = req.session.data['payslipOrP60'];
+        const voiceID = req.session.data['tcOptions'];
+        const tuConsent = req.session.data['cra-consent'];
+        
+        //Passport and payslip
+        if (passportConsent == 'true' && payslipOrP60 == 'payslip') {
+          res.redirect('./your-passport-details?payslip=true')
+        }
+        //Passport and P60 
+        else if (passportConsent == 'true' && payslipOrP60 == 'p60') {
+          res.redirect('./your-passport-details?p60=true')
+        }
+        //Passport and tax credits KBV
+        else if (passportConsent == 'true' && voiceID == 'voiceIdNo') {
+          res.redirect('./your-passport-details?tcKbv=true')
+        }
+        //Passport and tax credits voice ID
+        else if (passportConsent == 'true' && voiceID == 'voiceIdYes') {
+          res.redirect('./your-passport-details?voiceId=true')
+        }
+        //Passport and Transunion
+        else if (passportConsent == 'true' && tuConsent == 'true') {
+          res.redirect('./your-passport-details?tuKbv=true')
+        }
+        //Payslip and tax credits KBV
+        else if (payslipOrP60 == 'payslip' && voiceID == 'voiceIdNo') {
+          res.redirect('./payslip-question-1?tcKbv=true');
+        }
+        //Payslip and tax credits voice ID
+        else if (payslipOrP60 == 'payslip' && voiceID == 'voiceIdYes') {
+          res.redirect('./payslip-question-1?voiceId=true')
+        }
+        //Payslip and Transunion
+        else if (payslipOrP60 == 'payslip' && tuConsent == 'true') {
+          res.redirect('./payslip-question-1?tuKbv=true');
+        }
+        //P60 and tax credits KBV
+        else if (payslipOrP60 == 'p60' && voiceID == 'voiceIdNo') {
+          res.redirect('./p60-question-1?tcKbv=true');
+        }
+        //P60 and tax credits voice ID
+        else if (payslipOrP60 == 'p60' && voiceID == 'voiceIdYes') {
+          res.redirect('./p60-question-1?voiceId=true')
+        }
+        //P60 and Transunion
+        else if (payslipOrP60 == 'p60' && tuConsent == 'true') {
+          res.redirect('./p60-question-1?tuKbv=true');
+        }
+        //Tax credits KBV and Transunion
+        else if (voiceID == 'voiceIdNo' && tuConsent == 'true') {
+          res.redirect('./tax-credits-question-1?tuKbv=true');
+        }
+        //Tax credits voice ID and Transunion
+        else if (voiceID == 'voiceIdYes' && tuConsent == 'true') {
+          res.redirect('./voice-id?tuKbv=true')
+        }
+        // Fallback
+        else {
+          res.redirect('./choose-2-items-error')
+        }
+      })
+      
+      router.post('/v4/idv/hmrciv/payslip', (req, res) => {
+        res.redirect('./payslip-question-1');
+      })
+      
+      router.post('/v4/idv/hmrciv/p60', (req, res) => {
+        res.redirect('./p60-question-1');
+      })
+      
+      router.post('/v4/idv/hmrciv/tcKbv', (req, res) => {
+        res.redirect('./tax-credits-question-1');
+      })
+      
+      router.post('/v4/idv/hmrciv/tuKbv', (req, res) => {
+        res.redirect('./tu-question-1');
+      })
+      
+      router.post('/v4/idv/hmrciv/voiceId', (req, res) => { 
+        res.redirect("/carers/voice-id");
+      })
+      
+      router.post('/v4/idv/hmrciv/success', (req, res) => { 
+        res.redirect("/v4/address");
+      })
+      
     // IDV CHECK END
 
     // PERSONAL DETAILS QUESTIONS
-    router.post('/v4/name', (req, res, next) => {
-        res.redirect('/v4/nino');
-    });
+    // router.post('/v4/name', (req, res, next) => {
+    //     res.redirect('/v4/nino');
+    // });
 
-    router.post('/v4/nino', (req, res, next) => {
-        res.redirect('/v4/date-of-birth');
-    });
+    // router.post('/v4/nino', (req, res, next) => {
+    //     res.redirect('/v4/date-of-birth');
+    // });
 
-    router.post('/v4/date-of-birth', (req, res, next) => {
-        res.redirect('/v4/address');
-    });
+    // router.post('/v4/date-of-birth', (req, res, next) => {
+    //     res.redirect('/v4/address');
+    // });
 
     router.post('/v4/address', (req, res, next) => {
         const immigrationControl2 = req.session.data['safe-address'];
