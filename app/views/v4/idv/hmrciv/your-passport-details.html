@@ -27,9 +27,9 @@ Your passport details
       Your passport details
     </h1>
 
-    <form method="post" action={% if payslip === "true" %} "/idv/hmrciv/payslip"
-      {% elif p60 === "true" %} "/idv/hmrciv/p60" {% elif tcKbv === "true" %} "/idv/hmrciv/tcKbv"
-      {% elif tuKbv === "true" %} "/idv/hmrciv/tuKbv" {% elif voiceId === "true" %} "/idv/hmrciv/voice-id" {% endif %}>
+    <form method="post" action={% if payslip === "true" %} "/v4/idv/hmrciv/payslip"
+      {% elif p60 === "true" %} "/v4/idv/hmrciv/p60" {% elif tcKbv === "true" %} "/v4/idv/hmrciv/tcKbv"
+      {% elif tuKbv === "true" %} "/v4/idv/hmrciv/tuKbv" {% elif voiceId === "true" %} "/v4/idv/hmrciv/voice-id" {% endif %}>
 
       <div class="govuk-form-group" data-required="" data-error="Enter your passport number in the right format">
         <label class="govuk-label govuk-label--m " for="passport">
