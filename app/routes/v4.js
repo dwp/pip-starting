@@ -351,6 +351,10 @@ module.exports = function (router) {
     // COMPLEX APPLICATION CONTACT DETAILS END
 
     // RETURNING USER FLOW START
+    router.post('/v4/save_and_return/sign-in', (req, res, next) => {
+        res.redirect('/v4/save_and_return/sign-in-2fa');
+    });
+    
     router.post('/v4/save_and_return/sign-in-2fa', (req, res, next) => {
         res.redirect('/v4/nationality');
     });
