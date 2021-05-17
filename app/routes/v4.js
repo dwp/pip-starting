@@ -348,5 +348,12 @@ module.exports = function (router) {
         res.redirect('/v4/complex_contact_details/complex-contact-confirmation');
     });
 
-};
     // COMPLEX APPLICATION CONTACT DETAILS END
+
+    // RETURNING USER FLOW START
+    router.post('/v4/save_and_return/sign-in-2fa', (req, res, next) => {
+        res.redirect('/v4/nationality');
+    });
+    // RETURNING USER FLOW END
+};
+    
