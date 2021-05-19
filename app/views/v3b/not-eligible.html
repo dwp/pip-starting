@@ -25,7 +25,7 @@
       <ul class="govuk-list govuk-list">
 
         {% if data['over-16'] == 'Under 16' %}
-        <p class="govuk-body-l">This is because you're under 16 years old.</p>
+        <p class="govuk-body-l">This is because you're under 16 years old. PIP is only for people who are aged 16 or over.</p>
         <p>You might be able to get Disability Living Allowance for children instead. This is to help with extra costs for children under 16 who need help to do everyday tasks or get around.</p>
         <a href="https://www.gov.uk/disability-living-allowance-children" role="button" draggable="false" class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
           Apply for Disability Living Allowance for children
@@ -59,14 +59,14 @@
 
       </ul>
 
-      <p>You can still <a href="about_your_health/condition">apply for PIP</a>,
+      <p>You can still <a href="about_your_health/condition">Apply for PIP</a>,
         {% if data['over-16'] == 'Under 16' %} if you're sixteenth birthday is in the next 3 months.{% endif %}
 
-        {% if data['over-spa'] == 'No, never' or 'Not sure' %} but based on what you told us you're unliklely to get it. {% endif %}
+        {% if data['overspa'] == 'No' %} but based on what you've told us, you would not get it. {% endif %}
 
-        {% if data['condition'] == 'No, never' %} but based on what you told us you're unliklely to get it. {% endif %}
+        {% if data['condition'] == 'No, never' %} but based on what you've told us, you would not get it. {% endif %}
 
-        {% if data['over-9-months'] == 'Less than 9 months' %} but based on what you told us you're unlikely to get it.{% endif %}</p>
+        {% if data['over-9-months'] == 'Less than 9 months' %} but based on what you've told us, you would not get it.{% endif %}</p>
 
     </div> <!-- govuk-grid-column-two-thirds -->
   </div> <!-- govuk-grid-column-two-thirds -->
