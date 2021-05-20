@@ -10,58 +10,63 @@ module.exports = function (router) {
         if (over16 === 'Over State Pension age') {
             res.redirect('/v4/over-spa');
         } else {
-            res.redirect('/v4/where-you-live');
+            res.redirect('/v4/nationality');
         }
     });
 
     router.post('/v4/over-spa', (req, res, next) => {
-        res.redirect('/v4/where-you-live');
+        res.redirect('/v4/nationality');
     });
 
-    router.post('/v4/where-you-live', (req, res, next) => {
-        const whereLived = req.session.data['where-live'];
-        if (whereLived === 'Yes') {
-            res.redirect('/v4/living-in-gb');
+    router.post('/v4/nationality', (req, res, next) => {
+        const whereLive = req.session.data['nationality'];
+        if (whereLive === 'British') {
+            res.redirect('/v4/working-living-abroad');
+        } else if (whereLive === 'Irish'){
+            res.redirect('/v4/working-living-abroad');    
+        } else if (whereLive === 'A nationality of the European Economic Area (EEA)'){
+            res.redirect('/v4/living-in-uk');   
         } else {
-            res.redirect('/v4/living-in-gb-further-question');
+            res.redirect('/v4/refugee-protection');    
         }
     });
 
-    router.post('/v4/living-in-gb-further-question', (req, res, next) => {
-        const immigrationControl = req.session.data['immigration-control'];
-        if (immigrationControl === 'No') {
-            res.redirect('/v4/living-in-gb');
+    // router.post('/v4/living-in-gb-further-question', (req, res, next) => {
+    //     const immigrationControl = req.session.data['immigration-control'];
+    //     if (immigrationControl === 'No') {
+    //         res.redirect('/v4/living-in-gb');
+    //     } else if {
+    //         res.redirect('/v4/we-need-to-get-in-touch');
+    //     }
+    // });
+
+    router.post('/v4/living-in-uk', (req, res, next) => {
+        const livingUk = req.session.data['living-in-uk'];
+        if (livingUk === 'Yes') {
+            res.redirect('/v4/working-living-abroad');
+        } else {
+            res.redirect('/v4/refugee-protection');
+        }
+    });
+
+    router.post('/v4/refugee-protection', (req, res, next) => {
+        const refugeeProtection = req.session.data['refugee'];
+        if (refugeeProtection === 'Yes') {
+            res.redirect('/v4/working-living-abroad');
         } else {
             res.redirect('/v4/we-need-to-get-in-touch');
         }
     });
 
-    router.post('/v4/living-in-gb', (req, res, next) => {
-        const livingGb = req.session.data['gb'];
-        if (livingGb === 'Yes') {
+    router.post('/v4/working-living-abroad', (req, res, next) => {
+        const outsideBritain = req.session.data['outside-britain'];
+        if (outsideBritain === 'No') {
             res.redirect('/v4/health-condition');
         } else {
             res.redirect('/v4/we-need-to-get-in-touch');
         }
     });
 
-    router.post('/v4/living-in-gb-further-question-2', (req, res, next) => {
-        const immigrationControl2 = req.session.data['immigration-control-2'];
-        if (immigrationControl2 === 'No') {
-            const eligible = isEligible(req);
-            if (eligible === false) {
-                res.redirect('/v4/not-eligible')
-            } else {
-                res.redirect('/v4/name');
-            }
-        } else {
-            res.redirect('/v4/we-need-to-get-in-touch');
-        }
-    });
-
-    router.post('/v4/not-eligible-immigration-2', (req, res, next) => {
-        res.redirect('/v4/we-need-to-get-in-touch');
-    });
     // ELIGIBILITY QUESTIONS END
 
     // HEALTH CONDITION QUESTIONS
@@ -250,16 +255,16 @@ module.exports = function (router) {
     });
 
     router.post('/v4/contact-details', (req, res, next) => {
-        res.redirect('/v4/nationality');
-    });
-
-    router.post('/v4/nationality', (req, res, next) => {
-        res.redirect('/v4/working-living-abroad');
-    });
-
-    router.post('/v4/working-living-abroad', (req, res, next) => {
         res.redirect('/v4/in-hospital');
     });
+
+    // // router.post('/v4/nationality', (req, res, next) => {
+    // //     res.redirect('/v4/working-living-abroad');
+    // // });
+
+    // router.post('/v4/working-living-abroad', (req, res, next) => {
+    //     res.redirect('/v4/in-hospital');
+    // });
 
     router.post('/v4/in-hospital', (req, res, next) => {
         res.redirect('/v4/in-care-home');
