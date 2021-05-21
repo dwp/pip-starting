@@ -21,9 +21,9 @@ module.exports = function (router) {
     router.post('/v4/nationality', (req, res, next) => {
         const whereLive = req.session.data['nationality'];
         if (whereLive === 'British') {
-            res.redirect('/v4/working-living-abroad');
+            res.redirect('/v4/living-in-gb');
         } else if (whereLive === 'Irish'){
-            res.redirect('/v4/working-living-abroad');    
+            res.redirect('/v4/living-in-gb');    
         } else if (whereLive === 'A nationality of the European Economic Area (EEA)'){
             res.redirect('/v4/living-in-uk');   
         } else {
@@ -31,19 +31,19 @@ module.exports = function (router) {
         }
     });
 
-    // router.post('/v4/living-in-gb-further-question', (req, res, next) => {
-    //     const immigrationControl = req.session.data['immigration-control'];
-    //     if (immigrationControl === 'No') {
-    //         res.redirect('/v4/living-in-gb');
-    //     } else if {
-    //         res.redirect('/v4/we-need-to-get-in-touch');
-    //     }
-    // });
+    router.post('/v4/living-in-gb', (req, res, next) => {
+        const immigrationControl = req.session.data['gb'];
+        if (immigrationControl === 'Yes') {
+            res.redirect('/v4/health-condition');
+        } else {
+            res.redirect('/v4/working-living-abroad');
+        }
+    });
 
     router.post('/v4/living-in-uk', (req, res, next) => {
         const livingUk = req.session.data['living-in-uk'];
         if (livingUk === 'Yes') {
-            res.redirect('/v4/working-living-abroad');
+            res.redirect('/v4/living-in-gb');
         } else {
             res.redirect('/v4/we-need-to-get-in-touch');
         }
