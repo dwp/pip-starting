@@ -27,7 +27,7 @@ module.exports = function (router) {
         } else if (whereLive === 'A nationality of the European Economic Area (EEA)'){
             res.redirect('/v4/living-in-uk');   
         } else {
-            res.redirect('/v4/refugee-protection');    
+            res.redirect('/v4/we-need-to-get-in-touch');    
         }
     });
 
@@ -45,18 +45,18 @@ module.exports = function (router) {
         if (livingUk === 'Yes') {
             res.redirect('/v4/working-living-abroad');
         } else {
-            res.redirect('/v4/refugee-protection');
-        }
-    });
-
-    router.post('/v4/refugee-protection', (req, res, next) => {
-        const refugeeProtection = req.session.data['refugee'];
-        if (refugeeProtection === 'Yes') {
-            res.redirect('/v4/working-living-abroad');
-        } else {
             res.redirect('/v4/we-need-to-get-in-touch');
         }
     });
+
+    // router.post('/v4/refugee-protection', (req, res, next) => {
+    //     const refugeeProtection = req.session.data['refugee'];
+    //     if (refugeeProtection === 'Yes') {
+    //         res.redirect('/v4/working-living-abroad');
+    //     } else {
+    //         res.redirect('/v4/we-need-to-get-in-touch');
+    //     }
+    // });
 
     router.post('/v4/working-living-abroad', (req, res, next) => {
         const outsideBritain = req.session.data['outside-britain'];
@@ -257,14 +257,6 @@ module.exports = function (router) {
     router.post('/v4/contact-details', (req, res, next) => {
         res.redirect('/v4/in-hospital');
     });
-
-    // // router.post('/v4/nationality', (req, res, next) => {
-    // //     res.redirect('/v4/working-living-abroad');
-    // // });
-
-    // router.post('/v4/working-living-abroad', (req, res, next) => {
-    //     res.redirect('/v4/in-hospital');
-    // });
 
     router.post('/v4/in-hospital', (req, res, next) => {
         res.redirect('/v4/in-care-home');
