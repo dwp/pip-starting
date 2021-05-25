@@ -36,18 +36,18 @@ module.exports = function (router) {
         if (immigrationControl === 'Yes') {
             res.redirect('/v4/health-condition');
         } else {
-            res.redirect('/v4/working-living-abroad');
-        }
-    });
-
-    router.post('/v4/living-in-uk', (req, res, next) => {
-        const livingUk = req.session.data['living-in-uk'];
-        if (livingUk === 'Yes') {
-            res.redirect('/v4/living-in-gb');
-        } else {
             res.redirect('/v4/we-need-to-get-in-touch');
         }
     });
+
+    // router.post('/v4/living-in-uk', (req, res, next) => {
+    //     const livingUk = req.session.data['living-in-uk'];
+    //     if (livingUk === 'Yes') {
+    //         res.redirect('/v4/living-in-gb');
+    //     } else {
+    //         res.redirect('/v4/we-need-to-get-in-touch');
+    //     }
+    // });
 
     // router.post('/v4/refugee-protection', (req, res, next) => {
     //     const refugeeProtection = req.session.data['refugee'];
@@ -353,7 +353,7 @@ module.exports = function (router) {
     });
     
     router.post('/v4/save_and_return/sign-in-2fa', (req, res, next) => {
-        res.redirect('/v4/nationality');
+        res.redirect('/v4/in-hospital');
     });
     // RETURNING USER FLOW END
 };
