@@ -40,14 +40,14 @@ module.exports = function (router) {
         }
     });
 
-    // router.post('/v4/living-in-uk', (req, res, next) => {
-    //     const livingUk = req.session.data['living-in-uk'];
-    //     if (livingUk === 'Yes') {
-    //         res.redirect('/v4/living-in-gb');
-    //     } else {
-    //         res.redirect('/v4/we-need-to-get-in-touch');
-    //     }
-    // });
+    router.post('/v4/living-in-uk', (req, res, next) => {
+        const livingUk = req.session.data['living-in-uk'];
+        if (livingUk === 'Yes') {
+            res.redirect('/v4/living-in-gb');
+        } else {
+            res.redirect('/v4/we-need-to-get-in-touch');
+        }
+    });
 
     // router.post('/v4/refugee-protection', (req, res, next) => {
     //     const refugeeProtection = req.session.data['refugee'];
@@ -58,14 +58,14 @@ module.exports = function (router) {
     //     }
     // });
 
-    router.post('/v4/working-living-abroad', (req, res, next) => {
-        const outsideBritain = req.session.data['outside-britain'];
-        if (outsideBritain === 'No') {
-            res.redirect('/v4/health-condition');
-        } else {
-            res.redirect('/v4/we-need-to-get-in-touch');
-        }
-    });
+    // router.post('/v4/working-living-abroad', (req, res, next) => {
+    //     const outsideBritain = req.session.data['outside-britain'];
+    //     if (outsideBritain === 'No') {
+    //         res.redirect('/v4/health-condition');
+    //     } else {
+    //         res.redirect('/v4/we-need-to-get-in-touch');
+    //     }
+    // });
 
     // ELIGIBILITY QUESTIONS END
 
