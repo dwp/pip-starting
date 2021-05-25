@@ -334,6 +334,7 @@
                       <dd class="govuk-summary-list__value">
                         {{ data['address-line-1'] }}<br>
                         {{ data['address-line-2'] }}<br>
+                        {[ data['address-town'] ]}<br>
                         {{ data['address-county'] }}<br>
                         {{ data['address-postcode'] }}
                       </dd>
@@ -365,6 +366,7 @@
                       <dd class="govuk-summary-list__value">
                         {{ data['other-address-line-1'] }}<br>
                         {{ data['other-address-line-2'] }}<br>
+                        {{ data['other-address-town'] }}<br>
                         {{ data['other-address-county'] }}<br>
                         {{ data['other-address-postcode'] }}
                       </dd>
@@ -423,7 +425,7 @@
                         What format do you need communications in?
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {{ data['communication-format']['format-type'] }}
+                        {{ data['format-type'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="contact-details">
@@ -541,6 +543,7 @@
                       <dd class="govuk-summary-list__value">
                         {{ data['add-support-address-line-1'] }}<br>
                         {{ data['add-support-address-line-2'] }}<br>
+                        {{ data['add-support-address-town']}}<br>
                         {{ data['add-support-address-county'] }}<br>
                         {{ data['add-support-address-postcode'] }}
                       </dd>
@@ -550,6 +553,26 @@
                         </a>
                       </dd>
                     </div> <!-- govuk-summary-list__row -->
+
+                    {% if data['add-support-safe-address'] === 'No' %}
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Address
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['add-support-other-address-line-1'] }}<br>
+                        {{ data['add-support-other-address-line-2'] }}<br>
+                        {{ data['add-support-other-address-town'] }}<br>
+                        {{ data['add-support-other-address-county'] }}<br>
+                        {{ data['add-support-other-address-postcode'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="add-support-address-other">
+                          Change<span class="govuk-visually-hidden"> address</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    {% endif %}
                
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
