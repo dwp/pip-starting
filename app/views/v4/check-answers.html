@@ -53,17 +53,49 @@
                     
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        Do you currently live in England, Scotland or Wales?
+                        What is your nationality?
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {{ data['where-live'] }}
+                        {{ data['nationality'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="where-you-live">
-                          Change<span class="govuk-visually-hidden"> where you live</span>
+                        <a class="govuk-link" href="nationality">
+                          Change<span class="govuk-visually-hidden"> nationality</span>
                         </a>
                       </dd>
                     </div> <!-- govuk-summary-list__row -->
+
+                    {% if data['nationality'] === 'Another nationality' %}
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Which nationality are you?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['nationality-extra'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="nationality">
+                          Change<span class="govuk-visually-hidden">  another nationality</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    {% endif %}
+
+                    {% if data['nationality'] === 'A nationality of the European Economic Area (EEA)' %}
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Did you start living in the UK before 1 January 2021?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['living-in-uk'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="living-in-uk">
+                          Change<span class="govuk-visually-hidden">  when you started living in the UK</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    {% endif %}
                     
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
@@ -189,6 +221,50 @@
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="about_your_health/another-2">
+                          Change<span class="govuk-visually-hidden">  another condition</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+                    {% endif %}
+
+                    {% if data['condition3'] === 'Yes' %}
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        What other health condition or disability do you have?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['condition-name-3'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="about_your_health/condition-3">
+                          Change<span class="govuk-visually-hidden">  condition or disability</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Approximate start date
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['condition-date-3'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="about_your_health/condition-3">
+                          Change<span class="govuk-visually-hidden">  condition start date</span>
+                        </a>
+                      </dd>
+                    </div> <!-- govuk-summary-list__row -->
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Do you have another condition or disability?
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['condition3'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="about_your_health/another-3">
                           Change<span class="govuk-visually-hidden">  another condition</span>
                         </a>
                       </dd>
@@ -359,50 +435,6 @@
 
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                        What is your nationality?
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                        {{ data['nationality'] }}
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="nationality">
-                          Change<span class="govuk-visually-hidden"> nationality</span>
-                        </a>
-                      </dd>
-                    </div> <!-- govuk-summary-list__row -->
-
-                    {% if data['nationality'] === 'Another nationality' %}
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                        Which nationality are you?
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                        {{ data['nationality-extra'] }}
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="nationality">
-                          Change<span class="govuk-visually-hidden">  another nationality</span>
-                        </a>
-                      </dd>
-                    </div> <!-- govuk-summary-list__row -->
-                    {% endif %}
-                    
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                        Have you been abroad for more than 4 weeks at a time in the last 3 years?
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                        {{ data['outside-britain'] }}
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="working-living-abroad">
-                          Change<span class="govuk-visually-hidden"> time abroad</span>
-                        </a>
-                      </dd>
-                    </div> <!-- govuk-summary-list__row -->
-
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
                         Are you currently staying in a hospital or hospice as an in-patient?
                       </dt>
                       <dd class="govuk-summary-list__value">
@@ -429,22 +461,6 @@
                       </dd>
                     </div> <!-- govuk-summary-list__row -->
                    
-                    <!--{% if data['gb'] === 'Not sure' %}
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                        Have you been abroad for more than 9 months in total in the last 3 years?
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                        {{ data['gb'] }}
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="living-in-gb">
-                          Change<span class="govuk-visually-hidden"> where have you lived</span>
-                        </a>
-                      </dd>
-                    </div> --><!-- govuk-summary-list__row -->
-                    <!--{% endif %} -->
-
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
                         Do you need help from someone else to communicate with us?
