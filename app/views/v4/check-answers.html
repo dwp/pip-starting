@@ -304,7 +304,7 @@
                         National Insurance number
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {{ data['nino'] }}
+                        {{ data['auth-nino'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="nino">
@@ -318,7 +318,7 @@
                         Date of birth
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        {{ data['dob-day'] }} - {{ data['dob-month'] }} - {{ data['dob-year'] }}
+                        {{ data['auth-dob-day'] }} - {{ data['auth-dob-month'] }} - {{ data['auth-dob-year'] }}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="date-of-birth">
@@ -334,7 +334,7 @@
                       <dd class="govuk-summary-list__value">
                         {{ data['address-line-1'] }}<br>
                         {{ data['address-line-2'] }}<br>
-                        {[ data['address-town'] ]}<br>
+                        {{ data['address-town'] }}<br>
                         {{ data['address-county'] }}<br>
                         {{ data['address-postcode'] }}
                       </dd>
