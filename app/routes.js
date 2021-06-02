@@ -16,6 +16,7 @@ const v2b = require('./routes/v2b')
 const v3 = require('./routes/v3')
 const v3b = require('./routes/v3b')
 const v4 = require('./routes/v4')
+const v5 = require('./routes/v5')
 const authRoutes = require('./routes/auth')
 const idvRoutes = require('./routes/idv')
 
@@ -37,6 +38,7 @@ v2b(router);
 v3(router);
 v3b(router);
 v4(router);
+v5(router);
 router.use('/', authRoutes)
 router.use('/', idvRoutes)
 // ROUTER LIST END

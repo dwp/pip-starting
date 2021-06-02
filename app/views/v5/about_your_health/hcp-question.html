@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your health care professionals
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="#">
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Are there any health professionals that you would like to tell us about?
+                </h1>
+              </legend>
+              <ul class="govuk-list govuk-list--bullet">
+                  <li>We ask you to send us supporting evidence with your form, but sometimes we may contact the health professionals who support you for further information.</li>
+                  <li>Please tell us about any health professionals who treat or care for you most regularly and who are best placed to advise us on how your health condition or disability affects you.</li>
+                  <li>For example, a GP, hospital doctor, specialist nurse, community psychiatric nurse, occupational therapist, physiotherapist, social worker, counsellor or support worker.</li>
+              </ul>
+              <p>You can add other health professionals later if you need to.</p>
+
+                <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="hcp-q-1" name="hcp" type="radio" value="Yes">
+                        <label class="govuk-label govuk-radios__label" for="hcp">
+                        Yes
+                        </label>
+                    </div> <!-- govuk-radios__item -->
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="hcp-q-2" name="hcp" type="radio" value="No, never">
+                        <label class="govuk-label govuk-radios__label" for="hcp-q-2">
+                        No
+                        </label>
+                    </div> <!-- govuk-radios__item -->                 
+                </div> <!-- govuk-radios -->
+            </fieldset>
+        </div> <!-- govuk-form-group-->   
+
+        <input type="submit" class="govuk-button" value="Continue" id="submit">
+        
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
