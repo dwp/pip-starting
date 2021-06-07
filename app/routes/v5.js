@@ -110,7 +110,7 @@ module.exports = function (router) {
         if (conditionAnother === 'Yes') {
             res.redirect('/v5/about_your_health/condition-2');
         } else {
-            res.redirect('/v5/auth/dev-ready/register/start');
+            res.redirect('/v5/about_your_health/hcp-question');
         }
     });
 
@@ -123,7 +123,7 @@ module.exports = function (router) {
         if (conditionAnother2 === 'Yes') {
             res.redirect('/v5/about_your_health/condition-3');
         } else {
-            res.redirect('/v5/auth/dev-ready/register/start');
+            res.redirect('/v5/about_your_health/hcp-question');
         }
     });
 
@@ -132,7 +132,7 @@ module.exports = function (router) {
     });
 
     router.post('/v5/about_your_health/another-3', (req, res, next) => {
-        res.redirect('/v5/auth/dev-ready/register/start');
+        res.redirect('/v5/about_your_health/hcp-question');
     });
     // HEALTH CONDITION QUESTIONS END
 
