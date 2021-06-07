@@ -16,57 +16,105 @@
 
     <form id="form" method="post" action="#">
 
-      {% call govukFieldset({
-        classes: 'moj-add-another__item',
-        legend: {
-          text: 'What other health condition or disability do you have?',
-          classes: "govuk-fieldset__legend--xl",
-          isPageHeading: true
-        }
-      }) %}
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="hcp-3-name">
+            Health professional details
+          </label>
+        </h1>
+        <label class="govuk-label" for="hcp-3-name">
+            Their name
+        </label>
+        <input class="govuk-input" id="hcp-3-name" name="hcp-3-name" type="text">
+      </div> <!-- govuk-form-group -->
 
-      <p>By condition or disability, we mean:</p>
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="hcp-3-profession">
+              Their profession
+          </label>
+          <input class="govuk-input" id="hcp-3-profession" name="hcp-3-profession" type="text">
+      </div> <!-- govuk-form-group -->
 
-        <ul class="govuk-list govuk-list--bullet">
-          <li>physical conditions such as arthritis, heart disease or diabetes </li>
-          <li>blindness and sight impairment</li>
-          <li>hearing and speech difficulties</li>
-          <li>learning, developmental or behavioural difficulties</li>
-          <li>cognitive impairment</li>
-          <li>mental health conditions, such as depression, anxiety or bipolar disorder</li>
-          <li>neurological conditions, such as Parkinson's, epilepsy or autism</li>
-        </ul>
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="hcp-3-phone">
+              Their number, including dialling code
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="hcp-3-phone" name="hcp-3-phone" type="text">
+      </div> <!-- govuk-form-group -->
 
-      {{ govukInput({
-        id: 'condition-name-2',
-        name: 'condition-name-2',
-        label: {
-          html: 'Name of condition or disability',
-          classes: 'govuk-!-font-weight-bold'
-        },
-        hint: {
-          text: "For example, kidney failure."
-        }
-      }) }}
+      <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Their address
+            </h1>
+          </legend>
+        
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="hcp-3-address-line-1">
+              Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+            </label>
+            <input class="govuk-input" id="hcp-3-address-line-1" name="hcp-3-address-line-1" type="text" autocomplete="hcp-3-address-line1">
+          </div> <!-- govuk-form-group -->
+        
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="hcp-3-address-line-2">
+              <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+            </label>
+            <input class="govuk-input" id="hcp-3-address-line-2" name="hcp-3-address-line-2" type="text" autocomplete="hcp-3-address-line2">
+          </div> <!-- govuk-form-group -->
+        
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="hcp-3-address-town">
+              Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="hcp-3-address-town" name="hcp-3-address-town" type="text" autocomplete="hcp-3-address-level2">
+          </div> <!-- govuk-form-group -->
+        
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="hcp-3-address-county">
+              County
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="hcp-3-address-county" name="hcp-3-address-county" type="text">
+          </div> <!-- govuk-form-group -->
+        
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="hcp-3-address-postcode">
+              Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="hcp-3-address-postcode" name="hcp-3-address-postcode" type="text" autocomplete="hcp-3-postal-code">
+          </div> <!-- govuk-form-group-->
+        
+      </fieldset>
 
-      {{ govukInput({
-        id: 'condition-date-2',
-        name: 'condition-date-2',
-        classes: "govuk-!-width-two-thirds",
-        label: {
-          html: 'Approximate start date',
-          classes: 'govuk-!-font-weight-bold'
-        },
-        hint: {
-          text: "For example, about 14 months ago."
-        }
-      }) }}
+      <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="hcp-3-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                  When did you last see them?
+              </h1>
+              </legend>
+              <div id="hcp-3-hint" class="govuk-hint">
+              This can be an approximate date – for example, 3 2020
+              </div>
+              <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="hcp-3-month">
+                      Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hcp-3-month" name="hcp-3-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div> <!-- govuk-form-group -->
+              </div> <!-- govuk-date-input__item -->
+              <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="hcp-3-year">
+                      Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="hcp-3-year" name="hcp-3-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div> <!-- govuk-form-group -->
+              </div> <!-- govuk-date-input__item -->
+          </fieldset>
+      </div> <!-- govuk-form-group -->
 
-      {% endcall %}
-
-      {{ govukButton({
-        text: 'Continue'
-      }) }}
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
 
     </form>
 

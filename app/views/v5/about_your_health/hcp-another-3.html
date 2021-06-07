@@ -17,14 +17,16 @@
     <div class="govuk-grid-column-two-thirds">
 
       <p class="govuk-!-font-size-24">You have added details for:
-        <br><strong>{{ data['condition-name-1'] | capitalize }}</strong>
+        <br><strong>{{ data['hcp-1-name'] | capitalize }}</strong>
+        <br><strong>{{ data['hcp-2-name'] | capitalize }}</strong>
+        <br><strong>{{ data['hcp-3-name'] | capitalize }}</strong>
       </p>
 
       <form id="form" method="post" action="#">
 
         {{ govukRadios({
-          idPrefix: "condition2",
-          name: "condition2",
+          idPrefix: "hcp-4",
+          name: "hcp-4",
           fieldset: {
             legend: {
               text: "Do you have another condition or disability?",
