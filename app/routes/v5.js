@@ -134,6 +134,13 @@ module.exports = function (router) {
     router.post('/v5/about_your_health/another-3', (req, res, next) => {
         res.redirect('/v5/about_your_health/hcp-question');
     });
+
+    router.post('/v5/about_your_health/condition-new-2', (req, res, next) => {
+        console.log (req.session.data)
+        res.redirect('/v5/about_your_health/hcp-question');
+    });
+
+
     // HEALTH CONDITION QUESTIONS END
 
     // HEALTH PROFESSIONALS QUESTIONS START
