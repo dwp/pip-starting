@@ -88,52 +88,52 @@ module.exports = function (router) {
             res.redirect('/v5/not-eligible')
         } else if (over9months === 'At least 9 months'){
             if (eligible){
-                res.redirect('/v5/about_your_health/condition')
+                res.redirect('/v5/about_your_health/condition-new-2')
             } else {
                 res.redirect('/v5/not-eligible');
             }
         } else if (over9months === 'Not sure'){
             if (eligible){
-                res.redirect('/v5/about_your_health/condition')
+                res.redirect('/v5/about_your_health/condition-new-2')
             } else {
                 res.redirect('/v5/not-eligible');
             }
         }
     });
 
-    router.post('/v5/about_your_health/condition', (req, res, next) => {
-        res.redirect('/v5/about_your_health/another');
-    });
+    // router.post('/v5/about_your_health/condition', (req, res, next) => {
+    //     res.redirect('/v5/about_your_health/another');
+    // });
 
-    router.post('/v5/about_your_health/another', (req, res, next) => {
-        const conditionAnother = req.session.data['condition2'];
-        if (conditionAnother === 'Yes') {
-            res.redirect('/v5/about_your_health/condition-2');
-        } else {
-            res.redirect('/v5/about_your_health/hcp-question');
-        }
-    });
+    // router.post('/v5/about_your_health/another', (req, res, next) => {
+    //     const conditionAnother = req.session.data['condition2'];
+    //     if (conditionAnother === 'Yes') {
+    //         res.redirect('/v5/about_your_health/condition-2');
+    //     } else {
+    //         res.redirect('/v5/about_your_health/hcp-question');
+    //     }
+    // });
 
-    router.post('/v5/about_your_health/condition-2', (req, res, next) => {
-        res.redirect('/v5/about_your_health/another-2');
-    });
+    // router.post('/v5/about_your_health/condition-2', (req, res, next) => {
+    //     res.redirect('/v5/about_your_health/another-2');
+    // });
 
-    router.post('/v5/about_your_health/another-2', (req, res, next) => {
-        const conditionAnother2 = req.session.data['condition3'];
-        if (conditionAnother2 === 'Yes') {
-            res.redirect('/v5/about_your_health/condition-3');
-        } else {
-            res.redirect('/v5/about_your_health/hcp-question');
-        }
-    });
+    // router.post('/v5/about_your_health/another-2', (req, res, next) => {
+    //     const conditionAnother2 = req.session.data['condition3'];
+    //     if (conditionAnother2 === 'Yes') {
+    //         res.redirect('/v5/about_your_health/condition-3');
+    //     } else {
+    //         res.redirect('/v5/about_your_health/hcp-question');
+    //     }
+    // });
 
-    router.post('/v5/about_your_health/condition-3', (req, res, next) => {
-        res.redirect('/v5/about_your_health/another-3');
-    });
+    // router.post('/v5/about_your_health/condition-3', (req, res, next) => {
+    //     res.redirect('/v5/about_your_health/another-3');
+    // });
 
-    router.post('/v5/about_your_health/another-3', (req, res, next) => {
-        res.redirect('/v5/about_your_health/hcp-question');
-    });
+    // router.post('/v5/about_your_health/another-3', (req, res, next) => {
+    //     res.redirect('/v5/about_your_health/hcp-question');
+    // });
 
     router.post('/v5/about_your_health/condition-new-2', (req, res, next) => {
         console.log (req.session.data)
