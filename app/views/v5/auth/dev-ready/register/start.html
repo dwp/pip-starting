@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Register - {{ serviceName }} - GOV.UK 
+  Register - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
     {% include 'includes/phase-banner.njk' %}
-    
+
 {% endblock %}
 
 {% block content %}
@@ -14,7 +14,7 @@
         <div class="govuk-grid-column-two-thirds">
             <h1 class="govuk-heading-l">Register</h1>
 
-            <p>Create an account so you can sign in securely each time you visit.</p>
+            <p>Create an account so you can sign in securely and save your progress each time you visit.</p>
 
             <!-- <div class="govuk-inset-text">
               <a href="/auth/default/sign-in">I have already registered</a>
@@ -45,9 +45,9 @@
             <h2 class="govuk-heading-m">What happens next</h2>
             <p>We will send security codes to your email and mobile phone to check that they belong to you.</p>
             <p>You will create a password, which you will use with your email address to sign in securely.</p>
-            <p>We will ask some questions to check we are dealing with the right person and to protect you against fraud. We will then check this information against our records.</p>
+            <!-- <p>We will ask some questions to check we are dealing with the right person and to protect you against fraud. We will then check this information against our records.</p> -->
             <p>Each time you sign in we will send a new security code to your mobile phone.</p>
-            
+
             {{ govukButton({
                 text: "Continue",
                 href: "email-address.html"
