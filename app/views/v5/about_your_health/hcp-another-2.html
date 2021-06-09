@@ -3,54 +3,54 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Condition
+Condition
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "includes/phase-banner.html" %}
-  {% include "includes/back-link.html" %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link.html" %}
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <p class="govuk-!-font-size-24">You have added details for:
-        <br><strong>{{ data['hcp-1-name'] | capitalize }}</strong>
-        <br><strong>{{ data['hcp-2-name'] | capitalize }}</strong>
-      </p>
+    <p class="govuk-!-font-size-24">You have added details for:
+      <br><strong>{{ data['hcp-1-name'] | capitalize }}</strong>
+      <br><strong>{{ data['hcp-2-name'] | capitalize }}</strong>
+    </p>
 
-      <form id="form" method="post" action="#">
+    <form id="form" method="post" action="#">
 
-        {{ govukRadios({
-          idPrefix: "hcp-3",
-          name: "hcp-3",
-          fieldset: {
-            legend: {
-              text: "Are there any other health professionals that you would like to tell us about?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
-            }
-          },
-          items: [
-            {
-              value: "Yes",
-              text: "Yes"
-            },
-            {
-              value: "No",
-              text: "No"
-            }
-          ]
-        }) }}
+      {{ govukRadios({
+      idPrefix: "hcp-3",
+      name: "hcp-3",
+      fieldset: {
+      legend: {
+      text: "Are there any other health professionals that you would like to tell us about?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+      }
+      },
+      items: [
+      {
+      value: "Yes",
+      text: "Yes"
+      },
+      {
+      value: "No",
+      text: "No"
+      }
+      ]
+      }) }}
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+      {{ govukButton({
+      text: "Continue"
+      }) }}
 
-      </form>
+    </form>
 
-    </div>{# /govuk-grid-column-one-third #}
-  </div>{# /govuk-grid-row #}
+  </div>{# /govuk-grid-column-one-third #}
+</div>{# /govuk-grid-row #}
 {% endblock %}

@@ -37,7 +37,7 @@ Your health condition
                                name="conditions[0][condition_name]" type="text"
                                data-name="conditions[%index%][condition_name]"
                                data-id="conditions[%index%][condition_name]">
-                    </div>
+                    </div> <!-- govuk-form-group -->
                     <div class="govuk-form-group">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                             Approximate start date
@@ -54,9 +54,9 @@ Your health condition
                                        id="conditions[0][date]"
                                        name="conditions[0][date]" type="text" data-name="conditions[%index%][date]"
                                        data-id="conditions[%index%][date]">
-                            </div>
-                        </div>
-                    </div>
+                            </div> <!-- govuk-form-group -->
+                        </div> <!-- govuk-date-input__item -->
+                    </div> <!-- govuk-form-group -->
                     {% if conditionsLength > 1 %}
                     <button type="button" class="govuk-button govuk-button--secondary moj-add-another__remove-button">
                         Remove
@@ -80,7 +80,7 @@ Your health condition
                                value="condition.condition_name"
                                data-name="conditions[%index%][condition_name]"
                                data-id="conditions[%index%][condition_name]">
-                    </div>
+                    </div> <!-- govuk-form-group -->
                     <div class="govuk-form-group">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                             Approximate start date
@@ -99,9 +99,9 @@ Your health condition
                                        name="conditions[{{loop.index0}}][date]" type="text"
                                        data-name="conditions[%index%][date]" data-id="conditions[%index%][date]"
                                        value="condition.date">
-                            </div>
-                        </div>
-                    </div>
+                            </div> <!-- govuk-form-group -->
+                        </div> <!-- govuk-date-input__item -->
+                    </div> <!-- govuk-form-group -->
                     <button type="button" class="govuk-button govuk-button--secondary moj-add-another__remove-button">
                         Remove
                     </button>
@@ -121,9 +121,8 @@ Your health condition
                         Continue
                     </button>
                 </div>
-            </div>
+            </div> <!-- data module -->
         </form>
-    </div>
-    {# /govuk-grid-column-two-thirds #}
+    </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}
 {% endblock %}
