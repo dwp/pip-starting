@@ -20,23 +20,26 @@ Health professional
         <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="hcp-1-name">
             Health professional details
           </label>
+
+          <p class="govuk-body govuk-!-font-weight-bold">You can add other health professionals later if you need to.</p>
+
         </h1>
         <label class="govuk-label" for="hcp-1-name">
-          Their name
+          Name
         </label>
         <input class="govuk-input" id="hcp-1-name" name="hcp-1-name" type="text">
       </div> <!-- govuk-form-group -->
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="hcp-1-profession">
-          Their profession
+          Profession
         </label>
         <input class="govuk-input" id="hcp-1-profession" name="hcp-1-profession" type="text">
       </div> <!-- govuk-form-group -->
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="hcp-1-phone">
-          Their number, including dialling code
+          Phone number, including dialling code
         </label>
         <input class="govuk-input govuk-input--width-20" id="hcp-1-phone" name="hcp-1-phone" type="text">
       </div> <!-- govuk-form-group -->
@@ -44,9 +47,13 @@ Health professional
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h1 class="govuk-fieldset__heading">
-            Their address
+            Address
           </h1>
         </legend>
+
+          <div id="event-name-hint" class="govuk-hint">
+            This is where you see them such as a health centre, GP surgery or hospital address.
+          </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="hcp-1-address-line-1">
