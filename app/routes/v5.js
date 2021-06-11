@@ -67,9 +67,6 @@ module.exports = function (router) {
     //     }
     // });
 
-    // ELIGIBILITY QUESTIONS END
-
-    // HEALTH CONDITION QUESTIONS
     router.post('/v5/health-condition', (req, res, next) => {
         const healthCondition = req.session.data['condition'];
         if (healthCondition === 'Yes, all of the time or sometimes') {
@@ -88,107 +85,20 @@ module.exports = function (router) {
             res.redirect('/v5/not-eligible')
         } else if (over9months === 'At least 9 months'){
             if (eligible){
-                res.redirect('/v5/about_your_health/condition-new-2')
+                res.redirect('/v5/auth/dev-ready/register/start')
             } else {
                 res.redirect('/v5/not-eligible');
             }
         } else if (over9months === 'Not sure'){
             if (eligible){
-                res.redirect('/v5/about_your_health/condition-new-2')
+                res.redirect('/v5/auth/dev-ready/register/start')
             } else {
                 res.redirect('/v5/not-eligible');
             }
         }
     });
 
-    // router.post('/v5/about_your_health/condition', (req, res, next) => {
-    //     res.redirect('/v5/about_your_health/another');
-    // });
-
-    // router.post('/v5/about_your_health/another', (req, res, next) => {
-    //     const conditionAnother = req.session.data['condition2'];
-    //     if (conditionAnother === 'Yes') {
-    //         res.redirect('/v5/about_your_health/condition-2');
-    //     } else {
-    //         res.redirect('/v5/about_your_health/hcp-question');
-    //     }
-    // });
-
-    // router.post('/v5/about_your_health/condition-2', (req, res, next) => {
-    //     res.redirect('/v5/about_your_health/another-2');
-    // });
-
-    // router.post('/v5/about_your_health/another-2', (req, res, next) => {
-    //     const conditionAnother2 = req.session.data['condition3'];
-    //     if (conditionAnother2 === 'Yes') {
-    //         res.redirect('/v5/about_your_health/condition-3');
-    //     } else {
-    //         res.redirect('/v5/about_your_health/hcp-question');
-    //     }
-    // });
-
-    // router.post('/v5/about_your_health/condition-3', (req, res, next) => {
-    //     res.redirect('/v5/about_your_health/another-3');
-    // });
-
-    // router.post('/v5/about_your_health/another-3', (req, res, next) => {
-    //     res.redirect('/v5/about_your_health/hcp-question');
-    // });
-
-    router.post('/v5/about_your_health/condition-new-2', (req, res, next) => {
-        res.redirect('/v5/about_your_health/hcp-question');
-    });
-
-
-    // HEALTH CONDITION QUESTIONS END
-
-    // HEALTH PROFESSIONALS QUESTIONS START
-
-    router.post('/v5/about_your_health/hcp-question', (req, res, next) => {
-        const hcpQuestion = req.session.data['hcp'];
-        if (hcpQuestion === 'Yes') {
-            res.redirect('/v5/about_your_health/hcp-1');
-        } else {
-            res.redirect('/v5/auth/dev-ready/register/start');
-        }
-    });
-
-    router.post('/v5/about_your_health/hcp-1', (req, res, next) => {
-        res.redirect('/v5/about_your_health/hcp-another');
-    });
-
-    router.post('/v5/about_your_health/hcp-another', (req, res, next) => {
-        const hcpAnother1 = req.session.data['hcp-2'];
-        if (hcpAnother1 === 'Yes') {
-            res.redirect('/v5/about_your_health/hcp-2');
-        } else {
-            res.redirect('/v5/auth/dev-ready/register/start');
-        }
-    });
-
-    router.post('/v5/about_your_health/hcp-2', (req, res, next) => {
-        res.redirect('/v5/about_your_health/hcp-another-2');
-    });
-
-    router.post('/v5/about_your_health/hcp-another-2', (req, res, next) => {
-        const hcpAnother2 = req.session.data['hcp-3'];
-        if (hcpAnother2 === 'Yes') {
-            res.redirect('/v5/about_your_health/hcp-3');
-        } else {
-            res.redirect('/v5/auth/dev-ready/register/start');
-        }
-    });
-
-    router.post('/v5/about_your_health/hcp-3', (req, res, next) => {
-        res.redirect('/v5/about_your_health/hcp-another-3');
-    });
-
-    router.post('/v5/about_your_health/hcp-another-3', (req, res, next) => {
-        res.redirect('/v5/auth/dev-ready/register/start');
-    });
-
-    // HEALTH PROFESSIONALS QUESTIONS END
-
+    // ELIGIBILITY QUESTIONS END
 
     // IDV CHECK
     
@@ -286,7 +196,7 @@ module.exports = function (router) {
       
     // IDV CHECK END
 
-    // PERSONAL DETAILS QUESTIONS
+    // PERSONAL DETAILS AND HEALTH QUESTIONS
     router.post('/v5/name', (req, res, next) => {
         res.redirect('/v5/nino');
     });
@@ -313,6 +223,53 @@ module.exports = function (router) {
     });
 
     router.post('/v5/contact-details', (req, res, next) => {
+        res.redirect('/v5/about_your_health/condition-new-2');
+    });
+
+    router.post('/v5/about_your_health/condition-new-2', (req, res, next) => {
+        res.redirect('/v5/about_your_health/hcp-question');
+    });
+
+    router.post('/v5/about_your_health/hcp-question', (req, res, next) => {
+        const hcpQuestion = req.session.data['hcp'];
+        if (hcpQuestion === 'Yes') {
+            res.redirect('/v5/about_your_health/hcp-1');
+        } else {
+            res.redirect('/v5/in-hospital');
+        }
+    });
+
+    router.post('/v5/about_your_health/hcp-1', (req, res, next) => {
+        res.redirect('/v5/about_your_health/hcp-another');
+    });
+
+    router.post('/v5/about_your_health/hcp-another', (req, res, next) => {
+        const hcpAnother1 = req.session.data['hcp-2'];
+        if (hcpAnother1 === 'Yes') {
+            res.redirect('/v5/about_your_health/hcp-2');
+        } else {
+            res.redirect('/v5/in-hospital');
+        }
+    });
+
+    router.post('/v5/about_your_health/hcp-2', (req, res, next) => {
+        res.redirect('/v5/about_your_health/hcp-another-2');
+    });
+
+    router.post('/v5/about_your_health/hcp-another-2', (req, res, next) => {
+        const hcpAnother2 = req.session.data['hcp-3'];
+        if (hcpAnother2 === 'Yes') {
+            res.redirect('/v5/about_your_health/hcp-3');
+        } else {
+            res.redirect('/v5/in-hospital');
+        }
+    });
+
+    router.post('/v5/about_your_health/hcp-3', (req, res, next) => {
+        res.redirect('/v5/about_your_health/hcp-another-3');
+    });
+
+    router.post('/v5/about_your_health/hcp-another-3', (req, res, next) => {
         res.redirect('/v5/in-hospital');
     });
 
@@ -323,7 +280,7 @@ module.exports = function (router) {
     router.post('/v5/in-care-home', (req, res, next) => {
         res.redirect('/v5/add-support-communicating');
     });
-    // PERSONAL QUESTIONS END
+    // PERSONAL AND HEALTH QUESTIONS END
 
 
     // ADDITIONAL SUPPORT QUESTIONS
@@ -373,31 +330,41 @@ module.exports = function (router) {
 
     // ADDITIONAL SUPPORT QUESTIONS END
 
-    // COMPLEX APPLICATION CONTACT DETAILS
+    router.post('/v5/check-answers', (req, res, next) => {
+        res.redirect('/v5/we-need-to-get-in-touch');
+    });
 
     router.post('/v5/we-need-to-get-in-touch', (req, res, next) => {
-        res.redirect('/v5/complex_contact_details/complex-contact-name');
-    });
-
-    router.post('/v5/complex_contact_details/complex-contact-name', (req, res, next) => {
-        res.redirect('/v5/complex_contact_details/complex-contact-nino');
-    });
-
-    router.post('/v5/complex_contact_details/complex-contact-nino', (req, res, next) => {
-        res.redirect('/v5/complex_contact_details/complex-contact-date-of-birth');
-    });
-
-    router.post('/v5/complex_contact_details/complex-contact-date-of-birth', (req, res, next) => {
-        res.redirect('/v5/complex_contact_details/complex-contact-details');
-    });
-
-    router.post('/v5/complex_contact_details/complex-contact-details', (req, res, next) => {
-        res.redirect('/v5/complex_contact_details/complex-contact-check-answers');
-    });
-
-    router.post('/v5/complex_contact_details/complex-contact-check-answers', (req, res, next) => {
         res.redirect('/v5/complex_contact_details/complex-contact-confirmation');
     });
+
+    
+
+    // COMPLEX APPLICATION CONTACT DETAILS
+
+    // router.post('/v5/we-need-to-get-in-touch', (req, res, next) => {
+    //     res.redirect('/v5/complex_contact_details/complex-contact-name');
+    // });
+
+    // router.post('/v5/complex_contact_details/complex-contact-name', (req, res, next) => {
+    //     res.redirect('/v5/complex_contact_details/complex-contact-nino');
+    // });
+
+    // router.post('/v5/complex_contact_details/complex-contact-nino', (req, res, next) => {
+    //     res.redirect('/v5/complex_contact_details/complex-contact-date-of-birth');
+    // });
+
+    // router.post('/v5/complex_contact_details/complex-contact-date-of-birth', (req, res, next) => {
+    //     res.redirect('/v5/complex_contact_details/complex-contact-details');
+    // });
+
+    // router.post('/v5/complex_contact_details/complex-contact-details', (req, res, next) => {
+    //     res.redirect('/v5/complex_contact_details/complex-contact-check-answers');
+    // });
+
+    // router.post('/v5/complex_contact_details/complex-contact-check-answers', (req, res, next) => {
+    //     res.redirect('/v5/complex_contact_details/complex-contact-confirmation');
+    // });
 
     // COMPLEX APPLICATION CONTACT DETAILS END
 
