@@ -147,24 +147,24 @@ Check your answers
                 What health condition or disability do you have?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['condition-name-1'] }}
+                {{ data['conditions[condition_name]'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="about_your_health/condition">
+                <a class="govuk-link" href="about_your_health/condition-new-2">
                   Change<span class="govuk-visually-hidden"> condition or disability</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
 
-            <!-- <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Approximate start date
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['condition-date-1'] }}
+                {{ data['conditions[date]'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="about_your_health/condition">
+                <a class="govuk-link" href="about_your_health/condition-new-2">
                   Change<span class="govuk-visually-hidden"> condition start date</span>
                 </a>
               </dd>
