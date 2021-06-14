@@ -9,6 +9,10 @@ Check your answers
 {% include "includes/back-link.html" %}
 {% endblock %}
 
+{% set conditionsLength %}
+{{ data.conditions | length }}
+{% endset %}
+
 {% block content %}
 <form id="form" method="post" action="#">
 
@@ -18,9 +22,9 @@ Check your answers
         <div class="govuk-grid-column-two-thirds-from-desktop">
 
           <h1 class="govuk-heading-l">Check your answers</h1>
-
+     
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
+            
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 How old are you?
@@ -141,13 +145,16 @@ Check your answers
               </dd>
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
+           
 
+
+<!-- // Coditions start -->
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 What health condition or disability do you have?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['conditions[condition_name]'] }}
+                {{ data['conditions'][0]['condition_name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="about_your_health/condition-new-2">
@@ -161,7 +168,7 @@ Check your answers
                 Approximate start date
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['conditions[date]'] }}
+                {{ data['conditions'][0]['date'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="about_your_health/condition-new-2">
@@ -169,6 +176,45 @@ Check your answers
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
+            <!-- Conditions end  -->
+
+          {% if conditionsLength > 1 %}
+          {% for condition in data.conditions %}
+          {% if not loop.first %}
+          <!-- Coditions start -->
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What other health condition or disability do you have?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ condition.condition_name }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="about_your_health/condition-new-2">
+                Change<span class="govuk-visually-hidden"> condition or disability</span>
+              </a>
+            </dd>
+          </div> <!-- govuk-summary-list__row -->
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Approximate start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ condition.date }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="about_your_health/condition-new-2">
+                Change<span class="govuk-visually-hidden"> condition start date</span>
+              </a>
+            </dd>
+          </div> <!-- govuk-summary-list__row -->
+          <!-- Conditions end  -->
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+          
+
 
             <!-- <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
