@@ -1,8 +1,16 @@
+const { compile } = require("nunjucks");
+
 module.exports = function (router) {
     function isEligible(req) {
         return !(req.session.data['over-16'] === 'Under 16'
             || req.session.data['overspa'] === 'No')
     }
+
+    function complexCase(req) {
+        return (req.session.data['nationality'] === 'Another nationality'
+            || (req.session.data['nationality'] === 'A nationality of the European Economic Area (EEA)' && (req.session.data['living-in-uk'] === 'No' || req.session.data['living-in-uk'] === 'Not sure'))
+            || (req.session.data['gb'] === 'No'|| req.session.data['gb'] === 'Not sure'))
+        }
 
     // ELIGIBILITY QUESTIONS
     router.post('/v5/over-16', (req, res, next) => {
@@ -20,33 +28,19 @@ module.exports = function (router) {
 
     router.post('/v5/nationality', (req, res, next) => {
         const whereLive = req.session.data['nationality'];
-        if (whereLive === 'British') {
-            res.redirect('/v5/living-in-gb');
-        } else if (whereLive === 'Irish'){
-            res.redirect('/v5/living-in-gb');    
-        } else if (whereLive === 'A nationality of the European Economic Area (EEA)'){
-            res.redirect('/v5/living-in-uk');   
+        if (whereLive === 'A nationality of the European Economic Area (EEA)') {
+            res.redirect('/v5/living-in-uk');
         } else {
-            res.redirect('/v5/we-need-to-get-in-touch');    
+            res.redirect('/v5/living-in-gb');
         }
     });
 
     router.post('/v5/living-in-gb', (req, res, next) => {
-        const immigrationControl = req.session.data['gb'];
-        if (immigrationControl === 'Yes') {
-            res.redirect('/v5/health-condition');
-        } else {
-            res.redirect('/v5/we-need-to-get-in-touch');
-        }
+        res.redirect('/v5/health-condition');
     });
 
     router.post('/v5/living-in-uk', (req, res, next) => {
-        const livingUk = req.session.data['living-in-uk'];
-        if (livingUk === 'Yes') {
-            res.redirect('/v5/living-in-gb');
-        } else {
-            res.redirect('/v5/we-need-to-get-in-touch');
-        }
+        res.redirect('/v5/living-in-gb');
     });
 
     // router.post('/v5/refugee-protection', (req, res, next) => {
@@ -67,16 +61,13 @@ module.exports = function (router) {
     //     }
     // });
 
-    // ELIGIBILITY QUESTIONS END
-
-    // HEALTH CONDITION QUESTIONS
     router.post('/v5/health-condition', (req, res, next) => {
         const healthCondition = req.session.data['condition'];
         if (healthCondition === 'Yes, all of the time or sometimes') {
             res.redirect('/v5/over-9-months')
-        } else if (healthCondition === 'No, never'){
+        } else if (healthCondition === 'No, never') {
             res.redirect('/v5/not-eligible');
-        } else if (healthCondition === 'Not sure'){
+        } else if (healthCondition === 'Not sure') {
             res.redirect('/v5/about_your_health/condition');
         }
     });
@@ -86,118 +77,31 @@ module.exports = function (router) {
         const over9months = req.session.data['over-9-months'];
         if (over9months === 'Less than 9 months') {
             res.redirect('/v5/not-eligible')
-        } else if (over9months === 'At least 9 months'){
-            if (eligible){
-                res.redirect('/v5/about_your_health/condition-new-2')
+        } else if (over9months === 'At least 9 months') {
+            if (eligible) {
+                res.redirect('/v5/auth/dev-ready/register/start')
             } else {
                 res.redirect('/v5/not-eligible');
             }
-        } else if (over9months === 'Not sure'){
-            if (eligible){
-                res.redirect('/v5/about_your_health/condition-new-2')
+        } else if (over9months === 'Not sure') {
+            if (eligible) {
+                res.redirect('/v5/auth/dev-ready/register/start')
             } else {
                 res.redirect('/v5/not-eligible');
             }
         }
     });
 
-    // router.post('/v5/about_your_health/condition', (req, res, next) => {
-    //     res.redirect('/v5/about_your_health/another');
-    // });
-
-    // router.post('/v5/about_your_health/another', (req, res, next) => {
-    //     const conditionAnother = req.session.data['condition2'];
-    //     if (conditionAnother === 'Yes') {
-    //         res.redirect('/v5/about_your_health/condition-2');
-    //     } else {
-    //         res.redirect('/v5/about_your_health/hcp-question');
-    //     }
-    // });
-
-    // router.post('/v5/about_your_health/condition-2', (req, res, next) => {
-    //     res.redirect('/v5/about_your_health/another-2');
-    // });
-
-    // router.post('/v5/about_your_health/another-2', (req, res, next) => {
-    //     const conditionAnother2 = req.session.data['condition3'];
-    //     if (conditionAnother2 === 'Yes') {
-    //         res.redirect('/v5/about_your_health/condition-3');
-    //     } else {
-    //         res.redirect('/v5/about_your_health/hcp-question');
-    //     }
-    // });
-
-    // router.post('/v5/about_your_health/condition-3', (req, res, next) => {
-    //     res.redirect('/v5/about_your_health/another-3');
-    // });
-
-    // router.post('/v5/about_your_health/another-3', (req, res, next) => {
-    //     res.redirect('/v5/about_your_health/hcp-question');
-    // });
-
-    router.post('/v5/about_your_health/condition-new-2', (req, res, next) => {
-        res.redirect('/v5/about_your_health/hcp-question');
-    });
-
-
-    // HEALTH CONDITION QUESTIONS END
-
-    // HEALTH PROFESSIONALS QUESTIONS START
-
-    router.post('/v5/about_your_health/hcp-question', (req, res, next) => {
-        const hcpQuestion = req.session.data['hcp'];
-        if (hcpQuestion === 'Yes') {
-            res.redirect('/v5/about_your_health/hcp-1');
-        } else {
-            res.redirect('/v5/auth/dev-ready/register/start');
-        }
-    });
-
-    router.post('/v5/about_your_health/hcp-1', (req, res, next) => {
-        res.redirect('/v5/about_your_health/hcp-another');
-    });
-
-    router.post('/v5/about_your_health/hcp-another', (req, res, next) => {
-        const hcpAnother1 = req.session.data['hcp-2'];
-        if (hcpAnother1 === 'Yes') {
-            res.redirect('/v5/about_your_health/hcp-2');
-        } else {
-            res.redirect('/v5/auth/dev-ready/register/start');
-        }
-    });
-
-    router.post('/v5/about_your_health/hcp-2', (req, res, next) => {
-        res.redirect('/v5/about_your_health/hcp-another-2');
-    });
-
-    router.post('/v5/about_your_health/hcp-another-2', (req, res, next) => {
-        const hcpAnother2 = req.session.data['hcp-3'];
-        if (hcpAnother2 === 'Yes') {
-            res.redirect('/v5/about_your_health/hcp-3');
-        } else {
-            res.redirect('/v5/auth/dev-ready/register/start');
-        }
-    });
-
-    router.post('/v5/about_your_health/hcp-3', (req, res, next) => {
-        res.redirect('/v5/about_your_health/hcp-another-3');
-    });
-
-    router.post('/v5/about_your_health/hcp-another-3', (req, res, next) => {
-        res.redirect('/v5/auth/dev-ready/register/start');
-    });
-
-    // HEALTH PROFESSIONALS QUESTIONS END
-
+    // ELIGIBILITY QUESTIONS END
 
     // IDV CHECK
-    
+
     // router.post('/v5/idv/hmrciv/idvselection', (req, res) => {
     //     const passportConsent = req.session.data['passport-consent'];
     //     const payslipOrP60 = req.session.data['payslipOrP60'];
     //     const voiceID = req.session.data['tcOptions'];
     //     const tuConsent = req.session.data['cra-consent'];
-        
+
     //     //Passport and payslip
     //     if (passportConsent == 'true' && payslipOrP60 == 'payslip') {
     //       res.redirect('./your-passport-details?payslip=true')
@@ -255,38 +159,38 @@ module.exports = function (router) {
     //       res.redirect('./choose-2-items-error')
     //     }
     //   })
-      
+
     //   router.post('/v5/idv/hmrciv/payslip', (req, res) => {
     //     res.redirect('./payslip-question-1');
     //   })
-      
+
     //   router.post('/v5/idv/hmrciv/p60', (req, res) => {
     //     res.redirect('./p60-question-1');
     //   })
-      
+
     //   router.post('/v5/idv/hmrciv/tcKbv', (req, res) => {
     //     res.redirect('./tax-credits-question-1');
     //   })
-      
+
     //   router.post('/v5/idv/hmrciv/tuKbv', (req, res) => {
     //     res.redirect('./tu-question-1');
     //   })
-      
+
     //   router.post('/v5/idv/hmrciv/voiceId', (req, res) => { 
     //     res.redirect("/carers/voice-id");
     //   })
-      
+
     //   router.post('/v5/idv/hmrciv/success', (req, res) => { 
     //     res.redirect("/v5/address");
     //   })
 
-      router.post('/v5/auth/dev-ready/sign-in-2fa', (req, res) => { 
+    router.post('/v5/auth/dev-ready/sign-in-2fa', (req, res) => {
         res.redirect("/v5/name");
-      })
-      
+    })
+
     // IDV CHECK END
 
-    // PERSONAL DETAILS QUESTIONS
+    // PERSONAL DETAILS AND HEALTH QUESTIONS
     router.post('/v5/name', (req, res, next) => {
         res.redirect('/v5/nino');
     });
@@ -313,6 +217,53 @@ module.exports = function (router) {
     });
 
     router.post('/v5/contact-details', (req, res, next) => {
+        res.redirect('/v5/about_your_health/condition-new-2');
+    });
+
+    router.post('/v5/about_your_health/condition-new-2', (req, res, next) => {
+        res.redirect('/v5/about_your_health/hcp-question');
+    });
+
+    router.post('/v5/about_your_health/hcp-question', (req, res, next) => {
+        const hcpQuestion = req.session.data['hcp'];
+        if (hcpQuestion === 'Yes') {
+            res.redirect('/v5/about_your_health/hcp-1');
+        } else {
+            res.redirect('/v5/in-hospital');
+        }
+    });
+
+    router.post('/v5/about_your_health/hcp-1', (req, res, next) => {
+        res.redirect('/v5/about_your_health/hcp-another');
+    });
+
+    router.post('/v5/about_your_health/hcp-another', (req, res, next) => {
+        const hcpAnother1 = req.session.data['hcp-2'];
+        if (hcpAnother1 === 'Yes') {
+            res.redirect('/v5/about_your_health/hcp-2');
+        } else {
+            res.redirect('/v5/in-hospital');
+        }
+    });
+
+    router.post('/v5/about_your_health/hcp-2', (req, res, next) => {
+        res.redirect('/v5/about_your_health/hcp-another-2');
+    });
+
+    router.post('/v5/about_your_health/hcp-another-2', (req, res, next) => {
+        const hcpAnother2 = req.session.data['hcp-3'];
+        if (hcpAnother2 === 'Yes') {
+            res.redirect('/v5/about_your_health/hcp-3');
+        } else {
+            res.redirect('/v5/in-hospital');
+        }
+    });
+
+    router.post('/v5/about_your_health/hcp-3', (req, res, next) => {
+        res.redirect('/v5/about_your_health/hcp-another-3');
+    });
+
+    router.post('/v5/about_your_health/hcp-another-3', (req, res, next) => {
         res.redirect('/v5/in-hospital');
     });
 
@@ -323,7 +274,7 @@ module.exports = function (router) {
     router.post('/v5/in-care-home', (req, res, next) => {
         res.redirect('/v5/add-support-communicating');
     });
-    // PERSONAL QUESTIONS END
+    // PERSONAL AND HEALTH QUESTIONS END
 
 
     // ADDITIONAL SUPPORT QUESTIONS
@@ -373,31 +324,47 @@ module.exports = function (router) {
 
     // ADDITIONAL SUPPORT QUESTIONS END
 
-    // COMPLEX APPLICATION CONTACT DETAILS
+    router.post('/v5/check-answers', (req, res, next) => {
+        console.log(req.session.data)
+        const complex = complexCase(req);
+        if (!complex) {
+            res.redirect('/v5/confirmation')
+        } else {
+            res.redirect('/v5/we-need-to-get-in-touch')
+        };
+    });
 
     router.post('/v5/we-need-to-get-in-touch', (req, res, next) => {
-        res.redirect('/v5/complex_contact_details/complex-contact-name');
-    });
-
-    router.post('/v5/complex_contact_details/complex-contact-name', (req, res, next) => {
-        res.redirect('/v5/complex_contact_details/complex-contact-nino');
-    });
-
-    router.post('/v5/complex_contact_details/complex-contact-nino', (req, res, next) => {
-        res.redirect('/v5/complex_contact_details/complex-contact-date-of-birth');
-    });
-
-    router.post('/v5/complex_contact_details/complex-contact-date-of-birth', (req, res, next) => {
-        res.redirect('/v5/complex_contact_details/complex-contact-details');
-    });
-
-    router.post('/v5/complex_contact_details/complex-contact-details', (req, res, next) => {
-        res.redirect('/v5/complex_contact_details/complex-contact-check-answers');
-    });
-
-    router.post('/v5/complex_contact_details/complex-contact-check-answers', (req, res, next) => {
         res.redirect('/v5/complex_contact_details/complex-contact-confirmation');
     });
+
+
+
+    // COMPLEX APPLICATION CONTACT DETAILS
+
+    // router.post('/v5/we-need-to-get-in-touch', (req, res, next) => {
+    //     res.redirect('/v5/complex_contact_details/complex-contact-name');
+    // });
+
+    // router.post('/v5/complex_contact_details/complex-contact-name', (req, res, next) => {
+    //     res.redirect('/v5/complex_contact_details/complex-contact-nino');
+    // });
+
+    // router.post('/v5/complex_contact_details/complex-contact-nino', (req, res, next) => {
+    //     res.redirect('/v5/complex_contact_details/complex-contact-date-of-birth');
+    // });
+
+    // router.post('/v5/complex_contact_details/complex-contact-date-of-birth', (req, res, next) => {
+    //     res.redirect('/v5/complex_contact_details/complex-contact-details');
+    // });
+
+    // router.post('/v5/complex_contact_details/complex-contact-details', (req, res, next) => {
+    //     res.redirect('/v5/complex_contact_details/complex-contact-check-answers');
+    // });
+
+    // router.post('/v5/complex_contact_details/complex-contact-check-answers', (req, res, next) => {
+    //     res.redirect('/v5/complex_contact_details/complex-contact-confirmation');
+    // });
 
     // COMPLEX APPLICATION CONTACT DETAILS END
 
@@ -405,10 +372,10 @@ module.exports = function (router) {
     router.post('/v5/save_and_return/sign-in', (req, res, next) => {
         res.redirect('/v5/save_and_return/sign-in-2fa');
     });
-    
+
     router.post('/v5/save_and_return/sign-in-2fa', (req, res, next) => {
         res.redirect('/v5/in-hospital');
     });
     // RETURNING USER FLOW END
 };
-    
+
