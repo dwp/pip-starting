@@ -374,8 +374,12 @@ module.exports = function (router) {
     });
 
     router.post('/v5/save_and_return/sign-in-2fa', (req, res, next) => {
-        res.redirect('/v5/in-hospital');
+        res.redirect('/v5/save_and_return/signed-in');
     });
+
+    // router.post('v5/save_and_return/signed-in', (req, res, next) => {
+    //     res.redirect('/v5/in-hospital');
+    // });
     // RETURNING USER FLOW END
 };
 
