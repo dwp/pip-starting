@@ -277,7 +277,7 @@ module.exports = function (router) {
     });
 
     router.post('/v5/hospital-address', (req, res, next) => {
-        res.redirect('/v5/in-care-home');
+        res.redirect('/v5/add-support-communicating');
     });
 
     router.post('/v5/in-care-home', (req, res, next) => {
@@ -292,7 +292,7 @@ module.exports = function (router) {
     router.post('/v5/care-home-address', (req, res, next) => {
         res.redirect('/v5/add-support-communicating');
     });
-    
+
     // PERSONAL AND HEALTH QUESTIONS END
 
 
