@@ -268,12 +268,31 @@ module.exports = function (router) {
     });
 
     router.post('/v5/in-hospital', (req, res, next) => {
+        const inHospital = req.session.data['hospital'];
+        if (inHospital === 'Yes') {
+            res.redirect('/v5/hospital-address');
+        } else {
+            res.redirect('/v5/in-care-home');
+        }
+    });
+
+    router.post('/v5/hospital-address', (req, res, next) => {
         res.redirect('/v5/in-care-home');
     });
 
     router.post('/v5/in-care-home', (req, res, next) => {
+        const inCarehome = req.session.data['carehome'];
+        if (inCarehome === 'Yes') {
+            res.redirect('/v5/care-home-address');
+        } else {
+            res.redirect('/v5/add-support-communicating');
+        }
+    });
+
+    router.post('/v5/care-home-address', (req, res, next) => {
         res.redirect('/v5/add-support-communicating');
     });
+    
     // PERSONAL AND HEALTH QUESTIONS END
 
 
