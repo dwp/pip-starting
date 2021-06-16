@@ -9,7 +9,9 @@ module.exports = function (router) {
     function complexCase(req) {
         return (req.session.data['nationality'] === 'Another nationality'
             || (req.session.data['nationality'] === 'A nationality of the European Economic Area (EEA)' && (req.session.data['living-in-uk'] === 'No' || req.session.data['living-in-uk'] === 'Not sure'))
-            || (req.session.data['gb'] === 'No'|| req.session.data['gb'] === 'Not sure'))
+            || (req.session.data['gb'] === 'No'|| req.session.data['gb'] === 'Not sure')
+            || (req.session.data['eu-benefits'] === 'Yes' || req.session.data['eu-benefits'] === 'Not sure')
+            || (req.session.data['eu-insurance'] === 'Yes' || req.session.data['eu-insurance'] === 'Not sure'))
         }
 
     // ELIGIBILITY QUESTIONS
@@ -35,13 +37,31 @@ module.exports = function (router) {
         }
     });
 
-    router.post('/v5/living-in-gb', (req, res, next) => {
-        res.redirect('/v5/health-condition');
-    });
-
     router.post('/v5/living-in-uk', (req, res, next) => {
         res.redirect('/v5/living-in-gb');
     });
+
+    router.post('/v5/living-in-gb', (req, res, next) => {
+        res.redirect('/v5/eu-benefits');
+    });
+
+    router.post('/v5/eu-benefits', (req, res, next) => {
+        res.redirect('/v5/eu-worked');
+    });
+
+    router.post('/v5/eu-worked', (req, res, next) => {
+        const euWorked = req.session.data['eu-worked'];
+        if (euWorked === 'No') {
+            res.redirect('/v5/health-condition');
+        } else {
+            res.redirect('/v5/eu-insurance');
+        }
+    });
+
+    router.post('/v5/eu-insurance', (req, res, next) => {
+        res.redirect('/v5/health-condition');
+    });
+    
 
     // router.post('/v5/refugee-protection', (req, res, next) => {
     //     const refugeeProtection = req.session.data['refugee'];
@@ -396,9 +416,9 @@ module.exports = function (router) {
         res.redirect('/v5/save_and_return/signed-in');
     });
 
-    // router.post('v5/save_and_return/signed-in', (req, res, next) => {
-    //     res.redirect('/v5/in-hospital');
-    // });
+    router.post('v5/save_and_return/signed-in', (req, res, next) => {
+        res.redirect('/v5/in-hospital');
+    });
     // RETURNING USER FLOW END
 };
 
