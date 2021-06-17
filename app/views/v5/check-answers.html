@@ -117,6 +117,50 @@ Check your answers
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
+                Are you, or a family member, receiving any pensions or benefits from an EEA country or Switzerland?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['eu-benefits'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="eu-benefits">
+                  Change<span class="govuk-visually-hidden"> benefits from an EEA country or Switzerland</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Are you, or a family member, working in an EEA country or Switzerland?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['eu-worked'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="eu-worked">
+                  Change<span class="govuk-visually-hidden"> working in an EEA country or Switzerland</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            {% if data['eu-worked'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Are you, or a family member, paying insurance connected to your work to an EEA country or Switzerland?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['eu-insurance'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="eu-insurance">
+                  Change<span class="govuk-visually-hidden"> paying insurance in an EEA country or Switzerland</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 Is your ability to do everyday tasks or get around affected by any health conditions or disabilities you
                 have?
               </dt>
@@ -145,10 +189,172 @@ Check your answers
               </dd>
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
-           
+ 
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                First name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['first-name'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="name">
+                  Change<span class="govuk-visually-hidden"> fisrt name</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
 
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Last name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['last-name'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="name">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
 
-<!-- // Coditions start -->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                National Insurance number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['nino'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="nino">
+                  Change<span class="govuk-visually-hidden"> national insurance number</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['dob-day'] }} - {{ data['dob-month'] }} - {{ data['dob-year'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="date-of-birth">
+                  Change<span class="govuk-visually-hidden"> date of birth</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['address-line-1'] }}<br>
+                {{ data['address-line-2'] }}<br>
+                {{ data['address-town'] }}<br>
+                {{ data['address-county'] }}<br>
+                {{ data['address-postcode'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="address">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Can we write to you at this address?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['safe-address'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="address">
+                  Change<span class="govuk-visually-hidden"> safe address</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            {% if data['safe-address'] === 'No' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['other-address-line-1'] }}<br>
+                {{ data['other-address-line-2'] }}<br>
+                {{ data['other-address-town'] }}<br>
+                {{ data['other-address-county'] }}<br>
+                {{ data['other-address-postcode'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="address-other">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Phone number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['phone-number'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="contact-details">
+                  Change<span class="govuk-visually-hidden"> phone number</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Contact preference
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['contact-preference'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="contact-details">
+                  Change<span class="govuk-visually-hidden"> contact preference</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you need another communication format such as Braille, large print or CD audio?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['communication-format'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="contact-details">
+                  Change<span class="govuk-visually-hidden"> communication format</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            {% if data['communication-format'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What format do you need communications in?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['format-type'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="contact-details">
+                  Change<span class="govuk-visually-hidden"> other communication format</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+            <!-- Coditions start -->
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 What health condition or disability do you have?
@@ -176,7 +382,7 @@ Check your answers
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            <!-- Conditions end  -->
+          <!-- Conditions end  -->
 
           {% if conditionsLength > 1 %}
           {% for condition in data.conditions %}
@@ -214,109 +420,6 @@ Check your answers
           {% endfor %}
           {% endif %}
           
-
-
-            <!-- <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Do you have another condition or disability?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['condition2'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="about_your_health/another">
-                  Change<span class="govuk-visually-hidden"> another condition</span>
-                </a>
-              </dd>
-            </div> govuk-summary-list__row
-
-            {% if data['condition2'] === 'Yes' %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                What other health condition or disability do you have?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['condition-name-2'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="about_your_health/condition-2">
-                  Change<span class="govuk-visually-hidden"> condition or disability</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-
-            <!-- <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Approximate start date
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['condition-date-2'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="about_your_health/condition-2">
-                  Change<span class="govuk-visually-hidden"> condition start date</span>
-                </a>
-              </dd>
-            </div> govuk-summary-list__row -->
-
-            <!-- <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Do you have another condition or disability?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['condition3'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="about_your_health/another-2">
-                  Change<span class="govuk-visually-hidden"> another condition</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-            <!-- {% endif %} -->
-
-            <!--{% if data['condition3'] === 'Yes' %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                What other health condition or disability do you have?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['condition-name-3'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="about_your_health/condition-3">
-                  Change<span class="govuk-visually-hidden"> condition or disability</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-
-            <!--<div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Approximate start date
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['condition-date-3'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="about_your_health/condition-3">
-                  Change<span class="govuk-visually-hidden"> condition start date</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-
-           <!--<div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Do you have another condition or disability?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['condition3'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="about_your_health/another-3">
-                  Change<span class="govuk-visually-hidden"> another condition</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-            <!-- {% endif %}  -->
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -594,171 +697,7 @@ Check your answers
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
 
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                First name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['first-name'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="name">
-                  Change<span class="govuk-visually-hidden"> fisrt name</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Last name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['last-name'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="name">
-                  Change<span class="govuk-visually-hidden"> name</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                National Insurance number
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['nino'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="nino">
-                  Change<span class="govuk-visually-hidden"> national insurance number</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Date of birth
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['dob-day'] }} - {{ data['dob-month'] }} - {{ data['dob-year'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="date-of-birth">
-                  Change<span class="govuk-visually-hidden"> date of birth</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Address
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['address-line-1'] }}<br>
-                {{ data['address-line-2'] }}<br>
-                {{ data['address-town'] }}<br>
-                {{ data['address-county'] }}<br>
-                {{ data['address-postcode'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="address">
-                  Change<span class="govuk-visually-hidden"> address</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Can we write to you at this address?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['safe-address'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="address">
-                  Change<span class="govuk-visually-hidden"> safe address</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-
-            {% if data['safe-address'] === 'No' %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Address
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['other-address-line-1'] }}<br>
-                {{ data['other-address-line-2'] }}<br>
-                {{ data['other-address-town'] }}<br>
-                {{ data['other-address-county'] }}<br>
-                {{ data['other-address-postcode'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="address-other">
-                  Change<span class="govuk-visually-hidden"> address</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-            {% endif %}
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Phone number
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['phone-number'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="contact-details">
-                  Change<span class="govuk-visually-hidden"> phone number</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Contact preference
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['contact-preference'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="contact-details">
-                  Change<span class="govuk-visually-hidden"> contact preference</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Do you need another communication format such as Braille, large print or CD audio?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['communication-format'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="contact-details">
-                  Change<span class="govuk-visually-hidden"> communication format</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-
-            {% if data['communication-format'] === 'Yes' %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                What format do you need communications in?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['format-type'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="contact-details">
-                  Change<span class="govuk-visually-hidden"> other communication format</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-            {% endif %}
-
+            
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Are you currently staying in a hospital or hospice as an in-patient?
@@ -773,6 +712,27 @@ Check your answers
               </dd>
             </div> <!-- govuk-summary-list__row -->
 
+            {% if data['hospital'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Hospital or hospice address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hospital-address-line-1'] }}<br>
+                {{ data['hospital-address-line-2'] }}<br>
+                {{ data['hospital-address-town'] }}<br>
+                {{ data['hospital-address-county'] }}<br>
+                {{ data['hospital-address-postcode'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/v5/about_your_health/hcp-3">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+            {% if data['hospital'] === 'No' %} 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Are you currently staying or living in a care home or nursing home?
@@ -786,6 +746,28 @@ Check your answers
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
+            
+
+            {% if data['carehome'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Care or nursing home address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['care-home-address-line-1'] }}<br>
+                {{ data['care-home-address-line-2'] }}<br>
+                {{ data['care-home-address-town'] }}<br>
+                {{ data['care-home-address-county'] }}<br>
+                {{ data['care-home-address-postcode'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/v5/about_your_health/hcp-3">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+            {% endif %}
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
