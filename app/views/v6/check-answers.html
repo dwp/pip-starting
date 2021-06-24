@@ -22,9 +22,9 @@ Check your answers
         <div class="govuk-grid-column-two-thirds-from-desktop">
 
           <h1 class="govuk-heading-l">Check your answers</h1>
-     
+          <h2 class="govuk-heading-m">Eligibility</h2>
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 How old are you?
@@ -189,7 +189,11 @@ Check your answers
               </dd>
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
- 
+          </dl>
+
+          <h2 class="govuk-heading-m">Personal details</h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 First name
@@ -353,7 +357,11 @@ Check your answers
               </dd>
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
+          </dl>
 
+          <h2 class="govuk-heading-m">Your health</h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <!-- Coditions start -->
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -382,44 +390,44 @@ Check your answers
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-          <!-- Conditions end  -->
+            <!-- Conditions end  -->
 
-          {% if conditionsLength > 1 %}
-          {% for condition in data.conditions %}
-          {% if not loop.first %}
-          <!-- Coditions start -->
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              What other health condition or disability do you have?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ condition.condition_name }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="about_your_health/condition-new-2">
-                Change<span class="govuk-visually-hidden"> condition or disability</span>
-              </a>
-            </dd>
-          </div> <!-- govuk-summary-list__row -->
+            {% if conditionsLength > 1 %}
+            {% for condition in data.conditions %}
+            {% if not loop.first %}
+            <!-- Coditions start -->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What other health condition or disability do you have?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ condition.condition_name }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="about_your_health/condition-new-2">
+                  Change<span class="govuk-visually-hidden"> condition or disability</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Approximate start date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ condition.date }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="about_your_health/condition-new-2">
-                Change<span class="govuk-visually-hidden"> condition start date</span>
-              </a>
-            </dd>
-          </div> <!-- govuk-summary-list__row -->
-          <!-- Conditions end  -->
-          {% endif %}
-          {% endfor %}
-          {% endif %}
-          
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Approximate start date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ condition.date }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="about_your_health/condition-new-2">
+                  Change<span class="govuk-visually-hidden"> condition start date</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            <!-- Conditions end  -->
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -434,8 +442,8 @@ Check your answers
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            
-            
+
+
             {% if data['hcp'] === 'Yes' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -499,7 +507,7 @@ Check your answers
                 When did you last see them?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['hcp-1-month'] }} -  {{ data['hcp-1-year'] }}
+                {{ data['hcp-1-month'] }} - {{ data['hcp-1-year'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/v6/about_your_health/hcp-1">
@@ -508,7 +516,7 @@ Check your answers
               </dd>
             </div> <!-- govuk-summary-list__row -->
 
-             <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Are there any other health professionals we can contact?
               </dt>
@@ -586,7 +594,7 @@ Check your answers
                 When did you last see them?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['hcp-2-month'] }} -  {{ data['hcp-2-year'] }}
+                {{ data['hcp-2-month'] }} - {{ data['hcp-2-year'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/v6/about_your_health/hcp-2">
@@ -595,7 +603,7 @@ Check your answers
               </dd>
             </div> <!-- govuk-summary-list__row -->
 
-             <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Are there any other health professionals we can contact?
               </dt>
@@ -673,7 +681,7 @@ Check your answers
                 When did you last see them?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['hcp-3-month'] }} -  {{ data['hcp-3-year'] }}
+                {{ data['hcp-3-month'] }} - {{ data['hcp-3-year'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/v6/about_your_health/hcp-3">
@@ -682,7 +690,7 @@ Check your answers
               </dd>
             </div> <!-- govuk-summary-list__row -->
 
-             <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Are there any other health professionals we can contact?
               </dt>
@@ -697,7 +705,7 @@ Check your answers
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
 
-            
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Are you currently staying in a hospital or hospice as an in-patient?
@@ -732,7 +740,7 @@ Check your answers
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
 
-            {% if data['hospital'] === 'No' %} 
+            {% if data['hospital'] === 'No' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Are you currently staying or living in a care home or nursing home?
@@ -746,7 +754,6 @@ Check your answers
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            
 
             {% if data['carehome'] === 'Yes' %}
             <div class="govuk-summary-list__row">
@@ -768,7 +775,11 @@ Check your answers
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
             {% endif %}
+          </dl>
 
+          <h2 class="govuk-heading-m">Assisted support</h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Do you need help from someone else to communicate with us?
@@ -895,11 +906,9 @@ Check your answers
               </dd>
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
-
           </dl>
 
-          <input type="submit" class="govuk-button" data-module="govuk-button"
-            value="Save and continue" id="submit">
+          <input type="submit" class="govuk-button" data-module="govuk-button" value="Save and continue" id="submit">
         </div> <!-- govuk-grid-column-two-thirds-from-desktop -->
       </div> <!-- govuk-grid-row -->
 
