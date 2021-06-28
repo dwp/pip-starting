@@ -377,6 +377,11 @@ module.exports = function (router) {
     router.post('/v6/we-need-to-get-in-touch', (req, res, next) => {
         res.redirect('/v6/complex_contact_details/complex-contact-confirmation');
     });
+
+    router.post('/v6/confirmation', (req, res, next) => {
+        res.redirect('/p5/list');
+    });
+
     // CHECK ANSWERS END
 
 
