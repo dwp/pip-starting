@@ -19,29 +19,204 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+// styles for p5 
+
+.card {
+  border: 1px solid $govuk-border-colour;
+  margin-bottom: 20px;
+}
+
+.card-head {
+  padding: 1em;
+  background-color: govuk-colour("light-grey");
+}
+
+.card-body {
+  padding: 1em;
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  h1, h2, h3, h4, h5, h6, ul {
+    max-width: 600px
+  }
+
+  h5 {
+    margin-bottom: 10px !important;
+  }
+
+}
+
+.responsive-image img {
+  width: 100%;
+  margin-bottom: govuk-spacing(2);
+}
+
+.sans * {
+  font-family: sans-serif !important;
+}
+
+// Task list pattern
+
+.tag-started {
+  background-color: govuk-colour("white");
+  color: govuk-colour("blue");
+  border: 2px solid govuk-colour("blue");
+}
+
+.tag-inprogress {
+  background-color: govuk-colour("white");
+  color: govuk-colour("blue");
+  border: 2px solid govuk-colour("blue");
+}
+
+.tag-notstarted {
+  background-color: govuk-colour("light-grey");
+  color: govuk-colour("dark-grey");
+  border: 2px solid govuk-colour("light-grey");
+}
+
+// // Tag layout to include the label within the link
+
 .app-task-list__task-name {
+  span {
+    display: block;
+  }
+}
+
+.app-task-list__item .govuk-tag {
+  display: inline-block;
+  clear: both;
+}
+
+@include govuk-media-query($from: 450px) {
+  .app-task-list__task-name {
+    width: 100%;
     span {
-      display: block;
-    }
-  }
-  
-  .app-task-list__item .govuk-tag {
-    display: inline-block;
-    clear: both;
-  }
-  
-  @include govuk-media-query($from: 450px) {
-    .app-task-list__task-name {
-      width: 100%;
-      span {
-        display: inline;
-      }
-    }
-  }
-  
-  @include govuk-media-query($from: 450px) {
-    .app-task-list__item .govuk-tag {
       display: inline;
-      width: auto;
     }
   }
+}
+
+@include govuk-media-query($from: 450px) {
+  .app-task-list__item .govuk-tag {
+    display: inline;
+    width: auto;
+  }
+}
+
+// downloads
+
+.responsive-image {
+  width: 100%;
+}
+
+// uploading
+
+.progress-container {
+  background-image: url(/public/images/spinner.gif);
+  background-repeat: no-repeat;
+  background-position: center top;
+  text-align: center;
+  padding-top: 40px;
+  min-height: 400px;
+}
+
+
+// 
+
+.govuk-panel__title {
+  @include govuk-font($size: 36);
+  font-weight: bold;
+}
+
+a:visited {
+  color: $govuk-link-colour;
+}
+
+.govuk-phase-banner a:visited {
+  color: $govuk-link-colour;
+}
+
+.placeholder {
+  background-color: #eee;
+  padding: 80px;
+  text-align: center;
+  margin-bottom: govuk-spacing(2);
+}
+
+.indent-hairline {
+  border-left: 1px solid #b1b4b6;
+  padding-left: 15px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+.notify-width-container {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.notify-width-container-border {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: -10px;
+  padding-top: 10px;
+  border-bottom: 10px solid #1d70b8;
+}
+
+.thumbs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @include govuk-font($size: 19);
+  li a {
+    margin: 0 10px 20px 0;
+    padding: 0;
+    max-width: 200px;
+    padding: 10px;
+    border: 1px solid $govuk-border-colour;
+    text-align: center;
+    float: left;
+    margin-right: 10px;
+    min-height: 150px;
+  }
+  a,
+  a:visited {
+    color: $govuk-text-colour;
+    text-decoration: none;
+    &:hover {
+      background-color: #F8F7F7;
+    }
+  }
+}
+
+.thumb {
+  width: 100%;
+  max-width: 300px;
+}
+
+.app-task-list__intro {
+  padding-left: 30px;
+}
+
+body .interruption{
+  background-color: $govuk-link-colour;
+  padding: 20px;
+  p, h1 {
+    color: white;
+    max-width: 540px;
+  }
+  .govuk-button {
+    background-color: white;
+    color: black
+  }
+}
