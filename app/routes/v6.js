@@ -20,66 +20,13 @@ module.exports = function (router) {
         if (over16 === 'Over State Pension age') {
             res.redirect('/v6/over-spa');
         } else {
-            res.redirect('/v6/nationality');
+            res.redirect('/v6/health-condition');
         }
     });
 
     router.post('/v6/over-spa', (req, res, next) => {
-        res.redirect('/v6/nationality');
-    });
-
-    router.post('/v6/nationality', (req, res, next) => {
-        const whereLive = req.session.data['nationality'];
-        if (whereLive === 'A nationality of the European Economic Area (EEA)') {
-            res.redirect('/v6/living-in-uk');
-        } else {
-            res.redirect('/v6/living-in-gb');
-        }
-    });
-
-    router.post('/v6/living-in-uk', (req, res, next) => {
-        res.redirect('/v6/living-in-gb');
-    });
-
-    router.post('/v6/living-in-gb', (req, res, next) => {
-        res.redirect('/v6/eu-benefits');
-    });
-
-    router.post('/v6/eu-benefits', (req, res, next) => {
-        res.redirect('/v6/eu-worked');
-    });
-
-    router.post('/v6/eu-worked', (req, res, next) => {
-        const euWorked = req.session.data['eu-worked'];
-        if (euWorked === 'No') {
-            res.redirect('/v6/health-condition');
-        } else {
-            res.redirect('/v6/eu-insurance');
-        }
-    });
-
-    router.post('/v6/eu-insurance', (req, res, next) => {
         res.redirect('/v6/health-condition');
     });
-    
-
-    // router.post('/v6/refugee-protection', (req, res, next) => {
-    //     const refugeeProtection = req.session.data['refugee'];
-    //     if (refugeeProtection === 'Yes') {
-    //         res.redirect('/v6/working-living-abroad');
-    //     } else {
-    //         res.redirect('/v6/we-need-to-get-in-touch');
-    //     }
-    // });
-
-    // router.post('/v6/working-living-abroad', (req, res, next) => {
-    //     const outsideBritain = req.session.data['outside-britain'];
-    //     if (outsideBritain === 'No') {
-    //         res.redirect('/v6/health-condition');
-    //     } else {
-    //         res.redirect('/v6/we-need-to-get-in-touch');
-    //     }
-    // });
 
     router.post('/v6/health-condition', (req, res, next) => {
         const healthCondition = req.session.data['condition'];
@@ -88,7 +35,7 @@ module.exports = function (router) {
         } else if (healthCondition === 'No, never') {
             res.redirect('/v6/not-eligible');
         } else if (healthCondition === 'Not sure') {
-            res.redirect('/v6/about_your_health/condition');
+            res.redirect('/v6/over-9-months');
         }
     });
 
@@ -205,12 +152,59 @@ module.exports = function (router) {
     //   })
 
     router.post('/v6/auth/dev-ready/sign-in-2fa', (req, res) => {
-        res.redirect("/v6/name");
+        res.redirect("/v6/add-support-communicating");
     })
 
     // IDV CHECK END
 
-    // PERSONAL DETAILS AND HEALTH QUESTIONS
+    // ADDITIONAL SUPPORT QUESTIONS
+
+    router.post('/v6/add-support-communicating', (req, res, next) => {
+        res.redirect('/v6/add-support');
+    });
+
+    router.post('/v6/add-support', (req, res, next) => {
+        const addSupport = req.session.data['add-support'];
+        if (addSupport === 'Yes, all of the time or sometimes') {
+            res.redirect('/v6/add-support-help');
+        } else {
+            res.redirect('/v6/name');
+        }
+    });
+
+    router.post('/v6/add-support-help', (req, res, next) => {
+        const addsupportHelp = req.session.data['add-support-help'];
+        if (addsupportHelp === 'Yes') {
+            res.redirect('/v6/add-support-name');
+        } else {
+            res.redirect('/v6/name');
+        }
+    });
+
+    router.post('/v6/add-support-name', (req, res, next) => {
+        res.redirect('/v6/add-support-address');
+    });
+
+    router.post('/v6/add-support-address', (req, res, next) => {
+        const addsupportAddress = req.session.data['add-support-safe-address'];
+        if (addsupportAddress === 'No') {
+            res.redirect('/v6/add-support-address-other');
+        } else {
+            res.redirect('/v6/add-support-contact-details');
+        }
+    });
+
+    router.post('/v6/add-support-address-other', (req, res, next) => {
+        res.redirect('/v6/add-support-contact-details');
+    });
+
+    router.post('/v6/add-support-contact-details', (req, res, next) => {
+        res.redirect('/v6/name');
+    });
+
+    // ADDITIONAL SUPPORT QUESTIONS END
+
+    // PERSONAL DETAILS, RES & PRES AND HEALTH QUESTIONS
     router.post('/v6/name', (req, res, next) => {
         res.redirect('/v6/nino');
     });
@@ -237,6 +231,40 @@ module.exports = function (router) {
     });
 
     router.post('/v6/contact-details', (req, res, next) => {
+        res.redirect('/v6/nationality');
+    });
+
+    router.post('/v6/nationality', (req, res, next) => {
+        const whereLive = req.session.data['nationality'];
+        if (whereLive === 'A nationality of the European Economic Area (EEA)') {
+            res.redirect('/v6/living-in-uk');
+        } else {
+            res.redirect('/v6/living-in-gb');
+        }
+    });
+
+    router.post('/v6/living-in-uk', (req, res, next) => {
+        res.redirect('/v6/living-in-gb');
+    });
+
+    router.post('/v6/living-in-gb', (req, res, next) => {
+        res.redirect('/v6/eu-benefits');
+    });
+
+    router.post('/v6/eu-benefits', (req, res, next) => {
+        res.redirect('/v6/eu-worked');
+    });
+
+    router.post('/v6/eu-worked', (req, res, next) => {
+        const euWorked = req.session.data['eu-worked'];
+        if (euWorked === 'No') {
+            res.redirect('/v6/about_your_health/condition-new-2');
+        } else {
+            res.redirect('/v6/eu-insurance');
+        }
+    });
+
+    router.post('/v6/eu-insurance', (req, res, next) => {
         res.redirect('/v6/about_your_health/condition-new-2');
     });
 
@@ -297,7 +325,7 @@ module.exports = function (router) {
     });
 
     router.post('/v6/hospital-address', (req, res, next) => {
-        res.redirect('/v6/add-support-communicating');
+        res.redirect('/v6/check-answers');
     });
 
     router.post('/v6/in-care-home', (req, res, next) => {
@@ -305,63 +333,15 @@ module.exports = function (router) {
         if (inCarehome === 'Yes') {
             res.redirect('/v6/care-home-address');
         } else {
-            res.redirect('/v6/add-support-communicating');
+            res.redirect('/v6/check-answers');
         }
     });
 
     router.post('/v6/care-home-address', (req, res, next) => {
-        res.redirect('/v6/add-support-communicating');
-    });
-
-    // PERSONAL AND HEALTH QUESTIONS END
-
-
-    // ADDITIONAL SUPPORT QUESTIONS
-
-    router.post('/v6/add-support-communicating', (req, res, next) => {
-        res.redirect('/v6/add-support');
-    });
-
-    router.post('/v6/add-support', (req, res, next) => {
-        const addSupport = req.session.data['add-support'];
-        if (addSupport === 'Yes, all of the time or sometimes') {
-            res.redirect('/v6/add-support-help');
-        } else {
-            res.redirect('/v6/check-answers');
-        }
-    });
-
-    router.post('/v6/add-support-help', (req, res, next) => {
-        const addsupportHelp = req.session.data['add-support-help'];
-        if (addsupportHelp === 'Yes') {
-            res.redirect('/v6/add-support-name');
-        } else {
-            res.redirect('/v6/check-answers');
-        }
-    });
-
-    router.post('/v6/add-support-name', (req, res, next) => {
-        res.redirect('/v6/add-support-address');
-    });
-
-    router.post('/v6/add-support-address', (req, res, next) => {
-        const addsupportAddress = req.session.data['add-support-safe-address'];
-        if (addsupportAddress === 'No') {
-            res.redirect('/v6/add-support-address-other');
-        } else {
-            res.redirect('/v6/add-support-contact-details');
-        }
-    });
-
-    router.post('/v6/add-support-address-other', (req, res, next) => {
-        res.redirect('/v6/add-support-contact-details');
-    });
-
-    router.post('/v6/add-support-contact-details', (req, res, next) => {
         res.redirect('/v6/check-answers');
     });
 
-    // ADDITIONAL SUPPORT QUESTIONS END
+    // PERSONAL AND HEALTH QUESTIONS END
 
     // CHECK ANSWERS START
     router.post('/v6/check-answers', (req, res, next) => {
