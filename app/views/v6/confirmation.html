@@ -14,9 +14,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {{ govukPanel({
-        titleText: "Application registered - finish your application by [DD Month Year]"
-      }) }}
+      <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Application registered
+          </h1>
+          <div class="govuk-panel__body">
+            Finish your application by <br><strong>[DD Month Year]</strong>
+          </div>
+        </div>
 
       <p class="govuk-body">The first stage of your application for PIP has been registered with the Department for Work and Pensions. Your reference is your National Insurance number.</p>
 
@@ -26,7 +31,14 @@
 
       <p class="govuk-body">You can also upload and send any documentary evidence to support your application.</p>
 
-      <p class="govuk-body">You must do this by [DD Month Year].</p>
+      <p class="govuk-body">You must do this by [DD Month Year]. If you do not, we may your PIP claim.</p>
+
+      <p class="govuk-body">If you are getting Disability Living Allowance at the moment, this will stop if you do not send your answers and upload any evidence you have by this date.</p>
+
+      <p class="govuk-body">If you need to ask for more time, please contact:</p>
+
+        Phone: 0800 121 4433
+        Textphone: 0800 121 4493 if you have speech or hearing difficulties
 
       <p class="govuk-body">You can <a href="/v6/signed-out">sign out</a> of the service and return to it later to finish your application.</p>
 
