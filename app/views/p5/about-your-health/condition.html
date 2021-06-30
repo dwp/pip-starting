@@ -11,56 +11,55 @@
   {% include "p5/_back-link.html" %}
 {% endblock %}
 
+{% set conditionsLength %}
+{{ data.conditions | length }}
+{% endset %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/p5/about-your-health/conditions-details" method="post" novalidate>
+    <form action="/p5/about-your-health/check" method="post" novalidate>
 
-      {% call govukFieldset({
-        classes: 'moj-add-another__item',
-        legend: {
-          text: 'What health condition or disability do you have?',
-          classes: "govuk-fieldset__legend--l",
-          isPageHeading: true
-        }
-      }) %}
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--l">Your health conditions</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Condition</th>
+            <th scope="col" class="govuk-table__header">Start date</th>
+            <th scope="col" class="govuk-table__header">About your condition</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">{{ data['conditions'][0]['condition_name'] }}</th>
+            <td class="govuk-table__cell">{{ data['conditions'][0]['date'] }}</td>
+            <td class="govuk-table__cell"><a class="govuk-link" href="conditions-details">Give details</td>
+          </tr>
+          {% if conditionsLength > 1 %}
+          {% for condition in data.conditions %}
+          {% if not loop.first %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">{{ condition.condition_name }}</th>
+            <td class="govuk-table__cell">{{ condition.date }}</td>
+            <td class="govuk-table__cell"><a class="govuk-link" href="conditions-details-2">Give details</td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+    
+        </tbody>
+      </table>
 
-      <p>By condition or disability, we mean physical, sight, hearing or speech difficulties, learning, developmental or behavioural difficulties or mental health conditions.</p>
+      
 
-      <p>You can add other conditions and disabilities later if you need to.</p>
+      
 
-      {{ govukInput({
-        id: 'condition-name-1',
-        name: 'condition-name-1',
-        label: {
-          html: 'Name of your first condition or disability',
-          classes: 'govuk-!-font-weight-bold'
-        },
-        hint: {
-          text: "For example, kidney failure."
-        }
-      }) }}
-
-      {{ govukInput({
-        id: 'condition-date-1',
-        name: 'condition-date-1',
-        classes: "govuk-!-width-two-thirds",
-        label: {
-          html: 'Approximate start date',
-          classes: 'govuk-!-font-weight-bold'
-        },
-        hint: {
-          text: "For example, about 14 months ago."
-        }
-      }) }}
-
-      {% endcall %}
-
-      {{ govukButton({
+      <!-- {{ govukButton({
         text: 'Save and continue'
-      }) }}
+      }) }} -->
+      <p><a href="../list?aboutyourhealth=completed" class="govuk-button">Confirm and save</a></p>
 
     </form>
 

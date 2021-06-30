@@ -423,7 +423,7 @@ module.exports = function (router) {
     });
 
     router.post('v6/save_and_return/signed-in', (req, res, next) => {
-        res.redirect('/v6/in-hospital');
+        res.redirect('/v6/#');
     });
     // RETURNING USER FLOW END
 };
