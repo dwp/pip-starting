@@ -10,8 +10,8 @@ module.exports = function (router) {
         return (req.session.data['nationality'] === 'Another nationality' ||
           (
             req.session.data['nationality'] === 'A nationality of the European Economic Area (EEA)' &&
-            (req.session.data['gb'] === 'No')
-            // && (req.session.data['living-in-uk'] === 'No' || req.session.data['living-in-uk'] === 'Not sure')
+            (req.session.data['gb'] === 'No')&& 
+            (req.session.data['living-in-uk'] === 'No' || req.session.data['living-in-uk'] === 'Not sure')
           ) ||
           (req.session.data['eu-benefits'] === 'Yes' || req.session.data['eu-benefits'] === 'Not sure') ||
           (req.session.data['eu-insurance'] === 'Yes' || req.session.data['eu-insurance'] === 'Not sure') ||
@@ -252,7 +252,12 @@ module.exports = function (router) {
     });
 
     router.post('/v6/living-in-uk', (req, res, next) => {
-        res.redirect('/v6/living-in-gb');
+        const livingUk = req.session.data['living-in-uk'];
+        if (livingUk === 'No') {
+        res.redirect('/v6/health-condition');
+        } else {
+            res.redirect('/v6/living-in-gb');
+        }
     });
 
     router.post('/v6/living-in-gb', (req, res, next) => {
