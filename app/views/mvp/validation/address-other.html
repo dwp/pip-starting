@@ -1,7 +1,7 @@
 {% extends "layout-signed-in-mvp.html" %}
 
 {% block pageTitle %}
-Address
+Safe address
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,112 +23,81 @@ Address
           <div class="govuk-error-summary__body">
             <ul class="govuk-list govuk-error-summary__list">
               <li>
-                <a href="#address-line-1">Enter building and street</a>
+                <a href="#other-address-line-1">Enter building and street</a>
               </li>
               <li>
-                <a href="#address-town">Enter a town or city</a>
+                <a href="#other-address-town">Enter a town or city</a>
               </li>
               <li>
-                <a href="#address-county">Enter a county</a>
+                <a href="#other-address-county">Enter a county</a>
               </li>
               <li>
-                <a href="#address-postcode">Enter a postcode</a>
-              </li>
-              <li>
-                <a href="#safe-address-1">Select if yes we can write to you at this address</a>
+                <a href="#other-address-postcode">Enter a postcode</a>
               </li>
             </ul>
           </div>
         </div> <!-- govuk-error-summary -->
       </div> <!-- govuk-form-group -->
 
-
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">
-              Your address
+              What address can we write to?
             </h1>
           </legend>
+
           <div class="govuk-form-group govuk-form-group--error">
-            <label class="govuk-label" for="address-line-1">
+            <label class="govuk-label" for="other-address-line-1">
               Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
             </label>
             <span id="dob-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span> Enter a building and street
             </span>
-            <input class="govuk-input govuk-input--error" id="address-line-1" name="address-line-1" type="text"
-              autocomplete="address-line1">
+            <input class="govuk-input govuk-input--error" id="other-address-line-1" name="other-address-line-1" type="text"
+              autocomplete="other-address-line1">
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group">
-            <label class="govuk-label" for="address-line-2">
+            <label class="govuk-label" for="other-address-line-2">
               <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
             </label>
-            <input class="govuk-input" id="address-line-2" name="address-line-2" type="text"
-              autocomplete="address-line2">
+            <input class="govuk-input" id="other-address-line-2" name="other-address-line-2" type="text"
+              autocomplete="other-address-line2">
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group govuk-form-group--error">
-            <label class="govuk-label" for="address-town">
+            <label class="govuk-label" for="other-address-town">
               Town or city
             </label>
             <span id="dob-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span> Enter a town or city
             </span>
-            <input class="govuk-input govuk-input--error govuk-!-width-two-thirds" id="address-town" name="address-town"
-              type="text" autocomplete="address-level2">
+            <input class="govuk-input govuk-input--error govuk-!-width-two-thirds" id="other-address-town" name="other-address-town"
+              type="text" autocomplete="other-address-level2">
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group govuk-form-group--error">
-            <label class="govuk-label" for="address-county">
+            <label class="govuk-label" for="other-address-county">
               County
             </label>
             <span id="dob-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span> Enter a county
             </span>
-            <input class="govuk-input govuk-input--error govuk-!-width-two-thirds" id="address-county"
-              name="address-county" type="text">
+            <input class="govuk-input govuk-input--error govuk-!-width-two-thirds" id="other-address-county" name="other-address-county"
+              type="text">
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group govuk-form-group--error">
-            <label class="govuk-label" for="address-postcode">
+            <label class="govuk-label" for="other-address-postcode">
               Postcode
             </label>
             <span id="dob-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span> Enter a postcode
             </span>
-            <input class="govuk-input govuk-input--error govuk-input--width-10" id="address-postcode"
-              name="address-postcode" type="text" autocomplete="postal-code">
+            <input class="govuk-input govuk-input--error govuk-input--width-10" id="other-address-postcode" name="other-address-postcode"
+              type="text" autocomplete="other-postal-code">
           </div> <!-- govuk-form-group -->
-
-        </fieldset>
-      </div> <!-- govuk-form-group -->
-
-      <div class="govuk-form-group govuk-form-group--error ">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h1 class="govuk-fieldset__heading">
-              Can we write to you at this address?
-            </h1>
-          </legend>
-          <span id="dob-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Select if yes we can write to you at this address
-          </span>
-          <div class="govuk-radios govuk-radios--inline">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="safe-address-1" name="safe-address" type="radio" value="Yes">
-              <label class="govuk-label govuk-radios__label" for="safe-address-1">
-                Yes
-              </label>
-            </div> <!-- govuk-radios__item -->
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="safe-address-2" name="safe-address" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="safe-address-2">
-                No
-              </label>
-            </div> <!-- govuk-radios__item -->
-          </div> <!-- govuk-radios govuk-radios--inline -->
         </fieldset>
       </div> <!-- govuk-form-group -->
 
