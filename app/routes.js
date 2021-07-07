@@ -18,6 +18,7 @@ const v3b = require('./routes/v3b')
 const v4 = require('./routes/v4')
 const v5 = require('./routes/v5')
 const v6 = require('./routes/v6')
+const mvp = require('./routes/mvp')
 const pip2 = require('./routes/p5.js')
 const authRoutes = require('./routes/auth')
 const idvRoutes = require('./routes/idv')
@@ -42,6 +43,7 @@ v3b(router);
 v4(router);
 v5(router);
 v6(router);
+mvp(router);
 pip2(router);
 router.use('/', authRoutes)
 router.use('/', idvRoutes)
