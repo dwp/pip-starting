@@ -1,4 +1,4 @@
-{% extends "layout-signed-in-v6.html" %}
+{% extends "layout-signed-in-v7.html" %}
 
 {% block pageTitle %}
 Check your answers
@@ -6,7 +6,7 @@ Check your answers
 
 {% block beforeContent %}
 {% include "includes/phase-banner.html" %}
-{% include "includes/back-link.html" %}
+{% include "includes/back-link-v7.html" %}
 {% endblock %}
 
 {% set conditionsLength %}
@@ -570,7 +570,7 @@ Check your answers
                 {{ data['hcp'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-question">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-question">
                   Change<span class="govuk-visually-hidden"> Health Professional</span>
                 </a>
               </dd>
@@ -586,7 +586,7 @@ Check your answers
                 {{ data['hcp-1-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-1">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-1">
                   Change<span class="govuk-visually-hidden"> health professional name</span>
                 </a>
               </dd>
@@ -599,7 +599,7 @@ Check your answers
                 {{ data['hcp-1-profession'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-1">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-1">
                   Change<span class="govuk-visually-hidden"> profession</span>
                 </a>
               </dd>
@@ -612,7 +612,7 @@ Check your answers
                 {{ data['hcp-1-phone'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-1">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-1">
                   Change<span class="govuk-visually-hidden"> phone number</span>
                 </a>
               </dd>
@@ -630,7 +630,7 @@ Check your answers
                 {{ data['hcp-1-address-postcode'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-1">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-1">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
@@ -643,7 +643,7 @@ Check your answers
                 {{ data['hcp-1-month'] }} - {{ data['hcp-1-year'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-1">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-1">
                   Change<span class="govuk-visually-hidden"> lasxt seen them</span>
                 </a>
               </dd>
@@ -657,7 +657,7 @@ Check your answers
                 {{ data['hcp-2'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-another">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-another">
                   Change<span class="govuk-visually-hidden"> another health professional</span>
                 </a>
               </dd>
@@ -673,7 +673,7 @@ Check your answers
                 {{ data['hcp-2-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-2">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-2">
                   Change<span class="govuk-visually-hidden"> health professional name</span>
                 </a>
               </dd>
@@ -686,7 +686,7 @@ Check your answers
                 {{ data['hcp-2-profession'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-2">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-2">
                   Change<span class="govuk-visually-hidden"> profession</span>
                 </a>
               </dd>
@@ -699,7 +699,7 @@ Check your answers
                 {{ data['hcp-2-phone'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-2">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-2">
                   Change<span class="govuk-visually-hidden"> phone number</span>
                 </a>
               </dd>
@@ -717,7 +717,7 @@ Check your answers
                 {{ data['hcp-2-address-postcode'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-2">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-2">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
@@ -730,7 +730,7 @@ Check your answers
                 {{ data['hcp-2-month'] }} - {{ data['hcp-2-year'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-2">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-2">
                   Change<span class="govuk-visually-hidden"> lasxt seen them</span>
                 </a>
               </dd>
@@ -744,7 +744,7 @@ Check your answers
                 {{ data['hcp-3'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-another-2">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-another-2">
                   Change<span class="govuk-visually-hidden"> another health professional</span>
                 </a>
               </dd>
@@ -760,7 +760,7 @@ Check your answers
                 {{ data['hcp-3-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-3">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-3">
                   Change<span class="govuk-visually-hidden"> health professional name</span>
                 </a>
               </dd>
@@ -773,7 +773,7 @@ Check your answers
                 {{ data['hcp-3-profession'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-3">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-3">
                   Change<span class="govuk-visually-hidden"> profession</span>
                 </a>
               </dd>
@@ -786,7 +786,7 @@ Check your answers
                 {{ data['hcp-3-phone'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-3">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-3">
                   Change<span class="govuk-visually-hidden"> phone number</span>
                 </a>
               </dd>
@@ -804,7 +804,7 @@ Check your answers
                 {{ data['hcp-3-address-postcode'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-3">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-3">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
@@ -817,7 +817,7 @@ Check your answers
                 {{ data['hcp-3-month'] }} - {{ data['hcp-3-year'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-3">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-3">
                   Change<span class="govuk-visually-hidden"> lasxt seen them</span>
                 </a>
               </dd>
@@ -831,7 +831,7 @@ Check your answers
                 {{ data['hcp-4'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-another-2">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-another-2">
                   Change<span class="govuk-visually-hidden"> another health professional</span>
                 </a>
               </dd>
@@ -866,7 +866,7 @@ Check your answers
                 {{ data['hospital-address-postcode'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-3">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-3">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
@@ -901,7 +901,7 @@ Check your answers
                 {{ data['care-home-address-postcode'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v6/about_your_health/hcp-3">
+                <a class="govuk-link" href="/v7/about_your_health/hcp-3">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
