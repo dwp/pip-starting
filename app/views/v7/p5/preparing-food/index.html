@@ -8,7 +8,7 @@
 
 {% block beforeContent %}
   {% include "p5/_beta-banner.html" %}
-  {% include "p5/_back-link.html" %}
+  {% include "includes/back-link-v7.html" %}
 {% endblock %}
 
 {% block content %}
@@ -16,7 +16,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/p5/preparing-food/index-answer" method="post" novalidate>
+    <form action="/v7/p5/preparing-food/index-answer" method="post" novalidate>
 
       {{ govukRadios({
         name: "preparingfood-question",
@@ -58,7 +58,7 @@
 
     </form>
 
-    {% include "p5/preparing-food/_return-link.html" %}
+    {% include "v7/p5/preparing-food/_return-link.html" %}
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
