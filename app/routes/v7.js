@@ -390,9 +390,9 @@ module.exports = function (router) {
         res.redirect('/v7/complex_contact_details/complex-contact-confirmation');
     });
 
-    router.post('/v7/confirmation', (req, res, next) => {
-        res.redirect('/v7/p5/list');
-    });
+    // router.post('/v7/confirmation', (req, res, next) => {
+    //     res.redirect('/p5/list');
+    // });
 
     // CHECK ANSWERS END
 
