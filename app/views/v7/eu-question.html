@@ -1,0 +1,69 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Receiving benefits from an EU country
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+                Are you, or a family member:
+            </h1>
+          </legend>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                What we mean by family member
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              By ‘family member’ we mean husband, wife, civil partner or a parent you’re dependent on. We need this information as pensions or benefits from another country might affect how much PIP you can get.
+            </div>
+          </details>
+  
+          <p>Select all that apply</p>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Receiving any pensions or benefits from an EEA/EU country or Switzerland?
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                Working or worked in an EEA/EU country or Switzerland and paid paying insurance connected to your work to an EEA country or Switzerland?
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                None of these
+              </label>
+            </div>
+          </div>
+      
+        </fieldset>
+      </div>
+
+
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}
