@@ -307,12 +307,21 @@ module.exports = function (router) {
     router.post('/v7/about_your_health/hcp-question', (req, res, next) => {
         const hcpQuestion = req.session.data['hcp'];
         if (hcpQuestion === 'Yes') {
-            res.redirect('/v7/about_your_health/hcp-1');
+            res.redirect('/v7/about_your_health/consent');
         } else {
             res.redirect('/v7/in-hospital');
         }
     });
 
+    router.post('/v7/about_your_health/consent', (req, res, next) => {
+        const conSent = req.session.data['consent'];
+        if (conSent === 'Yes, I agree') {
+            res.redirect('/v7/about_your_health/hcp-1');
+        } else {
+            res.redirect('/v7/in-hospital');
+        }
+    });  
+    
     router.post('/v7/about_your_health/hcp-1', (req, res, next) => {
         res.redirect('/v7/about_your_health/hcp-another');
     });
