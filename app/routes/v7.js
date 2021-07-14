@@ -396,7 +396,7 @@ module.exports = function (router) {
     });
 
     router.post('/v7/we-need-to-get-in-touch', (req, res, next) => {
-        res.redirect('/v7/complex_contact_details/complex-contact-confirmation');
+        res.redirect('/v7/confirmation');
     });
 
     // router.post('/v7/confirmation', (req, res, next) => {
