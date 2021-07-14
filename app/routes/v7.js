@@ -13,8 +13,7 @@ module.exports = function (router) {
             (req.session.data['gb'] === 'No')&& 
             (req.session.data['living-in-uk'] === 'No' || req.session.data['living-in-uk'] === 'Not sure')
           ) ||
-          (req.session.data['eu-benefits'] === 'Yes' || req.session.data['eu-benefits'] === 'Not sure') ||
-          (req.session.data['eu-insurance'] === 'Yes' || req.session.data['eu-insurance'] === 'Not sure') ||
+          (req.session.data['eu-question'].indexOf('Getting a pension or benefit from an EEA country') > -1 || req.session.data['eu-question'].indexOf('Paid or paying insurance to an EEA country') > -1 ) ||
           (
             (req.session.data['nationality'] === 'British' || req.session.data['nationality'] === 'Irish') &&
             (req.session.data['gb'] === 'No')
@@ -54,13 +53,13 @@ module.exports = function (router) {
             res.redirect('/v7/not-eligible')
         } else if (over9months === 'At least 9 months') {
             if (eligible) {
-                res.redirect('/v7/auth/dev-ready/register/start')
+                res.redirect('/p5/sign-in/register-start')
             } else {
                 res.redirect('/v7/not-eligible');
             }
         } else if (over9months === 'Not sure') {
             if (eligible) {
-                res.redirect('/v7/auth/dev-ready/register/start')
+                res.redirect('/p5/sign-in/register-start')
             } else {
                 res.redirect('/v7/not-eligible');
             }
