@@ -14,44 +14,36 @@
         <div class="govuk-grid-column-two-thirds">
             <h1 class="govuk-heading-l">Register</h1>
 
-            <p>Create an account so you can sign in securely and save your progress each time you visit.</p>
+      <form action="enter-details" method="post" novalidate>
 
-            <!-- <div class="govuk-inset-text">
-              <a href="/auth/default/sign-in">I have already registered</a>
-            </div> -->
-            <p>
-              <a href="/auth/dev-ready/sign-in">I have already registered</a>
-            </p>
+      <p>Register so you can securely sign in whenever you use the Apply for PIP service.</p>
 
-            <h2 class="govuk-heading-m">Before you start</h2>
-            <p>You will need:</p>
+      <h2 class="govuk-heading-m">Before you start</h2>
 
-            <ul class="govuk-list govuk-list--bullet">
-                <li>an email address</li>
-                <li>a mobile phone</li>
-            </ul>
+      <p>You will need:</p>
 
-            <!-- <p>You will also need information from 2 sources so we can check we are dealing with the right person. You can choose from:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the email address used by the Department for Work and Pensions to contact you</li>
+        <li>your National Insurance number</li>
+        <li>your mobile phone</li>
+      </ul>
 
-            <ul class="govuk-list govuk-list--bullet">
-                <li>a UK passport</li>
-                <li>payslips or P60</li>
-                <li>information about tax credits, if you claim them</li>
-                <li>details of your bank accounts, loans, mortgages or credit agreements</li>
-            </ul> -->
+      <h2 class="govuk-heading-m">What happens next</h2>
 
-            <!-- <p><a href="">I do not have this information</a></p> -->
+      <p>We will send a 6-digit security code to your mobile phone or email address to check that it belongs to you.</p>
 
-            <h2 class="govuk-heading-m">What happens next</h2>
-            <p>We will send security codes to your email and mobile phone to check that they belong to you.</p>
-            <p>You will create a password, which you will use with your email address to sign in securely.</p>
-            <!-- <p>We will ask some questions to check we are dealing with the right person and to protect you against fraud. We will then check this information against our records.</p> -->
-            <p>Each time you sign in we will send a new security code to your mobile phone.</p>
+      <p>You will also need to create a password.</p>
 
-            {{ govukButton({
-                text: "Continue",
-                href: "email-address.html"
-            }) }}
+      <p>Whenever you sign in we will send a new security code to your mobile phone or email address.</p>
+
+      <p>We will check your details against our records to make sure we are dealing with the right person. This also helps protect you from fraud.</p>
+
+
+      <div style="margin-top: 30px"></div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
 
         </div>
     </div>
