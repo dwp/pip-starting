@@ -53,13 +53,13 @@ module.exports = function (router) {
             res.redirect('/v7/not-eligible')
         } else if (over9months === 'At least 9 months') {
             if (eligible) {
-                res.redirect('/p5/sign-in/register-start')
+                res.redirect('/p5/sign-in/intro-question')
             } else {
                 res.redirect('/v7/not-eligible');
             }
         } else if (over9months === 'Not sure') {
             if (eligible) {
-                res.redirect('/p5/sign-in/register-start')
+                res.redirect('/p5/sign-in/intro-question')
             } else {
                 res.redirect('/v7/not-eligible');
             }
