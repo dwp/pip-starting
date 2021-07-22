@@ -358,10 +358,14 @@ module.exports = function (router) {
     router.post('/v8/in-hospital', (req, res, next) => {
         const inHospital = req.session.data['hospital'];
         if (inHospital === 'Yes') {
-            res.redirect('/v8/hospital-address');
+            res.redirect('/v8/hospital-admission');
         } else {
             res.redirect('/v8/in-care-home');
         }
+    });
+
+    router.post('/v8/hospital-admission', (req, res, next) => {
+        res.redirect('/v8/hospital-address');
     });
 
     router.post('/v8/hospital-address', (req, res, next) => {
@@ -371,10 +375,14 @@ module.exports = function (router) {
     router.post('/v8/in-care-home', (req, res, next) => {
         const inCarehome = req.session.data['carehome'];
         if (inCarehome === 'Yes') {
-            res.redirect('/v8/care-home-address');
+            res.redirect('/v8/care-home-admission');
         } else {
             res.redirect('/v8/check-answers');
         }
+    });
+
+    router.post('/v8/care-home-admission', (req, res, next) => {
+        res.redirect('/v8/care-home-address');
     });
 
     router.post('/v8/care-home-address', (req, res, next) => {
