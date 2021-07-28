@@ -18,10 +18,42 @@ When were you admitted to a care home
 
         <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="care-home-admission">
-                What date were you admitted to a care or nursing home?
+                When did you go in to the care or nursing home?
               </label>
             </h1>
-            <input class="govuk-input govuk-input--width-20" id="care-home-admission" name="care-home-admission" type="text">
+            <div id="dob-hint" class="govuk-hint">
+              For example, 30 9 2021
+            </div>
+
+          <div class="govuk-date-input" id="dob">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day"
+                  type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month"
+                  type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year"
+                  type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div> <!-- govuk-date-input__item -->
+          </div> <!-- govuk-date-input -->
           </div>
 
       <input type="submit" class="govuk-button" value="Save and continue" id="submit">
