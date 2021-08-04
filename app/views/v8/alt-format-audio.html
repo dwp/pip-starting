@@ -1,0 +1,69 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Alternative contact format audio
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="eu-question">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Which kind of audio format do you need?
+                        </h1>
+                    </legend>
+
+                    <p>Select all that apply.</p>
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="alt-format-audio-1" name="alt-format-audio"
+                                type="checkbox" value="Audio cassetts">
+                            <label class="govuk-label govuk-checkboxes__label" for="alt-format-audio-1">
+                                Audio cassette
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="alt-format-audio-2" name="alt-format-audio-sl"
+                                type="checkbox" value="Audio CD">
+                            <label class="govuk-label govuk-checkboxes__label" for="alt-format-audio-2">
+                                Audio CD
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="alt-format-audio-3" name="alt-format-audio"
+                                type="checkbox" value="Audio DVD">
+                            <label class="govuk-label govuk-checkboxes__label" for="alt-format-audio-3">
+                                Audio DVD
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__divider">
+                            <p>or</p>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="alt-format-audio-4" name="alt-format-audio"
+                                type="checkbox" value="Audio MP3">
+                            <label class="govuk-label govuk-checkboxes__label" for="alt-format-audio-4">
+                                Audio MP3
+                            </label>
+                        </div>
+                    </div> <!-- govuk-checkboxes -->
+
+                </fieldset>
+            </div> <!-- govuk-form-group -->
+
+            <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+        </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}

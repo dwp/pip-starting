@@ -1,0 +1,90 @@
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Alternative contact format paper
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+<form id="form" method="post" action="#">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="eu-question">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Which kind of other paper format do you need?
+                        </h1>
+                    </legend>
+                    <p>Select all that apply.</p>
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="alt-format-paper-1" name="alt-format-paper"
+                                type="checkbox" value="Coloured paper">
+                            <label class="govuk-label govuk-checkboxes__label" for="alt-format-paper-1">
+                               Coloured paper
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="alt-format-paper-2" name="alt-format-paper"
+                                type="checkbox" value="Large print">
+                            <label class="govuk-label govuk-checkboxes__label" for="alt-format-paper-2">
+                                Large print
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="alt-format-paper-3" name="alt-format-paper"
+                                type="checkbox" value="Large print custom font">
+                            <label class="govuk-label govuk-checkboxes__label" for="alt-format-paper-3">
+                                Large print with a custom font
+                            </label>
+                        </div>
+                        
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="alt-format-paper-4" name="alt-format-paper"
+                                type="checkbox" value="Web accessible PDF">
+                            <label class="govuk-label govuk-checkboxes__label" for="alt-format-paper-4">
+                                Web accessible PDF
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="alt-format-paper-5" name="alt-format-paper"
+                                type="checkbox" value="Email">
+                            <label class="govuk-label govuk-checkboxes__label" for="alt-format-paper-5">
+                                Email
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__divider">
+                            <p>or</p>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="alt-format-paper-6" name="alt-format-paper"
+                                type="checkbox" value="Other paper format">
+                            <label class="govuk-label govuk-checkboxes__label" for="alt-format-paper-6">
+                                Other
+                            </label>
+                            
+                        </div>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="alt-format-details">
+                              Give details
+                            </label>
+                            <input class="govuk-input" id="alt-format-details" name="alt-format-details" type="text">
+                        </div>
+                    </div> <!-- govuk-checkboxes -->
+
+                </fieldset>
+            </div> <!-- govuk-form-group -->
+
+            <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+        </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-column-two-thirds -->
+</form>
+
+{% endblock %}
