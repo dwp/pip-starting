@@ -23,7 +23,8 @@
     <form action="/p5/about-your-health/check" method="post" novalidate>
 
       <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--l">Your health conditions</caption>
+        <h1 class="govuk-heading-l">Your health conditions</h1>
+        <p>Enter details for each of your conditions or disabilities</p>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Condition</th>
@@ -62,6 +63,8 @@
       <p><a href="../list?aboutyourhealth=completed" class="govuk-button">Confirm and save</a></p>
 
     </form>
+
+    <p><a href="#">Add another condition or disability</a></p>
 
     {% include "p5/about-your-health/_return-link.html" %}
 
