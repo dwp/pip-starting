@@ -6,20 +6,20 @@ module.exports = function (router) {
             || req.session.data['overspa'] === 'No')
     }
 
-    function complexCase (req) {
-        return (req.session.data['nationality'] === 'Another nationality' ||
-          (
-            req.session.data['nationality'] === 'A nationality of the European Economic Area (EEA)' &&
-            (req.session.data['gb'] === 'No')&& 
-            (req.session.data['living-in-uk'] === 'No' || req.session.data['living-in-uk'] === 'Not sure')
-          ) ||
-          (req.session.data['eu-question'].indexOf('Getting a pension or benefit from an EEA country') > -1 || req.session.data['eu-question'].indexOf('Paid or paying insurance to an EEA country') > -1 ) ||
-          (
-            (req.session.data['nationality'] === 'British' || req.session.data['nationality'] === 'Irish') &&
-            (req.session.data['gb'] === 'No')
-          )
-        )
-      }
+    // function complexCase (req) {
+    //     return (req.session.data['nationality'] === 'Another nationality' ||
+    //       (
+    //         req.session.data['nationality'] === 'A nationality of the European Economic Area (EEA)' &&
+    //         (req.session.data['gb'] === 'No')&& 
+    //         (req.session.data['living-in-uk'] === 'No' || req.session.data['living-in-uk'] === 'Not sure')
+    //       ) ||
+    //       (req.session.data['eu-question'].indexOf('Getting a pension or benefit from an EEA country') > -1 || req.session.data['eu-question'].indexOf('Paid or paying insurance to an EEA country') > -1 ) ||
+    //       (
+    //         (req.session.data['nationality'] === 'British' || req.session.data['nationality'] === 'Irish') &&
+    //         (req.session.data['gb'] === 'No')
+    //       )
+    //     )
+    //   }
 
     // ELIGIBILITY QUESTIONS
     router.post('/v8/over-16', (req, res, next) => {
@@ -392,17 +392,21 @@ module.exports = function (router) {
     // PERSONAL AND HEALTH QUESTIONS END
 
     // CHECK ANSWERS START
-    router.post('/v8/check-answers', (req, res, next) => {
-        console.log(req.session.data)
-        const complex = complexCase(req);
-        if (!complex) {
-            res.redirect('/v8/confirmation')
-        } else {
-            res.redirect('/v8/we-need-to-get-in-touch')
-        };
-    });
+    // router.post('/v8/check-answers', (req, res, next) => {
+    //     console.log(req.session.data)
+    //     const complex = complexCase(req);
+    //     if (!complex) {
+    //         res.redirect('/v8/confirmation')
+    //     } else {
+    //         res.redirect('/v8/we-need-to-get-in-touch')
+    //     };
+    // });
 
-    router.post('/v8/we-need-to-get-in-touch', (req, res, next) => {
+    // router.post('/v8/we-need-to-get-in-touch', (req, res, next) => {
+    //     res.redirect('/v8/confirmation');
+    // });
+
+    router.post('/v8/check-answers', (req, res, next) => {
         res.redirect('/v8/confirmation');
     });
 
