@@ -245,7 +245,7 @@ module.exports = function (router) {
             res.redirect('/v8/alt-format-sign-language');  }
         else if (altFormat === 'Audio') {
             res.redirect('/v8/alt-format-audio');   }       
-        else if (altFormat === 'Other paper formats') {
+        else if (altFormat === 'Other formats') {
             res.redirect('/v8/alt-format-paper'); }
         else {
             res.redirect('/v8/nationality');
