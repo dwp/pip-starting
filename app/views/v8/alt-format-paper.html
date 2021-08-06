@@ -18,36 +18,56 @@ Alternative contact format paper
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                         <h1 class="govuk-fieldset__heading">
-                            Which type of other paper format do you need?
+                            Which other format do you need?
                         </h1>
                     </legend>
                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="alt-format-paper-1" name="alt-format-paper"
-                                type="radio" value="Coloured paper">
+                                type="radio" value="Coloured paper" data-aria-controls="conditional-paper">
                             <label class="govuk-label govuk-radios__label" for="alt-format-paper-1">
                                 Coloured paper
                             </label>
                         </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                            id="conditional-paper">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="paper-details">
+                                    Give details
+                                </label>
+                                <input class="govuk-input govuk-!-width-two-thirds" id="paper-details"
+                                    name="paper-details" type="text">
+                            </div> <!-- govuk-form-group -->
+                        </div>
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="alt-format-paper-2" name="alt-format-paper"
-                                type="radio" value="Large print">
+                                type="radio" value="Large print - 16 font">
                             <label class="govuk-label govuk-radios__label" for="alt-format-paper-2">
-                                Large print
+                                Large print &ndash; 16 font
                             </label>
                         </div>
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="alt-format-paper-3" name="alt-format-paper"
-                                type="radio" value="Large print with ccustome font">
+                                type="radio" value="Large print with custom font" data-aria-controls="conditional-custom">
                             <label class="govuk-label govuk-radios__label" for="alt-format-paper-3">
                                 Large print with a custom font
                             </label>
                         </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                            id="conditional-custom">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="custom-details">
+                                    Give details
+                                </label>
+                                <input class="govuk-input govuk-!-width-two-thirds" id="custom-details"
+                                    name="custom-details" type="text">
+                            </div> <!-- govuk-form-group -->
+                        </div>
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="alt-format-paper-4" name="alt-format-paper"
-                                type="radio" value="Web accessible PDF">
+                                type="radio" value="Accessible PDF">
                             <label class="govuk-label govuk-radios__label" for="alt-format-paper-4">
-                                Web accessible PDF
+                                Accessible PDF
                             </label>
                         </div>
                         <div class="govuk-radios__item">
