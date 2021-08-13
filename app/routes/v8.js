@@ -189,7 +189,7 @@ module.exports = function (router) {
     });
 
     router.post('/v8/add-support-name', (req, res, next) => {
-        res.redirect('/v8/add-support-address');
+        res.redirect('/v8/name');
     });
 
     router.post('/v8/add-support-address', (req, res, next) => {
