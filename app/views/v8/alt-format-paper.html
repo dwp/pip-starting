@@ -14,91 +14,127 @@ Alternative contact format paper
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
+
             <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                         <h1 class="govuk-fieldset__heading">
                             Which other format do you need?
                         </h1>
                     </legend>
-                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="alt-format-paper-1" name="alt-format-paper"
-                                type="radio" value="Coloured paper" data-aria-controls="conditional-paper">
-                            <label class="govuk-label govuk-radios__label" for="alt-format-paper-1">
+                    
+                    <div id="contact-hint" class="govuk-hint">
+                        Select all options that are relevant to you.
+                    </div>
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="alt-format-paper-1" name="alt-format-paper"
+                                type="checkbox" value="email" data-aria-controls="conditional-contact">
+                            <label class="govuk-label govuk-checkboxes__label" for="alt-format-paper">
                                 Coloured paper
                             </label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                            id="conditional-paper">
+                        </div> <!-- govuk-checkboxes__item -->
+                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                            id="conditional-contact">
                             <div class="govuk-form-group">
-                                <label class="govuk-label" for="paper-details">
+                                <label class="govuk-label" for="contact-by-email">
                                     Give details
                                 </label>
-                                <input class="govuk-input govuk-!-width-two-thirds" id="paper-details"
-                                    name="paper-details" type="text">
+                                <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-email"
+                                    name="contact-by-email" type="email" spellcheck="false" autocomplete="email">
                             </div> <!-- govuk-form-group -->
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="alt-format-paper-2" name="alt-format-paper"
-                                type="radio" value="Large print - 16 font">
-                            <label class="govuk-label govuk-radios__label" for="alt-format-paper-2">
+                        </div> <!-- govuk-checkboxes__conditional -->
+
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="alt-format-paper-2" name="alt-format-paper"
+                                type="checkbox" value="phone" data-aria-controls="conditional-contact-2">
+                            <label class="govuk-label govuk-checkboxes__label" for="alt-format-paper-2">
                                 Large print &ndash; 16 font
                             </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="alt-format-paper-3" name="alt-format-paper"
-                                type="radio" value="Large print with custom font" data-aria-controls="conditional-custom">
-                            <label class="govuk-label govuk-radios__label" for="alt-format-paper-3">
+                        </div> <!-- govuk-checkboxes__item -->
+                        <!-- div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-2">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="contact-by-phone">
+                          Phone number
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="tel" autocomplete="tel"></div>
+                     </div> -->
+
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="alt-format-paper-3" name="alt-format-paper"
+                                type="checkbox" value="text message" data-aria-controls="conditional-contact-3">
+                            <label class="govuk-label govuk-checkboxes__label" for="alt-format-paper-3">
                                 Large print with a custom font
                             </label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                            id="conditional-custom">
+                        </div> <!-- govuk-checkboxes__item -->
+                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                            id="conditional-contact-3">
                             <div class="govuk-form-group">
-                                <label class="govuk-label" for="custom-details">
+                                <label class="govuk-label" for="contact-by-text">
                                     Give details
                                 </label>
-                                <input class="govuk-input govuk-!-width-two-thirds" id="custom-details"
-                                    name="custom-details" type="text">
+                                <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-text"
+                                    name="contact-by-text" type="tel" autocomplete="tel">
                             </div> <!-- govuk-form-group -->
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="alt-format-paper-4" name="alt-format-paper"
-                                type="radio" value="Accessible PDF">
-                            <label class="govuk-label govuk-radios__label" for="alt-format-paper-4">
+                        </div> <!-- govuk-checkboxes__conditional -->
+
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="alt-format-paper-4" name="alt-format-paper"
+                                type="checkbox" value="text message" data-aria-controls="conditional-contact-4">
+                            <label class="govuk-label govuk-checkboxes__label" for="alt-format-paper-4">
                                 Accessible PDF
                             </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="alt-format-paper-5" name="alt-format-paper"
-                                type="radio" value="Email">
-                            <label class="govuk-label govuk-radios__label" for="alt-format-paper-5">
+                        </div> <!-- govuk-checkboxes__item -->
+                        <!-- <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-4">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="contact-by-text">
+                            Mobile phone number
+                          </label>
+                          <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel" autocomplete="tel"></div>
+                      </div> -->
+
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="alt-format-paper-5" name="alt-format-paper"
+                                type="checkbox" value="text message" data-aria-controls="conditional-contact-5">
+                            <label class="govuk-label govuk-checkboxes__label" for="alt-format-paper-5">
                                 Email
                             </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="alt-format-paper-6" name="alt-format-paper"
-                                type="radio" value="Other" data-aria-controls="conditional-format">
-                            <label class="govuk-label govuk-radios__label" for="alt-format-paper-6">
+                        </div> <!-- govuk-checkboxes__item -->
+                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                            id="conditional-contact-5">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="contact-by-text">
+                                    Enter an email address
+                                </label>
+                                <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-text"
+                                    name="contact-by-text" type="tel" autocomplete="tel">
+                            </div> <!-- govuk-form-group -->
+                        </div> <!-- govuk-checkboxes__conditional -->
+
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="alt-format-paper-6" name="alt-format-paper"
+                                type="checkbox" value="text message" data-aria-controls="conditional-contact-6">
+                            <label class="govuk-label govuk-checkboxes__label" for="alt-format-paper-6">
                                 Other
                             </label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                            id="conditional-format">
+                        </div> <!-- govuk-checkboxes__item -->
+                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                            id="conditional-contact-6">
                             <div class="govuk-form-group">
-                                <label class="govuk-label" for="format-details">
+                                <label class="govuk-label" for="contact-by-text">
                                     Give details
                                 </label>
-                                <input class="govuk-input govuk-!-width-two-thirds" id="format-details"
-                                    name="format-details" type="text">
+                                <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-text"
+                                    name="contact-by-text" type="tel" autocomplete="tel">
                             </div> <!-- govuk-form-group -->
-                        </div>
-                    </div> <!-- govuk-radios govuk-radios--conditional -->
+                        </div> <!-- govuk-checkboxes__conditional -->
+
+                    </div> <!-- govuk-checkboxes -->
 
                 </fieldset>
             </div> <!-- govuk-form-group -->
 
+            <p class="govuk-body">DWP will contact you to arrange delivery</p>
 
             <input type="submit" class="govuk-button" value="Save and continue" id="submit">
 
