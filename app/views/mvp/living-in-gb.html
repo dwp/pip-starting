@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-signed-in-v7.html" %}
 
 {% block pageTitle %}
 Living in Great Britain
@@ -14,12 +14,15 @@ Living in Great Britain
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <fieldset class="govuk-fieldset" aria-describedby="living-in-uk-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">
-              Have you been in England, Scotland or Wales for at least 2 of the last 3 years?
+              Have you been in the UK for at least 2 of the last 3 years?
             </h1>
           </legend>
+            <div id="living-in-uk" class="govuk-hint">
+              The UK is England, Scotland, Wales and Northern Ireland.
+            </div>
           <div class="govuk-radios govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="gb-1" name="gb" type="radio" value="Yes">
