@@ -34,6 +34,9 @@ Safe address
               <li>
                 <a href="#other-address-postcode">Enter postcode</a>
               </li>
+              <li>
+                <a href="#address-country">Select country</a>
+              </li>
             </ul>
           </div>
         </div> <!-- govuk-error-summary -->
@@ -98,6 +101,24 @@ Safe address
             <input class="govuk-input govuk-input--error govuk-input--width-10" id="other-address-postcode"
               name="other-address-postcode" type="text" autocomplete="other-postal-code">
           </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group govuk-form-group--error">
+            <label class="govuk-label" for="country">
+              Country
+            </label>
+              <span id="dob-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Select country
+              </span>
+            <select class="govuk-select" id="country" name="country">
+              <option value="updated" selected>Select a country</option>
+              <option value="published">England</option>
+              <option value="views">Scotland</option>
+              <option value="comments">Wales</option>
+              <option value="views">Northern Ireland</option>
+              <option value="views">None of these</option>
+            </select>
+          </div>
+
         </fieldset>
       </div> <!-- govuk-form-group -->
 
