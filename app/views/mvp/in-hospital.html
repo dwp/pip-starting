@@ -20,20 +20,33 @@ Are you currently staying in hospital
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">
-              Are you currently staying in a hospital or hospice as an in-patient?
+              Are you currently staying in any of the these places?
             </h1>
           </legend>
-          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="hospital-1" name="hospital" type="radio" value="Yes">
+              <input class="govuk-radios__input" id="hospital-1" name="hospital" type="radio" value="Hospital">
               <label class="govuk-label govuk-radios__label" for="hospital-1">
-                Yes
+                Hospital
               </label>
             </div> <!-- govuk-radios__item -->
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="hospital-2" name="hospital" type="radio" value="No">
+              <input class="govuk-radios__input" id="hospital-2" name="hospital" type="radio" value="Hospice">
               <label class="govuk-label govuk-radios__label" for="hospital-2">
-                No
+                Hospice
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="hospital-3" name="hospital" type="radio" value="Care or nursing home">
+              <label class="govuk-label govuk-radios__label" for="hospital-3">
+                Care or nursing home
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="hospital-2" name="hospital" type="radio" value="None of these">
+              <label class="govuk-label govuk-radios__label" for="hospital-4">
+                None of these
               </label>
             </div> <!-- govuk-radios__item -->
           </div> <!-- govuk-radios govuk-radios -->
