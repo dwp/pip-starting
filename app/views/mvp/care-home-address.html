@@ -36,7 +36,7 @@ Care home or nursing home address
             </label>
             <input class="govuk-input" id="hospital-ward" name="hospital-ward" type="text"
               autocomplete="address-line1">
-          </div> <!-- govuk-form-group --> 
+          </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group">
             <label class="govuk-label" for="care-home-address-line-1">
@@ -75,6 +75,20 @@ Care home or nursing home address
             </label>
             <input class="govuk-input govuk-input--width-10" id="care-home-address-postcode" name="care-home-address-postcode" type="text"
               autocomplete="postal-code">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="country">
+              Country
+            </label>
+            <select class="govuk-select" id="country" name="country">
+              <option value="updated" selected>Select a country</option>
+              <option value="published">England</option>
+              <option value="views">Scotland</option>
+              <option value="comments">Wales</option>
+              <option value="views">Northern Ireland</option>
+              <option value="views">None of these</option>
+            </select>
           </div> <!-- govuk-form-group -->
 
         </fieldset>
