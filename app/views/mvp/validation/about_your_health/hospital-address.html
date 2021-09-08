@@ -37,6 +37,9 @@ Hospital address
               <li>
                 <a href="#hospital-address-postcode">Enter postcode</a>
               </li>
+              <li>
+                <a href="#hospital-country">Enter a country</a>
+              </li>
             </ul>
           </div>
         </div> <!-- govuk-error-summary -->
@@ -112,11 +115,113 @@ Hospital address
               autocomplete="postal-code">
           </div> <!-- govuk-form-group -->
 
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="country">
+          <div class="govuk-form-group govuk-form-group--error">
+            <label class="govuk-label" for="hospital-country">
               Country
             </label>
-            <select class="govuk-select" id="country" name="country">
+            <span id="dob-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Enter a country
+            </span>
+            <select class="govuk-select" id="hospital-country" name="hospital-country">
+              <option value="updated" selected>Select a country</option>
+              <option value="published">England</option>
+              <option value="views">Scotland</option>
+              <option value="comments">Wales</option>
+              <option value="views">Northern Ireland</option>
+              <option value="views">None of these</option>
+            </select>
+          </div>
+
+        </fieldset>
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <div class="govuk-form-group">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+          data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#hospital-address-postcode-2">Enter a real postcode</a>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- govuk-error-summary -->
+      </div> <!-- govuk-form-group -->
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Hospital address
+            </h1>
+          </legend>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="hospital-name">
+              Hospital name <span class="govuk-visually-hidden">line 1 of 2</span>
+            </label>
+            
+            <input class="govuk-input" id="hospital-name" name="hospital-name" type="text"
+              autocomplete="address-line1">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group ">
+            <label class="govuk-label" for="hospital-address-line-1">
+              Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+            </label>
+           
+            <input class="govuk-input" id="hospital-address-line-1" name="hospital-address-line-1" type="text"
+              autocomplete="address-line1">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="hospital-address-line-2">
+              <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+            </label>
+            <input class="govuk-input" id="hospital-address-line-2" name="hospital-address-line-2" type="text"
+              autocomplete="address-line2">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="hospital-address-town">
+              Town or city
+            </label>
+            
+            <input class="govuk-input govuk-!-width-two-thirds" id="hospital-address-town" name="hospital-address-town" type="text"
+              autocomplete="address-level2">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="hospital-address-county">
+              County
+            </label>
+            
+            <input class="govuk-input govuk-!-width-two-thirds" id="hospital-address-county" name="hospital-address-county" type="text">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group govuk-form-group--error">
+            <label class="govuk-label" for="hospital-address-postcode">
+              Postcode
+            </label>
+            <span id="dob-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Enter a real postcode
+            </span>
+            <input class="govuk-input govuk-input--width-10" id="hospital-address-postcode-2" name="hospital-address-postcode-2" type="text"
+              autocomplete="postal-code" value="@2S %L0">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group ">
+            <label class="govuk-label" for="hospital-country">
+              Country
+            </label>
+            <select class="govuk-select" id="hospital-country" name="hospital-country">
               <option value="updated" selected>Select a country</option>
               <option value="published">England</option>
               <option value="views">Scotland</option>
