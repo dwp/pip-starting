@@ -36,7 +36,8 @@ Nationality
             <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="nationality-3" name="nationality" type="radio"
-                  value="A nationality of the European Economic Area (EEA)" data-aria-controls="conditional-nationality-eea">
+                  value="A nationality of the European Economic Area (EEA)"
+                  data-aria-controls="conditional-nationality-eea">
                 <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
                   A nationality of the European Economic Area (EEA) or Switzerland
                 </label>
@@ -70,7 +71,7 @@ Nationality
                     <option value="Luxembourg">Luxembourg</option>
                     <option value="Malta">Malta</option>
                     <option value="Netherlands">Netherlands</option>
-                    <option value="Northern">Norway</option>
+                    <option value="Norway">Norway</option>
                     <option value="Poland">Poland</option>
                     <option value="Portugal">Portugal</option>
                     <option value="Romania">Romania</option>
@@ -84,30 +85,28 @@ Nationality
                 </div>
               </div> <!-- govuk-radios__item -->
 
-            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="nationality-4" name="nationality" type="radio"
-                  value="Another nationality" data-aria-controls="conditional-nationality">
-                <label class="govuk-label govuk-radios__label" for="contact">
-                  Another nationality
-                </label>
-              </div> <!-- govuk-radios__item -->
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-nationality">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="country">
-                    Country
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="nationality-4" name="nationality" type="radio"
+                    value="Another nationality" data-aria-controls="conditional-nationality">
+                  <label class="govuk-label govuk-radios__label" for="contact">
+                    Another nationality
                   </label>
-                  <select class="govuk-select" id="country" name="country">
-                    <option value="updated" selected>Select a country</option>
-                    <option value="England">England</option>
-                    <option value="Scotland">Scotland</option>
-                    <option value="Wales">Wales</option>
-                    <option value="Northern Ireland">Northern Ireland</option>
-                    <option value="None of these">None of these</option>
-                  </select>
-                </div> <!-- govuk-form-group -->
-              </div> <!-- govuk-radios__item -->
-            </div> <!-- govuk-radios -->
+                </div> <!-- govuk-radios__item -->
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-nationality">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="country">
+                      Country
+                    </label>
+                    <select class="govuk-select" id="country" name="country">
+                      <option value="updated" selected>Select a country</option>
+                      {% for nationality in nationalities %}
+                      <option value="{{nationality}}">{{nationality}}</option>
+                      {% endfor %}
+                    </select>
+                  </div> <!-- govuk-form-group -->
+                </div> <!-- govuk-radios__item -->
+              </div> <!-- govuk-radios -->
         </fieldset>
       </div> <!-- govuk-form-group -->
 

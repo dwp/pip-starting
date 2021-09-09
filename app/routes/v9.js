@@ -1,4 +1,6 @@
 const { compile } = require("nunjucks");
+const nationalities = require('../assets/nationalities.json')
+const countries = require('../assets/countries.json')
 
 module.exports = function (router) {
     function isEligible(req) {
@@ -277,6 +279,11 @@ module.exports = function (router) {
         }
     });
 
+    router.get('/v9/nationality', (req, res, next) => {
+        res.locals.nationalities = nationalities;
+              res.render('v9/nationality.html')
+          })
+
     router.post('/v9/living-in-uk', (req, res, next) => {
         const livingUk = req.session.data['living-in-uk'];
         if (livingUk === 'No') {
@@ -304,6 +311,10 @@ module.exports = function (router) {
           res.redirect('/v9/about_your_health/condition-new-2')
         }
       })
+
+    //   router.get('/v9/living-in-gb', (req, res, next) => {
+    //       res.render('v9/living-in-gb.html')
+    //   })
 
     // router.post('/v9/eu-benefits', (req, res, next) => {
     //     res.redirect('/v9/eu-question');
