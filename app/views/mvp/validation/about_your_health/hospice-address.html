@@ -1,7 +1,7 @@
 {% extends "layout-signed-in-mvp.html" %}
 
 {% block pageTitle %}
-Hospital address
+Hospice address
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,22 +23,22 @@ Hospital address
           <div class="govuk-error-summary__body">
             <ul class="govuk-list govuk-error-summary__list">
               <li>
-                <a href="#hospital-name">Enter a hospital name</a>
+                <a href="#hospice-name">Enter a hospice name</a>
               </li>
               <li>
-                <a href="#hospital-address-line-1">Enter building and street</a>
+                <a href="#hospice-address-line-1">Enter building and street</a>
               </li>
               <li>
-                <a href="#hospital-address-town">Enter town or city</a>
+                <a href="#hospice-address-town">Enter town or city</a>
               </li>
               <li>
-                <a href="#hospital-address-county">Enter county</a>
+                <a href="#hospice-address-county">Enter county</a>
               </li>
               <li>
-                <a href="#hospital-address-postcode">Enter postcode</a>
+                <a href="#hospice-address-postcode">Enter postcode</a>
               </li>
               <li>
-                <a href="#hospital-country">Enter a country</a>
+                <a href="#hospice-country">Enter a country</a>
               </li>
             </ul>
           </div>
@@ -49,80 +49,80 @@ Hospital address
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">
-              Hospital address
+              Hospice address
             </h1>
           </legend>
 
           <div class="govuk-form-group govuk-form-group--error">
-            <label class="govuk-label" for="hospital-name">
-              Hospital name <span class="govuk-visually-hidden">line 1 of 2</span>
+            <label class="govuk-label" for="hospice-name">
+              Hospice name <span class="govuk-visually-hidden">line 1 of 2</span>
             </label>
             <span id="dob-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter a hospital name
+              <span class="govuk-visually-hidden">Error:</span> Enter a hospice name
             </span>
-            <input class="govuk-input govuk-input--error" id="hospital-name" name="hospital-name" type="text"
+            <input class="govuk-input govuk-input--error" id="hospice-name" name="hospice-name" type="text"
               autocomplete="address-line1">
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group govuk-form-group--error">
-            <label class="govuk-label" for="hospital-address-line-1">
+            <label class="govuk-label" for="hospice-address-line-1">
               Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
             </label>
             <span id="dob-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span> Enter building and street
             </span>
-            <input class="govuk-input govuk-input--error" id="hospital-address-line-1" name="hospital-address-line-1" type="text"
+            <input class="govuk-input govuk-input--error" id="hospice-address-line-1" name="hospice-address-line-1" type="text"
               autocomplete="address-line1">
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group">
-            <label class="govuk-label" for="hospital-address-line-2">
+            <label class="govuk-label" for="hospice-address-line-2">
               <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
             </label>
-            <input class="govuk-input" id="hospital-address-line-2" name="hospital-address-line-2" type="text"
+            <input class="govuk-input" id="hospice-address-line-2" name="hospice-address-line-2" type="text"
               autocomplete="address-line2">
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group govuk-form-group--error">
-            <label class="govuk-label" for="hospital-address-town">
+            <label class="govuk-label" for="hospice-address-town">
               Town or city
             </label>
             <span id="dob-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span> Enter town or city
             </span>
-            <input class="govuk-input govuk-input--error govuk-!-width-two-thirds" id="hospital-address-town" name="hospital-address-town" type="text"
+            <input class="govuk-input govuk-input--error govuk-!-width-two-thirds" id="hospice-address-town" name="hospice-address-town" type="text"
               autocomplete="address-level2">
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group govuk-form-group--error">
-            <label class="govuk-label" for="hospital-address-county">
+            <label class="govuk-label" for="hospice-address-county">
               County
             </label>
             <span id="dob-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span> Enter county
             </span>
-            <input class="govuk-input govuk-input--error govuk-!-width-two-thirds" id="hospital-address-county" name="hospital-address-county" type="text">
+            <input class="govuk-input govuk-input--error govuk-!-width-two-thirds" id="hospice-address-county" name="hospice-address-county" type="text">
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group govuk-form-group--error">
-            <label class="govuk-label" for="hospital-address-postcode">
+            <label class="govuk-label" for="hospice-address-postcode">
               Postcode
             </label>
             <span id="dob-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span> Enter postcode
             </span>
-            <input class="govuk-input govuk-input--error govuk-input--width-10" id="hospital-address-postcode" name="hospital-address-postcode" type="text"
+            <input class="govuk-input govuk-input--error govuk-input--width-10" id="hospice-address-postcode" name="hospice-address-postcode" type="text"
               autocomplete="postal-code">
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group govuk-form-group--error">
-            <label class="govuk-label" for="hospital-country">
+            <label class="govuk-label" for="country">
               Country
             </label>
             <span id="dob-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span> Enter a country
             </span>
-            <select class="govuk-select govuk-input--error" id="hospital-country" name="hospital-country">
+            <select class="govuk-select govuk-input--error" id="hospice-country" name="hospice-country">
               <option value="updated" selected>Select a country</option>
               <option value="published">England</option>
               <option value="views">Scotland</option>
@@ -148,7 +148,7 @@ Hospital address
           <div class="govuk-error-summary__body">
             <ul class="govuk-list govuk-error-summary__list">
               <li>
-                <a href="#hospital-address-postcode-2">Enter a real postcode</a>
+                <a href="#hospice-address-postcode-1">Enter a real postcode</a>
               </li>
             </ul>
           </div>
@@ -159,69 +159,65 @@ Hospital address
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">
-              Hospital address
+              Hospice address
             </h1>
           </legend>
 
           <div class="govuk-form-group">
-            <label class="govuk-label" for="hospital-name">
-              Hospital name <span class="govuk-visually-hidden">line 1 of 2</span>
+            <label class="govuk-label" for="hospice-name">
+              Hospice name <span class="govuk-visually-hidden">line 1 of 2</span>
             </label>
-            
-            <input class="govuk-input" id="hospital-name" name="hospital-name" type="text"
-              autocomplete="address-line1">
-          </div> <!-- govuk-form-group -->
-
-          <div class="govuk-form-group ">
-            <label class="govuk-label" for="hospital-address-line-1">
-              Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
-            </label>
-           
-            <input class="govuk-input" id="hospital-address-line-1" name="hospital-address-line-1" type="text"
+            <input class="govuk-input" id="hospice-name" name="hospice-name" type="text"
               autocomplete="address-line1">
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group">
-            <label class="govuk-label" for="hospital-address-line-2">
+            <label class="govuk-label" for="hospice-address-line-1">
+              Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+            </label>
+            <input class="govuk-input" id="hospice-address-line-1" name="hospice-address-line-1" type="text"
+              autocomplete="address-line1">
+          </div> <!-- govuk-form-group -->
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="hospice-address-line-2">
               <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
             </label>
-            <input class="govuk-input" id="hospital-address-line-2" name="hospital-address-line-2" type="text"
+            <input class="govuk-input" id="hospice-address-line-2" name="hospice-address-line-2" type="text"
               autocomplete="address-line2">
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group">
-            <label class="govuk-label" for="hospital-address-town">
+            <label class="govuk-label" for="hospice-address-town">
               Town or city
             </label>
-            
-            <input class="govuk-input govuk-!-width-two-thirds" id="hospital-address-town" name="hospital-address-town" type="text"
+            <input class="govuk-input govuk-!-width-two-thirds" id="hospice-address-town" name="hospice-address-town" type="text"
               autocomplete="address-level2">
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group">
-            <label class="govuk-label" for="hospital-address-county">
+            <label class="govuk-label" for="hospice-address-county">
               County
             </label>
-            
-            <input class="govuk-input govuk-!-width-two-thirds" id="hospital-address-county" name="hospital-address-county" type="text">
+            <input class="govuk-input govuk-!-width-two-thirds" id="hospice-address-county" name="hospice-address-county" type="text">
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group govuk-form-group--error">
-            <label class="govuk-label" for="hospital-address-postcode">
+            <label class="govuk-label" for="hospice-address-postcode">
               Postcode
             </label>
             <span id="dob-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span> Enter a real postcode
             </span>
-            <input class="govuk-input govuk-input--error govuk-input--width-10" id="hospital-address-postcode-2" name="hospital-address-postcode-2" type="text"
+            <input class="govuk-input govuk-input--error govuk-input--width-10" id="hospice-address-postcode-1" name="hospice-address-postcode" type="text"
               autocomplete="postal-code" value="@2S %L0">
           </div> <!-- govuk-form-group -->
 
-          <div class="govuk-form-group ">
-            <label class="govuk-label" for="hospital-country">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="country">
               Country
             </label>
-            <select class="govuk-select" id="hospital-country" name="hospital-country">
+            <select class="govuk-select" id="country" name="country">
               <option value="updated" selected>Select a country</option>
               <option value="published">England</option>
               <option value="views">Scotland</option>
