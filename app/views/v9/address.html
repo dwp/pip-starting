@@ -66,11 +66,9 @@ Address
             </label>
             <select class="govuk-select" id="country" name="country">
               <option value="updated" selected>Select a country</option>
-              <option value="England">England</option>
-              <option value="Scotland">Scotland</option>
-              <option value="Wales">Wales</option>
-              <option value="Northern Ireland">Northern Ireland</option>
-              <option value="None of these">None of these</option>
+              {% for country in countries %}
+              <option value="{{country}}">{{country}}</option>
+              {% endfor %}
             </select>
           </div> <!-- govuk-form-group -->
 

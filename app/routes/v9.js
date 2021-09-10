@@ -235,6 +235,11 @@ module.exports = function (router) {
         }
     });
 
+    router.get('/v9/address', (req, res, next) => {
+        res.locals.countries = countries;
+              res.render('v9/address.html')
+          })
+
     router.post('/v9/address-other', (req, res, next) => {
         res.redirect('/v9/contact-details');
     });
