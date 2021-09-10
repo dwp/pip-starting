@@ -263,6 +263,16 @@ module.exports = function (router) {
         }
     });
 
+    router.get('/mvp/nationality', (req, res, next) => {
+        res.locals.nationalities = nationalities;
+        res.render('mvp/nationality.html')
+    })
+
+    router.get('/mvp/validation/res_and_pres/nationality', (req, res, next) => {
+        res.locals.nationalities = nationalities;
+        res.render('mvp/validation/res_and_pres/nationality.html')
+    })
+
     router.post('/mvp/living-in-uk', (req, res, next) => {
         const livingUk = req.session.data['living-in-uk'];
         if (livingUk === 'No') {
