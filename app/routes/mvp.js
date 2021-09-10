@@ -368,7 +368,7 @@ module.exports = function (router) {
     });
 
     router.get('/mvp/about_your_health/hcp-2', (req, res, next) => {
-        res.locals.nationalities = nationalities;
+        res.locals.countries = countries;
         res.render('mvp/about_your_health/hcp-2.html')
     })
 
@@ -384,6 +384,11 @@ module.exports = function (router) {
     router.post('/mvp/about_your_health/hcp-3', (req, res, next) => {
         res.redirect('/mvp/about_your_health/hcp-another-3');
     });
+
+    router.get('/mvp/about_your_health/hcp-3', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('mvp/about_your_health/hcp-3.html')
+    })
 
     router.post('/mvp/about_your_health/hcp-another-3', (req, res, next) => {
         res.redirect('/mvp/in-hospital');
