@@ -1,4 +1,6 @@
 const { compile } = require("nunjucks");
+const nationalities = require('../assets/nationalities.json')
+const countries = require('../assets/countries.json')
 
 module.exports = function (router) {
     function isEligible(req) {
@@ -6,21 +8,21 @@ module.exports = function (router) {
             || req.session.data['overspa'] === 'No')
     }
 
-    function complexCase (req) {
+    function complexCase(req) {
         return (req.session.data['nationality'] === 'Another nationality' ||
-          (
-            req.session.data['nationality'] === 'A nationality of the European Economic Area (EEA)' &&
-            (req.session.data['gb'] === 'No')&& 
-            (req.session.data['living-in-uk'] === 'No' || req.session.data['living-in-uk'] === 'Not sure')
-          ) ||
-          (req.session.data['eu-benefits'] === 'Yes' || req.session.data['eu-benefits'] === 'Not sure') ||
-          (req.session.data['eu-insurance'] === 'Yes' || req.session.data['eu-insurance'] === 'Not sure') ||
-          (
-            (req.session.data['nationality'] === 'British' || req.session.data['nationality'] === 'Irish') &&
-            (req.session.data['gb'] === 'No')
-          )
+            (
+                req.session.data['nationality'] === 'A nationality of the European Economic Area (EEA)' &&
+                (req.session.data['gb'] === 'No') &&
+                (req.session.data['living-in-uk'] === 'No' || req.session.data['living-in-uk'] === 'Not sure')
+            ) ||
+            (req.session.data['eu-benefits'] === 'Yes' || req.session.data['eu-benefits'] === 'Not sure') ||
+            (req.session.data['eu-insurance'] === 'Yes' || req.session.data['eu-insurance'] === 'Not sure') ||
+            (
+                (req.session.data['nationality'] === 'British' || req.session.data['nationality'] === 'Irish') &&
+                (req.session.data['gb'] === 'No')
+            )
         )
-      }
+    }
 
     // ELIGIBILITY QUESTIONS
     router.post('/mvp/over-16', (req, res, next) => {
@@ -234,6 +236,16 @@ module.exports = function (router) {
         }
     });
 
+    router.get('/mvp/address', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('mvp/address.html')
+    })
+
+    router.get('/mvp/validation/personal_details/address', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('mvp/validation/personal_details/address.html')
+    })
+
     router.post('/mvp/address-other', (req, res, next) => {
         res.redirect('/mvp/contact-details');
     });
@@ -254,7 +266,7 @@ module.exports = function (router) {
     router.post('/mvp/living-in-uk', (req, res, next) => {
         const livingUk = req.session.data['living-in-uk'];
         if (livingUk === 'No') {
-        res.redirect('/mvp/health-condition');
+            res.redirect('/mvp/health-condition');
         } else {
             res.redirect('/mvp/living-in-gb');
         }
@@ -263,21 +275,21 @@ module.exports = function (router) {
     router.post('/mvp/living-in-gb', (req, res, next) => {
         const nationality = req.session.data['nationality']
         const gb = req.session.data['gb']
-      
+
         if (nationality === 'British' ||
-          nationality === 'Irish' ||
-          nationality === 'A nationality of the European Economic Area (EEA)'
+            nationality === 'Irish' ||
+            nationality === 'A nationality of the European Economic Area (EEA)'
         ) {
-          if (gb === 'No') {
-            res.redirect('/mvp/about_your_health/condition-new-2')
-          }
-          if (gb === 'Yes' || gb === 'Not sure') {
-            res.redirect('/mvp/eu-benefits')
-          }
+            if (gb === 'No') {
+                res.redirect('/mvp/about_your_health/condition-new-2')
+            }
+            if (gb === 'Yes' || gb === 'Not sure') {
+                res.redirect('/mvp/eu-benefits')
+            }
         } else if (nationality === 'Another nationality') {
-          res.redirect('/mvp/about_your_health/condition-new-2')
+            res.redirect('/mvp/about_your_health/condition-new-2')
         }
-      })
+    })
 
     router.post('/mvp/eu-benefits', (req, res, next) => {
         res.redirect('/mvp/eu-worked');

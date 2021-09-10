@@ -1,4 +1,4 @@
-{% extends "layout-signed-in-mvp.html" %}
+{% extends "layout-signed-in-v7.html" %}
 
 {% block pageTitle %}
 Address
@@ -30,7 +30,7 @@ Address
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group">
-            <label class="govuk-label" for="address-line-2">
+            <label class="govuk-label" for="other-address-line-2">
               <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
             </label>
             <input class="govuk-input" id="address-line-2" name="address-line-2" type="text"
@@ -66,13 +66,11 @@ Address
             </label>
             <select class="govuk-select" id="country" name="country">
               <option value="updated" selected>Select a country</option>
-              <option value="published">England</option>
-              <option value="views">Scotland</option>
-              <option value="comments">Wales</option>
-              <option value="views">Northern Ireland</option>
-              <option value="views">None of these</option>
+              {% for country in countries %}
+              <option value="{{country}}">{{country}}</option>
+              {% endfor %}
             </select>
-          </div>
+          </div> <!-- govuk-form-group -->
 
         </fieldset>
       </div> <!-- govuk-form-group -->
