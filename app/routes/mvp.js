@@ -325,15 +325,34 @@ module.exports = function (router) {
     router.post('/mvp/about_your_health/hcp-question', (req, res, next) => {
         const hcpQuestion = req.session.data['hcp'];
         if (hcpQuestion === 'Yes') {
-            res.redirect('/mvp/about_your_health/hcp-1');
+            res.redirect('/mvp/about_your_health/consent');
         } else {
             res.redirect('/mvp/in-hospital');
         }
     });
 
+    router.post('/mvp/about_your_health/consent', (req, res, next) => {
+        const conSent = req.session.data['consent'];
+        if (conSent === 'Yes, I agree') {
+            res.redirect('/mvp/about_your_health/hcp-1');
+        } else {
+            res.redirect('/mvp/in-hospital');
+        }
+    });  
+
     router.post('/mvp/about_your_health/hcp-1', (req, res, next) => {
         res.redirect('/mvp/about_your_health/hcp-another');
     });
+
+    router.get('/mvp/about_your_health/hcp-1', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('mvp/about_your_health/hcp-1.html')
+    })
+
+    router.get('/mvp/validation/about_your_health/hcp-1', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('mvp/validation/about_your_health/hcp-1.html')
+    })
 
     router.post('/mvp/about_your_health/hcp-another', (req, res, next) => {
         const hcpAnother1 = req.session.data['hcp-2'];
@@ -347,6 +366,11 @@ module.exports = function (router) {
     router.post('/mvp/about_your_health/hcp-2', (req, res, next) => {
         res.redirect('/mvp/about_your_health/hcp-another-2');
     });
+
+    router.get('/mvp/about_your_health/hcp-2', (req, res, next) => {
+        res.locals.nationalities = nationalities;
+        res.render('mvp/about_your_health/hcp-2.html')
+    })
 
     router.post('/mvp/about_your_health/hcp-another-2', (req, res, next) => {
         const hcpAnother2 = req.session.data['hcp-3'];

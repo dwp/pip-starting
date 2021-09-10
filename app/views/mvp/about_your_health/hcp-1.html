@@ -1,12 +1,12 @@
-{% extends "layout-signed-in-mvp.html" %}
+{% extends "layout-signed-in-v7.html" %}
 
 {% block pageTitle %}
-Health professional details
+Health professional
 {% endblock %}
 
 {% block beforeContent %}
 {% include "includes/phase-banner.html" %}
-{% include "includes/back-link-v7.html %}
+{% include "includes/back-link-v7.html" %}
 {% endblock %}
 
 {% block content %}
@@ -16,6 +16,7 @@ Health professional details
 
     <form id="form" method="post" action="#">
 
+      
       <div class="govuk-form-group">
         <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="hcp-1-name">
             Health professional details
@@ -98,36 +99,36 @@ Health professional details
             type="text" autocomplete="hcp-1-postal-code">
         </div> <!-- govuk-form-group-->
 
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="hcp-1-addresscountry">
+            Country
+          </label>
+          <select class="govuk-select" id="hcp-1-addresscountry" name="hcp-1-addresscountry">
+            <option value="updated" selected>Select a country</option>
+            {% for country in countries %}
+            <option value="{{country}}">{{country}}</option>
+            {% endfor %}
+          </select>
+        </div> <!-- govuk-form-group -->
+
       </fieldset>
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="hcp-1-hint">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="hcp-1-last-contact">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h1 class="govuk-fieldset__heading">
-              When did you last see them?
+              When did you last speak to them?
             </h1>
           </legend>
-          <div id="hcp-1-hint" class="govuk-hint">
-            This can be an approximate date – for example, 3 2020
+          <div id="hcp-1-last-contact" class="govuk-hint">
+            This can be approximate – for example, March 2021 or 18 months ago.
           </div>
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="hcp-1-month">
-                Month
-              </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hcp-1-month"
-                name="hcp-1-month" type="text" pattern="[0-9]*" inputmode="numeric">
-            </div> <!-- govuk-form-group -->
-          </div> <!-- govuk-date-input__item -->
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="hcp-1-year">
-                Year
-              </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="hcp-1-year" name="hcp-1-year"
-                type="text" pattern="[0-9]*" inputmode="numeric">
-            </div> <!-- govuk-form-group -->
-          </div> <!-- govuk-date-input__item -->
+
+          <div class="govuk-form-group">
+            <input class="govuk-input govuk-input--width-two-thirds" id="hcp-1-last-contact" name="hcp-1-last-contact"
+              type="text" autocomplete="hcp-1-last-contact">
+          </div> <!-- govuk-form-group-->
+
         </fieldset>
       </div> <!-- govuk-form-group -->
 
