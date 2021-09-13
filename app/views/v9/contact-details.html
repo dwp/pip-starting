@@ -31,6 +31,10 @@ Contact details
             <input class="govuk-input govuk-!-width-two-thirds" id="phone-number" name="phone-number" type="text"
               autocomplete="phone-number">
           </div> <!-- govuk-form-group -->
+
+         
+          
+            
           <div class="govuk-form-group">
             <label class="govuk-label" for="alternative-phone-number">
               Alternative phone number <span class="govuk-visually-hidden">line 1 of 2</span>
@@ -56,31 +60,24 @@ Contact details
         </fieldset>
       </div> <!-- govuk-form-group -->
 
-      <!-- <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h1 class="govuk-fieldset__heading">
-              How would you prefer to be contacted?
-            </h1>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend--s">
+            We will send you text messages to keep you up to date on progress – it’s a quick and easy way to keep you updated. Would you rather opt out of this service?
           </legend>
-          <div class="govuk-radios govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-preference" name="contact-preference" type="radio"
-                value="By letter">
-              <label class="govuk-label govuk-radios__label" for="contact-preference">
-                By letter
+          <div id="waste-hint" class="govuk-hint">
+            Select to opt out.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Yes I want to opt out of SMS updates
               </label>
-            </div> <!-- govuk-radios__item -->
-            <!-- <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-preference-2" name="contact-preference" type="radio"
-                value="By phone">
-              <label class="govuk-label govuk-radios__label" for="contact-preference-2">
-                By phone
-              </label>
-            </div> <!-- govuk-radios__item -->
-         <!-- </div> <!-- govuk-radios govuk-radios--inline -->
-        <!-- </fieldset>
-      </div>  --><!-- govuk-form-group --> 
+            </div>
+          </div> <!-- govuk-checkboxes -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
