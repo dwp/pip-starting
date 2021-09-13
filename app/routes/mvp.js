@@ -8,21 +8,21 @@ module.exports = function (router) {
             || req.session.data['overspa'] === 'No')
     }
 
-    function complexCase(req) {
-        return (req.session.data['nationality'] === 'Another nationality' ||
-            (
-                req.session.data['nationality'] === 'A nationality of the European Economic Area (EEA)' &&
-                (req.session.data['gb'] === 'No') &&
-                (req.session.data['living-in-uk'] === 'No' || req.session.data['living-in-uk'] === 'Not sure')
-            ) ||
-            (req.session.data['eu-benefits'] === 'Yes' || req.session.data['eu-benefits'] === 'Not sure') ||
-            (req.session.data['eu-insurance'] === 'Yes' || req.session.data['eu-insurance'] === 'Not sure') ||
-            (
-                (req.session.data['nationality'] === 'British' || req.session.data['nationality'] === 'Irish') &&
-                (req.session.data['gb'] === 'No')
-            )
-        )
-    }
+    // function complexCase(req) {
+    //     return (req.session.data['nationality'] === 'Another nationality' ||
+    //         (
+    //             req.session.data['nationality'] === 'A nationality of the European Economic Area (EEA)' &&
+    //             (req.session.data['gb'] === 'No') &&
+    //             (req.session.data['living-in-uk'] === 'No' || req.session.data['living-in-uk'] === 'Not sure')
+    //         ) ||
+    //         (req.session.data['eu-benefits'] === 'Yes' || req.session.data['eu-benefits'] === 'Not sure') ||
+    //         (req.session.data['eu-insurance'] === 'Yes' || req.session.data['eu-insurance'] === 'Not sure') ||
+    //         (
+    //             (req.session.data['nationality'] === 'British' || req.session.data['nationality'] === 'Irish') &&
+    //             (req.session.data['gb'] === 'No')
+    //         )
+    //     )
+    // }
 
     // ELIGIBILITY QUESTIONS
     router.post('/mvp/over-16', (req, res, next) => {
