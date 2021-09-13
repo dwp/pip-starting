@@ -276,7 +276,7 @@ module.exports = function (router) {
     router.post('/mvp/living-in-uk', (req, res, next) => {
         const livingUk = req.session.data['living-in-uk'];
         if (livingUk === 'No') {
-            res.redirect('/mvp/health-condition');
+            res.redirect('/mvp/about_your_health/condition-new-2');
         } else {
             res.redirect('/mvp/living-in-gb');
         }

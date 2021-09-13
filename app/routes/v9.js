@@ -292,7 +292,7 @@ module.exports = function (router) {
     router.post('/v9/living-in-uk', (req, res, next) => {
         const livingUk = req.session.data['living-in-uk'];
         if (livingUk === 'No') {
-        res.redirect('/v9/health-condition');
+        res.redirect('/v9/about_your_health/condition-new-2');
         } else {
             res.redirect('/v9/living-in-gb');
         }
