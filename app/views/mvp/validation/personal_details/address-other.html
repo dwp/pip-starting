@@ -106,18 +106,16 @@ Safe address
             <label class="govuk-label" for="country">
               Country
             </label>
-              <span id="dob-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> Select country
-              </span>
-            <select class="govuk-select" id="country" name="country">
+            <span id="dob-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Select country
+            </span>
+            <select class="govuk-select  govuk-input--error" id="country" name="country">
               <option value="updated" selected>Select a country</option>
-              <option value="published">England</option>
-              <option value="views">Scotland</option>
-              <option value="comments">Wales</option>
-              <option value="views">Northern Ireland</option>
-              <option value="views">None of these</option>
+              {% for country in countries %}
+              <option value="{{country}}">{{country}}</option>
+              {% endfor %}
             </select>
-          </div>
+          </div> <!-- govuk-form-group -->
 
         </fieldset>
       </div> <!-- govuk-form-group -->

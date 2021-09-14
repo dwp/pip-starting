@@ -256,6 +256,11 @@ module.exports = function (router) {
         res.render('mvp/validation/personal_details/address.html')
     })
 
+    router.get('/mvp/validation/personal_details/address-other', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('mvp/validation/personal_details/address-other.html')
+    })
+
     router.post('/mvp/address-other', (req, res, next) => {
         res.redirect('/mvp/contact-details');
     });
@@ -435,6 +440,11 @@ module.exports = function (router) {
         res.render('mvp/hospital-address')
     })
 
+    router.get('/mvp/validation/about_your_health/hospital-address', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('mvp/validation/about_your_health/hospital-address')
+    })
+
     router.post('/mvp/hospice-admission', (req, res, next) => {
         res.redirect('/mvp/hospice-address');
     });
@@ -448,6 +458,11 @@ module.exports = function (router) {
         res.render('mvp/hospice-address')
     })
 
+    router.get('/mvp/validation/about_your_health/hospice-address', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('mvp/validation/about_your_health/hospice-address')
+    })
+
     router.post('/mvp/care-home-admission', (req, res, next) => {
         res.redirect('/mvp/care-home-address');
     });
@@ -458,6 +473,11 @@ module.exports = function (router) {
     router.get('/mvp/care-home-address', (req, res, next) => {
         res.locals.countries = countries;
         res.render('mvp/care-home-address')
+    })
+
+    router.get('/mvp/validation/about_your_health/care-home-address', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('mvp/validation/about_your_health/care-home-address')
     })
 
     // PERSONAL AND HEALTH QUESTIONS END

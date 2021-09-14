@@ -38,7 +38,7 @@ Care home or nursing home address
                 <a href="#care-home-address-postcode">Enter postcode</a>
               </li>
               <li>
-                <a href="#care-home-country">Enter a country</a>
+                <a href="#care-home-country">Select country</a>
               </li>
             </ul>
           </div>
@@ -120,15 +120,13 @@ Care home or nursing home address
               Country
             </label>
             <span id="dob-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter a country
+              <span class="govuk-visually-hidden">Error:</span> Select country
             </span>
-            <select class="govuk-select govuk-input--error" id="care-home-country" name="care-home-country">
+            <select class="govuk-select  govuk-input--error" id="care-home-country" name="care-home-country">
               <option value="updated" selected>Select a country</option>
-              <option value="published">England</option>
-              <option value="views">Scotland</option>
-              <option value="comments">Wales</option>
-              <option value="views">Northern Ireland</option>
-              <option value="views">None of these</option>
+              {% for country in countries %}
+              <option value="{{country}}">{{country}}</option>
+              {% endfor %}
             </select>
           </div> <!-- govuk-form-group -->
 
@@ -219,14 +217,11 @@ Care home or nursing home address
             </label>
             <select class="govuk-select" id="care-home-country" name="care-home-country">
               <option value="updated" selected>Select a country</option>
-              <option value="published">England</option>
-              <option value="views">Scotland</option>
-              <option value="comments">Wales</option>
-              <option value="views">Northern Ireland</option>
-              <option value="views">None of these</option>
+              {% for country in countries %}
+              <option value="{{country}}">{{country}}</option>
+              {% endfor %}
             </select>
           </div> <!-- govuk-form-group -->
-
         </fieldset>
       </div> <!-- govuk-form-group -->
 
