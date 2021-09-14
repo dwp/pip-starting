@@ -396,26 +396,36 @@ module.exports = function (router) {
 
     router.post('/mvp/in-hospital', (req, res, next) => {
         const inHospital = req.session.data['hospital'];
-        if (inHospital === 'Yes') {
-            res.redirect('/mvp/hospital-address');
-        } else {
-            res.redirect('/mvp/in-care-home');
-        }
-    });
-
-    router.post('/mvp/hospital-address', (req, res, next) => {
-        res.redirect('/mvp/check-answers');
-    });
-
-    router.post('/mvp/in-care-home', (req, res, next) => {
-        const inCarehome = req.session.data['carehome'];
-        if (inCarehome === 'Yes') {
-            res.redirect('/mvp/care-home-address');
+        if (inHospital === 'Hospital') {
+            res.redirect('/mvp/hospital-admission');
+        } else if (inHospital === 'Hospice') {
+            res.redirect('/mvp/hospice-admission');
+        } else if (inHospital === 'Care or nursing home') {
+            res.redirect('/mvp/care-home-admission');
         } else {
             res.redirect('/mvp/check-answers');
         }
     });
 
+    router.post('/mvp/hospital-admission', (req, res, next) => {
+        res.redirect('/mvp/hospital-address');
+    });
+    
+    router.post('/mvp/hospital-address', (req, res, next) => {
+        res.redirect('/mvp/check-answers');
+    });
+
+    router.post('/mvp/hospice-admission', (req, res, next) => {
+        res.redirect('/mvp/hospice-address');
+    });
+
+    router.post('/mvp/hospice-address', (req, res, next) => {
+        res.redirect('/mvp/check-answers');
+    });
+
+    router.post('/mvp/care-home-admission', (req, res, next) => {
+        res.redirect('/mvp/care-home-address');
+    });
     router.post('/mvp/care-home-address', (req, res, next) => {
         res.redirect('/mvp/check-answers');
     });
