@@ -78,16 +78,14 @@ Care home or nursing home address
           </div> <!-- govuk-form-group -->
 
           <div class="govuk-form-group">
-            <label class="govuk-label" for="country">
+            <label class="govuk-label" for="hcp-1-addresscountry">
               Country
             </label>
-            <select class="govuk-select" id="country" name="country">
+            <select class="govuk-select" id="hcp-1-addresscountry" name="hcp-1-addresscountry">
               <option value="updated" selected>Select a country</option>
-              <option value="published">England</option>
-              <option value="views">Scotland</option>
-              <option value="comments">Wales</option>
-              <option value="views">Northern Ireland</option>
-              <option value="views">None of these</option>
+              {% for country in countries %}
+              <option value="{{country}}">{{country}}</option>
+              {% endfor %}
             </select>
           </div> <!-- govuk-form-group -->
 

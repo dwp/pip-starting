@@ -409,6 +409,11 @@ module.exports = function (router) {
         res.render('v9/about_your_health/hcp-2')
     })
 
+    router.get('/v9/about_your_health/hcp-2', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('v9/about_your_health/hcp-2')
+    })
+
     router.post('/v9/about_your_health/hcp-another-2', (req, res, next) => {
         const hcpAnother2 = req.session.data['hcp-3'];
         if (hcpAnother2 === 'Yes') {

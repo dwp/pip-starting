@@ -204,9 +204,19 @@ module.exports = function (router) {
         }
     });
 
+    router.get('/mvp/add-support-address', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('mvp/add-support-address')
+    })
+
     router.post('/mvp/add-support-address-other', (req, res, next) => {
         res.redirect('/mvp/add-support-contact-details');
     });
+
+    router.get('/mvp/add-support-address-other', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('mvp/add-support-address-other')
+    })
 
     router.post('/mvp/add-support-contact-details', (req, res, next) => {
         res.redirect('/mvp/name');
@@ -249,6 +259,11 @@ module.exports = function (router) {
     router.post('/mvp/address-other', (req, res, next) => {
         res.redirect('/mvp/contact-details');
     });
+
+    router.get('/mvp/address-other', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('mvp/address-other.html')
+    })
 
     router.post('/mvp/contact-details', (req, res, next) => {
         res.redirect('/mvp/nationality');
@@ -415,6 +430,11 @@ module.exports = function (router) {
         res.redirect('/mvp/check-answers');
     });
 
+    router.get('/mvp/hospital-address', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('mvp/hospital-address')
+    })
+
     router.post('/mvp/hospice-admission', (req, res, next) => {
         res.redirect('/mvp/hospice-address');
     });
@@ -423,12 +443,22 @@ module.exports = function (router) {
         res.redirect('/mvp/check-answers');
     });
 
+    router.get('/mvp/hospice-address', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('mvp/hospice-address')
+    })
+
     router.post('/mvp/care-home-admission', (req, res, next) => {
         res.redirect('/mvp/care-home-address');
     });
     router.post('/mvp/care-home-address', (req, res, next) => {
         res.redirect('/mvp/check-answers');
     });
+
+    router.get('/mvp/care-home-address', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('mvp/care-home-address')
+    })
 
     // PERSONAL AND HEALTH QUESTIONS END
 
