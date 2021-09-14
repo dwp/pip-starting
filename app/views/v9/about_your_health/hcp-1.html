@@ -98,6 +98,18 @@ Health professional
             type="text" autocomplete="hcp-1-postal-code">
         </div> <!-- govuk-form-group-->
 
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="country">
+            Country
+          </label>
+          <select class="govuk-select" id="country" name="country">
+            <option value="updated" selected>Select a country</option>
+            {% for country in countries %}
+            <option value="{{country}}">{{country}}</option>
+            {% endfor %}
+          </select>
+        </div> <!-- govuk-form-group -->
+
       </fieldset>
 
       <div class="govuk-form-group">
