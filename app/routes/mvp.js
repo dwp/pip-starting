@@ -271,6 +271,33 @@ module.exports = function (router) {
     })
 
     router.post('/mvp/contact-details', (req, res, next) => {
+        const altFormat = req.session.data['format-type'];
+        if (altFormat === 'Braille') {
+            res.redirect('/mvp/alt-format-braille'); }
+        else if (altFormat === 'Sign Language') {
+            res.redirect('/mvp/alt-format-sign-language');  }
+        else if (altFormat === 'Audio') {
+            res.redirect('/mvp/alt-format-audio');   }       
+        else if (altFormat === 'Other formats') {
+            res.redirect('/mvp/alt-format-paper'); }
+        else {
+            res.redirect('/mvp/nationality');
+        }     
+    });
+
+    router.post('/mvp/alt-format-braille', (req, res, next) => {
+        res.redirect('/mvp/nationality');
+    });
+
+    router.post('/mvp/alt-format-sign-language', (req, res, next) => {
+        res.redirect('/mvp/nationality');
+    });
+
+    router.post('/mvp/alt-format-audio', (req, res, next) => {
+        res.redirect('/mvp/nationality');
+    });
+
+    router.post('/mvp/alt-format-paper', (req, res, next) => {
         res.redirect('/mvp/nationality');
     });
 

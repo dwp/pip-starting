@@ -1,4 +1,4 @@
-{% extends "layout-signed-in-mvp.html" %}
+{% extends "layout-signed-in-v7.html" %}
 
 {% block pageTitle %}
 Contact details
@@ -23,14 +23,25 @@ Contact details
           </legend>
           <div class="govuk-form-group">
             <label class="govuk-label" for="address-line-1">
-              Phone number <span class="govuk-visually-hidden">line 1 of 2</span>
+              Mobile number <span class="govuk-visually-hidden">line 1 of 2</span>
             </label>
-            <div id="dob-hint" class="govuk-hint">
-              Enter a phone number we can speak to you or leave a message on, including the dialling code.
-            </div>
+            <!-- <div id="dob-hint" class="govuk-hint">
+              Enter your mobile number.
+            </div> -->
             <input class="govuk-input govuk-!-width-two-thirds" id="phone-number" name="phone-number" type="text"
               autocomplete="phone-number">
           </div> <!-- govuk-form-group -->
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="alternative-phone-number">
+              Alternative phone number <span class="govuk-visually-hidden">line 1 of 2</span>
+            </label>
+            <div id="dob-hint" class="govuk-hint">
+              Enter an alternative number you can be contaced on, including the dialling code.
+            </div>
+            <input class="govuk-input govuk-!-width-two-thirds" id="alternative-phone-number"
+              name="alternative-phone-number" type="text" autocomplete="phone-number">
+          </div> <!-- govuk-form-group -->
+
           <div class="govuk-form-group">
             <label class="govuk-label" for="address-town">
               Textphone (optional)
@@ -46,30 +57,30 @@ Contact details
       </div> <!-- govuk-form-group -->
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h1 class="govuk-fieldset__heading">
-              How would you prefer to be contacted?
+              Do you want to receive text messages to update you on the progress of your application?
             </h1>
           </legend>
+
           <div class="govuk-radios govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-preference" name="contact-preference" type="radio"
-                value="By letter">
-              <label class="govuk-label govuk-radios__label" for="contact-preference">
-                By letter
+              <input class="govuk-radios__input" id="add-support-communicating-1" name="add-support-communicating"
+                type="radio" value="Yes, all of the time">
+              <label class="govuk-label govuk-radios__label" for="add-support-communicating-1">
+                Yes
               </label>
             </div> <!-- govuk-radios__item -->
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-preference-2" name="contact-preference" type="radio"
-                value="By phone">
-              <label class="govuk-label govuk-radios__label" for="contact-preference-2">
-                By phone
+              <input class="govuk-radios__input" id="add-support-communicating-2" name="add-support-communicating"
+                type="radio" value="No, never">
+              <label class="govuk-label govuk-radios__label" for="add-support-communicating-2">
+                No
               </label>
             </div> <!-- govuk-radios__item -->
-          </div> <!-- govuk-radios govuk-radios--inline -->
-        </fieldset>
-      </div> <!-- govuk-form-group -->
+          </div>
+      </div><!-- govuk-for-group -->
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
@@ -79,7 +90,7 @@ Contact details
             </h1>
           </legend>
           <div id="contact-hint" class="govuk-hint">
-            Other formats could be Braille, large print or audio CD.
+            Other formats could be Braille, Sign Language, audio formats or other paper formats.
           </div>
           <div class="govuk-radios govuk-radios--conditional govuk-radios--inline" data-module="govuk-radios">
             <div class="govuk-radios__item">
@@ -99,16 +110,22 @@ Contact details
                 </div> <!-- govuk-radios__item -->
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="format-type-2" name="format-type" type="radio"
-                    value="Large print">
+                    value="Sign Language">
                   <label class="govuk-label govuk-radios__label" for="format-type-2">
-                    Large print
+                    Sign Language
                   </label>
                 </div> <!-- govuk-radios__item -->
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="format-type-3" name="format-type" type="radio"
-                    value="Audio CD">
+                  <input class="govuk-radios__input" id="format-type-3" name="format-type" type="radio" value="Audio">
                   <label class="govuk-label govuk-radios__label" for="format-type-3">
-                    Audio CD
+                    Audio
+                  </label>
+                </div> <!-- govuk-radios__item -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="format-type-4" name="format-type" type="radio"
+                    value="Other formats">
+                  <label class="govuk-label govuk-radios__label" for="format-type-4">
+                    Paper and other formats
                   </label>
                 </div> <!-- govuk-radios__item -->
               </div> <!-- govuk-radios govuk-radios -->
