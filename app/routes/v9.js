@@ -259,6 +259,10 @@ module.exports = function (router) {
     })
 
     router.post('/v9/contact-details', (req, res, next) => {
+        res.redirect('/v9/alt-formats.html')
+    })
+
+    router.post('/v9/alt-formats', (req, res, next) => {
         const altFormat = req.session.data['format-type'];
         if (altFormat === 'Braille') {
             res.redirect('/v9/alt-format-braille');
