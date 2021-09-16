@@ -1,4 +1,4 @@
-{% extends "layout-signed-in-v7.html" %}
+{% extends "layout-signed-in-mvp.html" %}
 
 {% block pageTitle %}
 Check your answers
@@ -110,7 +110,8 @@ Check your answers
                 {{ data['add-support-address-line-2'] }}<br>
                 {{ data['add-support-address-town']}}<br>
                 {{ data['add-support-address-county'] }}<br>
-                {{ data['add-support-address-postcode'] }}
+                {{ data['add-support-address-postcode'] }}<br>
+                {{ data['add-support-address-country'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="add-support-address">
@@ -129,7 +130,8 @@ Check your answers
                 {{ data['add-support-other-address-line-2'] }}<br>
                 {{ data['add-support-other-address-town'] }}<br>
                 {{ data['add-support-other-address-county'] }}<br>
-                {{ data['add-support-other-address-postcode'] }}
+                {{ data['add-support-other-address-postcode'] }}<br>
+                {{ data['add-support-other-address-country'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="add-support-address-other">
@@ -224,7 +226,8 @@ Check your answers
                 {{ data['address-line-2'] }}<br>
                 {{ data['address-town'] }}<br>
                 {{ data['address-county'] }}<br>
-                {{ data['address-postcode'] }}
+                {{ data['address-postcode'] }}<br>
+                {{ data['address-country'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="address">
@@ -256,7 +259,8 @@ Check your answers
                 {{ data['other-address-line-2'] }}<br>
                 {{ data['other-address-town'] }}<br>
                 {{ data['other-address-county'] }}<br>
-                {{ data['other-address-postcode'] }}
+                {{ data['other-address-postcode'] }}<br>
+                {{ data['other-address-country'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="address-other">
@@ -268,7 +272,7 @@ Check your answers
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Phone number
+                Mobile number
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['phone-number'] }}
@@ -372,7 +376,7 @@ Check your answers
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
 
-            {% if data['format-type'] === 'Other formats' %}
+            {% if data['format-type'] === 'Paper and other formats' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Which other format do you need?
@@ -456,7 +460,7 @@ Check your answers
                 Which nationality are you?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['nationality-extra'] }}
+                {{ data['nationality-country'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="nationality">
@@ -466,7 +470,23 @@ Check your answers
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
 
-            {% if data['nationality'] === 'A nationality of the European Economic Area (EEA)' %}
+            {% if data['nationality'] === 'A nationality of the European Economic Area (EEA) or Switzerland' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Country
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['eea-country'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="nationality">
+                  Change<span class="govuk-visually-hidden"> nationality of the European Economic Area (EEA) or Switzerland</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+            {% if data['nationality'] === 'A nationality of the European Economic Area (EEA) or Switzerland' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Did you start living in the UK before 1 January 2021?
@@ -484,7 +504,7 @@ Check your answers
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Have you lived in England, Scotland or Wales for at least 2 of the last 3 years?
+                Have you been in the UK for at least 2 of the last 3 years?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['gb'] }}
@@ -496,6 +516,7 @@ Check your answers
               </dd>
             </div> <!-- govuk-summary-list__row -->
 
+            {% if data['gb'] === 'Yes' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Do any of the following apply to you or a family member?
@@ -509,8 +530,8 @@ Check your answers
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-          </dl>
-
+          {% endif %}
+           </dl> 
           <h2 class="govuk-heading-m">Your health</h2>
 
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -529,7 +550,7 @@ Check your answers
               </dd>
             </div> <!-- govuk-summary-list__row -->
 
-            <div class="govuk-summary-list__row">
+            <!-- <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Approximate start date
               </dt>
@@ -541,7 +562,7 @@ Check your answers
                   Change<span class="govuk-visually-hidden"> condition start date</span>
                 </a>
               </dd>
-            </div> <!-- govuk-summary-list__row -->
+            </div> <!-- govuk-summary-list__row --> 
             <!-- Conditions end  -->
 
             {% if conditionsLength > 1 %}
@@ -562,7 +583,7 @@ Check your answers
               </dd>
             </div> <!-- govuk-summary-list__row -->
 
-            <div class="govuk-summary-list__row">
+            <!-- <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Approximate start date
               </dt>
@@ -574,7 +595,7 @@ Check your answers
                   Change<span class="govuk-visually-hidden"> condition start date</span>
                 </a>
               </dd>
-            </div> <!-- govuk-summary-list__row -->
+            </div> <!-- govuk-summary-list__row --> 
             <!-- Conditions end  -->
             {% endif %}
             {% endfor %}
@@ -589,7 +610,7 @@ Check your answers
                 {{ data['hcp'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-question">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-question">
                   Change<span class="govuk-visually-hidden"> Health Professional</span>
                 </a>
               </dd>
@@ -604,7 +625,7 @@ Check your answers
                 {{ data['consent'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-1">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-1">
                   Change<span class="govuk-visually-hidden"> health professional consent</span>
                 </a>
               </dd>
@@ -620,7 +641,7 @@ Check your answers
                 {{ data['hcp-1-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-1">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-1">
                   Change<span class="govuk-visually-hidden"> health professional name</span>
                 </a>
               </dd>
@@ -633,7 +654,7 @@ Check your answers
                 {{ data['hcp-1-profession'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-1">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-1">
                   Change<span class="govuk-visually-hidden"> profession</span>
                 </a>
               </dd>
@@ -646,7 +667,7 @@ Check your answers
                 {{ data['hcp-1-phone'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-1">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-1">
                   Change<span class="govuk-visually-hidden"> phone number</span>
                 </a>
               </dd>
@@ -661,10 +682,11 @@ Check your answers
                 {{ data['hcp-1-address-line-2'] }}<br>
                 {{ data['hcp-1-address-town'] }}<br>
                 {{ data['hcp-1-address-county'] }}<br>
-                {{ data['hcp-1-address-postcode'] }}
+                {{ data['hcp-1-address-postcode'] }}<br>
+                {{ data['hcp-1-address-country'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-1">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-1">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
@@ -674,10 +696,10 @@ Check your answers
                 When did you last see them?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['hcp-1-month'] }} - {{ data['hcp-1-year'] }}
+                {{ data['hcp-1-last-contact'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-1">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-1">
                   Change<span class="govuk-visually-hidden"> lasxt seen them</span>
                 </a>
               </dd>
@@ -691,7 +713,7 @@ Check your answers
                 {{ data['hcp-2'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-another">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-another">
                   Change<span class="govuk-visually-hidden"> another health professional</span>
                 </a>
               </dd>
@@ -707,7 +729,7 @@ Check your answers
                 {{ data['hcp-2-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-2">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-2">
                   Change<span class="govuk-visually-hidden"> health professional name</span>
                 </a>
               </dd>
@@ -720,7 +742,7 @@ Check your answers
                 {{ data['hcp-2-profession'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-2">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-2">
                   Change<span class="govuk-visually-hidden"> profession</span>
                 </a>
               </dd>
@@ -733,7 +755,7 @@ Check your answers
                 {{ data['hcp-2-phone'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-2">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-2">
                   Change<span class="govuk-visually-hidden"> phone number</span>
                 </a>
               </dd>
@@ -748,10 +770,11 @@ Check your answers
                 {{ data['hcp-2-address-line-2'] }}<br>
                 {{ data['hcp-2-address-town'] }}<br>
                 {{ data['hcp-2-address-county'] }}<br>
-                {{ data['hcp-2-address-postcode'] }}
+                {{ data['hcp-2-address-postcode'] }}<br>
+                {{ data['hcp-2-address-country'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-2">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-2">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
@@ -761,10 +784,10 @@ Check your answers
                 When did you last see them?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['hcp-2-month'] }} - {{ data['hcp-2-year'] }}
+                {{ data['hcp-2-last-contact'] }} 
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-2">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-2">
                   Change<span class="govuk-visually-hidden"> lasxt seen them</span>
                 </a>
               </dd>
@@ -778,7 +801,7 @@ Check your answers
                 {{ data['hcp-3'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-another-2">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-another-2">
                   Change<span class="govuk-visually-hidden"> another health professional</span>
                 </a>
               </dd>
@@ -794,7 +817,7 @@ Check your answers
                 {{ data['hcp-3-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-3">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-3">
                   Change<span class="govuk-visually-hidden"> health professional name</span>
                 </a>
               </dd>
@@ -807,7 +830,7 @@ Check your answers
                 {{ data['hcp-3-profession'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-3">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-3">
                   Change<span class="govuk-visually-hidden"> profession</span>
                 </a>
               </dd>
@@ -820,7 +843,7 @@ Check your answers
                 {{ data['hcp-3-phone'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-3">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-3">
                   Change<span class="govuk-visually-hidden"> phone number</span>
                 </a>
               </dd>
@@ -835,10 +858,11 @@ Check your answers
                 {{ data['hcp-3-address-line-2'] }}<br>
                 {{ data['hcp-3-address-town'] }}<br>
                 {{ data['hcp-3-address-county'] }}<br>
-                {{ data['hcp-3-address-postcode'] }}
+                {{ data['hcp-3-address-postcode'] }}<br>
+                {{ data['hcp-3-address-country'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-3">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-3">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
@@ -848,10 +872,10 @@ Check your answers
                 When did you last see them?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['hcp-3-month'] }} - {{ data['hcp-3-year'] }}
+                {{ data['hcp-3-last-contact'] }} 
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-3">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-3">
                   Change<span class="govuk-visually-hidden"> lasxt seen them</span>
                 </a>
               </dd>
@@ -865,7 +889,7 @@ Check your answers
                 {{ data['hcp-4'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-another-2">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-another-2">
                   Change<span class="govuk-visually-hidden"> another health professional</span>
                 </a>
               </dd>
@@ -875,7 +899,7 @@ Check your answers
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Are you currently staying in a hospital or hospice as an in-patient?
+                Are you currently staying in any of the these places?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['hospital'] }}
@@ -887,10 +911,10 @@ Check your answers
               </dd>
             </div> <!-- govuk-summary-list__row -->
 
-            {% if data['hospital'] === 'Yes' %}
+            {% if data['hospital'] === 'Hospital' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                When did you go into the hospital or hospice?
+                When did you go into hospital?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['hospital-admission-day'] }} - {{ data['hospital-admission-month'] }} - {{ data['hospital-admission-year'] }}
@@ -904,39 +928,60 @@ Check your answers
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Hospital or hospice address
+                Hospital address
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['hospital-address-line-1'] }}<br>
                 {{ data['hospital-address-line-2'] }}<br>
                 {{ data['hospital-address-town'] }}<br>
                 {{ data['hospital-address-county'] }}<br>
-                {{ data['hospital-address-postcode'] }}
+                {{ data['hospital-address-postcode'] }}<br>
+                {{ data['hospital-address-country'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v7/about_your_health/hcp-3">
+                <a class="govuk-link" href="/mvp/hospital-address">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
 
-            {% if data['hospital'] === 'No' %}
+            {% if data['hospital'] === 'Hospice' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Are you currently staying or living in a care home or nursing home?
+                When did you go into the hospice?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['carehome'] }}
+                {{ data['hospice-admission-day'] }} - {{ data['hospice-admission-month'] }} - {{ data['hospice-admission-year'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="in-care-home">
-                  Change<span class="govuk-visually-hidden"> if you are in a vcare</span>
+                <a class="govuk-link" href="hospice-admission.html">
+                  Change<span class="govuk-visually-hidden"> date you were admitted to hospice</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
 
-            {% if data['carehome'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Hospice address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['hospice-address-line-1'] }}<br>
+                {{ data['hospice-address-line-2'] }}<br>
+                {{ data['hospice-address-town'] }}<br>
+                {{ data['hospice-address-county'] }}<br>
+                {{ data['hospice-address-postcode'] }}<br>
+                {{ data['hospice-address-country'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/mvp/hospice-address">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+            {% if data['hospital'] === 'Care or nursing home' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 When did you go into the care or nursing home?
@@ -960,7 +1005,8 @@ Check your answers
                 {{ data['care-home-address-line-2'] }}<br>
                 {{ data['care-home-address-town'] }}<br>
                 {{ data['care-home-address-county'] }}<br>
-                {{ data['care-home-address-postcode'] }}
+                {{ data['care-home-address-postcode'] }}<br>
+                {{ data['care-home-address-country'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="care-home-address">
@@ -968,7 +1014,6 @@ Check your answers
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            {% endif %}
             {% endif %}
           </dl>
 

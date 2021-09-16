@@ -278,7 +278,7 @@ module.exports = function (router) {
             res.redirect('/mvp/alt-format-sign-language');  }
         else if (altFormat === 'Audio') {
             res.redirect('/mvp/alt-format-audio');   }       
-        else if (altFormat === 'Other formats') {
+        else if (altFormat === 'Paper and other formats') {
             res.redirect('/mvp/alt-format-paper'); }
         else {
             res.redirect('/mvp/nationality');
@@ -303,7 +303,7 @@ module.exports = function (router) {
 
     router.post('/mvp/nationality', (req, res, next) => {
         const whereLive = req.session.data['nationality'];
-        if (whereLive === 'A nationality of the European Economic Area (EEA)') {
+        if (whereLive === 'A nationality of the European Economic Area (EEA) or Switzerland') {
             res.redirect('/mvp/living-in-uk');
         } else {
             res.redirect('/mvp/living-in-gb');
