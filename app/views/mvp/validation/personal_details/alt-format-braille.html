@@ -14,13 +14,31 @@ Alternative contact format Braile
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <div class="govuk-form-group">
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+          data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#alt-format-braille">Select which Braille format you need</a>
+              </li>
+            </ul>
+          </div>
+        </div> <!-- govuk-error-summary -->
+
+      <div class="govuk-form-group--error">
         <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">
               Which Braille format do you need?
             </h1>
           </legend>
+
+            <span id="alt-format-braille-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span>Select which Braille format you need
+            </span>
 
           <div id="changed-name-hint" class="govuk-hint">
             Select one option
@@ -42,6 +60,8 @@ Alternative contact format Braile
 
         </fieldset>
       </div> <!-- govuk-form-group -->
+
+      <br>
 
       <p class="govuk-body">The Department for Work and Pensions will contact you to arrange delivery.</p>
 
