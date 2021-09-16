@@ -12,7 +12,7 @@ module.exports = function (router) {
     //     return (req.session.data['nationality'] === 'Another nationality' ||
     //       (
     //         req.session.data['nationality'] === 'A nationality of the European Economic Area (EEA)' &&
-    //         (req.session.data['gb'] === 'No')&& 
+    //         (req.session.data['gb'] === 'No')&&
     //         (req.session.data['living-in-uk'] === 'No' || req.session.data['living-in-uk'] === 'Not sure')
     //       ) ||
     //       (req.session.data['eu-question'].indexOf('Getting a pension or benefit from an EEA country') > -1 || req.session.data['eu-question'].indexOf('Paid or paying insurance to an EEA country') > -1 ) ||
@@ -24,6 +24,11 @@ module.exports = function (router) {
     //   }
 
     // ELIGIBILITY QUESTIONS
+
+    router.post('/v9/eligibility-start', (req, res) => {
+        res.redirect("/v9/over-16");
+    })
+
     router.post('/v9/over-16', (req, res, next) => {
         const over16 = req.session.data['over-16'];
         if (over16 === 'Over State Pension age') {
@@ -82,7 +87,7 @@ module.exports = function (router) {
     //     if (passportConsent == 'true' && payslipOrP60 == 'payslip') {
     //       res.redirect('./your-passport-details?payslip=true')
     //     }
-    //     //Passport and P60 
+    //     //Passport and P60
     //     else if (passportConsent == 'true' && payslipOrP60 == 'p60') {
     //       res.redirect('./your-passport-details?p60=true')
     //     }
@@ -152,11 +157,11 @@ module.exports = function (router) {
     //     res.redirect('./tu-question-1');
     //   })
 
-    //   router.post('/v9/idv/hmrciv/voiceId', (req, res) => { 
+    //   router.post('/v9/idv/hmrciv/voiceId', (req, res) => {
     //     res.redirect("/carers/voice-id");
     //   })
 
-    //   router.post('/v9/idv/hmrciv/success', (req, res) => { 
+    //   router.post('/v9/idv/hmrciv/success', (req, res) => {
     //     res.redirect("/v9/address");
     //   })
 
@@ -465,7 +470,7 @@ module.exports = function (router) {
     router.post('/v9/hospice-admission', (req, res, next) => {
         res.redirect('/v9/hospice-address');
     });
-    
+
     router.post('/v9/hospice-address', (req, res, next) => {
         res.redirect('/v9/check-answers');
     });
@@ -558,4 +563,3 @@ module.exports = function (router) {
     });
     // RETURNING USER FLOW END
 };
-
