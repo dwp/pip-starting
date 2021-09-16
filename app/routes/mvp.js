@@ -341,27 +341,27 @@ module.exports = function (router) {
                 res.redirect('/mvp/about_your_health/condition-new-2')
             }
             if (gb === 'Yes' || gb === 'Not sure') {
-                res.redirect('/mvp/eu-benefits')
+                res.redirect('/mvp/eu-question')
             }
         } else if (nationality === 'Another nationality') {
             res.redirect('/mvp/about_your_health/condition-new-2')
         }
     })
 
-    router.post('/mvp/eu-benefits', (req, res, next) => {
-        res.redirect('/mvp/eu-worked');
-    });
+    // router.post('/mvp/eu-question', (req, res, next) => {
+    //     res.redirect('/mvp/eu-worked');
+    // });
 
-    router.post('/mvp/eu-worked', (req, res, next) => {
-        const euWorked = req.session.data['eu-worked'];
-        if (euWorked === 'No') {
-            res.redirect('/mvp/about_your_health/condition-new-2');
-        } else {
-            res.redirect('/mvp/eu-insurance');
-        }
-    });
+    // router.post('/mvp/eu-worked', (req, res, next) => {
+    //     const euWorked = req.session.data['eu-worked'];
+    //     if (euWorked === 'No') {
+    //         res.redirect('/mvp/about_your_health/condition-new-2');
+    //     } else {
+    //         res.redirect('/mvp/eu-insurance');
+    //     }
+    // });
 
-    router.post('/mvp/eu-insurance', (req, res, next) => {
+    router.post('/mvp/eu-question', (req, res, next) => {
         res.redirect('/mvp/about_your_health/condition-new-2');
     });
 
