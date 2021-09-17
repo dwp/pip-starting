@@ -25,6 +25,11 @@ module.exports = function (router) {
     // }
 
     // ELIGIBILITY QUESTIONS
+
+    router.post('/mvp/eligibility-start', (req, res) => {
+        res.redirect("/mvp/over-16");
+    })
+
     router.post('/mvp/over-16', (req, res, next) => {
         const over16 = req.session.data['over-16'];
         if (over16 === 'Over State Pension age') {
@@ -510,22 +515,26 @@ module.exports = function (router) {
     // PERSONAL AND HEALTH QUESTIONS END
 
     // CHECK ANSWERS START
+    // router.post('/mvp/check-answers', (req, res, next) => {
+    //     console.log(req.session.data)
+    //     const complex = complexCase(req);
+    //     if (!complex) {
+    //         res.redirect('/mvp/confirmation')
+    //     } else {
+    //         res.redirect('/mvp/we-need-to-get-in-touch')
+    //     };
+    // });
+
+    // router.post('/mvp/we-need-to-get-in-touch', (req, res, next) => {
+    //     res.redirect('/mvp/complex_contact_details/complex-contact-confirmation');
+    // });
+
+    // router.post('/mvp/confirmation', (req, res, next) => {
+    //     res.redirect('/p5/list');
+    // });
+
     router.post('/mvp/check-answers', (req, res, next) => {
-        console.log(req.session.data)
-        const complex = complexCase(req);
-        if (!complex) {
-            res.redirect('/mvp/confirmation')
-        } else {
-            res.redirect('/mvp/we-need-to-get-in-touch')
-        };
-    });
-
-    router.post('/mvp/we-need-to-get-in-touch', (req, res, next) => {
-        res.redirect('/mvp/complex_contact_details/complex-contact-confirmation');
-    });
-
-    router.post('/mvp/confirmation', (req, res, next) => {
-        res.redirect('/p5/list');
+        res.redirect('/mvp/confirmation');
     });
 
     // CHECK ANSWERS END
