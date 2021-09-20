@@ -25,6 +25,15 @@ module.exports = function (router) {
 
     // ELIGIBILITY QUESTIONS
 
+    router.post('/v9/intro-question', (req, res, next) => {
+        const newOld = req.session.data['new-existing'];
+        if (newOld === 'Yes, I already have a password') {
+            res.redirect("/v9/save_and_return/sign-in");
+        } else  {
+            res.redirect('/v9/eligibility-start');
+        }
+    })
+    
     router.post('/v9/eligibility-start', (req, res) => {
         res.redirect("/v9/over-16");
     })
@@ -60,17 +69,21 @@ module.exports = function (router) {
             res.redirect('/v9/not-eligible')
         } else if (over9months === 'At least 9 months') {
             if (eligible) {
-                res.redirect('/p5/sign-in/intro-question')
+                res.redirect('/v9/eligible')
             } else {
                 res.redirect('/v9/not-eligible');
             }
         } else if (over9months === 'Not sure') {
             if (eligible) {
-                res.redirect('/p5/sign-in/intro-question')
+                res.redirect('/v9/eligible')
             } else {
                 res.redirect('/v9/not-eligible');
             }
         }
+    });
+
+    router.post('/v9/eligible', (req, res, next) => {
+        res.redirect('/p5/sign-in/register-start');
     });
 
     // ELIGIBILITY QUESTIONS END
