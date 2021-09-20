@@ -460,17 +460,21 @@ module.exports = function (router) {
 
     router.post('/v9/in-hospital', (req, res, next) => {
         const inHospital = req.session.data['hospital'];
-        if (inHospital === 'Yes') {
+        if (inHospital === 'Hospital') {
             res.redirect('/v9/hospital-admission');
+        } else if (inHospital === 'Hospice') {
+            res.redirect('/v9/hospice-admission');
+        } else if (inHospital === 'Care or nursing home') {
+            res.redirect('/v9/care-home-admission');
         } else {
-            res.redirect('/v9/in-care-home');
+            res.redirect('/v9/check-answers');
         }
     });
 
     router.post('/v9/hospital-admission', (req, res, next) => {
         res.redirect('/v9/hospital-address');
     });
-
+    
     router.post('/v9/hospital-address', (req, res, next) => {
         res.redirect('/v9/check-answers');
     });
@@ -478,6 +482,11 @@ module.exports = function (router) {
     router.get('/v9/hospital-address', (req, res, next) => {
         res.locals.countries = countries;
         res.render('v9/hospital-address')
+    })
+
+    router.get('/v9/validation/about_your_health/hospital-address', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('v9/validation/about_your_health/hospital-address')
     })
 
     router.post('/v9/hospice-admission', (req, res, next) => {
@@ -493,10 +502,14 @@ module.exports = function (router) {
         res.render('v9/hospice-address')
     })
 
+    router.get('/v9/validation/about_your_health/hospice-address', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('v9/validation/about_your_health/hospice-address')
+    })
+
     router.post('/v9/care-home-admission', (req, res, next) => {
         res.redirect('/v9/care-home-address');
     });
-
     router.post('/v9/care-home-address', (req, res, next) => {
         res.redirect('/v9/check-answers');
     });
@@ -504,6 +517,11 @@ module.exports = function (router) {
     router.get('/v9/care-home-address', (req, res, next) => {
         res.locals.countries = countries;
         res.render('v9/care-home-address')
+    })
+
+    router.get('/v9/validation/about_your_health/care-home-address', (req, res, next) => {
+        res.locals.countries = countries;
+        res.render('v9/validation/about_your_health/care-home-address')
     })
 
     // PERSONAL AND HEALTH QUESTIONS END
