@@ -33,6 +33,7 @@
 "Burkinau",
 "Burmese",
 "Burundi",
+"Cambodian",
 "Cameroonian",
 "Canadian",
 "Cape Verdean",
@@ -83,7 +84,6 @@
 "Jamaican",
 "Japanese",
 "Jordanian",
-"Cambodian",
 "Kazakh",
 "Kenyan",
 "Kiribati",
@@ -194,5 +194,4 @@
 "Yugoslavian",
 "Zairean",
 "Zambian",
-"Zimbabwean",
-"Not known"]
+"Zimbabwean"]
