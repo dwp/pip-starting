@@ -27,7 +27,7 @@ module.exports = function (router) {
 
     router.post('/v9/intro-question', (req, res, next) => {
         const newOld = req.session.data['new-existing'];
-        if (newOld === 'Yes, I already have a password') {
+        if (newOld === 'Yes') {
             res.redirect("/v9/save_and_return/sign-in");
         } else  {
             res.redirect('/v9/eligibility-start');
