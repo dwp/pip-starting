@@ -197,35 +197,35 @@ module.exports = function (router) {
     });
 
     router.post('/mvp/add-support-name', (req, res, next) => {
-        res.redirect('/mvp/add-support-address');
-    });
-
-    router.post('/mvp/add-support-address', (req, res, next) => {
-        const addsupportAddress = req.session.data['add-support-safe-address'];
-        if (addsupportAddress === 'No') {
-            res.redirect('/mvp/add-support-address-other');
-        } else {
-            res.redirect('/mvp/add-support-contact-details');
-        }
-    });
-
-    router.get('/mvp/add-support-address', (req, res, next) => {
-        res.locals.countries = countries;
-        res.render('mvp/add-support-address')
-    })
-
-    router.post('/mvp/add-support-address-other', (req, res, next) => {
-        res.redirect('/mvp/add-support-contact-details');
-    });
-
-    router.get('/mvp/add-support-address-other', (req, res, next) => {
-        res.locals.countries = countries;
-        res.render('mvp/add-support-address-other')
-    })
-
-    router.post('/mvp/add-support-contact-details', (req, res, next) => {
         res.redirect('/mvp/name');
     });
+
+    // router.post('/mvp/add-support-address', (req, res, next) => {
+    //     const addsupportAddress = req.session.data['add-support-safe-address'];
+    //     if (addsupportAddress === 'No') {
+    //         res.redirect('/mvp/add-support-address-other');
+    //     } else {
+    //         res.redirect('/mvp/add-support-contact-details');
+    //     }
+    // });
+
+    // router.get('/mvp/add-support-address', (req, res, next) => {
+    //     res.locals.countries = countries;
+    //     res.render('mvp/add-support-address')
+    // })
+
+    // router.post('/mvp/add-support-address-other', (req, res, next) => {
+    //     res.redirect('/mvp/add-support-contact-details');
+    // });
+
+    // router.get('/mvp/add-support-address-other', (req, res, next) => {
+    //     res.locals.countries = countries;
+    //     res.render('mvp/add-support-address-other')
+    // })
+
+    // router.post('/mvp/add-support-contact-details', (req, res, next) => {
+    //     res.redirect('/mvp/name');
+    // });
 
     // ADDITIONAL SUPPORT QUESTIONS END
 
