@@ -209,34 +209,34 @@ module.exports = function (router) {
     });
 
     router.post('/v9/add-support-name', (req, res, next) => {
-        res.redirect('/v9/add-support-address');
-    });
-
-    router.post('/v9/add-support-address', (req, res, next) => {
-        const addsupportAddress = req.session.data['add-support-safe-address'];
-        if (addsupportAddress === 'No') {
-            res.redirect('/v9/add-support-address-other');
-        } else {
-            res.redirect('/v9/add-support-contact-details');
-        }
-    });
-    router.get('/v9/add-support-address', (req, res, next) => {
-        res.locals.countries = countries;
-        res.render('v9/add-support-address')
-    })
-
-    router.post('/v9/add-support-address-other', (req, res, next) => {
-        res.redirect('/v9/add-support-contact-details');
-    });
-
-    router.get('/v9/add-support-address-other', (req, res, next) => {
-        res.locals.countries = countries;
-        res.render('v9/add-support-address-other')
-    })
-
-    router.post('/v9/add-support-contact-details', (req, res, next) => {
         res.redirect('/v9/name');
     });
+
+    // router.post('/v9/add-support-address', (req, res, next) => {
+    //     const addsupportAddress = req.session.data['add-support-safe-address'];
+    //     if (addsupportAddress === 'No') {
+    //         res.redirect('/v9/add-support-address-other');
+    //     } else {
+    //         res.redirect('/v9/add-support-contact-details');
+    //     }
+    // });
+    // router.get('/v9/add-support-address', (req, res, next) => {
+    //     res.locals.countries = countries;
+    //     res.render('v9/add-support-address')
+    // })
+
+    // router.post('/v9/add-support-address-other', (req, res, next) => {
+    //     res.redirect('/v9/add-support-contact-details');
+    // });
+
+    // router.get('/v9/add-support-address-other', (req, res, next) => {
+    //     res.locals.countries = countries;
+    //     res.render('v9/add-support-address-other')
+    // })
+
+    // router.post('/v9/add-support-contact-details', (req, res, next) => {
+    //     res.redirect('/v9/name');
+    // });
 
     // ADDITIONAL SUPPORT QUESTIONS END
 
