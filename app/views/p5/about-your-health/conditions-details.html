@@ -40,6 +40,17 @@
         }
       }) }}
 
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="condition-start-date">
+          Approximate start date?
+          </label>
+        </h1>
+        <div id="condition-start-date-hint" class="govuk-hint">
+          For example, about 14 months ago.
+        </div>
+        <input class="govuk-input" id="condition-start-date" name="condition-start-date" type="text" aria-describedby="condition-start-date-hint">
+      </div>
+
       {{ govukButton({
         text: 'Save and continue'
       }) }}

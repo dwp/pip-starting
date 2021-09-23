@@ -28,14 +28,14 @@
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Condition</th>
-            <th scope="col" class="govuk-table__header">Start date</th>
+            <!-- <th scope="col" class="govuk-table__header">Start date</th> -->
             <th scope="col" class="govuk-table__header">About your condition</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">{{ data['conditions'][0]['condition_name'] }}</th>
-            <td class="govuk-table__cell">{{ data['conditions'][0]['date'] }}</td>
+            <!-- <td class="govuk-table__cell">{{ data['conditions'][0]['date'] }}</td> -->
             <td class="govuk-table__cell"><a class="govuk-link" href="conditions-details">Give details</td>
           </tr>
           {% if conditionsLength > 1 %}
@@ -43,7 +43,7 @@
           {% if not loop.first %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">{{ condition.condition_name }}</th>
-            <td class="govuk-table__cell">{{ condition.date }}</td>
+            <!-- <td class="govuk-table__cell">{{ condition.date }}</td> -->
             <td class="govuk-table__cell"><a class="govuk-link" href="conditions-details-2">Give details</td>
           </tr>
           {% endif %}

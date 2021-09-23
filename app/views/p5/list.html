@@ -41,20 +41,20 @@
                     <strong class="govuk-tag app-task-list__task-completed" id="aboutyourhealth">Completed</strong>
                   </span>
                 </a>
-                {% else %}
+                {% elif sectionStatus.aboutyourhealth === "inprogress" %}
                 <a class="app-task-list__task-name " href="/p5/about-your-health/condition">
                   About your health
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="aboutyourhealth">Not complete</strong>
                   </span>
                 </a>
-
-                <!-- <a class="app-task-list__task-name " href="/p5/about-your-health/condition">
+                {% else %}
+                <a class="app-task-list__task-name " href="/p5/about-your-health/condition">
                   About your health
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="aboutyourhealth">Not started</strong>
                   </span>
-                </a> -->
+                </a>
               {% endif %}
             </li>
             <li class="app-task-list__item">
@@ -65,20 +65,20 @@
                     <strong class="govuk-tag app-task-list__task-completed" id="aboutyourhealthprofessionals">Completed</strong>
                   </span>
                 </a>
-                {% else %}
+                {% elif sectionStatus.aboutyourhealthprofessionals === "inprogress" %}
                 <a class="app-task-list__task-name " href="/p5/about-your-health-professionals/check">
                   About your health professionals
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="aboutyourhealthprofessionals">Not complete</strong>
                   </span>
                 </a>
-
-                <!-- <a class="app-task-list__task-name " href="/p5/about-your-health-professionals/check">
+                {% else %}
+                <a class="app-task-list__task-name " href="/p5/about-your-health-professionals/check">
                   About your health professionals
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="aboutyourhealthprofessionals">Not started</strong>
                   </span>
-                </a> -->
+                </a>
               {% endif %}
             </li>
           </ul>
