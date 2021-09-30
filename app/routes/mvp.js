@@ -70,17 +70,21 @@ module.exports = function (router) {
             res.redirect('/mvp/not-eligible')
         } else if (over9months === 'At least 9 months') {
             if (eligible) {
-                res.redirect('/mvp/auth/dev-ready/register/start')
+                res.redirect('/mvp/eligible')
             } else {
                 res.redirect('/mvp/not-eligible');
             }
         } else if (over9months === 'Not sure') {
             if (eligible) {
-                res.redirect('/mvp/auth/dev-ready/register/start')
+                res.redirect('/mvp/eligible')
             } else {
                 res.redirect('/mvp/not-eligible');
             }
         }
+    });
+
+    router.post('/mvp/eligible', (req, res, next) => {
+        res.redirect('/mvp/sign-in/register-start');
     });
 
     // ELIGIBILITY QUESTIONS END
