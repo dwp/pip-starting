@@ -26,6 +26,15 @@ module.exports = function (router) {
 
     // ELIGIBILITY QUESTIONS
 
+    router.post('/mvp/intro-question', (req, res, next) => {
+        const newOld = req.session.data['new-existing'];
+        if (newOld === 'Yes') {
+            res.redirect("/mvp/save_and_return/sign-in");
+        } else  {
+            res.redirect('/mvp/eligibility-start');
+        }
+    })
+
     router.post('/mvp/eligibility-start', (req, res) => {
         res.redirect("/mvp/over-16");
     })
