@@ -6,7 +6,7 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-{% include "includes/back-link-signed-out.html" %}
+<a href="index" class="govuk-back-link">Back to main index</a>
 {% endblock %}
 
 {% block content %}
@@ -33,7 +33,7 @@ GOV.UK Prototype Kit
         <h2 class="govuk-heading-s">Eligibility</h2>
         <ul class="govuk-list govuk-list--bullet">
 
-            <li><a href="/mvp/eligibility-start">PIP Apply landing page - Private beta</a>
+            <li><a href="/mvp/eligibility-start">Eligibility start page</a>
 
             </li>
             <li><a href="/mvp/over-16">How old are you?</a>
@@ -55,6 +55,9 @@ GOV.UK Prototype Kit
                 <ul>
                     <li><a href="/mvp/validation/eligibility/over-9-months">Validation messages</a></li>
                 </ul>
+            </li>
+            <li><a href="/mvp/eligible">Eligible</a>
+
             </li>
             <li><a href="/mvp/not-eligible">Not eligible</a>
 
