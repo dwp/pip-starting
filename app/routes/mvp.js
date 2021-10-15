@@ -101,7 +101,7 @@ module.exports = function (router) {
     //     if (passportConsent == 'true' && payslipOrP60 == 'payslip') {
     //       res.redirect('./your-passport-details?payslip=true')
     //     }
-    //     //Passport and P60 
+    //     //Passport and P60
     //     else if (passportConsent == 'true' && payslipOrP60 == 'p60') {
     //       res.redirect('./your-passport-details?p60=true')
     //     }
@@ -171,11 +171,11 @@ module.exports = function (router) {
     //     res.redirect('./tu-question-1');
     //   })
 
-    //   router.post('/mvp/idv/hmrciv/voiceId', (req, res) => { 
+    //   router.post('/mvp/idv/hmrciv/voiceId', (req, res) => {
     //     res.redirect("/carers/voice-id");
     //   })
 
-    //   router.post('/mvp/idv/hmrciv/success', (req, res) => { 
+    //   router.post('/mvp/idv/hmrciv/success', (req, res) => {
     //     res.redirect("/mvp/address");
     //   })
 
@@ -295,12 +295,12 @@ module.exports = function (router) {
         else if (altFormat === 'Sign Language') {
             res.redirect('/mvp/alt-format-sign-language');  }
         else if (altFormat === 'Audio') {
-            res.redirect('/mvp/alt-format-audio');   }       
+            res.redirect('/mvp/alt-format-audio');   }
         else if (altFormat === 'Paper and other formats') {
             res.redirect('/mvp/alt-format-paper'); }
         else {
             res.redirect('/mvp/nationality');
-        }     
+        }
     });
 
     router.post('/mvp/alt-format-braille', (req, res, next) => {
@@ -403,7 +403,7 @@ module.exports = function (router) {
         } else {
             res.redirect('/mvp/in-hospital');
         }
-    });  
+    });
 
     router.post('/mvp/about_your_health/hcp-1', (req, res, next) => {
         res.redirect('/mvp/about_your_health/hcp-another');
@@ -467,6 +467,8 @@ module.exports = function (router) {
             res.redirect('/mvp/hospice-admission');
         } else if (inHospital === 'Care or nursing home') {
             res.redirect('/mvp/care-home-admission');
+          } else if (inHospital === 'Other') {
+              res.redirect('/mvp/care-home-admission');
         } else {
             res.redirect('/mvp/check-answers');
         }
@@ -475,7 +477,7 @@ module.exports = function (router) {
     router.post('/mvp/hospital-admission', (req, res, next) => {
         res.redirect('/mvp/hospital-address');
     });
-    
+
     router.post('/mvp/hospital-address', (req, res, next) => {
         res.redirect('/mvp/check-answers');
     });
@@ -595,4 +597,3 @@ module.exports = function (router) {
     });
     // RETURNING USER FLOW END
 };
-
