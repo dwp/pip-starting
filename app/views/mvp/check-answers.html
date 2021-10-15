@@ -982,10 +982,10 @@ Check your answers
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
 
-            {% if data['hospital'] === 'Other accommodation' %}
+            {% if data['hospital'] === 'Care or nursing home' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                When did you go into the other accommodation?
+                When did you go into the accommodation?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['care-home-admission-day'] }} - {{ data['care-home-admission-month'] }} - {{
@@ -1000,7 +1000,7 @@ Check your answers
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Other accommodation address
+                Accommodation address
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['care-home-name'] }}<br>
@@ -1013,7 +1013,44 @@ Check your answers
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="care-home-address">
-                  Change<span class="govuk-visually-hidden"> Other accommodation address</span>
+                  Change<span class="govuk-visually-hidden"> care home or nursing home address</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+            {% if data['hospital'] === 'Other' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                When did you go into the other accommodation?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['care-home-admission-day'] }} - {{ data['care-home-admission-month'] }} - {{
+                data['care-home-admission-year'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="care-home-admission">
+                  Change<span class="govuk-visually-hidden"> date you went into the other accommodation</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Other accommodation address?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['care-home-name'] }}<br>
+                {{ data['care-home-address-line-1'] }}<br>
+                {{ data['care-home-address-line-2'] }}<br>
+                {{ data['care-home-address-town'] }}<br>
+                {{ data['care-home-address-county'] }}<br>
+                {{ data['care-home-address-postcode'] }}<br>
+                {{ data['care-home-address-country'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="care-home-address">
+                  Change<span class="govuk-visually-hidden"> other accommodation address</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
