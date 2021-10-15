@@ -465,9 +465,9 @@ module.exports = function (router) {
             res.redirect('/mvp/hospital-admission');
         } else if (inHospital === 'Hospice') {
             res.redirect('/mvp/hospice-admission');
-        } else if (inHospital === 'Other accommodation') {
+        } else if (inHospital === 'Care or nursing home') {
             res.redirect('/mvp/care-home-admission');
-          } else if (inHospital === 'Other') {
+        } else if (inHospital === 'Other') {
               res.redirect('/mvp/care-home-admission');
         } else {
             res.redirect('/mvp/check-answers');
