@@ -193,7 +193,7 @@ module.exports = function (router) {
 
     router.post('/mvp/add-support', (req, res, next) => {
         const addSupport = req.session.data['add-support'];
-        if (addSupport === 'Yes, all of the time or sometimes') {
+        if (addSupport === 'Yes') {
             res.redirect('/mvp/add-support-help');
         } else {
             res.redirect('/mvp/name');
@@ -465,7 +465,7 @@ module.exports = function (router) {
             res.redirect('/mvp/hospital-admission');
         } else if (inHospital === 'Hospice') {
             res.redirect('/mvp/hospice-admission');
-        } else if (inHospital === 'Care or nursing home') {
+        } else if (inHospital === 'Other accommodation') {
             res.redirect('/mvp/care-home-admission');
         } else {
             res.redirect('/mvp/check-answers');
