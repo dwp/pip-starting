@@ -24,7 +24,7 @@ Are you currently staying in hospital
           <div class="govuk-error-summary__body">
             <ul class="govuk-list govuk-error-summary__list">
               <li>
-                <a href="#hospital-1">Select if you are staying in a hospital, hospice, other, or none of these</a>
+                <a href="#hospital-1">Select if you are staying in a hospital, hospice, care or nursing home, other, or none of these</a>
               </li>
             </ul>
           </div>
@@ -42,8 +42,8 @@ Are you currently staying in hospital
               Select one option.
             </div>
             <span id="add-support-communicating-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span>Select if you are staying in a hospital, hospice, other, or none of these
-            </span> 
+              <span class="govuk-visually-hidden">Error:</span>Select if you are staying in a hospital, care or nursin home, hospice, other, or none of these
+            </span>
           <div class="govuk-radios govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="hospital-1" name="hospital" type="radio" value="Hospital">
@@ -53,23 +53,29 @@ Are you currently staying in hospital
             </div> <!-- govuk-radios__item -->
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="hospital-2" name="hospital" type="radio" value="Hospice">
-              <label class="govuk-label govuk-radios__label" for="hospital-2">
+              <label class="govuk-label govuk-radios__label" for="hospital2">
                 Hospice
               </label>
             </div> <!-- govuk-radios__item -->
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="hospital-3" name="hospital" type="radio" value="Care or nursing home">
               <label class="govuk-label govuk-radios__label" for="hospital-3">
+                Care or nursing home
+              </label>
+            </div> <!-- govuk-radios__item -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="hospital-4" name="hospital" type="radio" value="Other accommodation">
+              <label class="govuk-label govuk-radios__label" for="hospital-4">
                 Other
               </label>
               <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-                This includes care or nursing home, residential college, respite care, sheltered housing or other accommodation.
+                This includes residential college, respite care, sheltered housing or other accommodation.
               </div>
             </div> <!-- govuk-radios__item -->
             <div class="govuk-radios__divider">or</div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="hospital-2" name="hospital" type="radio" value="None of these">
-              <label class="govuk-label govuk-radios__label" for="hospital-4">
+              <input class="govuk-radios__input" id="hospital-5" name="hospital" type="radio" value="None of these">
+              <label class="govuk-label govuk-radios__label" for="hospital-5">
                 No, none of these
               </label>
             </div> <!-- govuk-radios__item -->
