@@ -33,7 +33,7 @@ module.exports = function (router) {
             res.redirect('/v9/eligibility-start');
         }
     })
-    
+
     router.post('/v9/eligibility-start', (req, res) => {
         res.redirect("/v9/over-16");
     })
@@ -464,8 +464,10 @@ module.exports = function (router) {
             res.redirect('/v9/hospital-admission');
         } else if (inHospital === 'Hospice') {
             res.redirect('/v9/hospice-admission');
-        } else if (inHospital === 'Care or nursing home') {
+        } else if (inHospital === 'Other accommodation') {
             res.redirect('/v9/care-home-admission');
+          } else if (inHospital === 'Other') {
+              res.redirect('/v9/care-home-admission');
         } else {
             res.redirect('/v9/check-answers');
         }
@@ -474,7 +476,7 @@ module.exports = function (router) {
     router.post('/v9/hospital-admission', (req, res, next) => {
         res.redirect('/v9/hospital-address');
     });
-    
+
     router.post('/v9/hospital-address', (req, res, next) => {
         res.redirect('/v9/check-answers');
     });
