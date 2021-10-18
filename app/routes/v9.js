@@ -291,7 +291,7 @@ module.exports = function (router) {
         else if (altFormat === 'Audio') {
             res.redirect('/v9/alt-format-audio');
         }
-        else if (altFormat === 'Other formats') {
+        else if (altFormat === 'Paper and other formats') {
             res.redirect('/v9/alt-format-paper');
         }
         else {
