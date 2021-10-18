@@ -25,64 +25,64 @@ module.exports = function (router) {
 
     // ELIGIBILITY QUESTIONS
 
-    router.post('/v9/intro-question', (req, res, next) => {
+    router.post('/v10/intro-question', (req, res, next) => {
         const newOld = req.session.data['new-existing'];
         if (newOld === 'Yes') {
-            res.redirect("/v9/save_and_return/sign-in");
+            res.redirect("/v10/save_and_return/sign-in");
         } else  {
-            res.redirect('/v9/eligibility-start');
+            res.redirect('/v10/eligibility-start');
         }
     })
 
-    router.post('/v9/eligibility-start', (req, res) => {
-        res.redirect("/v9/over-16");
+    router.post('/v10/eligibility-start', (req, res) => {
+        res.redirect("/v10/over-16");
     })
 
-    router.post('/v9/over-16', (req, res, next) => {
+    router.post('/v10/over-16', (req, res, next) => {
         const over16 = req.session.data['over-16'];
         if (over16 === 'Over State Pension age') {
-            res.redirect('/v9/over-spa');
+            res.redirect('/v10/over-spa');
         } else {
-            res.redirect('/v9/health-condition');
+            res.redirect('/v10/health-condition');
         }
     });
 
-    router.post('/v9/over-spa', (req, res, next) => {
-        res.redirect('/v9/health-condition');
+    router.post('/v10/over-spa', (req, res, next) => {
+        res.redirect('/v10/health-condition');
     });
 
-    router.post('/v9/health-condition', (req, res, next) => {
+    router.post('/v10/health-condition', (req, res, next) => {
         const healthCondition = req.session.data['condition'];
         if (healthCondition === 'Yes, all of the time or sometimes') {
-            res.redirect('/v9/over-9-months')
+            res.redirect('/v10/over-9-months')
         } else if (healthCondition === 'No, never') {
-            res.redirect('/v9/not-eligible');
+            res.redirect('/v10/not-eligible');
         } else if (healthCondition === 'Not sure') {
-            res.redirect('/v9/over-9-months');
+            res.redirect('/v10/over-9-months');
         }
     });
 
-    router.post('/v9/over-9-months', (req, res, next) => {
+    router.post('/v10/over-9-months', (req, res, next) => {
         const eligible = isEligible(req);
         const over9months = req.session.data['over-9-months'];
         if (over9months === 'Less than 9 months') {
-            res.redirect('/v9/not-eligible')
+            res.redirect('/v10/not-eligible')
         } else if (over9months === 'At least 9 months') {
             if (eligible) {
-                res.redirect('/v9/eligible')
+                res.redirect('/v10/eligible')
             } else {
-                res.redirect('/v9/not-eligible');
+                res.redirect('/v10/not-eligible');
             }
         } else if (over9months === 'Not sure') {
             if (eligible) {
-                res.redirect('/v9/eligible')
+                res.redirect('/v10/eligible')
             } else {
-                res.redirect('/v9/not-eligible');
+                res.redirect('/v10/not-eligible');
             }
         }
     });
 
-    router.post('/v9/eligible', (req, res, next) => {
+    router.post('/v10/eligible', (req, res, next) => {
         res.redirect('/p5/sign-in/register-start');
     });
 
@@ -90,7 +90,7 @@ module.exports = function (router) {
 
     // IDV CHECK
 
-    // router.post('/v9/idv/hmrciv/idvselection', (req, res) => {
+    // router.post('/v10/idv/hmrciv/idvselection', (req, res) => {
     //     const passportConsent = req.session.data['passport-consent'];
     //     const payslipOrP60 = req.session.data['payslipOrP60'];
     //     const voiceID = req.session.data['tcOptions'];
@@ -154,191 +154,191 @@ module.exports = function (router) {
     //     }
     //   })
 
-    //   router.post('/v9/idv/hmrciv/payslip', (req, res) => {
+    //   router.post('/v10/idv/hmrciv/payslip', (req, res) => {
     //     res.redirect('./payslip-question-1');
     //   })
 
-    //   router.post('/v9/idv/hmrciv/p60', (req, res) => {
+    //   router.post('/v10/idv/hmrciv/p60', (req, res) => {
     //     res.redirect('./p60-question-1');
     //   })
 
-    //   router.post('/v9/idv/hmrciv/tcKbv', (req, res) => {
+    //   router.post('/v10/idv/hmrciv/tcKbv', (req, res) => {
     //     res.redirect('./tax-credits-question-1');
     //   })
 
-    //   router.post('/v9/idv/hmrciv/tuKbv', (req, res) => {
+    //   router.post('/v10/idv/hmrciv/tuKbv', (req, res) => {
     //     res.redirect('./tu-question-1');
     //   })
 
-    //   router.post('/v9/idv/hmrciv/voiceId', (req, res) => {
+    //   router.post('/v10/idv/hmrciv/voiceId', (req, res) => {
     //     res.redirect("/carers/voice-id");
     //   })
 
-    //   router.post('/v9/idv/hmrciv/success', (req, res) => {
-    //     res.redirect("/v9/address");
+    //   router.post('/v10/idv/hmrciv/success', (req, res) => {
+    //     res.redirect("/v10/address");
     //   })
 
-    router.post('/v9/auth/dev-ready/sign-in-2fa', (req, res) => {
-        res.redirect("/v9/add-support-communicating");
+    router.post('/v10/auth/dev-ready/sign-in-2fa', (req, res) => {
+        res.redirect("/v10/add-support-communicating");
     })
 
     // IDV CHECK END
 
     // ADDITIONAL SUPPORT QUESTIONS
 
-    router.post('/v9/add-support-communicating', (req, res, next) => {
-        res.redirect('/v9/add-support');
+    router.post('/v10/add-support-communicating', (req, res, next) => {
+        res.redirect('/v10/add-support');
     });
 
-    router.post('/v9/add-support', (req, res, next) => {
+    router.post('/v10/add-support', (req, res, next) => {
         const addSupport = req.session.data['add-support'];
         if (addSupport === 'Yes, all of the time or sometimes') {
-            res.redirect('/v9/add-support-help');
+            res.redirect('/v10/add-support-help');
         } else {
-            res.redirect('/v9/name');
+            res.redirect('/v10/name');
         }
     });
 
-    router.post('/v9/add-support-help', (req, res, next) => {
+    router.post('/v10/add-support-help', (req, res, next) => {
         const addsupportHelp = req.session.data['add-support-help'];
         if (addsupportHelp === 'Yes') {
-            res.redirect('/v9/add-support-name');
+            res.redirect('/v10/add-support-name');
         } else {
-            res.redirect('/v9/name');
+            res.redirect('/v10/name');
         }
     });
 
-    router.post('/v9/add-support-name', (req, res, next) => {
-        res.redirect('/v9/name');
+    router.post('/v10/add-support-name', (req, res, next) => {
+        res.redirect('/v10/name');
     });
 
-    // router.post('/v9/add-support-address', (req, res, next) => {
+    // router.post('/v10/add-support-address', (req, res, next) => {
     //     const addsupportAddress = req.session.data['add-support-safe-address'];
     //     if (addsupportAddress === 'No') {
-    //         res.redirect('/v9/add-support-address-other');
+    //         res.redirect('/v10/add-support-address-other');
     //     } else {
-    //         res.redirect('/v9/add-support-contact-details');
+    //         res.redirect('/v10/add-support-contact-details');
     //     }
     // });
-    // router.get('/v9/add-support-address', (req, res, next) => {
+    // router.get('/v10/add-support-address', (req, res, next) => {
     //     res.locals.countries = countries;
-    //     res.render('v9/add-support-address')
+    //     res.render('v10/add-support-address')
     // })
 
-    // router.post('/v9/add-support-address-other', (req, res, next) => {
-    //     res.redirect('/v9/add-support-contact-details');
+    // router.post('/v10/add-support-address-other', (req, res, next) => {
+    //     res.redirect('/v10/add-support-contact-details');
     // });
 
-    // router.get('/v9/add-support-address-other', (req, res, next) => {
+    // router.get('/v10/add-support-address-other', (req, res, next) => {
     //     res.locals.countries = countries;
-    //     res.render('v9/add-support-address-other')
+    //     res.render('v10/add-support-address-other')
     // })
 
-    // router.post('/v9/add-support-contact-details', (req, res, next) => {
-    //     res.redirect('/v9/name');
+    // router.post('/v10/add-support-contact-details', (req, res, next) => {
+    //     res.redirect('/v10/name');
     // });
 
     // ADDITIONAL SUPPORT QUESTIONS END
 
     // PERSONAL DETAILS, RES & PRES AND HEALTH QUESTIONS
-    router.post('/v9/name', (req, res, next) => {
-        res.redirect('/v9/nino');
+    router.post('/v10/name', (req, res, next) => {
+        res.redirect('/v10/nino');
     });
 
-    router.post('/v9/nino', (req, res, next) => {
-        res.redirect('/v9/date-of-birth');
+    router.post('/v10/nino', (req, res, next) => {
+        res.redirect('/v10/date-of-birth');
     });
 
-    router.post('/v9/date-of-birth', (req, res, next) => {
-        res.redirect('/v9/address');
+    router.post('/v10/date-of-birth', (req, res, next) => {
+        res.redirect('/v10/address');
     });
 
-    router.post('/v9/address', (req, res, next) => {
+    router.post('/v10/address', (req, res, next) => {
         const immigrationControl2 = req.session.data['safe-address'];
         if (immigrationControl2 === 'No') {
-            res.redirect('/v9/address-other');
+            res.redirect('/v10/address-other');
         } else {
-            res.redirect('/v9/contact-details');
+            res.redirect('/v10/contact-details');
         }
     });
 
-    router.get('/v9/address', (req, res, next) => {
+    router.get('/v10/address', (req, res, next) => {
         res.locals.countries = countries;
-        res.render('v9/address.html')
+        res.render('v10/address.html')
     })
 
-    router.post('/v9/address-other', (req, res, next) => {
-        res.redirect('/v9/contact-details');
+    router.post('/v10/address-other', (req, res, next) => {
+        res.redirect('/v10/contact-details');
     });
 
-    router.get('/v9/address-other', (req, res, next) => {
+    router.get('/v10/address-other', (req, res, next) => {
         res.locals.countries = countries;
-        res.render('v9/address-other.html')
+        res.render('v10/address-other.html')
     })
 
-    router.post('/v9/contact-details', (req, res, next) => {
-        res.redirect('/v9/alt-formats.html')
+    router.post('/v10/contact-details', (req, res, next) => {
+        res.redirect('/v10/alt-formats.html')
     })
 
-    router.post('/v9/alt-formats', (req, res, next) => {
+    router.post('/v10/alt-formats', (req, res, next) => {
         const altFormat = req.session.data['format-type'];
         if (altFormat === 'Braille') {
-            res.redirect('/v9/alt-format-braille');
+            res.redirect('/v10/alt-format-braille');
         }
         else if (altFormat === 'Sign Language') {
-            res.redirect('/v9/alt-format-sign-language');
+            res.redirect('/v10/alt-format-sign-language');
         }
         else if (altFormat === 'Audio') {
-            res.redirect('/v9/alt-format-audio');
+            res.redirect('/v10/alt-format-audio');
         }
         else if (altFormat === 'Paper and other formats') {
-            res.redirect('/v9/alt-format-paper');
+            res.redirect('/v10/alt-format-paper');
         }
         else {
-            res.redirect('/v9/nationality');
+            res.redirect('/v10/nationality');
         }
     });
 
-    router.post('/v9/alt-format-braille', (req, res, next) => {
-        res.redirect('/v9/nationality');
+    router.post('/v10/alt-format-braille', (req, res, next) => {
+        res.redirect('/v10/nationality');
     });
 
-    router.post('/v9/alt-format-sign-language', (req, res, next) => {
-        res.redirect('/v9/nationality');
+    router.post('/v10/alt-format-sign-language', (req, res, next) => {
+        res.redirect('/v10/nationality');
     });
 
-    router.post('/v9/alt-format-audio', (req, res, next) => {
-        res.redirect('/v9/nationality');
+    router.post('/v10/alt-format-audio', (req, res, next) => {
+        res.redirect('/v10/nationality');
     });
 
-    router.post('/v9/alt-format-paper', (req, res, next) => {
-        res.redirect('/v9/nationality');
+    router.post('/v10/alt-format-paper', (req, res, next) => {
+        res.redirect('/v10/nationality');
     });
 
-    router.post('/v9/nationality', (req, res, next) => {
+    router.post('/v10/nationality', (req, res, next) => {
         const whereLive = req.session.data['nationality'];
         if (whereLive === 'A nationality of the European Economic Area (EEA)') {
-            res.redirect('/v9/living-in-uk');
+            res.redirect('/v10/living-in-uk');
         } else {
-            res.redirect('/v9/living-in-gb');
+            res.redirect('/v10/living-in-gb');
         }
     });
 
-    router.get('/v9/nationality', (req, res, next) => {
+    router.get('/v10/nationality', (req, res, next) => {
         res.locals.nationalities = nationalities;
-        res.render('v9/nationality.html')
+        res.render('v10/nationality.html')
     })
 
-    router.post('/v9/living-in-uk', (req, res, next) => {
+    router.post('/v10/living-in-uk', (req, res, next) => {
         const livingUk = req.session.data['living-in-uk'];
         if (livingUk === 'No') {
-            res.redirect('/v9/about_your_health/condition-new-2');
+            res.redirect('/v10/about_your_health/condition-new-2');
         } else {
-            res.redirect('/v9/living-in-gb');
+            res.redirect('/v10/living-in-gb');
         }
     });
 
-    router.post('/v9/living-in-gb', (req, res, next) => {
+    router.post('/v10/living-in-gb', (req, res, next) => {
         const nationality = req.session.data['nationality']
         const gb = req.session.data['gb']
 
@@ -347,206 +347,206 @@ module.exports = function (router) {
             nationality === 'A nationality of the European Economic Area (EEA)'
         ) {
             if (gb === 'No') {
-                res.redirect('/v9/about_your_health/condition-new-2')
+                res.redirect('/v10/about_your_health/condition-new-2')
             }
             if (gb === 'Yes' || gb === 'Not sure') {
-                res.redirect('/v9/eu-question')
+                res.redirect('/v10/eu-question')
             }
         } else if (nationality === 'Another nationality') {
-            res.redirect('/v9/about_your_health/condition-new-2')
+            res.redirect('/v10/about_your_health/condition-new-2')
         }
     })
 
-    //   router.get('/v9/living-in-gb', (req, res, next) => {
-    //       res.render('v9/living-in-gb.html')
+    //   router.get('/v10/living-in-gb', (req, res, next) => {
+    //       res.render('v10/living-in-gb.html')
     //   })
 
-    // router.post('/v9/eu-benefits', (req, res, next) => {
-    //     res.redirect('/v9/eu-question');
+    // router.post('/v10/eu-benefits', (req, res, next) => {
+    //     res.redirect('/v10/eu-question');
     // });
 
-    // router.post('/v9/eu-worked', (req, res, next) => {
+    // router.post('/v10/eu-worked', (req, res, next) => {
     //     const euWorked = req.session.data['eu-worked'];
     //     if (euWorked === 'No') {
-    //         res.redirect('/v9/about_your_health/condition-new-2');
+    //         res.redirect('/v10/about_your_health/condition-new-2');
     //     } else {
-    //         res.redirect('/v9/eu-insurance');
+    //         res.redirect('/v10/eu-insurance');
     //     }
     // });
 
-    // router.post('/v9/eu-insurance', (req, res, next) => {
-    //     res.redirect('/v9/about_your_health/condition-new-2');
+    // router.post('/v10/eu-insurance', (req, res, next) => {
+    //     res.redirect('/v10/about_your_health/condition-new-2');
     // });
 
-    router.post('/v9/eu-question', (req, res, next) => {
-        res.redirect('/v9/about_your_health/condition-new-2');
+    router.post('/v10/eu-question', (req, res, next) => {
+        res.redirect('/v10/about_your_health/condition-new-2');
     });
 
-    router.post('/v9/about_your_health/condition-new-2', (req, res, next) => {
-        res.redirect('/v9/about_your_health/hcp-question');
+    router.post('/v10/about_your_health/condition-new-2', (req, res, next) => {
+        res.redirect('/v10/about_your_health/hcp-question');
     });
 
-    router.post('/v9/about_your_health/hcp-question', (req, res, next) => {
+    router.post('/v10/about_your_health/hcp-question', (req, res, next) => {
         const hcpQuestion = req.session.data['hcp'];
         if (hcpQuestion === 'Yes') {
-            res.redirect('/v9/about_your_health/consent');
+            res.redirect('/v10/about_your_health/consent');
         } else {
-            res.redirect('/v9/in-hospital');
+            res.redirect('/v10/in-hospital');
         }
     });
 
-    router.post('/v9/about_your_health/consent', (req, res, next) => {
+    router.post('/v10/about_your_health/consent', (req, res, next) => {
         const conSent = req.session.data['consent'];
         if (conSent === 'Yes, I agree') {
-            res.redirect('/v9/about_your_health/hcp-1');
+            res.redirect('/v10/about_your_health/hcp-1');
         } else {
-            res.redirect('/v9/in-hospital');
+            res.redirect('/v10/in-hospital');
         }
     });
 
-    router.post('/v9/about_your_health/hcp-1', (req, res, next) => {
-        res.redirect('/v9/about_your_health/hcp-another');
+    router.post('/v10/about_your_health/hcp-1', (req, res, next) => {
+        res.redirect('/v10/about_your_health/hcp-another');
     });
 
-    router.get('/v9/about_your_health/hcp-1', (req, res, next) => {
+    router.get('/v10/about_your_health/hcp-1', (req, res, next) => {
         res.locals.countries = countries;
-        res.render('v9/about_your_health/hcp-1')
+        res.render('v10/about_your_health/hcp-1')
     })
 
-    router.post('/v9/about_your_health/hcp-another', (req, res, next) => {
+    router.post('/v10/about_your_health/hcp-another', (req, res, next) => {
         const hcpAnother1 = req.session.data['hcp-2'];
         if (hcpAnother1 === 'Yes') {
-            res.redirect('/v9/about_your_health/hcp-2');
+            res.redirect('/v10/about_your_health/hcp-2');
         } else {
-            res.redirect('/v9/in-hospital');
+            res.redirect('/v10/in-hospital');
         }
     });
 
-    router.post('/v9/about_your_health/hcp-2', (req, res, next) => {
-        res.redirect('/v9/about_your_health/hcp-another-2');
+    router.post('/v10/about_your_health/hcp-2', (req, res, next) => {
+        res.redirect('/v10/about_your_health/hcp-another-2');
     });
 
-    router.get('/v9/about_your_health/hcp-2', (req, res, next) => {
+    router.get('/v10/about_your_health/hcp-2', (req, res, next) => {
         res.locals.countries = countries;
-        res.render('v9/about_your_health/hcp-2')
+        res.render('v10/about_your_health/hcp-2')
     })
 
-    router.get('/v9/about_your_health/hcp-2', (req, res, next) => {
+    router.get('/v10/about_your_health/hcp-2', (req, res, next) => {
         res.locals.countries = countries;
-        res.render('v9/about_your_health/hcp-2')
+        res.render('v10/about_your_health/hcp-2')
     })
 
-    router.post('/v9/about_your_health/hcp-another-2', (req, res, next) => {
+    router.post('/v10/about_your_health/hcp-another-2', (req, res, next) => {
         const hcpAnother2 = req.session.data['hcp-3'];
         if (hcpAnother2 === 'Yes') {
-            res.redirect('/v9/about_your_health/hcp-3');
+            res.redirect('/v10/about_your_health/hcp-3');
         } else {
-            res.redirect('/v9/in-hospital');
+            res.redirect('/v10/in-hospital');
         }
     });
 
-    router.post('/v9/about_your_health/hcp-3', (req, res, next) => {
-        res.redirect('/v9/about_your_health/hcp-another-3');
+    router.post('/v10/about_your_health/hcp-3', (req, res, next) => {
+        res.redirect('/v10/about_your_health/hcp-another-3');
     });
 
-    router.get('/v9/about_your_health/hcp-3', (req, res, next) => {
+    router.get('/v10/about_your_health/hcp-3', (req, res, next) => {
         res.locals.countries = countries;
-        res.render('v9/about_your_health/hcp-3')
+        res.render('v10/about_your_health/hcp-3')
     })
 
-    router.post('/v9/about_your_health/hcp-another-3', (req, res, next) => {
-        res.redirect('/v9/in-hospital');
+    router.post('/v10/about_your_health/hcp-another-3', (req, res, next) => {
+        res.redirect('/v10/in-hospital');
     });
 
-    router.post('/v9/in-hospital', (req, res, next) => {
+    router.post('/v10/in-hospital', (req, res, next) => {
         const inHospital = req.session.data['hospital'];
         if (inHospital === 'Hospital') {
-            res.redirect('/v9/hospital-admission');
+            res.redirect('/v10/hospital-admission');
         } else if (inHospital === 'Hospice') {
-            res.redirect('/v9/hospice-admission');
+            res.redirect('/v10/hospice-admission');
         } else if (inHospital === 'Care or nursing home') {
-            res.redirect('/v9/care-home-admission');
+            res.redirect('/v10/care-home-admission');
         } else if (inHospital === 'Other') {
-              res.redirect('/v9/care-home-admission');
+              res.redirect('/v10/care-home-admission');
         } else {
-            res.redirect('/v9/check-answers');
+            res.redirect('/v10/check-answers');
         }
     });
-    router.post('/v9/hospital-admission', (req, res, next) => {
-        res.redirect('/v9/hospital-address');
+    router.post('/v10/hospital-admission', (req, res, next) => {
+        res.redirect('/v10/hospital-address');
     });
 
-    router.post('/v9/hospital-address', (req, res, next) => {
-        res.redirect('/v9/check-answers');
+    router.post('/v10/hospital-address', (req, res, next) => {
+        res.redirect('/v10/check-answers');
     });
 
-    router.get('/v9/hospital-address', (req, res, next) => {
+    router.get('/v10/hospital-address', (req, res, next) => {
         res.locals.countries = countries;
-        res.render('v9/hospital-address')
+        res.render('v10/hospital-address')
     })
 
-    router.get('/v9/validation/about_your_health/hospital-address', (req, res, next) => {
+    router.get('/v10/validation/about_your_health/hospital-address', (req, res, next) => {
         res.locals.countries = countries;
-        res.render('v9/validation/about_your_health/hospital-address')
+        res.render('v10/validation/about_your_health/hospital-address')
     })
 
-    router.post('/v9/hospice-admission', (req, res, next) => {
-        res.redirect('/v9/hospice-address');
+    router.post('/v10/hospice-admission', (req, res, next) => {
+        res.redirect('/v10/hospice-address');
     });
 
-    router.post('/v9/hospice-address', (req, res, next) => {
-        res.redirect('/v9/check-answers');
+    router.post('/v10/hospice-address', (req, res, next) => {
+        res.redirect('/v10/check-answers');
     });
 
-    router.get('/v9/hospice-address', (req, res, next) => {
+    router.get('/v10/hospice-address', (req, res, next) => {
         res.locals.countries = countries;
-        res.render('v9/hospice-address')
+        res.render('v10/hospice-address')
     })
 
-    router.get('/v9/validation/about_your_health/hospice-address', (req, res, next) => {
+    router.get('/v10/validation/about_your_health/hospice-address', (req, res, next) => {
         res.locals.countries = countries;
-        res.render('v9/validation/about_your_health/hospice-address')
+        res.render('v10/validation/about_your_health/hospice-address')
     })
 
-    router.post('/v9/care-home-admission', (req, res, next) => {
-        res.redirect('/v9/care-home-address');
+    router.post('/v10/care-home-admission', (req, res, next) => {
+        res.redirect('/v10/care-home-address');
     });
-    router.post('/v9/care-home-address', (req, res, next) => {
-        res.redirect('/v9/check-answers');
+    router.post('/v10/care-home-address', (req, res, next) => {
+        res.redirect('/v10/check-answers');
     });
 
-    router.get('/v9/care-home-address', (req, res, next) => {
+    router.get('/v10/care-home-address', (req, res, next) => {
         res.locals.countries = countries;
-        res.render('v9/care-home-address')
+        res.render('v10/care-home-address')
     })
 
-    router.get('/v9/validation/about_your_health/care-home-address', (req, res, next) => {
+    router.get('/v10/validation/about_your_health/care-home-address', (req, res, next) => {
         res.locals.countries = countries;
-        res.render('v9/validation/about_your_health/care-home-address')
+        res.render('v10/validation/about_your_health/care-home-address')
     })
 
     // PERSONAL AND HEALTH QUESTIONS END
 
     // CHECK ANSWERS START
-    // router.post('/v9/check-answers', (req, res, next) => {
+    // router.post('/v10/check-answers', (req, res, next) => {
     //     console.log(req.session.data)
     //     const complex = complexCase(req);
     //     if (!complex) {
-    //         res.redirect('/v9/confirmation')
+    //         res.redirect('/v10/confirmation')
     //     } else {
-    //         res.redirect('/v9/we-need-to-get-in-touch')
+    //         res.redirect('/v10/we-need-to-get-in-touch')
     //     };
     // });
 
-    // router.post('/v9/we-need-to-get-in-touch', (req, res, next) => {
-    //     res.redirect('/v9/confirmation');
+    // router.post('/v10/we-need-to-get-in-touch', (req, res, next) => {
+    //     res.redirect('/v10/confirmation');
     // });
 
-    router.post('/v9/check-answers', (req, res, next) => {
-        res.redirect('/v9/confirmation');
+    router.post('/v10/check-answers', (req, res, next) => {
+        res.redirect('/v10/confirmation');
     });
 
-    // router.post('/v9/confirmation', (req, res, next) => {
+    // router.post('/v10/confirmation', (req, res, next) => {
     //     res.redirect('/p5/list');
     // });
 
@@ -555,43 +555,43 @@ module.exports = function (router) {
 
     // COMPLEX APPLICATION CONTACT DETAILS
 
-    // router.post('/v9/we-need-to-get-in-touch', (req, res, next) => {
-    //     res.redirect('/v9/complex_contact_details/complex-contact-name');
+    // router.post('/v10/we-need-to-get-in-touch', (req, res, next) => {
+    //     res.redirect('/v10/complex_contact_details/complex-contact-name');
     // });
 
-    // router.post('/v9/complex_contact_details/complex-contact-name', (req, res, next) => {
-    //     res.redirect('/v9/complex_contact_details/complex-contact-nino');
+    // router.post('/v10/complex_contact_details/complex-contact-name', (req, res, next) => {
+    //     res.redirect('/v10/complex_contact_details/complex-contact-nino');
     // });
 
-    // router.post('/v9/complex_contact_details/complex-contact-nino', (req, res, next) => {
-    //     res.redirect('/v9/complex_contact_details/complex-contact-date-of-birth');
+    // router.post('/v10/complex_contact_details/complex-contact-nino', (req, res, next) => {
+    //     res.redirect('/v10/complex_contact_details/complex-contact-date-of-birth');
     // });
 
-    // router.post('/v9/complex_contact_details/complex-contact-date-of-birth', (req, res, next) => {
-    //     res.redirect('/v9/complex_contact_details/complex-contact-details');
+    // router.post('/v10/complex_contact_details/complex-contact-date-of-birth', (req, res, next) => {
+    //     res.redirect('/v10/complex_contact_details/complex-contact-details');
     // });
 
-    // router.post('/v9/complex_contact_details/complex-contact-details', (req, res, next) => {
-    //     res.redirect('/v9/complex_contact_details/complex-contact-check-answers');
+    // router.post('/v10/complex_contact_details/complex-contact-details', (req, res, next) => {
+    //     res.redirect('/v10/complex_contact_details/complex-contact-check-answers');
     // });
 
-    // router.post('/v9/complex_contact_details/complex-contact-check-answers', (req, res, next) => {
-    //     res.redirect('/v9/complex_contact_details/complex-contact-confirmation');
+    // router.post('/v10/complex_contact_details/complex-contact-check-answers', (req, res, next) => {
+    //     res.redirect('/v10/complex_contact_details/complex-contact-confirmation');
     // });
 
     // COMPLEX APPLICATION CONTACT DETAILS END
 
     // RETURNING USER FLOW START
-    router.post('/v9/save_and_return/sign-in', (req, res, next) => {
-        res.redirect('/v9/save_and_return/sign-in-2fa');
+    router.post('/v10/save_and_return/sign-in', (req, res, next) => {
+        res.redirect('/v10/save_and_return/sign-in-2fa');
     });
 
-    router.post('/v9/save_and_return/sign-in-2fa', (req, res, next) => {
-        res.redirect('/v9/save_and_return/signed-in');
+    router.post('/v10/save_and_return/sign-in-2fa', (req, res, next) => {
+        res.redirect('/v10/save_and_return/signed-in');
     });
 
-    router.post('v9/save_and_return/signed-in', (req, res, next) => {
-        res.redirect('/v9/#');
+    router.post('v10/save_and_return/signed-in', (req, res, next) => {
+        res.redirect('/v10/#');
     });
     // RETURNING USER FLOW END
 };
