@@ -291,7 +291,7 @@ module.exports = function (router) {
         else if (altFormat === 'Audio') {
             res.redirect('/v9/alt-format-audio');
         }
-        else if (altFormat === 'Other formats') {
+        else if (altFormat === 'Paper and other formats') {
             res.redirect('/v9/alt-format-paper');
         }
         else {
@@ -464,15 +464,14 @@ module.exports = function (router) {
             res.redirect('/v9/hospital-admission');
         } else if (inHospital === 'Hospice') {
             res.redirect('/v9/hospice-admission');
-        } else if (inHospital === 'Other accommodation') {
+        } else if (inHospital === 'Care or nursing home') {
             res.redirect('/v9/care-home-admission');
-          } else if (inHospital === 'Other') {
+        } else if (inHospital === 'Other') {
               res.redirect('/v9/care-home-admission');
         } else {
             res.redirect('/v9/check-answers');
         }
     });
-
     router.post('/v9/hospital-admission', (req, res, next) => {
         res.redirect('/v9/hospital-address');
     });
