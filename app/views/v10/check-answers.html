@@ -1,4 +1,4 @@
-{% extends "layout-signed-in-v7.html" %}
+{% extends "layout-signed-in-mvp.html" %}
 
 {% block pageTitle %}
 Check your answers
@@ -75,10 +75,11 @@ Check your answers
             {% if data['add-support-help'] === 'Yes' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Helper's first name
+                Helper's name
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['add-support-first-name'] }}
+                {{ data['add-support-first-name'] }}<br>
+                {{ data['add-support-last-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="add-support-name">
@@ -87,19 +88,7 @@ Check your answers
               </dd>
             </div> <!-- govuk-summary-list__row -->
 
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Helper's last name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['add-support-last-name'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="add-support-name">
-                  Change<span class="govuk-visually-hidden"> last name</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
+            
 
             {% endif %}
           </dl>
@@ -109,28 +98,15 @@ Check your answers
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                First name
+                Name
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['first-name'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="name">
-                  Change<span class="govuk-visually-hidden"> fisrt name</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Last name
-              </dt>
-              <dd class="govuk-summary-list__value">
+                {{ data['first-name'] }}<br>
                 {{ data['last-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="name">
-                  Change<span class="govuk-visually-hidden"> name</span>
+                  Change<span class="govuk-visually-hidden"> fisrt name</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -578,25 +554,10 @@ Check your answers
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-
-            <!-- <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Approximate start date
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ condition.date }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="about_your_health/condition-new-2">
-                  Change<span class="govuk-visually-hidden"> condition start date</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
             <!-- Conditions end  -->
             {% endif %}
             {% endfor %}
             {% endif %}
-
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -606,7 +567,7 @@ Check your answers
                 {{ data['hcp'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-question">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-question">
                   Change<span class="govuk-visually-hidden"> Health Professional</span>
                 </a>
               </dd>
@@ -622,7 +583,7 @@ Check your answers
                 {{ data['consent'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-1">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-1">
                   Change<span class="govuk-visually-hidden"> health professional consent</span>
                 </a>
               </dd>
@@ -630,6 +591,7 @@ Check your answers
             {% endif %}
 
             {% if data['consent'] === 'Yes, I agree' %}
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Health professional name
@@ -638,70 +600,34 @@ Check your answers
                 {{ data['hcp-1-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-1">
-                  Change<span class="govuk-visually-hidden"> health professional name</span>
+                <a class="govuk-link" href="/mvp/remove-hcp-confirmation">
+                  Remove<span class="govuk-visually-hidden"> health professional name</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
+            
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Their profession
+                Their details
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['hcp-1-profession'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-1">
-                  Change<span class="govuk-visually-hidden"> profession</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Their phone number
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['hcp-1-phone'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-1">
-                  Change<span class="govuk-visually-hidden"> phone number</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Their address
-              </dt>
-              <dd class="govuk-summary-list__value">
+                {{ data['hcp-1-profession'] }}<br>
+                {{ data['hcp-1-phone'] }}<br>
                 {{ data['hcp-1-address-line-1'] }}<br>
                 {{ data['hcp-1-address-line-2'] }}<br>
                 {{ data['hcp-1-address-town'] }}<br>
                 {{ data['hcp-1-address-county'] }}<br>
                 {{ data['hcp-1-address-postcode'] }}<br>
-                {{ data['hcp-1-address-country'] }}
+                {{ data['hcp-1-address-country'] }}<br>
+                {{ data['hcp-1-last-contact'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-1">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-1">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                When did you last see them?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['hcp-1-last-contact'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-1">
-                  Change<span class="govuk-visually-hidden"> lasxt seen them</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-
+                   
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Are there any other health professionals we can contact?
@@ -710,9 +636,10 @@ Check your answers
                 {{ data['hcp-2'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-another">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-another">
                   Change<span class="govuk-visually-hidden"> another health professional</span>
                 </a>
+                
               </dd>
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
@@ -726,70 +653,35 @@ Check your answers
                 {{ data['hcp-2-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-2">
-                  Change<span class="govuk-visually-hidden"> health professional name</span>
+                <a class="govuk-link" href="/mvp/remove-hcp-confirmation">
+                  Remove
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
+            
+           
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Their profession
+                Their details
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['hcp-2-profession'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-2">
-                  Change<span class="govuk-visually-hidden"> profession</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Their phone number
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['hcp-2-phone'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-2">
-                  Change<span class="govuk-visually-hidden"> phone number</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Their address
-              </dt>
-              <dd class="govuk-summary-list__value">
+                {{ data['hcp-2-profession'] }}<br>
+                {{ data['hcp-2-phone'] }}<br>
                 {{ data['hcp-2-address-line-1'] }}<br>
                 {{ data['hcp-2-address-line-2'] }}<br>
                 {{ data['hcp-2-address-town'] }}<br>
                 {{ data['hcp-2-address-county'] }}<br>
                 {{ data['hcp-2-address-postcode'] }}<br>
-                {{ data['hcp-2-address-country'] }}
+                {{ data['hcp-2-address-country'] }}<br>
+                {{ data['hcp-2-last-contact'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-2">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-2">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                When did you last see them?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['hcp-2-last-contact'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-2">
-                  Change<span class="govuk-visually-hidden"> lasxt seen them</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-
+            
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Are there any other health professionals we can contact?
@@ -798,7 +690,7 @@ Check your answers
                 {{ data['hcp-3'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-another-2">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-another-2">
                   Change<span class="govuk-visually-hidden"> another health professional</span>
                 </a>
               </dd>
@@ -814,70 +706,34 @@ Check your answers
                 {{ data['hcp-3-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-3">
-                  Change<span class="govuk-visually-hidden"> health professional name</span>
+                <a class="govuk-link" href="/mvp/remove-hcp-confirmation">
+                  Remove<span class="govuk-visually-hidden"> health professional name</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
+            
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Their profession
+                Their details
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['hcp-3-profession'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-3">
-                  Change<span class="govuk-visually-hidden"> profession</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Their phone number
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['hcp-3-phone'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-3">
-                  Change<span class="govuk-visually-hidden"> phone number</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Their address
-              </dt>
-              <dd class="govuk-summary-list__value">
+                {{ data['hcp-3-profession'] }}<br>
+                {{ data['hcp-3-phone'] }}<br>
                 {{ data['hcp-3-address-line-1'] }}<br>
                 {{ data['hcp-3-address-line-2'] }}<br>
                 {{ data['hcp-3-address-town'] }}<br>
                 {{ data['hcp-3-address-county'] }}<br>
                 {{ data['hcp-3-address-postcode'] }}<br>
-                {{ data['hcp-3-address-country'] }}
+                {{ data['hcp-3-address-country'] }}<br>
+                {{ data['hcp-3-last-contact'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-3">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-3">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                When did you last see them?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['hcp-3-last-contact'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-3">
-                  Change<span class="govuk-visually-hidden"> lasxt seen them</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
-
+            
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Are there any other health professionals we can contact?
@@ -886,7 +742,7 @@ Check your answers
                 {{ data['hcp-4'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/about_your_health/hcp-another-2">
+                <a class="govuk-link" href="/mvp/about_your_health/hcp-another-2">
                   Change<span class="govuk-visually-hidden"> another health professional</span>
                 </a>
               </dd>
@@ -938,7 +794,7 @@ Check your answers
                 {{ data['hospital-address-country'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/hospital-address">
+                <a class="govuk-link" href="/mvp/hospital-address">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
@@ -975,7 +831,7 @@ Check your answers
                 {{ data['hospice-address-country'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v9/hospice-address">
+                <a class="govuk-link" href="/mvp/hospice-address">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
