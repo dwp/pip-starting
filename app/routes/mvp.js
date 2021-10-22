@@ -552,6 +552,10 @@ module.exports = function (router) {
         res.redirect('/mvp/confirmation');
     });
 
+    router.post('/mvp/remove-hcp-confirmation', (req, res, next) => {
+        res.redirect('/mvp/check-answers');
+    });
+
     // CHECK ANSWERS END
 
 
