@@ -1,15 +1,12 @@
-{% set status = "signed-out" %}
-{% set pageTitle = "Cookies" %}
-
-{% extends "layout-p5.html" %}
+{% extends "layout-signed-in-mvp.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+How we use cookies
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5/_beta-banner.html" %}
-  {% include "p5/_back-link.html" %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
 {% endblock %}
 
 {% block content %}
