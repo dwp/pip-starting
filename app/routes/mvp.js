@@ -31,7 +31,7 @@ module.exports = function (router) {
         if (newOld === 'Yes') {
             res.redirect("/mvp/save_and_return/sign-in");
         } else  {
-            res.redirect('/mvp/eligibility-start');
+            res.redirect('/mvp/sign-in/register-start');
         }
     })
 
