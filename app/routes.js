@@ -23,6 +23,7 @@ const v8 = require('./routes/v8')
 const v9 = require('./routes/v9')
 const mvp = require('./routes/mvp')
 const pip2 = require('./routes/p5.js')
+const mvpp5 = require('./routes/mvp-p5.js')
 const authRoutes = require('./routes/auth')
 const idvRoutes = require('./routes/idv')
 
@@ -51,6 +52,7 @@ v8(router);
 v9(router);
 mvp(router);
 pip2(router);
+mvpp5(router);
 router.use('/', authRoutes)
 router.use('/', idvRoutes)
 // ROUTER LIST END
