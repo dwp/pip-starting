@@ -502,7 +502,7 @@ module.exports = function (app) {
     if (question === 'yes') {
         res.redirect('file-upload-help')
       } else {
-        res.redirect('/p5/motability-scheme')
+        res.redirect('/mvp/p5/apply/declaration')
       }
   });
 
@@ -513,7 +513,7 @@ module.exports = function (app) {
     if (question === 'yes') {
         res.redirect('supporting-evidence-upload-2')
       } else {
-        res.redirect('/p5/motability-scheme')
+        res.redirect('/mvp/p5/apply/declaration')
       }
   });
 
@@ -524,7 +524,7 @@ module.exports = function (app) {
     if (question === 'yes') {
         res.redirect('supporting-evidence-upload-3')
       } else {
-        res.redirect('/p5/motability-scheme')
+        res.redirect('/mvp/p5/apply/declaration')
       }
   });
 
@@ -535,7 +535,7 @@ module.exports = function (app) {
     if (question === 'yes') {
         res.redirect('supporting-evidence-upload-4')
       } else {
-        res.redirect('/p5/motability-scheme')
+        res.redirect('/mvp/p5/apply/declaration')
       }
   });
 
