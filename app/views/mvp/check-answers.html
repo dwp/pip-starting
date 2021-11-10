@@ -249,6 +249,16 @@ Check your answers
               </dd>
             </div>
             {% endif %}
+            {% if data['alt-format-paper'] === 'Large print with a custom font' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Give details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['large-print-custom-font'] }}
+              </dd>
+            </div>
+            {% endif %}
             {% if data['alt-format-paper'] === 'Email' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
