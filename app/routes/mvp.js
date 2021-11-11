@@ -384,6 +384,10 @@ module.exports = function (router) {
     });
 
     router.post('/mvp/about_your_health/condition-new-2', (req, res, next) => {
+        res.redirect('/mvp/about_your_health/condition-new-2-detail');
+    });
+
+    router.post('/mvp/about_your_health/condition-new-2-detail', (req, res, next) => {
         res.redirect('/mvp/about_your_health/hcp-question');
     });
 
