@@ -13,7 +13,7 @@ Your health condition
         <form id="form" method="post" action="#">
 
             <div class="govuk-form-group">
-                <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="more-detail">
+                <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="condition-detail">
                         About this condition or disability – {{ data['health-condition'] }}
                     </label>
                 </h1>
@@ -28,8 +28,7 @@ Your health condition
                         private as well as NHS funded treatments)</li>
                     <li>any side effects these have on you</li>
                 </ul>
-                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="18"
-                    aria-describedby="more-detail-hint"></textarea>
+                <textarea class="govuk-textarea" id="condition-detail" name="condition-detail" rows="18" aria-describedby="more-detail-hint"></textarea>
             </div>
 
 

@@ -336,28 +336,26 @@ Check your answers
             <h2 class="govuk-heading-m">Your health</h2>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                What health condition or disability do you have?
+                What health condition or disability do you have and approximate start date
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['conditions'][0]['condition_name'] }}
+                {{ data['your-condition'] }}</br>
+                {{ data['condition-start-date'] }}
+                
               </dd>
             </div>
-            {% if conditionsLength > 1 %}
-            {% for condition in data.conditions %}
-            {% if not loop.first %}
-            <!-- Coditions start -->
+           
+            
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                What other health condition or disability do you have?
+               Details about your health condition
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ condition.condition_name }}
+                {{ data['condition-detail'] }}
               </dd>
             </div>
-            <!-- Conditions end  -->
-            {% endif %}
-            {% endfor %}
-            {% endif %}
+           
+            
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Can the Department for Work and Pensions contact any health professionals for information about you?
