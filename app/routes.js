@@ -21,6 +21,7 @@ const v6 = require('./routes/v6')
 const v7 = require('./routes/v7')
 const v8 = require('./routes/v8')
 const v9 = require('./routes/v9')
+const v10 = require('./routes/v10')
 const mvp = require('./routes/mvp')
 const pip2 = require('./routes/p5.js')
 const mvpp5 = require('./routes/mvp-p5.js')
@@ -50,6 +51,7 @@ v6(router);
 v7(router);
 v8(router);
 v9(router);
+v10(router);
 mvp(router);
 pip2(router);
 mvpp5(router);
