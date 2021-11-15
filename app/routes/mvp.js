@@ -242,7 +242,7 @@ module.exports = function (router) {
 
     // ADDITIONAL SUPPORT QUESTIONS END
 
-    // PERSONAL DETAILS, RES & PRES AND HEALTH QUESTIONS
+    // PERSONAL DETAILS START
     router.post('/mvp/name', (req, res, next) => {
         res.redirect('/mvp/nino');
     });
@@ -319,6 +319,10 @@ module.exports = function (router) {
         res.redirect('/mvp/nationality');
     });
 
+    // PERSONAL DETAILS END
+
+    // RES AND PRRS START
+
     router.post('/mvp/nationality', (req, res, next) => {
         const whereLive = req.session.data['nationality'];
         if (whereLive === 'A nationality of the European Economic Area (EEA) or Switzerland') {
@@ -379,17 +383,21 @@ module.exports = function (router) {
     //     }
     // });
 
+    // RES AND PRRES END
+
+    // ABOUT YOUR HEALTH START
+
     router.post('/mvp/eu-question', (req, res, next) => {
         res.redirect('/mvp/about_your_health/condition-new-2');
     });
 
     router.post('/mvp/about_your_health/condition-new-2', (req, res, next) => {
-        res.redirect('/mvp/about_your_health/condition-new-2-detail');
-    });
-
-    router.post('/mvp/about_your_health/condition-new-2-detail', (req, res, next) => {
         res.redirect('/mvp/about_your_health/hcp-question');
     });
+
+    // router.post('/mvp/about_your_health/condition-new-2-detail', (req, res, next) => {
+    //     res.redirect('/mvp/about_your_health/hcp-question');
+    // });
 
     router.post('/mvp/about_your_health/hcp-question', (req, res, next) => {
         const hcpQuestion = req.session.data['hcp'];
@@ -531,7 +539,7 @@ module.exports = function (router) {
         res.render('mvp/validation/about_your_health/care-home-address')
     })
 
-    // PERSONAL AND HEALTH QUESTIONS END
+    // ABOUT YOUR HEALTH END
 
     // CHECK ANSWERS START
     // router.post('/mvp/check-answers', (req, res, next) => {
