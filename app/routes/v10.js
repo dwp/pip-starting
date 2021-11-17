@@ -187,10 +187,10 @@ module.exports = function (router) {
     // ADDITIONAL SUPPORT QUESTIONS
 
     router.post('/v10/add-support-communicating', (req, res, next) => {
-        res.redirect('/v10/add-support');
+        res.redirect('/v10/add-support-3');
     });
 
-    router.post('/v10/add-support', (req, res, next) => {
+    router.post('/v10/add-support-3', (req, res, next) => {
         const addSupport = req.session.data['add-support'];
         if (addSupport === 'Yes, all of the time or sometimes') {
             res.redirect('/v10/add-support-help');
@@ -317,7 +317,7 @@ module.exports = function (router) {
 
     router.post('/v10/nationality', (req, res, next) => {
         const whereLive = req.session.data['nationality'];
-        if (whereLive === 'A nationality of the European Economic Area (EEA)') {
+        if (whereLive === 'A nationality of the European Economic Area (EEA) or Switzerland') {
             res.redirect('/v10/living-in-uk');
         } else {
             res.redirect('/v10/living-in-gb');
@@ -344,7 +344,7 @@ module.exports = function (router) {
 
         if (nationality === 'British' ||
             nationality === 'Irish' ||
-            nationality === 'A nationality of the European Economic Area (EEA)'
+            nationality === 'A nationality of the European Economic Area (EEA) or Switzerland'
         ) {
             if (gb === 'No') {
                 res.redirect('/v10/about_your_health/condition-new-2')
