@@ -1,4 +1,4 @@
-{% set pageTitle = "Check your answers: dressing and undressing" %}
+ {% set pageTitle = "Check your answers: dressing and undressing" %}
 
 {% extends "layout-p5.html" %}
 
@@ -15,7 +15,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <form id="form" method="post" action="/p5/list">
+    <form id="form" method="post" action="/p5-v10/list">
 
       <h1 class="govuk-heading-l">Check your answers: dressing and undressing</h1>
 
@@ -33,7 +33,7 @@
               actions: {
                 items: [
                   {
-                    href: "/p5/dressing-and-undressing/",
+                    href: "/p5-v10/dressing-and-undressing/",
                     text: "Change",
                     visuallyHiddenText: " your answer to whether your condition affects you dressing or undressing"
                   }
@@ -50,7 +50,7 @@
               actions: {
                 items: [
                   {
-                    href: "/p5/dressing-and-undressing/details",
+                    href: "/p5-v10/dressing-and-undressing/details",
                     text: "Change",
                     visuallyHiddenText: " your answer to difficulties you have with dressing and undressing and how you manage them"
                   }
@@ -74,7 +74,7 @@
               actions: {
                 items: [
                   {
-                    href: "/p5/dressing-and-undressing/",
+                    href: "/p5-v10/dressing-and-undressing/",
                     text: "Change",
                     visuallyHiddenText: "your answer to whether your condition affects you dressing or undressing"
                   }
@@ -86,7 +86,7 @@
 
       {% endif %}
 
-      <a href="/p5/list?dressingandundressing=completed" class="govuk-button">Confirm and save</a>
+      <a href="/p5-v10/list?dressingandundressing=completed" class="govuk-button">Confirm and save</a>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->

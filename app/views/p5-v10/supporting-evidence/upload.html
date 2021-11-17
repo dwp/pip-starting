@@ -26,12 +26,12 @@
   {% if cya == "true" %}
     {{ govukBackLink({
       text: "Back",
-      href: "/p5/check-your-answers"
+      href: "/p5-v10/check-your-answers"
     }) }}
   {% else %}
     {{ govukBackLink({
       text: "Back",
-      href: "/p5/start"
+      href: "/p5-v10/start"
     }) }}
   {% endif %}
 
@@ -51,9 +51,9 @@
       {% endif %}
 
       {% if cya == "true" %}
-        <form action="/p5/uploading-cya" method="post" novalidate>
+        <form action="/p5-v10/uploading-cya" method="post" novalidate>
       {% else %}
-        <form action="/p5/uploading" method="post" novalidate>
+        <form action="/p5-v10/uploading" method="post" novalidate>
       {% endif %}
 
         <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">

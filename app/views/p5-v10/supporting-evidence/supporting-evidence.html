@@ -11,12 +11,12 @@
   {% if cya == "true" %}
     {{ govukBackLink({
       text: "Back",
-      href: "/p5/check-your-answers"
+      href: "/p5-v10/check-your-answers"
     }) }}
   {% else %}
     {{ govukBackLink({
       text: "Back",
-      href: "/p5/supporting-evidence"
+      href: "/p5-v10/supporting-evidence"
     }) }}
   {% endif %}
 
@@ -28,9 +28,9 @@
     <div class="govuk-grid-column-two-thirds">
 
       {% if cya == "true" %}
-        <form action="/p5/supporting-evidence/supporting-evidence-data-cya" method="post" novalidate>
+        <form action="/p5-v10/supporting-evidence/supporting-evidence-data-cya" method="post" novalidate>
       {% else %}
-        <form action="/p5/supporting-evidence/supporting-evidence-data" method="post" novalidate>
+        <form action="/p5-v10/supporting-evidence/supporting-evidence-data" method="post" novalidate>
       {% endif %}
 
         <div class="govuk-form-group">
