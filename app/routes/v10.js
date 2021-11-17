@@ -30,7 +30,7 @@ module.exports = function (router) {
         if (newOld === 'Yes') {
             res.redirect("/v10/save_and_return/sign-in");
         } else  {
-            res.redirect('/v10/eligibility-start');
+            res.redirect('/v10/sign-in/register-start');
         }
     })
 

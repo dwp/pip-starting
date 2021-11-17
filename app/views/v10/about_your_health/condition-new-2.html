@@ -6,23 +6,16 @@ Your health condition
 {% include "includes/phase-banner.html" %}
 {% include "includes/back-link-v7.html" %}
 {% endblock %}
-{% set conditionsLength %}
-{{ data.conditions | length }}
-{% endset %}
+
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <form id="form" method="post" action="#">
-            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">What physical or mental health conditions or disabilities do you
-                have?</h1>
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Enter a physical or mental health condition or
+                disability you have</h1>
 
-            <details class="govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  What we mean by conditions or disabilities
-                </span>
-              </summary>
-              <div class="govuk-details__text">
+            <div class="govuk-body">
+                <p>You can add other conditions or disabilities later.</p>
                 <p>Conditions and disabilities include:</p>
                 <ul class="govuk-list govuk-list--bullet">
                     <li>physical conditions, like arthritis, heart disease or diabetes</li>
@@ -33,108 +26,31 @@ Your health condition
                     <li>mental health conditions, like depression, anxiety or bipolar disorder</li>
                     <li>neurological conditions, like Parkinson's or epilepsy</li>
                 </ul>
-              </div>
-            </details>
-            <div data-module="moj-add-another">
-                <!-- START HERE -->
-                <fieldset class="govuk-fieldset moj-add-another__item">
-                    <p class="govuk-body govuk-!-font-weight-bold"></p>
-                    <div class="govuk-form-group">
-                        <label class="govuk-label govuk-!-font-weight-bold" for="conditions[0][condition_name]">
-                            Enter a condition or disability
-                        </label>
+            </div> <!-- govuk-body -->
 
-                        <p>You can add more by selecting 'Add another'. You'll be able to give more information about how each condition affects you later.</p>
+            <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--s" for="your-condition">
+                        Condition or disability
+                    </label>
+                </h1>
+                <input class="govuk-input" id="your-condition" name="your-condition" type="text" aria-describedby="your-condition">
+            </div> <!-- govuk-form-group -->
 
-                        <input class="govuk-input" id="conditions[0][condition_name]"
-                               name="conditions[0][condition_name]" type="text"
-                               data-name="conditions[%index%][condition_name]"
-                               data-id="conditions[%index%][condition_name]">
-                    </div> <!-- govuk-form-group -->
-                    <!-- <div class="govuk-form-group">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                            Approximate start date
-                        </legend>
-                        <div id="date-of-birth-hint" class="govuk-hint">
-                            For example, 3 1980
-                        </div>
-                        <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="conditions[0][date]">
-
-                                </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-20"
-                                       id="conditions[0][date]"
-                                       name="conditions[0][date]" type="text" data-name="conditions[%index%][date]"
-                                       data-id="conditions[%index%][date]">
-                            </div> <!-- govuk-form-group -->
-                        <!-- </div> <!-- govuk-date-input__item -->
-                    <!-- </div> <!-- govuk-form-group --> 
-                    {% if conditionsLength > 1 %}
-                    <button type="button" class="govuk-button govuk-button--secondary moj-add-another__remove-button">
-                        Remove
-                    </button>
-                    {% endif %}
-                </fieldset>
-                <!-- ENDS HERE -->
-                {% if conditionsLength > 1 %}
-                {% for condition in data.conditions %}
-                {% if not loop.first %}
-                <!-- START HERE -->
-                <fieldset class="govuk-fieldset moj-add-another__item">
-                    <p class="govuk-body govuk-!-font-weight-bold"></p>
-                    <div class="govuk-form-group">
-                        <label class="govuk-label govuk-!-font-weight-bold"
-                               for="conditions[{{loop.index0}}][condition_name]">
-                            Name of condition or disability
-                        </label>
-                        <input class="govuk-input" id="conditions[{{loop.index0}}][condition_name]"
-                               name="conditions[{{loop.index0}}][condition_name]" type="text"
-                               value="condition.condition_name"
-                               data-name="conditions[%index%][condition_name]"
-                               data-id="conditions[%index%][condition_name]">
-                    </div> <!-- govuk-form-group -->
-                    <div class="govuk-form-group">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                            Approximate start date
-                        </legend>
-                        <div id="date-of-birth-hint" class="govuk-hint">
-                            For example, 3 1980
-                        </div>
-                        <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label"
-                                       for="conditions[{{loop.index0}}][date]">
-
-                                </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-20"
-                                       id="conditions[{{loop.index0}}][date]"
-                                       name="conditions[{{loop.index0}}][date]" type="text"
-                                       data-name="conditions[%index%][date]" data-id="conditions[%index%][date]"
-                                       value="condition.date">
-                            </div> <!-- govuk-form-group -->
-                        </div> <!-- govuk-date-input__item -->
-                    </div> <!-- govuk-form-group -->
-                    <button type="button" class="govuk-button govuk-button--secondary moj-add-another__remove-button">
-                        Remove
-                    </button>
-                </fieldset>
-                <!-- ENDS HERE -->
-                {% endif %}
-                {% endfor %}
-                {% endif %}
-                <div class="moj-button-action">
-                    <button class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4"
-                            data-module="govuk-button">
-                        Add another
-                    </button>
+            <!-- <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--s" for="condition-start-date">
+                        Approximate start date?
+                    </label>
+                </h1>
+                <div id="condition-start-date-hint" class="govuk-hint">
+                    For example, about 14 months ago.
                 </div>
-                <div class="moj-button-action">
-                    <button class="govuk-button" data-module="govuk-button">
-                        Save and continue
-                    </button>
-                </div>
-            </div> <!-- data module -->
+                <input class="govuk-input" id="condition-start-date" name="condition-start-date" type="text" aria-describedby="condition-start-date-hint">
+            </div> <!-- govuk-form-group -->
+ 
+            <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
         </form>
     </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}
