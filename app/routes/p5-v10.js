@@ -218,14 +218,14 @@ module.exports = function (app) {
     //   req.session.sectionStatus.supportingevidence = req.query.supportingevidence
     // };
 
-    res.render('p5/list.html', {sectionStatus: req.session.sectionStatus, sectionCount: req.session.sectionCount});
+    res.render('p5-v10/list.html', {sectionStatus: req.session.sectionStatus, sectionCount: req.session.sectionCount});
   });
 
   // Clear data on the 'application cancelled' screen
 
-  app.get('/*/clear-p5', function (req, res) {
+  app.get('/*/clear-p5-v10', function (req, res) {
     req.session.destroy()
-    res.render('p5/application-cancelled')
+    res.render('p5-v10/application-cancelled')
   })
 
 
