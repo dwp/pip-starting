@@ -218,7 +218,7 @@ module.exports = function (app) {
     //   req.session.sectionStatus.supportingevidence = req.query.supportingevidence
     // };
 
-    res.render('p5/list.html', {sectionStatus: req.session.sectionStatus, sectionCount: req.session.sectionCount});
+    res.render('mvp/p5/list.html', {sectionStatus: req.session.sectionStatus, sectionCount: req.session.sectionCount});
   });
 
   // Clear data on the 'application cancelled' screen
