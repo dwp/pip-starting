@@ -8,6 +8,7 @@
 
 {% block beforeContent %}
   {% include "p5/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
 {% endblock %}
 
 {% block content %}
@@ -32,7 +33,7 @@
           {{ data['hcp-1-name'] | title }}
         </h2>
         <div class="app-summary-card__actions">
-          <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> {{ data['professional-name-1'] | title }}</span>
+          <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> {{ data['hcp-1-name'] | title }}</span>
           </a>
         </div>{# /app-summary-card__actions #}
       </header>
@@ -121,7 +122,7 @@
 
     {% endif %}
 
-    <p><a href="#">Add another health professional</a></p>
+    <p><a href="health-professional.html">Add another health professional</a></p>
 
     <p><a href="../list?aboutyourhealthprofessionals=completed" class="govuk-button">Confirm and save</a></p>
 

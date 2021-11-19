@@ -8,7 +8,7 @@
 
 {% block beforeContent %}
   {% include "p5/_beta-banner.html" %}
-  {% include "p5/_back-link.html" %}
+  {% include "includes/back-link-v7.html" %}
 {% endblock %}
 
 {% block content %}
@@ -102,40 +102,24 @@
 
       {% endcall %}
 
-        {{ govukDateInput({
-        id: "professional-date-1",
-        fieldset: {
-          legend: {
-            text: "When did you last see them?",
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "This can be an approximate date – for example, 3 2020"
-        },
-        items: [
-          {
-            id: "professional-date-month-1",
-            name: "professional-date-month-1",
-            label: "Month",
-            classes: "govuk-input--width-2",
-            attributes: {
-              'data-name': 'condition-%index%--dob--month-',
-              'data-id': 'condition-%index%--dob--month-'
-            }
-          },
-          {
-            id: "professional-date-year-1",
-            name: "professional-date-year-1",
-            label: "Year",
-            classes: "govuk-input--width-4",
-            attributes: {
-              'data-name': 'condition-%index%--dob--year-',
-              'data-id': 'condition-%index%--dob--year-'
-            }
-          }
-        ]
-      }) }}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="hcp-1-last-contact">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              When did you last speak to them?
+            </h1>
+          </legend>
+          <div id="hcp-1-last-contact" class="govuk-hint">
+            This can be approximate – for example, March 2021 or 18 months ago.
+          </div>
+
+          <div class="govuk-form-group">
+            <input class="govuk-input govuk-input--width-two-thirds" id="hcp-1-last-contact" name="hcp-1-last-contact"
+              type="text" autocomplete="hcp-1-last-contact">
+          </div> <!-- govuk-form-group-->
+
+        </fieldset>
+      </div> <!-- govuk-form-group -->
 
         {{ govukButton({
           text: "Save and continue"
