@@ -28,11 +28,11 @@
     <section class="app-summary-card govuk-!-margin-bottom-6">
 
       <header class="app-summary-card__header">
-        <h2 class="app-summary-card__title">
-          {{ data['professional-name-1'] | title }}
+        <h2 class="app-summary-card__title govuk-heading-m">
+          {{ data['hcp-1-name'] | title }}
         </h2>
         <div class="app-summary-card__actions">
-          <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> {{ data['professional-name-1'] | title }}</span>
+          <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> {{ data['hcp-1-name'] | title }}</span>
           </a>
         </div>{# /app-summary-card__actions #}
       </header>
@@ -46,14 +46,17 @@
               },
               value: {
               html: '<p class="govuk-body">' +
-                data["professional-name-1"] | title + '<br>' +
-                data["professional-profession-1"] | title + '<br>' +
-                data["professional-phone-1"] | title + '<br>' +
-                data["professional-address-line-1-1"] | title + '<br>' +
-                data["professional-address-line-2-1"] | title + '<br>' +
-                data["professional-address-town-1"] | title + '<br>' +
-                data["professional-address-postcode-1"] | upper + '<br>' +
-                'Last seen: June ' + data["professional-date-year-1"] + '</p>'
+                data["hcp-1-name"] | title + '<br>' +
+                data["hcp-1-profession"] | title + '<br>' +
+                data["hcp-1-phone"] | title + '<br>' +
+                data["hcp-1-address-line-1"] | title + '<br>' +
+                data["hcp-1-address-line-2"] | title + '<br>' +
+                data["hcp-1-address-town"] | title + '<br>' +
+                data["hcp-1-address-county"] | title + '<br>' +
+                data["hcp-1-address-town"] | title + '<br>' +
+                data["hcp-1-address-postcode-1"] | upper + '<br>' +
+                data["hcp-1-address-country"] | title + '<br>' +
+                'Last seen: June ' + data["hcp-1-last-contact"] + '</p>'
               },
               actions: {
                 items: [
@@ -70,16 +73,16 @@
       </div>{# /app-summary-card__body #}
     </section>
 
-    {% if data['professional2'] == "Yes" %}
+    {% if data['hcp-2'] == "Yes" %}
 
       <section class="app-summary-card govuk-!-margin-bottom-6">
 
         <header class="app-summary-card__header">
-          <h2 class="app-summary-card__title">
-            {{ data['professional-name-2'] | title }}
+          <h2 class="app-summary-card__title govuk-heading-m">
+            {{ data['hcp-2-name'] | title }}
           </h2>
           <div class="app-summary-card__actions">
-            <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> {{ data['professional-name-2'] | title }}</span>
+            <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> {{ data['hcp-2-name'] | title }}</span>
             </a>
           </div>{# /app-summary-card__actions #}
         </header>
@@ -93,14 +96,17 @@
                 },
                 value: {
                 html: '<p class="govuk-body">' +
-                  data["professional-name-2"] | title + '<br>' +
-                  data["professional-profession-2"] | title + '<br>' +
-                  data["professional-phone-2"] | title + '<br>' +
-                  data["professional-address-line-1-2"] | title + '<br>' +
-                  data["professional-address-line-2-2"] | title + '<br>' +
-                  data["professional-address-town-2"] | title + '<br>' +
-                  data["professional-address-postcode-2"] | upper + '<br>' +
-                  'Last seen: February ' + data["professional-date-year-2"] + '</p>'
+                  data["hcp-1-name"] | title + '<br>' +
+                data["hcp-2-profession"] | title + '<br>' +
+                data["hcp-2-phone"] | title + '<br>' +
+                data["hcp-2-address-line-1"] | title + '<br>' +
+                data["hcp-2-address-line-2"] | title + '<br>' +
+                data["hcp-2-address-town"] | title + '<br>' +
+                data["hcp-2-address-county"] | title + '<br>' +
+                data["hcp-2-address-town"] | title + '<br>' +
+                data["hcp-2-address-postcode-1"] | upper + '<br>' +
+                data["hcp-2-address-country"] | title + '<br>' +
+                'Last seen: June ' + data["hcp-2-last-contact"] + '</p>'
                 },
                 actions: {
                   items: [
