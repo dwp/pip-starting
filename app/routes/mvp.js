@@ -357,7 +357,7 @@ module.exports = function (router) {
 
         if (nationality === 'British' ||
             nationality === 'Irish' ||
-            nationality === 'A nationality of the European Economic Area (EEA)'
+            nationality === 'A nationality of the European Economic Area (EEA) or Switzerland'
         ) {
             if (gb === 'No') {
                 res.redirect('/mvp/about_your_health/condition-new-2')
