@@ -24,12 +24,12 @@
   {% if cya == "true" %}
     {{ govukBackLink({
       text: "Back",
-      href: "/mvp/p5-rev-1/upload-cya"
+      href: "/mvp-rev-1/p5-rev-1/upload-cya"
     }) }}
   {% else %}
     {{ govukBackLink({
       text: "Back",
-      href: "/mvp/p5-rev-1/upload"
+      href: "/mvp-rev-1/p5-rev-1/upload"
     }) }}
   {% endif %}
 
@@ -50,11 +50,11 @@
           <dd class="govuk-summary-list__actions">
 
             {% if cya == "true" %}
-              <a class="govuk-link" href="/mvp/p5-rev-1/upload-cya?delete=true">
+              <a class="govuk-link" href="/mvp-rev-1/p5-rev-1/upload-cya?delete=true">
                 Delete<span class="govuk-visually-hidden"> file</span>
               </a>
             {% else %}
-              <a class="govuk-link" href="/mvp/p5-rev-1/upload?delete=true">
+              <a class="govuk-link" href="/mvp-rev-1/p5-rev-1/upload?delete=true">
                 Delete<span class="govuk-visually-hidden"> file</span>
               </a>
             {% endif %}
@@ -63,9 +63,9 @@
       </dl>
 
       {% if cya == "true" %}
-        <a href="/mvp/p5-rev-1/check-your-answers" class="govuk-button" data-module="govuk-button">Confirm and save</a>
+        <a href="/mvp-rev-1/p5-rev-1/check-your-answers" class="govuk-button" data-module="govuk-button">Confirm and save</a>
       {% else %}
-        <a href="/mvp/p5-rev-1/supporting-evidence" class="govuk-button" data-module="govuk-button">Confirm and save</a>
+        <a href="/mvp-rev-1/p5-rev-1/supporting-evidence" class="govuk-button" data-module="govuk-button">Confirm and save</a>
       {% endif %}
 
     </div>{# /govuk-grid-column-two-thirds #}
