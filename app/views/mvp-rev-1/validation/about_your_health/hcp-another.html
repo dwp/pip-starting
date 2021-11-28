@@ -1,9 +1,9 @@
-{% set pageTitle = "Other health professionals" %}
+{% set pageTitle = "Other healthcare professionals" %}
 
 {% extends "layout-signed-in-mvp.html" %}
 
 {% block pageTitle %}
-Add another health professional
+Add another healthcare professional
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,7 +22,7 @@ Add another health professional
     titleText: "There is a problem",
     errorList: [
     {
-    text: "Select yes if there are other health professionals we can contact",
+    text: "Select yes if there are other healthcare professionals we can contact",
     href: "#passport-issued-day"
     }
     ]
@@ -39,7 +39,7 @@ Add another health professional
       name: "hcp-2",
       fieldset: {
       legend: {
-      text: "Are there any other health professionals we can contact?",
+      text: "Are there any other healthcare professionals we can contact?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
       }
@@ -55,7 +55,7 @@ Add another health professional
       }
       ],
       errorMessage: {
-        text: "Select yes if there are other health professionals we can contact"
+        text: "Select yes if there are other healthcare professionals we can contact"
       }
       }) }}
 
