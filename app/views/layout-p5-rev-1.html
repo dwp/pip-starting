@@ -42,16 +42,16 @@
     {% include "includes/cookie-banner.html" %}
     {{ govukHeader({
       serviceName: serviceName,
-      serviceUrl: "/p5-rev-1/list"
+      serviceUrl: "mvp-rev-1/p5-rev-1/list"
     }) }}
   {% else %}
     {% include "includes/cookie-banner.html" %}
     {{ govukHeader({
       serviceName: serviceName,
-      serviceUrl: "/p5-rev-1/list",
+      serviceUrl: "mvp-rev-1/p5-rev-1/list",
       navigation: [
         {
-          href: "/p5-rev-1/help",
+          href: "mvp-rev-1/p5-rev-1/help",
           text: "Help and contact"
         }
       ]
@@ -63,7 +63,7 @@
 
 {% if useAutoStoreData %}
   {% block footer %}
-    {% include "p5-rev-1/_footer.html" %}
+    {% include "mvp-rev-1/p5-rev-1/_footer.html" %}
   {% endblock %}
 {% endif %}
 
