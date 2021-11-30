@@ -7,17 +7,17 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "mvp-rev-1/p5-rev-1/_beta-banner.html" %}
+{% include "p5-rev-1/_beta-banner.html" %}
 
   {% if cya == "true" %}
     {{ govukBackLink({
       text: "Back",
-      href: "/mvp-rev-1/p5-rev-1/supporting-evidence/check"
+      href: "/p5-rev-1/supporting-evidence/check"
     }) }}
   {% else %}
     {{ govukBackLink({
       text: "Back",
-      href: "/mvp-rev-1/p5-rev-1/supporting-evidence/index?uploaded=1"
+      href: "/p5-rev-1/supporting-evidence/index?uploaded=1"
     }) }}
   {% endif %}
 

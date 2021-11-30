@@ -4,11 +4,11 @@
 {% extends "layout-p5-rev-1.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "mvp-rev-1/p5-rev-1/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "mvp-rev-1/p5-rev-1/_beta-banner.html" %}
+  {% include "p5-rev-1/_beta-banner.html" %}
 {% endblock %}
 
 {% block content %}
@@ -31,13 +31,13 @@
 
       {% if getData.scenario === "locked" %}
         <a href="/p5-rev-1/sign-in/code-text?scenario=locked" class="govuk-button">Continue</a>
-        {% include "mvp-rev-1/p5-rev-1/sign-in/_problems.html" %}
+        {% include "p5-rev-1/sign-in/_problems.html" %}
       {% elif getData.scenario === "active" %}
         <a href="/p5-rev-1/sign-in/code-text?scenario=active" class="govuk-button">Get another code</a>
-        {% include "mvp-rev-1/p5-rev-1/sign-in/_problems.html" %}
+        {% include "p5-rev-1/sign-in/_problems.html" %}
       {% else %}
         <a href="/p5-rev-1/sign-in/code-text" class="govuk-button">Get another code</a>
-        {% include "mvp-rev-1/p5-rev-1/sign-in/_problems.html" %}
+        {% include "p5-rev-1/sign-in/_problems.html" %}
       {% endif %}
 
     </div>{# /govuk-grid-column-two-thirds #}

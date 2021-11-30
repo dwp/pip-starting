@@ -3,11 +3,11 @@
 {% extends "layout-p5-rev-1.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "mvp-rev-1/p5-rev-1/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "mvp-rev-1/p5-rev-1/_beta-banner.html" %}
+  {% include "p5-rev-1/_beta-banner.html" %}
   {% include "includes/back-link-v7.html" %}
 {% endblock %}
 
@@ -16,7 +16,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <form id="form" method="post" action="/mvp-rev-1/p5-rev-1/list-1">
+    <form id="form" method="post" action="/p5-rev-1/list-1">
 
       <h1 class="govuk-heading-l">Check your answers: preparing food</h1>
 
@@ -34,7 +34,7 @@
               actions: {
                 items: [
                   {
-                    href: "/mvp-rev-1/p5-rev-1/preparing-food/",
+                    href: "/p5-rev-1/preparing-food/",
                     text: "Change",
                     visuallyHiddenText: " your answer for whether your condition affects you preparing food, or ever prevents you from doing so"
                   }
@@ -51,7 +51,7 @@
               actions: {
                 items: [
                   {
-                    href: "/mvp-rev-1/p5-rev-1/preparing-food/details",
+                    href: "/p5-rev-1/preparing-food/details",
                     text: "Change",
                     visuallyHiddenText: " your answer for difficulties you have with preparing food and how you manage them"
                   }
@@ -75,7 +75,7 @@
               actions: {
                 items: [
                   {
-                    href: "/mvp-rev-1/p5-rev-1/preparing-food/",
+                    href: "/p5-rev-1/preparing-food/",
                     text: "Change",
                     visuallyHiddenText: " your answer for whether your condition affects you preparing food, or ever prevents you from doing so"
                   }
@@ -87,7 +87,7 @@
 
       {% endif %}
 
-      <a href="/mvp-rev-1/p5-rev-1/list-1?preparingfood=completed" class="govuk-button">Confirm and save</a>
+      <a href="/p5-rev-1/list-1?preparingfood=completed" class="govuk-button">Confirm and save</a>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->

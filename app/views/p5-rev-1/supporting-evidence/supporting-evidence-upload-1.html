@@ -3,11 +3,11 @@
 {% extends "layout-p5-rev-1.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "mvp-rev-1/p5-rev-1/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-{% include "mvp-rev-1/p5-rev-1/_beta-banner.html" %}
+{% include "p5-rev-1/_beta-banner.html" %}
 {% include "includes/back-link-v7.html" %}
 {% endblock %}
 
@@ -25,9 +25,9 @@
       {% endif %}
 
       {% if cya == "true" %}
-        <form action="/mvp-rev-1/p5-rev-1/supporting-evidence/uploading-supporting-evidence-1-cya" method="post" novalidate>
+        <form action="/p5-rev-1/supporting-evidence/uploading-supporting-evidence-1-cya" method="post" novalidate>
       {% else %}
-        <form action="/mvp-rev-1/p5-rev-1/supporting-evidence/uploading-supporting-evidence-1" method="post" novalidate>
+        <form action="/p5-rev-1/supporting-evidence/uploading-supporting-evidence-1" method="post" novalidate>
       {% endif %}
 
         <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
