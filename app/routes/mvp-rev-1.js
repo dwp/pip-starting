@@ -290,7 +290,7 @@ module.exports = function (router) {
 
     router.post('/mvp-rev-1/contact-details', (req, res, next) => {
         const altFormat = req.session.data['format-type'];
-        if (altFormat === 'Braille') {
+        if (altFormat === 'braille') {
             res.redirect('/mvp-rev-1/alt-format-braille'); }
         else if (altFormat === 'Sign Language') {
             res.redirect('/mvp-rev-1/alt-format-sign-language');  }
