@@ -42,16 +42,16 @@
     {% include "includes/cookie-banner.html" %}
     {{ govukHeader({
       serviceName: serviceName,
-      serviceUrl: "p5-rev-1/list"
+      serviceUrl: "list-1"
     }) }}
   {% else %}
     {% include "includes/cookie-banner.html" %}
     {{ govukHeader({
       serviceName: serviceName,
-      serviceUrl: "p5-rev-1/list",
+      serviceUrl: "list-1",
       navigation: [
         {
-          href: "p5-rev-1/help",
+          href: "help",
           text: "Help and contact"
         }
       ]
