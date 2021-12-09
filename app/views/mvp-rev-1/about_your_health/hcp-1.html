@@ -120,15 +120,27 @@ health or care professional
               When did you last speak to them?
             </h1>
           </legend>
-          <div id="hcp-1-last-contact" class="govuk-hint">
-            This can be approximate – for example, March 2021 or 18 months ago.
+          <div id="hcp-1-last-contact-hint" class="govuk-hint">
+            This can be an approximate date – for example, 3 2020
           </div>
-
-          <div class="govuk-form-group">
-            <input class="govuk-input govuk-input--width-two-thirds" id="hcp-1-last-contact" name="hcp-1-last-contact"
-              type="text" autocomplete="hcp-1-last-contact">
-          </div> <!-- govuk-form-group-->
-
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="hcp-1-last-contact-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hcp-1-last-contact-month"
+                name="hcp-1-last-contact-month" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div> <!-- govuk-form-group -->
+          </div> <!-- govuk-date-input__item -->
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="hcp-1-last-contact-year">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="hcp-1-last-contact-year" name="hcp-1-last-contact-year"
+                type="text" pattern="[0-9]*" inputmode="numeric">
+            </div> <!-- govuk-form-group -->
+          </div> <!-- govuk-date-input__item -->
         </fieldset>
       </div> <!-- govuk-form-group -->
 
