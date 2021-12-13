@@ -1,15 +1,15 @@
 {% set pageTitle = "Help and contacts" %}
 {% set current = "help" %}
 
-{% extends "layout-p5.html" %}
+{% extends "layout-p5-v10.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5-v10/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5/_beta-banner.html" %}
-  {% include "p5/_back-link-list.html" %}
+  {% include "p5-v10/_beta-banner.html" %}
+  {% include "p5-v10/_back-link-list.html" %}
 {% endblock %}
 
 {% block content %}
@@ -40,12 +40,12 @@
 {#       <p>Call the PIP enquiry line if you would like to fill in and post a paper form and your evidence instead.</p> #}
 
       <div class="indent-hairline">
-        {% include "p5/_contact.html" %}
+        {% include "p5-v10/_contact.html" %}
       </div>
 
     </div>
   </div>
 
-  {% include "p5/_prototype-shortcuts.html" %}
+  {% include "p5-v10/_prototype-shortcuts.html" %}
 
 {% endblock %}
