@@ -59,7 +59,7 @@ Check your answers
             {% if data['add-support'] === 'Yes' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Is someone helping you with this application?
+                Is someone helping you with this claim?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['add-support-help'] }}<br>
@@ -88,7 +88,7 @@ Check your answers
               </dd>
             </div> <!-- govuk-summary-list__row -->
 
-            
+
 
             {% endif %}
           </dl>
@@ -236,7 +236,7 @@ Check your answers
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Do you want to receive text messages to update you on the progress of your application?
+                Do you want to receive text messages to update you on the progress of your claim?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['sms-updates'] }}
@@ -244,7 +244,7 @@ Check your answers
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="contact-details">
                   Change<span class="govuk-visually-hidden"> if you want to receive sms updates on the progress of your
-                    application</span>
+                    claim</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -282,7 +282,7 @@ Check your answers
             {% if data['format-type'] === 'Braille' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Which Braille format do you need?
+                Which braille format do you need?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['alt-format-braile'] }}
@@ -561,14 +561,14 @@ Check your answers
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Can the Department for Work and Pensions contact any health professionals for information about you?
+                Can the Department for Work and Pensions contact any health and care professionals for information about you?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['hcp'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/mvp/about_your_health/hcp-question">
-                  Change<span class="govuk-visually-hidden"> Health Professional</span>
+                  Change<span class="govuk-visually-hidden"> health or care professional</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -576,15 +576,15 @@ Check your answers
             {% if data['hcp'] === 'Yes' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Do you agree that your health professionals can share relevant information about your health conditions
-                to support your application?
+                Do you agree that your health and care professionals can share relevant information about your health conditions
+                to support your claim?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['consent'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/mvp/about_your_health/hcp-1">
-                  Change<span class="govuk-visually-hidden"> health professional consent</span>
+                  Change<span class="govuk-visually-hidden"> health and care professional consent</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -594,18 +594,18 @@ Check your answers
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Health professional name
+                Health or care professional name
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['hcp-1-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/mvp/remove-hcp-confirmation">
-                  Remove<span class="govuk-visually-hidden"> health professional name</span>
+                  Remove<span class="govuk-visually-hidden"> health or care professional name</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Their details
@@ -627,19 +627,19 @@ Check your answers
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-                   
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Are there any other health professionals we can contact?
+                Are there any other health or care professionals we can contact?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['hcp-2'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/mvp/about_your_health/hcp-another">
-                  Change<span class="govuk-visually-hidden"> another health professional</span>
+                  Change<span class="govuk-visually-hidden"> another health or care professional</span>
                 </a>
-                
+
               </dd>
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
@@ -647,7 +647,7 @@ Check your answers
             {% if data['hcp-2'] === 'Yes' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Second health professional name
+                Second health or care professional name
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['hcp-2-name'] }}
@@ -658,8 +658,8 @@ Check your answers
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            
-           
+
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Their details
@@ -681,17 +681,17 @@ Check your answers
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Are there any other health professionals we can contact?
+                Are there any other health or care professionals we can contact?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['hcp-3'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/mvp/about_your_health/hcp-another-2">
-                  Change<span class="govuk-visually-hidden"> another health professional</span>
+                  Change<span class="govuk-visually-hidden"> another health or care professional</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -700,18 +700,18 @@ Check your answers
             {% if data['hcp-3'] === 'Yes' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Third health professional name
+                Third health or care professional name
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['hcp-3-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/mvp/remove-hcp-confirmation">
-                  Remove<span class="govuk-visually-hidden"> health professional name</span>
+                  Remove<span class="govuk-visually-hidden"> health or care professional name</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Their details
@@ -733,17 +733,17 @@ Check your answers
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Are there any other health professionals we can contact?
+                Are there any other health or care professionals we can contact?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['hcp-4'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/mvp/about_your_health/hcp-another-2">
-                  Change<span class="govuk-visually-hidden"> another health professional</span>
+                  Change<span class="govuk-visually-hidden"> another health or care professional</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
