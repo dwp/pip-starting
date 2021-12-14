@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5/_beta-banner.html" %}
+{% include "includes/back-link-v7.html" %}
 {% endblock %}
 
 {% block content %}
@@ -53,7 +53,7 @@
                 data["hcp-1-address-line-2"] | title + '<br>' +
                 data["hcp-1-address-town"] | title + '<br>' +
                 data["hcp-1-address-postcode"] | upper + '<br>' +
-                'When did you last speak to them: ' + data["hcp-1-last-contact"] + '</p>'
+                'When did you last speak to them: ' + data["hcp-1-last-contact-month" - "hcp-last-contact-year"] + '</p>'
               },
               actions: {
                 items: [
@@ -100,7 +100,7 @@
                 data["hcp-2-address-line-2"] | title + '<br>' +
                 data["hcp-2-address-town"] | title + '<br>' +
                 data["hcp-2-address-postcode"] | upper + '<br>' +
-                'When did you last speak to them: ' + data["hcp-2-last-contact"] + '</p>'
+                'When did you last speak to them: ' + data["hcp-2-last-contact-month" - "hcp-2-last-contact-year"] + '</p>'
                 },
                 actions: {
                   items: [

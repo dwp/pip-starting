@@ -8,18 +8,7 @@
 
 {% block beforeContent %}
 {% include "p5/_beta-banner.html" %}
-  {% if cya == "true" %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "/p5-v10/check-your-answers"
-    }) }}
-  {% else %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "/p5-v10/supporting-evidence"
-    }) }}
-  {% endif %}
-
+{% include "includes/back-link-v7.html" %}
 {% endblock %}
 
 {% block content %}

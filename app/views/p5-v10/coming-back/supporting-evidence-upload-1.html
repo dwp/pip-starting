@@ -8,14 +8,7 @@
 
 {% block beforeContent %}
 {% include "p5/_beta-banner.html" %}
-
-
-    {{ govukBackLink({
-      text: "Back",
-      href: "file-upload-help"
-    }) }}
-
-
+{% include "includes/back-link-v7.html" %}
 {% endblock %}
 
 {% block content %}

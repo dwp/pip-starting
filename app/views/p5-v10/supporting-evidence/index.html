@@ -8,10 +8,7 @@
 
 {% block beforeContent %}
 {% include "p5/_beta-banner.html" %}
-  {{ govukBackLink({
-      text: "Back",
-      href: "/p5-v10/list"
-   }) }}
+{% include "includes/back-link-v7.html" %}
 {% endblock %}
 
 {% block content %}

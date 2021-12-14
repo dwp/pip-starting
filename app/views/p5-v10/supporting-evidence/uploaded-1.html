@@ -21,18 +21,7 @@
 {% include "p5/_beta-banner.html" %}
   {% include "includes/_work-in-progress.html" %}
 
-  {% if cya == "true" %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "/p5-v10/upload-cya"
-    }) }}
-  {% else %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "/p5-v10/upload"
-    }) }}
-  {% endif %}
-
+  {% include "includes/back-link-v7.html" %}
 {% endblock %}
 
 {% block content %}
