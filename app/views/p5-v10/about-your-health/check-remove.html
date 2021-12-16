@@ -1,14 +1,14 @@
 {% set pageTitle = "Are you sure you want to remove ‘{{data['condition-name-1']}}’?
 " %}
 
-{% extends "layout-p5.html" %}
+{% extends "layout-p5-v10.html" %}
 
 {% block pageTitle %}
   {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5/_beta-banner.html" %}
+  {% include "p5-v10/_beta-banner.html" %}
   {% include "includes/back-link-v7.html" %}
 {% endblock %}
 
