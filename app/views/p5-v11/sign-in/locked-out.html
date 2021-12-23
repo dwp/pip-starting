@@ -1,14 +1,14 @@
 {% set status = "signed-out" %}
 {% set pageTitle = "Your account has been locked" %}
 
-{% extends "layout-p5-rev-1.html" %}
+{% extends "layout-p5-v11.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5-rev-1/_beta-banner.html" %}
+  {% include "p5-v11/_beta-banner.html" %}
 {% endblock %}
 
 {% block content %}
@@ -26,7 +26,7 @@
         <li>access to your emails and mobile phone</li>
       </ul>
 
-      <a href="/p5-rev-1/sign-in/enter-details?scenario=locked" class="govuk-button">Continue</a>
+      <a href="/p5-v11/sign-in/enter-details?scenario=locked" class="govuk-button">Continue</a>
 
     </div>{# /govuk-grid-column-two-thirds #}
   </div>{# /govuk-grid-row #}
