@@ -63,6 +63,7 @@ mvprev1(router);
 p5rev1(router);
 pip2(router);
 p5v10(router);
+p5v11(router);
 mvpp5(router);
 router.use('/', authRoutes)
 router.use('/', idvRoutes)
