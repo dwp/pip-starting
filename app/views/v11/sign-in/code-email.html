@@ -4,11 +4,11 @@
 {% extends "layout-p5.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5/_beta-banner.html" %}
+  {% include "p5-v11/_beta-banner.html" %}
 {% endblock %}
 
 {% block content %}
@@ -28,14 +28,14 @@
         </div>
 
         {% if getData.scenario === "locked" %}
-          <a href="/p5/sign-in/code-text?scenario=locked" class="govuk-button">Continue</a>
-          <p><a href="/p5/sign-in/code-email-get-another?scenario=locked">I did not get a code</a></p>
+          <a href="/p5-v11/sign-in/code-text?scenario=locked" class="govuk-button">Continue</a>
+          <p><a href="/p5-v11/sign-in/code-email-get-another?scenario=locked">I did not get a code</a></p>
         {% elif getData.scenario === "active" %}
-          <a href="/p5/list" class="govuk-button">Continue</a>
-          <p><a href="/p5/sign-in/code-email-get-another?scenario=active">I did not get a code</a></p>
+          <a href="/p5-v11/list" class="govuk-button">Continue</a>
+          <p><a href="/p5-v11/sign-in/code-email-get-another?scenario=active">I did not get a code</a></p>
         {% else %}
-          <a href="/p5/sign-in/create-password" class="govuk-button">Continue</a>
-          <p><a href="/p5/sign-in/code-email-get-another">I did not get a code</a></p>
+          <a href="/p5-v11/sign-in/create-password" class="govuk-button">Continue</a>
+          <p><a href="/p5-v11/sign-in/code-email-get-another">I did not get a code</a></p>
         {% endif %}
 
       </form>

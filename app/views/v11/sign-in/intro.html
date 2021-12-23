@@ -4,11 +4,11 @@
 {% extends "layout-p5.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5/_beta-banner.html" %}
+  {% include "p5-v11/_beta-banner.html" %}
 {% endblock %}
 
 {% block content %}
@@ -46,7 +46,7 @@
 
       {{ govukButton({
         text: "Start now",
-        href: "/p5/sign-in/intro-question",
+        href: "/p5-v11/sign-in/intro-question",
         isStartButton: true
       }) }}
 
