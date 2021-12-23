@@ -190,9 +190,9 @@ module.exports = function (router) {
         res.redirect('/v11/add-support');
     });
 
-    router.post('/v11/add-support-3', (req, res, next) => {
+    router.post('/v11/add-support', (req, res, next) => {
         const addSupport = req.session.data['add-support'];
-        if (addSupport === 'Yes, all of the time or sometimes') {
+        if (addSupport === 'Yes') {
             res.redirect('/v11/add-support-help');
         } else {
             res.redirect('/v11/name');
