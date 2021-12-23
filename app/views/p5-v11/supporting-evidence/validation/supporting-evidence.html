@@ -3,20 +3,20 @@
 {% set pageTitle = "Error – Do you want to upload any supporting evidence?" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5-v11?_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-{% include "p5/_beta-banner.html" %}
+{% include "p5-v11?_beta-banner.html" %}
   {% if cya == "true" %}
     {{ govukBackLink({
       text: "Back",
-      href: "/p5/check-your-answers"
+      href: "/p5-v11?check-your-answers"
     }) }}
   {% else %}
     {{ govukBackLink({
       text: "Back",
-      href: "/p5/supporting-evidence"
+      href: "/p5-v11?supporting-evidence"
     }) }}
   {% endif %}
 

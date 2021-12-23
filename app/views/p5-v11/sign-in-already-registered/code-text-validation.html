@@ -4,11 +4,11 @@
 {% extends "layout-p5.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5-v11?_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5/_beta-banner.html" %}
+  {% include "p5-v11?_beta-banner.html" %}
 {% endblock %}
 
 {% block content %}
@@ -17,9 +17,9 @@
     <div class="govuk-grid-column-two-thirds">
 
       {% if getData.next === "list" %}
-        <form action="/p5/sign-in/splash-message" method="POST" novalidate>
+        <form action="/p5-v11?sign-in/splash-message" method="POST" novalidate>
       {% else %}
-        <form action="/p5/sign-in/create-password" method="POST" novalidate>
+        <form action="/p5-v11?sign-in/create-password" method="POST" novalidate>
       {% endif %}
 
         <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
@@ -47,16 +47,16 @@
         </div>
 
         {% if getData.scenario === "locked" %}
-          <a href="/p5/sign-in/create-new-password?scenario=locked" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
-          <p><a href="/p5/sign-in/code-text-get-another?scenario=locked">I did not get a code</a></p>
+          <a href="/p5-v11?sign-in/create-new-password?scenario=locked" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
+          <p><a href="/p5-v11?sign-in/code-text-get-another?scenario=locked">I did not get a code</a></p>
         {% elif getData.scenario === "active" %}
-          <a href="/p5/sign-in/splash-message" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
-          <p><a href="/p5/sign-in/code-text-get-another?scenario=active">I did not get a code</a></p>
-          <p><a href="/p5/sign-in/code-email?scenario=active">Get a code by email instead</a></p>
+          <a href="/p5-v11?sign-in/splash-message" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
+          <p><a href="/p5-v11?sign-in/code-text-get-another?scenario=active">I did not get a code</a></p>
+          <p><a href="/p5-v11?sign-in/code-email?scenario=active">Get a code by email instead</a></p>
         {% else %}
-          <a href="/p5/sign-in/create-password" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
-          <p><a href="/p5/sign-in/code-text-get-another">I did not get a code</a></p>
-          <p><a href="/p5/sign-in/code-email">Get a code by email instead</a></p>
+          <a href="/p5-v11?sign-in/create-password" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
+          <p><a href="/p5-v11?sign-in/code-text-get-another">I did not get a code</a></p>
+          <p><a href="/p5-v11?sign-in/code-email">Get a code by email instead</a></p>
         {% endif %}
 
       </form>
