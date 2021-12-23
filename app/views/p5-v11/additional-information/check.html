@@ -1,13 +1,13 @@
-{% extends "layout-p5-rev-1.html" %}
+{% extends "layout-p5-v11.html" %}
 
 {% set pageTitle = "Check your answers: additional information" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5-rev-1/_beta-banner.html" %}
+  {% include "p5-v11/_beta-banner.html" %}
   {% include "includes/back-link-v7.html" %}
 {% endblock %}
 
@@ -16,7 +16,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <form id="form" method="post" action="/p5-rev-1/list-1">
+    <form id="form" method="post" action="/p5-v11/list-1">
 
       <h1 class="govuk-heading-l">Check your answers: additional information</h1>
 
@@ -35,7 +35,7 @@
               actions: {
                 items: [
                   {
-                    href: "/p5-rev-1/additional-information/",
+                    href: "/p5-v11/additional-information/",
                     text: "Change",
                     visuallyHiddenText: "your answer to whether there is anything else you would like to tell us about"
                   }
@@ -52,7 +52,7 @@
               actions: {
                 items: [
                   {
-                    href: "/p5-rev-1/additional-information/details",
+                    href: "/p5-v11/additional-information/details",
                     text: "Change",
                     visuallyHiddenText: "additional information"
                   }
@@ -76,7 +76,7 @@
               actions: {
                 items: [
                   {
-                    href: "/p5-rev-1/additional-information/",
+                    href: "/p5-v11/additional-information/",
                     text: "Change",
                     visuallyHiddenText: "your answer to whether there is anything else you would like to tell us about"
                   }
@@ -141,7 +141,7 @@
         ]
       }) }} #}
 
-      <a href="/p5-rev-1/list-1?additionalinformation=completed" class="govuk-button">Confirm and save</a>
+      <a href="/p5-v11/list-1?additionalinformation=completed" class="govuk-button">Confirm and save</a>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->

@@ -1,13 +1,13 @@
 {% set pageTitle = "Tell us about the difficulties you have with mixing with other people and how you manage them" %}
 
-{% extends "layout-p5-rev-1.html" %}
+{% extends "layout-p5-v11.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5-rev-1/_beta-banner.html" %}
+  {% include "p5-v11/_beta-banner.html" %}
   {% include "includes/back-link-v7.html" %}
 
 {% endblock %}
@@ -17,7 +17,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/p5-rev-1/mixing-with-other-people/check" method="post" novalidate>
+    <form action="/p5-v11/mixing-with-other-people/check" method="post" novalidate>
 
       {{ govukTextarea({
         name: "mixingwithotherpeople-details",
@@ -58,7 +58,7 @@
 
     </form>
 
-    {% include "p5-rev-1/mixing-with-other-people/_return-link.html" %}
+    {% include "p5-v11/mixing-with-other-people/_return-link.html" %}
 
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}

@@ -1,4 +1,4 @@
-{% extends "layout-p5-rev-1.html" %}
+{% extends "layout-p5-v11.html" %}
 
 {% set pageTitle = "Check your uploaded files" %}
 
@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "p5-rev-1/_beta-banner.html" %}
+{% include "p5-v11/_beta-banner.html" %}
 {% include "includes/back-link-v7.html" %}
 
 {% endblock %}
@@ -26,9 +26,9 @@
       {% endif %}
 
       {% if cya == "true" %}
-        <form action="/p5-rev-1/supporting-evidence/supporting-evidence-uploaded-2-data-cya" method="post" novalidate>
+        <form action="/p5-v11/supporting-evidence/supporting-evidence-uploaded-2-data-cya" method="post" novalidate>
       {% else %}
-        <form action="/p5-rev-1/supporting-evidence/supporting-evidence-uploaded-2-data" method="post" novalidate>
+        <form action="/p5-v11/supporting-evidence/supporting-evidence-uploaded-2-data" method="post" novalidate>
       {% endif %}
 
         <h1 class="govuk-heading-l">Your uploaded files</h1>
@@ -57,7 +57,7 @@
               <a download href="/">{{ data['supporting-evidence-file-2'] }}</a>, 5MB
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" href="/p5-rev-1/supporting-evidence/supporting-evidence-uploaded-1?delete=true">
+              <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" href="/p5-v11/supporting-evidence/supporting-evidence-uploaded-1?delete=true">
                 Delete<span class="govuk-visually-hidden"> file 2</span>
               </a>
             </dd>
