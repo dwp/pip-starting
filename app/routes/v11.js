@@ -187,7 +187,7 @@ module.exports = function (router) {
     // ADDITIONAL SUPPORT QUESTIONS
 
     router.post('/v11/add-support-communicating', (req, res, next) => {
-        res.redirect('/v11/add-support-3');
+        res.redirect('/v11/add-support');
     });
 
     router.post('/v11/add-support-3', (req, res, next) => {
