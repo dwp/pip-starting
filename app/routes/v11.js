@@ -281,11 +281,20 @@ module.exports = function (router) {
     })
 
     router.post('/v11/alt-formats', (req, res, next) => {
-        const altFormat = req.session.data['format-type'];
+        const altFormats = req.session.data['communication-format'];
+        if (altFormats === 'Yes') {
+            res.redirect('/v11/alt-formats-choice');
+        } else {
+            res.redirect('/v11/nationality');
+        }
+    })
+
+    router.post('/v11/alt-formats-choice', (req, res, next) => {
+        const altFormat = req.session.data['alt-formats-choice'];
         if (altFormat === 'Braille') {
             res.redirect('/v11/alt-format-braille');
         }
-        else if (altFormat === 'Sign Language') {
+        else if (altFormat === 'Sign language') {
             res.redirect('/v11/alt-format-sign-language');
         }
         else if (altFormat === 'Audio') {
@@ -293,9 +302,6 @@ module.exports = function (router) {
         }
         else if (altFormat === 'Paper and other formats') {
             res.redirect('/v11/alt-format-paper');
-        }
-        else {
-            res.redirect('/v11/nationality');
         }
     });
 
