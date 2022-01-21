@@ -1,13 +1,13 @@
 {% set pageTitle = "Check your answers: about your health" %}
 
-{% extends "layout-p5-rev-1.html" %}
+{% extends "layout-live-pip2-v1-0.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "live-pip2-v1-0/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5-rev-1/_beta-banner.html" %}
+  {% include "live-pip2-v1-0/_beta-banner.html" %}
   {% include "includes/back-link-v7.html" %}
 {% endblock %}
 
@@ -36,7 +36,7 @@
           {{ data['condition-name-1'] | capitalize }}
         </h2>
         <div class="app-summary-card__actions">
-          <a class="govuk-link" href="/p5-rev-1/about-your-health/check-remove">Remove<span class="govuk-visually-hidden"> {{ data['condition-name-1'] | lower }}</span>
+          <a class="govuk-link" href="/live-pip2-v1-0/about-your-health/check-remove">Remove<span class="govuk-visually-hidden"> {{ data['condition-name-1'] | lower }}</span>
           </a>
         </div>{# /app-summary-card__actions #}
       </header> -->

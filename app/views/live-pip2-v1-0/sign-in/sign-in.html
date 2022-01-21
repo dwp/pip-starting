@@ -1,15 +1,15 @@
 {% set status = "signed-out" %}
 {% set pageTitle = "Sign in" %}
 
-{% extends "layout-p5-rev-1.html" %}
+{% extends "layout-live-pip2-v1-0.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "live-pip2-v1-0/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5-rev-1/_beta-banner.html" %}
-  {% include "p5-rev-1/_back-link.html" %}
+  {% include "live-pip2-v1-0/_beta-banner.html" %}
+  {% include "live-pip2-v1-0/_back-link.html" %}
 {% endblock %}
 
 
@@ -20,7 +20,7 @@
 
       <h1 class="govuk-heading-l">Sign in</h1>
 
-      <form action="/p5-rev-1/sign-in/choose-scenario" method="post" novalidate>
+      <form action="/live-pip2-v1-0/sign-in/choose-scenario" method="post" novalidate>
 
         {{ govukInput({
           label: {
@@ -57,16 +57,16 @@
         }) }} #}
 
         {% if getData.scenario === "locked" %}
-          <a href="/p5-rev-1/sign-in/locked-out" class="govuk-button">Continue</a>
+          <a href="/live-pip2-v1-0/sign-in/locked-out" class="govuk-button">Continue</a>
         {% else %}
-          <a href="/p5-rev-1/sign-in/code-text?scenario=active" class="govuk-button">Continue</a>
+          <a href="/live-pip2-v1-0/sign-in/code-text?scenario=active" class="govuk-button">Continue</a>
         {% endif %}
 
       </form>
 
 
-      <p><a href="/p5-rev-1/sign-in/register-start">Register now</a> if you have not used this service before.</p>
-      <p><a href="/p5-rev-1/sign-in/forgot-password">I forgot my password</a></p>
+      <p><a href="/live-pip2-v1-0/sign-in/register-start">Register now</a> if you have not used this service before.</p>
+      <p><a href="/live-pip2-v1-0/sign-in/forgot-password">I forgot my password</a></p>
 
     </div>{# /govuk-grid-column-two-thirds #}
   </div>{# /govuk-grid-row #}
