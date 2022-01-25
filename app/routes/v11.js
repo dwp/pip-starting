@@ -324,16 +324,22 @@ module.exports = function (router) {
     router.post('/v11/nationality', (req, res, next) => {
         const whereLive = req.session.data['nationality'];
         if (whereLive === 'A nationality of the European Economic Area (EEA) or Switzerland') {
-            res.redirect('/v11/living-in-uk');
+            res.redirect('/v11/nationality-of-eaa-or-switzerland');
+        } else if (whereLive === 'Another nationality') {
+            res.redirect('/v11/nationality-another');
         } else {
             res.redirect('/v11/living-in-gb');
         }
     });
 
-    router.get('/v11/nationality', (req, res, next) => {
+    router.get('/v11/nationality-another', (req, res, next) => {
         res.locals.nationalities = nationalities;
-        res.render('v11/nationality.html')
+        res.render('v11/nationality-another.html')
     })
+
+    router.post('/v11/nationality-of-eaa-or-switzerland', (req, res, next) => {
+        res.redirect('/v11/living-in-uk');
+    });
 
     router.post('/v11/living-in-uk', (req, res, next) => {
         const livingUk = req.session.data['living-in-uk'];
@@ -342,6 +348,10 @@ module.exports = function (router) {
         } else {
             res.redirect('/v11/living-in-gb');
         }
+    });
+
+    router.post('/v11/nationality-another', (req, res, next) => {
+        res.redirect('/v11/living-in-gb');
     });
 
     router.post('/v11/living-in-gb', (req, res, next) => {
@@ -478,6 +488,7 @@ module.exports = function (router) {
             res.redirect('/v11/check-answers');
         }
     });
+
     router.post('/v11/hospital-admission', (req, res, next) => {
         res.redirect('/v11/hospital-address');
     });
