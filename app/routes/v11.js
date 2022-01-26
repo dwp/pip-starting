@@ -292,32 +292,32 @@ module.exports = function (router) {
     router.post('/v11/alt-formats-choice', (req, res, next) => {
         const altFormat = req.session.data['alt-formats-choice'];
         if (altFormat === 'Braille') {
-            res.redirect('/v11/alt-format-braille');
+            res.redirect('/v11/alt-formats-braille');
         }
         else if (altFormat === 'Sign language') {
-            res.redirect('/v11/alt-format-sign-language');
+            res.redirect('/v11/alt-formats-sign-language');
         }
         else if (altFormat === 'Audio') {
-            res.redirect('/v11/alt-format-audio');
+            res.redirect('/v11/alt-formats-audio');
         }
         else if (altFormat === 'Paper and other formats') {
-            res.redirect('/v11/alt-format-paper');
+            res.redirect('/v11/alt-formats-paper');
         }
     });
 
-    router.post('/v11/alt-format-braille', (req, res, next) => {
+    router.post('/v11/alt-formats-braille', (req, res, next) => {
         res.redirect('/v11/nationality');
     });
 
-    router.post('/v11/alt-format-sign-language', (req, res, next) => {
+    router.post('/v11/alt-formats-sign-language', (req, res, next) => {
         res.redirect('/v11/nationality');
     });
 
-    router.post('/v11/alt-format-audio', (req, res, next) => {
+    router.post('/v11/alt-formats-audio', (req, res, next) => {
         res.redirect('/v11/nationality');
     });
 
-    router.post('/v11/alt-format-paper', (req, res, next) => {
+    router.post('/v11/alt-formats-paper', (req, res, next) => {
         res.redirect('/v11/nationality');
     });
 
