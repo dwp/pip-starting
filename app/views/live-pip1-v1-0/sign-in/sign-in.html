@@ -20,7 +20,7 @@
 
       <h1 class="govuk-heading-l">Sign in</h1>
 
-      <form action="/p5/sign-in/choose-scenario" method="post" novalidate>
+      <form action="/live-pip1-v1-0/sign-in/choose-scenario" method="post" novalidate>
 
         {{ govukInput({
           label: {
@@ -57,16 +57,16 @@
         }) }} #}
 
         {% if getData.scenario === "locked" %}
-          <a href="/p5/sign-in/locked-out" class="govuk-button">Continue</a>
+          <a href="/live-pip1-v1-0/sign-in/locked-out" class="govuk-button">Continue</a>
         {% else %}
-          <a href="/p5/sign-in/code-text?scenario=active" class="govuk-button">Continue</a>
+          <a href="/live-pip1-v1-0/sign-in/code-text?scenario=active" class="govuk-button">Continue</a>
         {% endif %}
 
       </form>
 
 
-      <p><a href="/p5/sign-in/register-start">Register now</a> if you have not used this service before.</p>
-      <p><a href="/p5/sign-in/forgot-password">I forgot my password</a></p>
+      <p><a href="/live-pip1-v1-0/sign-in/register-start">Register now</a> if you have not used this service before.</p>
+      <p><a href="/live-pip1-v1-0/sign-in/forgot-password">I forgot my password</a></p>
 
     </div>{# /govuk-grid-column-two-thirds #}
   </div>{# /govuk-grid-row #}
