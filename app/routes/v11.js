@@ -300,8 +300,11 @@ module.exports = function (router) {
         else if (altFormat === 'Audio') {
             res.redirect('/v11/alt-formats-audio');
         }
-        else if (altFormat === 'Paper and other formats') {
+        else if (altFormat === 'Paper') {
             res.redirect('/v11/alt-formats-paper');
+        }
+        else if (altFormat === 'Other formats') {
+            res.redirect('/v11/alt-formats-other');
         }
     });
 
@@ -318,6 +321,44 @@ module.exports = function (router) {
     });
 
     router.post('/v11/alt-formats-paper', (req, res, next) => {
+        const altPaper = req.session.data['alt-format-paper'];
+        if (altPaper === 'Coloured paper') {
+            res.redirect('/v11/alt-formats-paper-colour');
+        }
+        else if (altPaper === 'Large print with a custom font') {
+            res.redirect('/v11/alt-formats-paper-custom-font');
+        }
+        else {
+            res.redirect('/v11/nationality');
+        }
+    });
+
+    router.post('/v11/alt-formats-paper-colour', (req, res, next) => {
+        res.redirect('/v11/nationality');
+    });
+
+    router.post('/v11/alt-formats-paper-custom-font', (req, res, next) => {
+        res.redirect('/v11/nationality');
+    });
+
+    router.post('/v11/alt-formats-other', (req, res, next) => {
+        const altOther = req.session.data['alt-format-paper'];
+        if (altOther === 'Email') {
+            res.redirect('/v11/alt-formats-other-email');
+        }
+        else if (altOther === 'Other') {
+            res.redirect('/v11/alt-formats-other-other');
+        }
+        else {
+            res.redirect('/v11/nationality');
+        }
+    });
+
+    router.post('/v11/alt-formats-other-email', (req, res, next) => {
+        res.redirect('/v11/nationality');
+    });
+
+    router.post('/v11/alt-formats-other-other', (req, res, next) => {
         res.redirect('/v11/nationality');
     });
 
