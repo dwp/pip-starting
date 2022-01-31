@@ -321,7 +321,7 @@ module.exports = function (router) {
     });
 
     router.post('/v11/alt-formats-paper', (req, res, next) => {
-        const altPaper = req.session.data['alt-format-paper'];
+        const altPaper = req.session.data['alt-formats-paper'];
         if (altPaper === 'Coloured paper') {
             res.redirect('/v11/alt-formats-paper-colour');
         }
@@ -342,7 +342,7 @@ module.exports = function (router) {
     });
 
     router.post('/v11/alt-formats-other', (req, res, next) => {
-        const altOther = req.session.data['alt-format-paper'];
+        const altOther = req.session.data['alt-formats-other'];
         if (altOther === 'Email') {
             res.redirect('/v11/alt-formats-other-email');
         }
@@ -444,7 +444,7 @@ module.exports = function (router) {
     });
 
     router.post('/v11/about_your_health/hcp-question', (req, res, next) => {
-        const hcpQuestion = req.session.data['hcp'];
+        const hcpQuestion = req.session.data['hcp-question'];
         if (hcpQuestion === 'Yes') {
             res.redirect('/v11/about_your_health/consent');
         } else {
