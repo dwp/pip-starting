@@ -600,6 +600,10 @@ module.exports = function (router) {
     //     res.redirect('/v11/confirmation');
     // });
 
+    router.post('/v11/about_your_health/remove-hcp-confirmation', (req, res, next) => {
+        res.redirect('/v11/check-answers');
+    });
+    
     router.post('/v11/check-answers', (req, res, next) => {
         res.redirect('/v11/confirmation');
     });
