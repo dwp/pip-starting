@@ -1,7 +1,7 @@
 {% extends "layout-signed-in-mvp.html" %}
 
 {% block pageTitle %}
-Check your answers personal details 
+Check your answers personal details
 {% endblock %}
 
 {% block beforeContent %}
@@ -180,7 +180,7 @@ Check your answers personal details
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Do you need communications in another format?
@@ -326,7 +326,7 @@ Check your answers personal details
             {% if data['alt-formats-other'] === 'Email' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Give the email address you want to use
+                What is your email address?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['alt-formats-other-email'] }}
@@ -342,7 +342,7 @@ Check your answers personal details
             {% if data['alt-formats-other'] === 'Other' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Give details of other alternative contact formats you need
+                Describe the communication format you need
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['alt-formats-other-other'] }}
