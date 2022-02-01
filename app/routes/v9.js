@@ -387,7 +387,7 @@ module.exports = function (router) {
     });
 
     router.post('/v9/about_your_health/hcp-question', (req, res, next) => {
-        const hcpQuestion = req.session.data['hcp'];
+        const hcpQuestion = req.session.data['hcp-question'];
         if (hcpQuestion === 'Yes') {
             res.redirect('/v9/about_your_health/consent');
         } else {

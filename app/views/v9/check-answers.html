@@ -564,7 +564,7 @@ Check your answers
                 Can the Department for Work and Pensions contact any health professionals for information about you?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['hcp'] }}
+                {{ data['hcp-question'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/mvp/about_your_health/hcp-question">
@@ -573,7 +573,7 @@ Check your answers
               </dd>
             </div> <!-- govuk-summary-list__row -->
 
-            {% if data['hcp'] === 'Yes' %}
+            {% if data['hcp-question'] === 'Yes' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Do you agree that your health professionals can share relevant information about your health conditions

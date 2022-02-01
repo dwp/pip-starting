@@ -1,14 +1,14 @@
 {% set pageTitle = "Tell us more about the difficulties you have with planning and following journeys and how you manage them" %}
 
-{% extends "layout-p5-rev-1.html" %}
+{% extends "layout-live-pip2-v1-0.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5-rev-1/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "live-pip2-v1-0/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5-rev-1/_beta-banner.html" %}
-  {% include "p5-rev-1/_back-link.html" %}
+  {% include "live-pip2-v1-0/_beta-banner.html" %}
+  {% include "live-pip2-v1-0/_back-link.html" %}
 {% endblock %}
 
 {% block content %}
@@ -16,7 +16,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/p5-rev-1/planning-and-following-a-journey/check" method="post" novalidate>
+    <form action="/live-pip2-v1-0/planning-and-following-a-journey/check" method="post" novalidate>
 
       {{ govukTextarea({
         name: "planningandfollowingajourney-details",
@@ -58,7 +58,7 @@
 
     </form>
 
-    {% include "p5-rev-1/planning-and-following-a-journey/_return-link.html" %}
+    {% include "live-pip2-v1-0/planning-and-following-a-journey/_return-link.html" %}
 
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}

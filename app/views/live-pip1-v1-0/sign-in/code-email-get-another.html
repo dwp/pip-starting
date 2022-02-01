@@ -30,11 +30,11 @@
       <h1 class="govuk-heading-l">Get another 6-digit security code sent to email@email.com</h1>
 
       {% if getData.scenario === "locked" %}
-        <a href="/p5/sign-in/code-email?scenario=locked" class="govuk-button">Get another code</a>
+        <a href="/live-pip1-v1-0/sign-in/code-email?scenario=locked" class="govuk-button">Get another code</a>
       {% elif getData.scenario === "active" %}
-        <a href="/p5/sign-in/code-email?scenario=active" class="govuk-button">Get another code</a>
+        <a href="/live-pip1-v1-0/sign-in/code-email?scenario=active" class="govuk-button">Get another code</a>
       {% else %}
-        <a href="/p5/sign-in/code-email" class="govuk-button">Get another code</a>
+        <a href="/live-pip1-v1-0/sign-in/code-email" class="govuk-button">Get another code</a>
       {% endif %}
 
       {% include "p5/sign-in/_problems.html" %}
