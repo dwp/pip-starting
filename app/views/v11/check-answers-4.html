@@ -1,7 +1,7 @@
 {% extends "layout-signed-in-mvp.html" %}
 
 {% block pageTitle %}
-Check your answers your health
+Check your answers about your health
 {% endblock %}
 
 {% block beforeContent %}
@@ -94,7 +94,7 @@ Check your answers your health
               </dd>
             </div> <!-- govuk-summary-list__row -->
 
-            {% if data['hcp-question'] === 'Yes' %}
+            {% if data['hcp-q'] === 'Yes' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Do you agree that your health and care professionals can share relevant information about your health conditions
@@ -104,7 +104,7 @@ Check your answers your health
                 {{ data['consent'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/mvp/about_your_health/hcp-1">
+                <a class="govuk-link" href="/mvp/about_your_health/consent">
                   Change<span class="govuk-visually-hidden"> health and care professional consent</span>
                 </a>
               </dd>
@@ -121,7 +121,7 @@ Check your answers your health
                 {{ data['hcp-1-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/mvp/remove-hcp-confirmation">
+                <a class="govuk-link" href="/v11/about_your_health/remove-hcp-confirmation">
                   Remove<span class="govuk-visually-hidden"> health or care professional name</span>
                 </a>
               </dd>
@@ -174,7 +174,7 @@ Check your answers your health
                 {{ data['hcp-2-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/mvp/remove-hcp-confirmation">
+                <a class="govuk-link" href="/v11/about_your_health/remove-hcp-confirmation">
                   Remove
                 </a>
               </dd>
@@ -227,7 +227,7 @@ Check your answers your health
                 {{ data['hcp-3-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/mvp/remove-hcp-confirmation">
+                <a class="govuk-link" href="/v11/about_your_health/remove-hcp-confirmation">
                   Remove<span class="govuk-visually-hidden"> health or care professional name</span>
                 </a>
               </dd>
@@ -295,7 +295,7 @@ Check your answers your health
                 data['hospital-admission-year'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="in-hospital">
+                <a class="govuk-link" href="hospital-admission.html">
                   Change<span class="govuk-visually-hidden"> date you were admitted to hospital</span>
                 </a>
               </dd>
@@ -315,7 +315,7 @@ Check your answers your health
                 {{ data['hospital-address-country'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/mvp/hospital-address">
+                <a class="govuk-link" href="hospital-address">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
@@ -352,7 +352,7 @@ Check your answers your health
                 {{ data['hospice-address-country'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/mvp/hospice-address">
+                <a class="govuk-link" href="hospice-address">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
