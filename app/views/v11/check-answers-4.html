@@ -148,7 +148,9 @@ Check your answers about your health
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
+            {% endif %}
 
+            {% if data['hcp-2'] === 'No' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Are there any other health or care professionals we can contact?
@@ -202,7 +204,9 @@ Check your answers about your health
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
+            {% endif %}
 
+            {% if data['hcp-3'] === 'No' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Are there any other health or care professionals we can contact?
@@ -254,7 +258,9 @@ Check your answers about your health
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
+            {% endif %}
 
+            {% if data['hcp-4'] === 'No' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Are there any other health or care professionals we can contact?
