@@ -354,11 +354,15 @@ module.exports = function (router) {
             res.redirect('/v11/alt-formats-other-other');
         }
         else {
-            res.redirect('/v11/check-answers-2');
+            res.redirect('/v11/alt-formats-other-pdf-email');
         }
     });
 
     router.post('/v11/alt-formats-other-email', (req, res, next) => {
+        res.redirect('/v11/check-answers-2');
+    });
+
+    router.post('/v11/alt-formats-other-pdf-email', (req, res, next) => {
         res.redirect('/v11/check-answers-2');
     });
 
