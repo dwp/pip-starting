@@ -323,6 +323,22 @@ Check your answers personal details
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
 
+            {% if data['alt-formats-other'] === 'Accessible PDF' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What is your email address?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['alt-formats-other-pdf-email'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="alt-formats-other-pdf-email">
+                  Change<span class="govuk-visually-hidden"> email address details</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+            
             {% if data['alt-formats-other'] === 'Email' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
