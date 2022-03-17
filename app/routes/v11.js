@@ -456,7 +456,7 @@ module.exports = function (router) {
     // });
 
     router.post('/v11/about_your_health/condition-new-2', (req, res, next) => {
-        res.redirect('/v11/about_your_health/hcp-question');
+        res.redirect('/v11/about_your_health/consent');
     });
 
     router.post('/v11/about_your_health/hcp-question', (req, res, next) => {
@@ -604,7 +604,7 @@ module.exports = function (router) {
     router.post('/v11/about_your_health/remove-hcp-confirmation', (req, res, next) => {
         res.redirect('/v11/check-answers-4');
     });
-    
+
     router.post('/v11/check-answers-4', (req, res, next) => {
         res.redirect('/v11/confirmation');
     });
