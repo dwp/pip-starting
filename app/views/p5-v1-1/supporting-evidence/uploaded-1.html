@@ -1,4 +1,4 @@
-{% extends "layout-p5-v11.html" %}
+{% extends "layout-p5-v1-1.html" %}
 
 {% set pageTitle = "Check your form – Send your PIP form – GOV.UK" %}
 
@@ -18,18 +18,18 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "p5-v11/_beta-banner.html" %}
+{% include "p5-v1-1/_beta-banner.html" %}
   {% include "includes/_work-in-progress.html" %}
 
   {% if cya == "true" %}
     {{ govukBackLink({
       text: "Back",
-      href: "/p5-v11/upload-cya"
+      href: "/p5-v1-1/upload-cya"
     }) }}
   {% else %}
     {{ govukBackLink({
       text: "Back",
-      href: "/p5-v11/upload"
+      href: "/p5-v1-1/upload"
     }) }}
   {% endif %}
 
@@ -50,11 +50,11 @@
           <dd class="govuk-summary-list__actions">
 
             {% if cya == "true" %}
-              <a class="govuk-link" href="/p5-v11/upload-cya?delete=true">
+              <a class="govuk-link" href="/p5-v1-1/upload-cya?delete=true">
                 Delete<span class="govuk-visually-hidden"> file</span>
               </a>
             {% else %}
-              <a class="govuk-link" href="/p5-v11/upload?delete=true">
+              <a class="govuk-link" href="/p5-v1-1/upload?delete=true">
                 Delete<span class="govuk-visually-hidden"> file</span>
               </a>
             {% endif %}
@@ -63,14 +63,14 @@
       </dl>
 
       {% if cya == "true" %}
-        <a href="/p5-v11/check-your-answers" class="govuk-button" data-module="govuk-button">Confirm and save</a>
+        <a href="/p5-v1-1/check-your-answers" class="govuk-button" data-module="govuk-button">Confirm and save</a>
       {% else %}
-        <a href="/p5-v11/supporting-evidence" class="govuk-button" data-module="govuk-button">Confirm and save</a>
+        <a href="/p5-v1-1/supporting-evidence" class="govuk-button" data-module="govuk-button">Confirm and save</a>
       {% endif %}
 
     </div>{# /govuk-grid-column-two-thirds #}
 
-    {% include "p5-v11/_upload-sidebar.html" %}
+    {% include "p5-v1-1/_upload-sidebar.html" %}
 
   </div>{# /govuk-grid-row #}
 

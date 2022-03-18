@@ -1,13 +1,13 @@
 {% set pageTitle = "Other health professionals" %}
 
-{% extends "layout-p5-v11.html" %}
+{% extends "layout-p5-v1-1.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5-v1-1/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5-v11/_beta-banner.html" %}
+  {% include "p5-v1-1/_beta-banner.html" %}
   {% include "includes/back-link-v7.html" %}
 {% endblock %}
 
@@ -16,7 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/p5-v11/about-your-health-professionals/q-health-professional-answer" method="post" novalidate>
+      <form action="/p5-v1-1/about-your-health-professionals/q-health-professional-answer" method="post" novalidate>
 
         {{ govukRadios({
           idPrefix: "aid",
@@ -51,7 +51,7 @@
 
       </form>
 
-      {% include "p5-v11/about-your-health-professionals/_return-link.html" %}
+      {% include "p5-v1-1/about-your-health-professionals/_return-link.html" %}
 
     </div>{# /govuk-grid-column-one-third #}
   </div>{# /govuk-grid-row #}

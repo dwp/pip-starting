@@ -1,13 +1,13 @@
 {% set pageTitle = "Check your answers: about your health" %}
 
-{% extends "layout-p5-v11.html" %}
+{% extends "layout-p5-v1-1.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5-v1-1/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5-v11/_beta-banner.html" %}
+  {% include "p5-v1-1/_beta-banner.html" %}
   {% include "includes/back-link-v7.html" %}
 {% endblock %}
 
@@ -36,7 +36,7 @@
           {{ data['condition-name-1'] | capitalize }}
         </h2>
         <div class="app-summary-card__actions">
-          <a class="govuk-link" href="/p5-v11/about-your-health/check-remove">Remove<span class="govuk-visually-hidden"> {{ data['condition-name-1'] | lower }}</span>
+          <a class="govuk-link" href="/p5-v1-1/about-your-health/check-remove">Remove<span class="govuk-visually-hidden"> {{ data['condition-name-1'] | lower }}</span>
           </a>
         </div>{# /app-summary-card__actions #}
       </header> -->
@@ -145,7 +145,7 @@
 
       {% endif %}
 
-    <p><a href="#">Add another condition or disability</a></p>
+    <p><a href="another">Add another condition or disability</a></p>
 
     <p><a href="../list-1?aboutyourhealth=completed" class="govuk-button">Confirm and save</a></p>
 

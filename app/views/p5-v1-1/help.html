@@ -1,15 +1,15 @@
 {% set pageTitle = "Help and contacts" %}
 {% set current = "help" %}
 
-{% extends "layout-p5-v11.html" %}
+{% extends "layout-p5-v1-1.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5-v1-1/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5-v11/_beta-banner.html" %}
-  {% include "p5-v11/_back-link-list.html" %}
+  {% include "p5-v1-1/_beta-banner.html" %}
+  {% include "p5-v1-1/_back-link-list.html" %}
 {% endblock %}
 
 {% block content %}
@@ -38,12 +38,12 @@
       <h2 class="govuk-heading-m">Contact</h2>
 
       <div class="indent-hairline">
-        {% include "p5-v11/_contact.html" %}
+        {% include "p5-v1-1/_contact.html" %}
       </div>
 
     </div>
   </div>
 
-  {% include "p5-v11/_prototype-shortcuts.html" %}
+  {% include "p5-v1-1/_prototype-shortcuts.html" %}
 
 {% endblock %}

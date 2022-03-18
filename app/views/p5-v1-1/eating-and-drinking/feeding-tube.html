@@ -1,13 +1,13 @@
 {% set pageTitle = "Do you use a feeding tube or similar device to eat or drink?" %}
 
-{% extends "layout-p5-v11.html" %}
+{% extends "layout-p5-v1-1.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5-v1-1/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5-v11/_beta-banner.html" %}
+  {% include "p5-v1-1/_beta-banner.html" %}
   {% include "includes/back-link-v7.html" %}
 {% endblock %}
 
@@ -16,7 +16,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/p5-v11/eating-and-drinking/details" method="post" novalidate>
+    <form action="/p5-v1-1/eating-and-drinking/details" method="post" novalidate>
 
       {{ govukRadios({
         name: "eatinganddrinking-feedingtube",
@@ -47,7 +47,7 @@
 
     </form>
 
-    {% include "p5-v11/preparing-food/_return-link.html" %}
+    {% include "p5-v1-1/preparing-food/_return-link.html" %}
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->

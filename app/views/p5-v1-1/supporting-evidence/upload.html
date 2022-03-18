@@ -1,4 +1,4 @@
-{% extends "layout-p5-v11-rev-1.html" %}
+{% extends "layout-p5-v1-1-rev-1.html" %}
 
 {% set pageTitle = "Upload your completed PIP form
  – Send your PIP form – GOV.UK" %}
@@ -19,19 +19,19 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "v11/p5-v11-rev-1/_beta-banner.html" %}
+{% include "v11/p5-v1-1-rev-1/_beta-banner.html" %}
 
   {% include "includes/_work-in-progress.html" %}
 
   {% if cya == "true" %}
     {{ govukBackLink({
       text: "Back",
-      href: "/v11-rev-1/p5-v11-rev-1/check-your-answers"
+      href: "/v11-rev-1/p5-v1-1-rev-1/check-your-answers"
     }) }}
   {% else %}
     {{ govukBackLink({
       text: "Back",
-      href: "/v11-rev-1/p5-v11-rev-1/start"
+      href: "/v11-rev-1/p5-v1-1-rev-1/start"
     }) }}
   {% endif %}
 
@@ -51,9 +51,9 @@
       {% endif %}
 
       {% if cya == "true" %}
-        <form action="/v11-rev-1/p5-v11-rev-1/uploading-cya" method="post" novalidate>
+        <form action="/v11-rev-1/p5-v1-1-rev-1/uploading-cya" method="post" novalidate>
       {% else %}
-        <form action="/v11-rev-1/p5-v11-rev-1/uploading" method="post" novalidate>
+        <form action="/v11-rev-1/p5-v1-1-rev-1/uploading" method="post" novalidate>
       {% endif %}
 
         <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
@@ -76,7 +76,7 @@
 
     </div>{# /govuk-grid-column-two-thirds #}
 
-    {% include "v11/p5-v11-rev-1/_upload-sidebar.html" %}
+    {% include "v11/p5-v1-1-rev-1/_upload-sidebar.html" %}
 
   </div>{# /govuk-grid-row #}
 
