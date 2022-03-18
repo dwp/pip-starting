@@ -41,7 +41,7 @@ Your health condition
                     <p class="govuk-body govuk-!-font-weight-bold"></p>
                     <div class="govuk-form-group">
                         <label class="govuk-label govuk-!-font-weight-bold" for="conditions[0][condition_name]">
-                            Enter a condition or disability
+                            Enter a condition or disability here
                         </label>
 
                         <p>You can add more by selecting 'Add another'. You'll be able to give more information about how each condition affects you later.</p>
@@ -86,7 +86,7 @@ Your health condition
                     <div class="govuk-form-group">
                         <label class="govuk-label govuk-!-font-weight-bold"
                                for="conditions[{{loop.index0}}][condition_name]">
-                            Name of condition or disability
+                            Name of your other condition or disability
                         </label>
                         <input class="govuk-input" id="conditions[{{loop.index0}}][condition_name]"
                                name="conditions[{{loop.index0}}][condition_name]" type="text"
@@ -94,7 +94,7 @@ Your health condition
                                data-name="conditions[%index%][condition_name]"
                                data-id="conditions[%index%][condition_name]">
                     </div> <!-- govuk-form-group -->
-                    <div class="govuk-form-group">
+                    <!-- <div class="govuk-form-group">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                             Approximate start date
                         </legend>
@@ -114,7 +114,7 @@ Your health condition
                                        value="condition.date">
                             </div> <!-- govuk-form-group -->
                         </div> <!-- govuk-date-input__item -->
-                    </div> <!-- govuk-form-group -->
+                    </div> <!-- govuk-form-group --> 
                     <button type="button" class="govuk-button govuk-button--secondary moj-add-another__remove-button">
                         Remove
                     </button>
