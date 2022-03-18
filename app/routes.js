@@ -34,7 +34,8 @@ const authRoutes = require('./routes/auth')
 const idvRoutes = require('./routes/idv')
 const pip1livev1 = require('./routes/live-pip1-v1-0')
 const pip2livev1 = require('./routes/live-pip2-v1-0')
-
+const pip1v1point1 = require('./routes/pip1-v1-1')
+const pip2v1point1 = require('./routes/pip2-v1-1')
 
 // ROUTES REDIRECT END
 
@@ -69,6 +70,8 @@ p5v11(router);
 mvpp5(router);
 pip1livev1(router);
 pip2livev1(router);
+pip1v1point1(router);
+pip2v1point1(router);
 router.use('/', authRoutes)
 router.use('/', idvRoutes)
 // ROUTER LIST END
