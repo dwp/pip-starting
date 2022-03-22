@@ -33,7 +33,7 @@
           {{ data['hcp-1-name'] | title }}
         </h2>
         <div class="app-summary-card__actions">
-          <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> {{ data['hcp-1-name'] | title }}</span>
+          <a class="govuk-link" href="check-remove.html">Remove<span class="govuk-visually-hidden"> {{ data['hcp-1-name'] | title }}</span>
           </a>
         </div>{# /app-summary-card__actions #}
       </header>
@@ -55,8 +55,8 @@
                 data["hcp-1-address-town"] | title + '<br>' +
                 data["hcp-1-address-county"] | title + '<br>' +
                 data["hcp-1-address-postcode"] | upper + '<br>' +
-                data["hcp-1-country"] | title + '<br>' +
-                'When did you last speak to them?: ' + data["hcp-1-last-contact"] + '</p>'
+                data["hcp-1-address-country"] | title + '<br>' +
+                'When did you last speak to them? ' + data["hcp-1-last-contact"] + '</p>'
               },
               actions: {
                 items: [
@@ -82,7 +82,7 @@
             {{ data['hcp-2-name'] | title }}
           </h2>
           <div class="app-summary-card__actions">
-            <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> {{ data['professional-name-2'] | title }}</span>
+            <a class="govuk-link" href="check-remove.html">Remove<span class="govuk-visually-hidden"> {{ data['professional-name-2'] | title }}</span>
             </a>
           </div>{# /app-summary-card__actions #}
         </header>
@@ -104,7 +104,8 @@
                   data["hcp-2-address-town"] | title + '<br>' +
                   data["hcp-2-address-county"] | title + '<br>' +
                   data["hcp-2-address-postcode"] | upper + '<br>' +
-                  'When did you last speak to them: ' + data["hcp-2-last-contact-month"] ["hcp-2-last-contact-year"] + '</p>'
+                  data["hcp-2-address-country"] | title + '<br>' +
+                  'When did you last speak to them? ' + data["hcp-2-last-contact"] + '</p>'
                 },
                 actions: {
                   items: [
