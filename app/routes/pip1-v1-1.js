@@ -392,7 +392,7 @@ module.exports = function (router) {
     });
 
     router.post('/pip1-v1-1/about_your_health/condition-new-2', (req, res, next) => {
-        res.redirect('/pip1-v1-1/about_your_health/hcp-question');
+        res.redirect('/pip1-v1-1/about_your_health/consent');
     });
 
     // router.post('/pip1-v1-1/about_your_health/condition-new-2-detail', (req, res, next) => {
