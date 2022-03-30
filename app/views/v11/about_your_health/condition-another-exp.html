@@ -1,0 +1,99 @@
+{% set pageTitle = "Your conditions or disabilities" %}
+
+{% extends "layout-signed-in-v7.html" %}
+
+{% block pageTitle %}
+Your conditions or disabilities
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+  
+        {% set pizzaOrder = data.pizzaOrder %}
+  
+        {% if pizzaOrder | length > 0 %}
+  
+          <h1 class="govuk-heading-l">Check your order</h1>
+          
+          {% for pizza in pizzaOrder %}
+            
+            {# toppings as string #}
+            {% set toppingsString = '' %}
+            {% for topping in pizza.toppings %}
+              {% if toppingsString | length %}
+                {% set toppingsString = toppingsString + ', ' + topping %}
+              {% else %}
+                {% set toppingsString = topping %}
+              {% endif %}
+            {% endfor %}
+  
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: pizza.eater | capitalize + "'s pizza" if pizza.eater else ""
+                  },
+                  value: {
+                    text: pizza.size | capitalize + ' with ' + toppingsString
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "/check-pizza?pizzaId=" + pizza.id,
+                        text: "Change",
+                        visuallyHiddenText: pizza.eater + "'s pizza"
+                      },
+                      {
+                        href: "/remove-pizza?pizzaId=" + pizza.id,
+                        text: "Remove",
+                        visuallyHiddenText: pizza.eater + "'s pizza"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+  
+          {% endfor %}
+  
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Order",
+              href: '/submit'
+            }) }}
+            
+            {{ govukButton({
+              text: "Add another pizza",
+              classes: "govuk-button--secondary",
+              href: '/pizza'
+            }) }}
+          </div>
+        
+        {% else %}
+          <h1 class="govuk-heading-l">You have removed all your pizzas</h1>
+          <p class="govuk-body">We have not saved your choices. You can start a new order by adding a pizza.</p>
+          {{ govukButton({
+            text: "Add a pizza",
+            href: '/pizza'
+          }) }}
+        {% endif %}
+  
+      </div>
+    </div>
+  {% endblock %}
+
+  </div>{# /govuk-grid-column-one-third #}
+</div>{# /govuk-grid-row #}
+{% endblock %}

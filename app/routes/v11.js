@@ -459,6 +459,14 @@ module.exports = function (router) {
         res.redirect('/v11/about_your_health/consent');
     });
 
+    // router.post('/v11/about_your_health/condition-new-2-exp', (req, res, next) => {
+    //     res.redirect('/v11/about_your_health/consent');
+    // });
+
+    router.post('/select-size', (req, res, next) => {
+        res.render('pizza/condition-another-exp.html')
+        })
+
     router.post('/v11/about_your_health/hcp-question', (req, res, next) => {
         const hcpQuestion = req.session.data['hcp-q'];
         if (hcpQuestion === 'Yes') {
