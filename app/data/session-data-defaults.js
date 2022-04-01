@@ -18,6 +18,8 @@ Example usage:
 */
 
 module.exports = {
+  
+  conditionOrder: []
 
   // Insert values here
 
