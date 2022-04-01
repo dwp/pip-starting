@@ -1,6 +1,7 @@
 // Core dependencies
 const fs = require('fs')
 const path = require('path')
+const url = require('url')
 
 // NPM dependencies
 const bodyParser = require('body-parser')
@@ -9,7 +10,6 @@ const express = require('express')
 const nunjucks = require('nunjucks')
 const sessionInCookie = require('client-sessions')
 const sessionInMemory = require('express-session')
-const cookieParser = require('cookie-parser')
 
 // Run before other code to make sure variables from .env are available
 dotenv.config()
@@ -45,12 +45,6 @@ if (useV6) {
   v6App = express()
 }
 
-// Set cookies for use in cookie banner.
-app.use(cookieParser())
-documentationApp.use(cookieParser())
-app.use(utils.handleCookies(app))
-documentationApp.use(utils.handleCookies(documentationApp))
-
 // Set up configuration variables
 var releaseVersion = packageJson.version
 var glitchEnv = (process.env.PROJECT_REMIX_CHAIN) ? 'production' : false // glitch.com
@@ -62,6 +56,9 @@ var useHttps = process.env.USE_HTTPS || config.useHttps
 useHttps = useHttps.toLowerCase()
 
 var useDocumentation = (config.useDocumentation === 'true')
+
+// logging
+var useLogging = config.useLogging
 
 // Promo mode redirects the root to /docs - so our landing page is docs when published on heroku
 var promoMode = process.env.PROMO_MODE || 'false'
@@ -109,7 +106,7 @@ app.set('view engine', 'html')
 // Middleware to serve static assets
 app.use('/public', express.static(path.join(__dirname, '/public')))
 
-// Serve govuk-frontend in from node_modules (so not to break pre-extenstions prototype kits)
+// Serve govuk-frontend in from node_modules (so not to break pre-extensions prototype kits)
 app.use('/node_modules/govuk-frontend', express.static(path.join(__dirname, '/node_modules/govuk-frontend')))
 
 // Set up documentation app
@@ -162,7 +159,6 @@ if (useV6) {
 app.locals.asset_path = '/public/'
 app.locals.useAutoStoreData = (useAutoStoreData === 'true')
 app.locals.useCookieSessionStore = (useCookieSessionStore === 'true')
-app.locals.cookieText = config.cookieText
 app.locals.promoMode = promoMode
 app.locals.releaseVersion = 'v' + releaseVersion
 app.locals.serviceName = config.serviceName
@@ -206,6 +202,24 @@ if (useAutoStoreData === 'true') {
   }
 }
 
+// Logging session data
+if (useLogging !== 'false') {
+  app.use((req, res, next) => {
+    const all = (useLogging === 'true')
+    const post = (useLogging === 'post' && req.method === 'POST')
+    const get = (useLogging === 'get' && req.method === 'GET')
+    if (all || post || get) {
+      const log = {
+        method: req.method,
+        url: req.originalUrl,
+        data: req.session.data
+      }
+      console.log(JSON.stringify(log, null, 2))
+    }
+    next()
+  })
+}
+
 // Clear all data in session if you open /prototype-admin/clear-data
 app.post('/prototype-admin/clear-data', function (req, res) {
   req.session.data = {}
@@ -215,8 +229,6 @@ app.post('/prototype-admin/clear-data', function (req, res) {
 // Redirect root to /docs when in promo mode.
 if (promoMode === 'true') {
   console.log('Prototype Kit running in promo mode')
-
-  app.locals.cookieText = 'GOV.UK uses cookies to make the site simpler. <a href="/docs/cookies">Find out more about cookies</a>'
 
   app.get('/', function (req, res) {
     res.redirect('/docs')
@@ -310,7 +322,11 @@ if (useV6) {
 
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
 app.post(/^\/([^.]+)$/, function (req, res) {
-  res.redirect('/' + req.params[0])
+  res.redirect(url.format({
+    pathname: '/' + req.params[0],
+    query: req.query
+  })
+  )
 })
 
 // Catch 404 and forward to error handler
