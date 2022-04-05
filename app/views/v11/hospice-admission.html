@@ -16,47 +16,31 @@ When were you admitted to hospice
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <div class="govuk-form-group">
-            <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="hospice-admission">
-                When did you go into the hospice?
-              </label>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              When did you go into the hospice?
             </h1>
+          </legend>
 
-          </div>
-
-            <div id="hospice-admission" class="govuk-hint">
-              For example, 30 9 2021
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="hospice-admission-1" name="hospice-admission" type="radio" value="Today">
+              <label class="govuk-label govuk-radios__label" for="hospice-admission-1">
+                Today
+              </label>
             </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="hospice-admission-2" name="hospice-admission" type="radio" value="Before today">
+              <label class="govuk-label govuk-radios__label" for="hospice-admission-2">
+                Before today
+              </label>
+            </div>
+          </div> <!-- govuk-radios -->
 
-          <div class="govuk-date-input" id="hospice-admission">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="hospice-admission">
-                  Day
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hospice-admission-day" name="hospice-admission-day"
-                  type="text" pattern="[0-9]*" inputmode="numeric">
-              </div>
-            </div> <!-- govuk-date-input__item -->
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="hospice-admission-month">
-                  Month
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hospice-admission-month" name="hospice-admission-month"
-                  type="text" pattern="[0-9]*" inputmode="numeric">
-              </div>
-            </div> <!-- govuk-date-input__item -->
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="hospice-admission-year">
-                  Year
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="hospice-admission-year" name="hospice-admission-year"
-                  type="text" pattern="[0-9]*" inputmode="numeric">
-              </div>
-            </div> <!-- govuk-date-input__item -->
-          </div> <!-- govuk-date-input -->
+        </fieldset>
+      </div> <!-- govuk-form-group -->
 
       <input type="submit" class="govuk-button" value="Save and continue" id="submit">
 
