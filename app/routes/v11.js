@@ -534,23 +534,23 @@ module.exports = function (router) {
     router.post('/v11/in-hospital', (req, res, next) => {
         const inHospital = req.session.data['hospital'];
         if (inHospital === 'Hospital') {
-            res.redirect('/v11/hospital-admission');
+            res.redirect('/v11/hospital-address');
         } else if (inHospital === 'Hospice') {
-            res.redirect('/v11/hospice-admission');
+            res.redirect('/v11/hospice-address');
         } else if (inHospital === 'Care or nursing home') {
-            res.redirect('/v11/care-home-admission');
+            res.redirect('/v11/care-home-address');
         } else if (inHospital === 'Other') {
-              res.redirect('/v11/care-home-admission');
+              res.redirect('/v11/care-home-address');
         } else {
             res.redirect('/v11/check-answers-4');
         }
     });
 
-    router.post('/v11/hospital-admission', (req, res, next) => {
-        res.redirect('/v11/hospital-address');
+    router.post('/v11/hospital-address', (req, res, next) => {
+        res.redirect('/v11/hospital-admission');
     });
 
-    router.post('/v11/hospital-address', (req, res, next) => {
+    router.post('/v11/hospital-admission', (req, res, next) => {
         res.redirect('/v11/check-answers-4');
     });
 
@@ -559,11 +559,11 @@ module.exports = function (router) {
         res.render('v11/hospital-address')
     })
 
-    router.post('/v11/hospice-admission', (req, res, next) => {
-        res.redirect('/v11/hospice-address');
+    router.post('/v11/hospice-address', (req, res, next) => {
+        res.redirect('/v11/hospice-admission');
     });
 
-    router.post('/v11/hospice-address', (req, res, next) => {
+    router.post('/v11/hospice-admission', (req, res, next) => {
         res.redirect('/v11/check-answers-4');
     });
 
@@ -572,10 +572,10 @@ module.exports = function (router) {
         res.render('v11/hospice-address')
     })
 
-    router.post('/v11/care-home-admission', (req, res, next) => {
-        res.redirect('/v11/care-home-address');
-    });
     router.post('/v11/care-home-address', (req, res, next) => {
+        res.redirect('/v11/care-home-admission');
+    });
+    router.post('/v11/care-home-admission', (req, res, next) => {
         res.redirect('/v11/check-answers-4');
     });
 
