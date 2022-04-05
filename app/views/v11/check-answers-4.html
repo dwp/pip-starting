@@ -292,20 +292,6 @@ Check your answers about your health
             </div> <!-- govuk-summary-list__row -->
 
             {% if data['hospital'] === 'Hospital' %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                When did you go into hospital?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['hospital-admission-day'] }} - {{ data['hospital-admission-month'] }} - {{
-                data['hospital-admission-year'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="hospital-admission.html">
-                  Change<span class="govuk-visually-hidden"> date you were admitted to hospital</span>
-                </a>
-              </dd>
-            </div> <!-- govuk-summary-list__row -->
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -326,24 +312,24 @@ Check your answers about your health
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            {% endif %}
 
-            {% if data['hospital'] === 'Hospice' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                When did you go into the hospice?
+                When did you go into hospital?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['hospice-admission-day'] }} - {{ data['hospice-admission-month'] }} - {{
-                data['hospice-admission-year'] }}
+                {{ data['hospital-admission'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="hospice-admission.html">
-                  Change<span class="govuk-visually-hidden"> date you were admitted to hospice</span>
+                <a class="govuk-link" href="hospital-admission.html">
+                  Change<span class="govuk-visually-hidden"> date you went into to hospital</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
 
+            {% endif %}
+
+            {% if data['hospital'] === 'Hospice' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Hospice address
@@ -363,24 +349,24 @@ Check your answers about your health
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            {% endif %}
 
-            {% if data['hospital'] === 'Care or nursing home' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                When did you go into the accommodation?
+                When did you go into the hospice?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['care-home-admission-day'] }} - {{ data['care-home-admission-month'] }} - {{
-                data['care-home-admission-year'] }}
+                {{ data['hospice-admission'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="care-home-admission">
-                  Change<span class="govuk-visually-hidden"> date you were admitted to the care home</span>
+                <a class="govuk-link" href="hospice-admission.html">
+                  Change<span class="govuk-visually-hidden"> date you went into the hospice</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
 
+            {% endif %}
+
+            {% if data['hospital'] === 'Care or nursing home' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Accommodation address
@@ -400,24 +386,22 @@ Check your answers about your health
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            {% endif %}
-
-            {% if data['hospital'] === 'Other' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                When did you go into the other accommodation?
+                When did you go into this accommodation?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['care-home-admission-day'] }} - {{ data['care-home-admission-month'] }} - {{
-                data['care-home-admission-year'] }}
+                {{ data['care-home-admission'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="care-home-admission">
-                  Change<span class="govuk-visually-hidden"> date you went into the other accommodation</span>
+                  Change<span class="govuk-visually-hidden"> date you went into to the care home</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
+            {% endif %}
 
+            {% if data['hospital'] === 'Other' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Other accommodation address?
@@ -434,6 +418,19 @@ Check your answers about your health
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="care-home-address">
                   Change<span class="govuk-visually-hidden"> other accommodation address</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                When did you go into this accommodation?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['care-home-admission'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="care-home-admission">
+                  Change<span class="govuk-visually-hidden"> date you went into the other accommodation</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
