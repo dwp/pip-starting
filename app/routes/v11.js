@@ -431,7 +431,7 @@ module.exports = function (router) {
     });
 
     router.post('/v11/check-answers-3', (req, res, next) => {
-        res.redirect('/v11/about_your_health/condition-new-2');
+        res.redirect('/v11/about_your_health/add-condition');
     });
 
     //   router.get('/v11/living-in-gb', (req, res, next) => {
@@ -455,18 +455,18 @@ module.exports = function (router) {
     //     res.redirect('/v11/about_your_health/condition-new-2');
     // });
 
-    router.post('/v11/about_your_health/condition-new-2', (req, res, next) => {
-        res.redirect('/v11/about_your_health/consent');
-    });
+    // router.post('/v11/about_your_health/condition-new-2', (req, res, next) => {
+    //     res.redirect('/v11/about_your_health/consent');
+    // });
 
-    router.post('/v11/about_your_health/hcp-question', (req, res, next) => {
-        const hcpQuestion = req.session.data['hcp-q'];
-        if (hcpQuestion === 'Yes') {
-            res.redirect('/v11/about_your_health/consent');
-        } else {
-            res.redirect('/v11/in-hospital');
-        }
-    });
+    // router.post('/v11/about_your_health/hcp-question', (req, res, next) => {
+    //     const hcpQuestion = req.session.data['hcp-q'];
+    //     if (hcpQuestion === 'Yes') {
+    //         res.redirect('/v11/about_your_health/consent');
+    //     } else {
+    //         res.redirect('/v11/in-hospital');
+    //     }
+    // });
 
     router.post('/v11/about_your_health/consent', (req, res, next) => {
         const conSent = req.session.data['consent'];
