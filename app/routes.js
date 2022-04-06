@@ -79,86 +79,86 @@ router.use('/', idvRoutes)
 
 // DWP add another pattern for condition
 
-const amendCondition = (conditions, condition) => {
-    const index = conditions.findIndex(p => p.id === condition.id);
-    conditions.splice(index, 1);
-    conditions.push(condition);
-    return conditions;
-  }
+// const amendCondition = (conditions, condition) => {
+//     const index = conditions.findIndex(p => p.id === condition.id);
+//     conditions.splice(index, 1);
+//     conditions.push(condition);
+//     return conditions;
+//   }
   
-  // clear any temp condition data on add another
-  router.get('/condition', (req, res, next) => {
-    const { edit } = req.query;
-    const { data } = req.session;
-    let originalChoice;
-    if(edit) {
-      originalChoice = data?.condition?.type;
-    } else {
-      req.session.data.condition = {};
-    }
-    res.render('v11/about_your_health/add-condition.html', { choice: originalChoice });
-  })
+//   // clear any temp condition data on add another
+//   router.get('/condition', (req, res, next) => {
+//     const { edit } = req.query;
+//     const { data } = req.session;
+//     let originalChoice;
+//     if(edit) {
+//       originalChoice = data?.condition?.type;
+//     } else {
+//       req.session.data.condition = {};
+//     }
+//     res.render('v11/about_your_health/add-condition.html', { choice: originalChoice });
+//   })
   
-  // Add your routes here - above the module.exports line
+//   // Add your routes here - above the module.exports line
   
   
-  router.post('/select-size', (req, res, next) => {
-    res.render('v11/about_your_health/condition-summary.html')
-  })
+//   router.post('/select-size', (req, res, next) => {
+//     res.render('v11/about_your_health/condition-summary.html')
+//   })
   
-  router.get('/check-condition', (req, res, next) => {
-    const { conditionId } = req.query;
-    const { data } = req.session;
-    const condition = data.conditionOrder.filter((p) => p.id === parseInt(conditionId));
-    data.condition = condition[0];
-    const selectedCondition = condition[0];
-    res.render('v11/about_your_health/add-condition.html', { condition: selectedCondition });
-  })
+//   router.get('/check-condition', (req, res, next) => {
+//     const { conditionId } = req.query;
+//     const { data } = req.session;
+//     const condition = data.conditionOrder.filter((p) => p.id === parseInt(conditionId));
+//     data.condition = condition[0];
+//     const selectedCondition = condition[0];
+//     res.render('v11/about_your_health/add-condition.html', { condition: selectedCondition });
+//   })
   
-  router.post('/check-condition', (req, res, next) => {
-    const { data } = req.session;
-    const condition = data.condition;
+//   router.post('/check-condition', (req, res, next) => {
+//     const { data } = req.session;
+//     const condition = data.condition;
     
-    if(condition.id) {
-      amendCondition(data.conditionOrder, condition);
-    } else {
-      // give condition an id - to find in amend step
-      condition.id = data.conditionOrder.length + 1;
-      data.conditionOrder.push(condition);
-    }
+//     if(condition.id) {
+//       amendCondition(data.conditionOrder, condition);
+//     } else {
+//       // give condition an id - to find in amend step
+//       condition.id = data.conditionOrder.length + 1;
+//       data.conditionOrder.push(condition);
+//     }
   
-    res.render('v11/about_your_health/condition-summary.html', { condition: data.condition });
-  })
+//     res.render('v11/about_your_health/condition-summary.html', { condition: data.condition });
+//   })
   
-  // last page before submission
-  router.get('/condition-summary', (req, res, next) => {
-    res.render('v11/about_your_health/condition-summary.html');
-  })
+//   // last page before submission
+//   router.get('/condition-summary', (req, res, next) => {
+//     res.render('v11/about_your_health/condition-summary.html');
+//   })
   
-  // remove condition from order
-  router.get('/remove-condition', (req, res, next) => {
-    const { conditionId } = req.query;
-    const { data } = req.session;
-    const condition = data.conditionOrder.filter((p) => p.id === parseInt(conditionId));
-    res.render('v11/about_your_health/remove-condition.html', { binnedCondition: condition[0] });
-  })
+//   // remove condition from order
+//   router.get('/remove-condition', (req, res, next) => {
+//     const { conditionId } = req.query;
+//     const { data } = req.session;
+//     const condition = data.conditionOrder.filter((p) => p.id === parseInt(conditionId));
+//     res.render('v11/about_your_health/remove-condition.html', { binnedCondition: condition[0] });
+//   })
   
-  router.post('/remove-condition', (req, res, next) => {
-    const { binCondition, binnedConditionId } = req.body;
-    const { data } = req.session;
-    if(binCondition === "yes"){
-      const index = data.conditionOrder.findIndex(p => p.id === parseInt(binnedConditionId));
-      data.conditionOrder.splice(index, 1)
-    }
-    res.render('v11/about_your_health/condition-summary.html');
-  })
+//   router.post('/remove-condition', (req, res, next) => {
+//     const { binCondition, binnedConditionId } = req.body;
+//     const { data } = req.session;
+//     if(binCondition === "yes"){
+//       const index = data.conditionOrder.findIndex(p => p.id === parseInt(binnedConditionId));
+//       data.conditionOrder.splice(index, 1)
+//     }
+//     res.render('v11/about_your_health/condition-summary.html');
+//   })
   
   
-  router.get('/submit', (req, res, next) => {
-    req.session.data.conditionOrder = [];
-    req.session.data.condition = {};
-    res.render('v11/about_your_health/consent.html');
-  }) 
+//   router.get('/submit', (req, res, next) => {
+//     req.session.data.conditionOrder = [];
+//     req.session.data.condition = {};
+//     res.render('v11/about_your_health/consent.html');
+//   }) 
 
   // Add another condition end
 
