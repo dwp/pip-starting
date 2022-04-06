@@ -29,7 +29,7 @@ Check your answers about your health
 
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <!-- Coditions start -->
-            <div class="govuk-summary-list__row">
+            <!-- <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 What health condition or disability do you have?
               </dt>
@@ -41,7 +41,7 @@ Check your answers about your health
                   Change<span class="govuk-visually-hidden"> condition or disability</span>
                 </a>
               </dd>
-            </div> <!-- govuk-summary-list__row -->
+            </div> --> <!-- govuk-summary-list__row -->
 
             <!-- <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -80,7 +80,7 @@ Check your answers about your health
             {% endfor %}
             {% endif %}
 
-            <div class="govuk-summary-list__row">
+            <!-- <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Can the Department for Work and Pensions contact any health and care professionals for information about you?
               </dt>
@@ -92,9 +92,9 @@ Check your answers about your health
                   Change<span class="govuk-visually-hidden"> if DWP can contact your health or care professional</span>
                 </a>
               </dd>
-            </div> <!-- govuk-summary-list__row -->
+            </div> --> <!-- govuk-summary-list__row -->
 
-            {% if data['hcp-q'] === 'Yes' %}
+           
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Do you agree that your health and care professionals can share relevant information about your health conditions
@@ -109,7 +109,7 @@ Check your answers about your health
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            {% endif %}
+           
 
             {% if data['consent'] === 'Yes, I agree' %}
 
