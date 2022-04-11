@@ -289,17 +289,33 @@ module.exports = function (router) {
     })
 
     router.post('/pip1-v1-1/contact-details', (req, res, next) => {
-        const altFormat = req.session.data['format-type'];
-        if (altFormat === 'braille') {
-            res.redirect('/pip1-v1-1/alt-format-braille'); }
-        else if (altFormat === 'Sign Language') {
-            res.redirect('/pip1-v1-1/alt-format-sign-language');  }
-        else if (altFormat === 'Audio') {
-            res.redirect('/pip1-v1-1/alt-format-audio');   }
-        else if (altFormat === 'Paper and other formats') {
-            res.redirect('/pip1-v1-1/alt-format-paper'); }
-        else {
+        res.redirect('/pip1-v1-1/alt-formats');
+    });
+    router.post('/pip1-v1-1/alt-formats', (req, res, next) => {
+        const altFormats = req.session.data['communication-format'];
+        if (altFormats === 'Yes') {
+            res.redirect('/pip1-v1-1/alt-formats-choice');
+        } else {
             res.redirect('/pip1-v1-1/nationality');
+        }
+    })
+
+    router.post('/pip1-v1-1/alt-formats-choice', (req, res, next) => {
+        const altFormat = req.session.data['alt-formats-choice'];
+        if (altFormat === 'Braille') {
+            res.redirect('/pip1-v1-1/alt-format-braille');
+        }
+        else if (altFormat === 'Sign language') {
+            res.redirect('/pip1-v1-1/alt-format-sign-language');
+        }
+        else if (altFormat === 'Audio') {
+            res.redirect('/pip1-v1-1/alt-format-audio');
+        }
+        else if (altFormat === 'Paper') {
+            res.redirect('/pip1-v1-1/alt-formats-paper');
+        }
+        else if (altFormat === 'Other formats') {
+            res.redirect('/pip1-v1-1/alt-formats-other');
         }
     });
 
@@ -315,9 +331,49 @@ module.exports = function (router) {
         res.redirect('/pip1-v1-1/nationality');
     });
 
-    router.post('/pip1-v1-1/alt-format-paper', (req, res, next) => {
+    router.post('/pip1-v1-1/alt-formats-paper', (req, res, next) => {
+        const altPaper = req.session.data['alt-formats-paper'];
+        if (altPaper === 'Coloured paper') {
+            res.redirect('/pip1-v1-1/alt-formats-paper-colour');
+        }
+        else if (altPaper === 'Large print with a custom font') {
+            res.redirect('/pip1-v1-1/alt-formats-paper-custom-font');
+        }
+        else {
+            res.redirect('/pip1-v1-1/naiotnality');
+        }
+    });
+
+    router.post('/pip1-v1-1/alt-formats-paper-colour', (req, res, next) => {
         res.redirect('/pip1-v1-1/nationality');
     });
+
+    router.post('/pip1-v1-1/alt-formats-paper-custom-font', (req, res, next) => {
+        res.redirect('/pip1-v1-1/nationality');
+    });
+
+    router.post('/pip1-v1-1/alt-formats-other', (req, res, next) => {
+        const altOther = req.session.data['alt-formats-other'];
+        if (altOther === 'Email') {
+            res.redirect('/pip1-v1-1/alt-formats-other-email');
+        }
+        else if (altOther === 'Other') {
+            res.redirect('/pip1-v1-1/alt-formats-other-other');
+        }
+        else {
+            res.redirect('/pip1-v1-1/nationality');
+        }
+    });
+
+    router.post('/pip1-v1-1/alt-formats-other-email', (req, res, next) => {
+        res.redirect('/pip1-v1-1/nationality');
+    });
+
+    router.post('/pip1-v1-1/alt-formats-other-other', (req, res, next) => {
+        res.redirect('/pip1-v1-1/nationality');
+    });
+
+
 
     // PERSONAL DETAILS END
 
