@@ -373,8 +373,6 @@ module.exports = function (router) {
         res.redirect('/pip1-v1-1/nationality');
     });
 
-
-
     // PERSONAL DETAILS END
 
     // RES AND PRRS START
@@ -382,20 +380,30 @@ module.exports = function (router) {
     router.post('/pip1-v1-1/nationality', (req, res, next) => {
         const whereLive = req.session.data['nationality'];
         if (whereLive === 'A nationality of the European Economic Area (EEA) or Switzerland') {
-            res.redirect('/pip1-v1-1/living-in-uk');
+            res.redirect('/pip1-v1-1/nationality-of-eaa-or-switzerland');
+        } else if (whereLive === 'Another nationality') {
+            res.redirect('/pip1-v1-1/nationality-another');
         } else {
             res.redirect('/pip1-v1-1/living-in-gb');
         }
     });
 
-    router.get('/pip1-v1-1/nationality', (req, res, next) => {
+    router.post('/pip1-v1-1/nationality-of-eaa-or-switzerland', (req, res, next) => {
+        res.redirect('/pip1-v1-1/living-in-uk');
+    });
+
+    router.post('/pip1-v1-1/nationality-another', (req, res, next) => {
+        res.redirect('/pip1-v1-1/living-in-gb');
+    });
+
+    router.get('/pip1-v1-1/nationality-another', (req, res, next) => {
         res.locals.nationalities = nationalities;
-        res.render('pip1-v1-1/nationality.html')
+        res.render('pip1-v1-1/nationality-another.html')
     })
 
-    router.get('/pip1-v1-1/validation/res_and_pres/nationality', (req, res, next) => {
+    router.get('/pip1-v1-1/validation/res_and_pres/nationality-another', (req, res, next) => {
         res.locals.nationalities = nationalities;
-        res.render('pip1-v1-1/validation/res_and_pres/nationality.html')
+        res.render('pip1-v1-1/validation/res_and_pres/nationality-another.html')
     })
 
     router.post('/pip1-v1-1/living-in-uk', (req, res, next) => {
