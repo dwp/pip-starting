@@ -195,11 +195,11 @@ Check your answers
                 What format do you need communications in?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['format-type'] }}
+                {{ data['alt-formats-choice'] }}
               </dd>
             </div>
             {% endif %}
-            {% if data['format-type'] === 'Braille' %}
+            {% if data['alt-formats-choice'] === 'Braille' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Which Braille format do you need?
@@ -209,7 +209,7 @@ Check your answers
               </dd>
             </div>
             {% endif %}
-            {% if data['format-type'] === 'Sign Language' %}
+            {% if data['alt-formats-choice'] === 'Sign Language' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Which type of sign language do you need?
@@ -219,7 +219,7 @@ Check your answers
               </dd>
             </div>
             {% endif %}
-            {% if data['format-type'] === 'Audio' %}
+            {% if data['alt-formats-choice'] === 'Audio' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Which type of audio format do you need?
@@ -229,53 +229,63 @@ Check your answers
               </dd>
             </div>
             {% endif %}
-            {% if data['format-type'] === 'Paper and other formats' %}
+            {% if data['alt-formats-choice'] === 'Paper' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Which paper format do you need?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['alt-formats-paper'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['alt-formats-paper'] === 'Coloured paper' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Give details of what coloured paper you need
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['alt-formats-paper-colour'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['alt-formats-paper'] === 'Large print with a custom font' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Give details of the custom font you need
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['alt-formats-paper-custom'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['alt-formats-choice'] === 'Other formats' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Which other format do you need?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['alt-format-paper'] }}
+                {{ data['alt-formats-other'] }}
               </dd>
             </div>
             {% endif %}
-            {% if data['alt-format-paper'] === 'Coloured paper' %}
+            {% if data['alt-formats-other'] === 'Email' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Give details
+                What is your email address?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['coloured-paper-detail'] }}
+                {{ data['alt-formats-other-email'] }}
               </dd>
             </div>
             {% endif %}
-            {% if data['alt-format-paper'] === 'Large print with a custom font' %}
+            {% if data['alt-formats-other'] === 'Other' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Give details
+                Describe the communication format you need
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['large-print-custom-font'] }}
-              </dd>
-            </div>
-            {% endif %}
-            {% if data['alt-format-paper'] === 'Email' %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Enter an email address
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['contact-by-email'] }}
-              </dd>
-            </div>
-            {% endif %}
-            {% if data['alt-format-paper'] === 'Other' %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Give details
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['other-format'] }}
+                {{ data['alt-formats-other-other'] }}
               </dd>
             </div>
             {% endif %}
@@ -292,21 +302,34 @@ Check your answers
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['nationality'] }}</br>
-                {% if data['nationality'] === 'A nationality of the European Economic Area (EEA) or Switzerland' %}
-                <div class="govuk-body govuk-!-margin-top-4"> {{ data['eea-country'] }} </div>
-                {% endif %}
-                {% if data['nationality'] === 'Another nationality' %}
-                <div class="govuk-body govuk-!-margin-top-4"> {{ data['nationality-country'] }} </div>
-                {% endif %}
               </dd>
             </div>
             {% if data['nationality'] === 'A nationality of the European Economic Area (EEA) or Switzerland' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What is your nationality?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['eea-country'] }}
+              </dd>
+            </div>
+            
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Did you start living in the UK before 1 January 2021?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['living-in-uk'] }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if data['nationality'] === 'Another nationality' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What is your nationality?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['other-nationality'] }}
               </dd>
             </div>
             {% endif %}
@@ -352,15 +375,8 @@ Check your answers
                 {{ data['condition-detail'] }}
               </dd>
             </div>  -->
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Can the Department for Work and Pensions contact your health and care professionals for information about you?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['hcp'] }}
-              </dd>
-            </div>
-            {% if data['hcp'] === 'Yes' %}
+            
+            
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Do you agree that your health and care professionals can share relevant information about your health conditions
@@ -370,7 +386,7 @@ Check your answers
                 {{ data['consent'] }}
               </dd>
             </div>
-            {% endif %}
+           
             {% if data['consent'] === 'Yes, I agree' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
