@@ -340,7 +340,7 @@ module.exports = function (router) {
             res.redirect('/pip1-v1-1/alt-formats-paper-custom-font');
         }
         else {
-            res.redirect('/pip1-v1-1/naiotnality');
+            res.redirect('/pip1-v1-1/nationality');
         }
     });
 
