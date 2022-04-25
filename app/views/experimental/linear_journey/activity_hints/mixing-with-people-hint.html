@@ -1,12 +1,12 @@
 {% extends "layout-signed-in-v7.html" %}
 
 {% block pageTitle %}
-Reading hint
+Mixing with other people hint
 {% endblock %}
 
 {% block beforeContent %}
 {% include "includes/phase-banner.html" %}
-<a href="activities-with-hints.html" class="govuk-back-link">Back to activities</a>
+<a href="javascript:history.back()" class="govuk-back-link">Back to activities list</a>
 {% endblock %}
 
 {% block content %}
@@ -18,16 +18,20 @@ Reading hint
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-                What we mean by reading
+                What we mean by mixing with other people
             </h1>
           </legend>
           <div id="mobility-activity-hint" class="govuk-hint">
-            <p>This means being able to see information and do the following in your own language:
+            <p>This means
               <ul class="govuk-list govuk-list--bullet">
-                <li>reading written words and numbers both indoors and outdoors</li>
-                <li>reading signs and symbols, for example, a green exit sign on a door</li>
+                <li>meeting people face-to-face</li>
+                <li>understanding how they are behaving towards you including body language</li>
+                <li>behaving appropriately towards them</li>
+                <li>being able to make new relationships with other people</li>
+                <li>doing things with people you know well and people you do not know</li>
               </ul>
             </p>
+
           </div>
 
       </div> <!-- govuk-form-group -->

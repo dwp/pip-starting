@@ -1,12 +1,12 @@
 {% extends "layout-signed-in-v7.html" %}
 
 {% block pageTitle %}
-Eating and drinking hint
+Moving around hint
 {% endblock %}
 
 {% block beforeContent %}
 {% include "includes/phase-banner.html" %}
-<a href="activities-with-hints.html" class="govuk-back-link">Back to activities</a>
+<a href="javascript:history.back()" class="govuk-back-link">Back to activities list</a>
 {% endblock %}
 
 {% block content %}
@@ -18,18 +18,11 @@ Eating and drinking hint
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-                What we mean by eating and drinking
+                What we mean by moving around
             </h1>
           </legend>
           <div id="mobility-activity-hint" class="govuk-hint">
-            <p>This means:
-              <ul class="govuk-list govuk-list--bullet">
-                <li>remembering when to eat</li>
-                <li>cutting food into pieces</li>
-                <li>putting food and drink in your mouth</li>
-                <li>chewing and swallowing food and drink </li>
-              </ul>
-            </p>
+            <p>This means being able to walk without any specialist equipment or support from another person.</p>
 
           </div>
 

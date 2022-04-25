@@ -1,12 +1,12 @@
 {% extends "layout-signed-in-v7.html" %}
 
 {% block pageTitle %}
-Managing treatments hint
+Using the toilet and managing incontinence hint
 {% endblock %}
 
 {% block beforeContent %}
 {% include "includes/phase-banner.html" %}
-<a href="activities-with-hints.html" class="govuk-back-link">Back to activities</a>
+<a href="javascript:history.back()" class="govuk-back-link">Back to activities list</a>
 {% endblock %}
 
 {% block content %}
@@ -18,17 +18,25 @@ Managing treatments hint
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-                What we mean by managing medicines and treatments
+                What we mean by using the toilet and managing incontinence
             </h1>
           </legend>
           <div id="mobility-activity-hint" class="govuk-hint">
-            <p>This means:
+            <p>Using the toilet means:
               <ul class="govuk-list govuk-list--bullet">
-                <li>monitoring changes in your health conditions or disabilities, for example, your blood sugar level, mental state or pain levels</li>
-                <li>taking medication in the right way and at the right time</li>
-                <li>managing therapies at home which have been recommended by a health professional or pharmacist, for example, physiotherapy or home dialysis</li>
+                <li>being able to get on or off a normal toilet</li>
+                <li>cleaning yourself after using the toilet</li>
               </ul>
             </p>
+
+            <p>Managing incontinence means:
+              <ul class="govuk-list govuk-list--bullet">
+                <li>managing the emptying of your bowel and bladder when you have difficulty controlling this, including if you need a collecting device such as a catheter or stoma bag</li>
+                <li>cleaning yourself after doing so</li>
+              </ul>
+            </p>
+
+            <p>It does not mean physically getting to the bathroom.</p>
 
           </div>
 
