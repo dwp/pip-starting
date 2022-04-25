@@ -1,0 +1,52 @@
+{% extends "layout-signed-in-mvp.html" %}
+
+{% block pageTitle %}
+Start
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form id="form" method="post" action="#">
+        <h1 class="govuk-heading-xl">
+          Apply for Personal Independence Payment (PIP)
+        </h1>
+
+        <p>Content to add around this part of the application process.</p>
+        <p>E.G. they have 'registered' the intent to claim in the first part PIP1 and this is further information about how their condition affects their daily activities and mobility</p>
+        <p>Content around displaying any deatils they have completed int he PIP1 for their condition and health professionals</p>
+        <p>Describe what the journey of the health questionnaire will be: Health condittion, health professionals, activity and mobility questions, additional information & upload supporting documents</p>
+        
+        <h2 class="govuk-heading-l">Before you start</h2>
+
+        <p>You do not have to answer all the questions in one go. You can save your progress at any point and continue later.</p>
+
+        <p>You will need:</p>
+        <ul class="govuk-list govuk-list--bullet">
+         
+          <li>details of your health conditions or disabilities and how they affect your ability to do everyday tasks and get around</li>
+          <li>details of any medicines or treatments you have</li>
+          <li>details of your health and care professionals</li>
+          <li>hospital or care home details if you're staying or living in one</li>
+          <li>evidence of your conditions or disabilities if you have it, such as doctors' reports, care or treatment plans, test results or repeat prescription lists </li>
+        </ul>
+
+        <a href="/experimental/linear_journey/activities-with-hints" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+            Start now
+            <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+            </svg>
+        </a>
+
+        </form>
+    </div> <!-- govuk-grid-column-two-thirds -->
+</div> <!-- govuk-grid-column-two-thirds -->
+
+
+{% endblock %}
