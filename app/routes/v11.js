@@ -739,7 +739,11 @@ module.exports = function (router) {
     });
 
     router.post('v11/save_and_return/signed-in', (req, res, next) => {
-        res.redirect('/v11/#');
+        res.redirect('/v11/save_and_return/check-answers-returning');
+    });
+
+    router.post('/v11/save_and_return/check-answers-returning', (req, res, next) => {
+        res.redirect('/v11/nationality');
     });
     // RETURNING USER FLOW END
 };
