@@ -22,8 +22,10 @@ Check your answers personal details
         <div class="govuk-grid-column-two-thirds-from-desktop">
 
           <h1 class="govuk-heading-l">
-            Check your progress
+            Check your answers
           </h1>
+
+          <p>You can check the answers you've already given before you continue your claim. You do not have to do this now. You can check them again before you submit your claim.</p>
 
           <h2 class="govuk-heading-m">Help with applying</h2>
 
@@ -127,7 +129,7 @@ Check your answers personal details
                 Date of birth
               </dt>
               <dd class="govuk-summary-list__value">
-                <!-- {{ data['dob-day'] }} - {{ data['dob-month'] }} - {{ data['dob-year'] }} --> 13th March 1993
+                <!-- {{ data['dob-day'] }} - {{ data['dob-month'] }} - {{ data['dob-year'] }} --> 13 March 1993
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/v11/date-of-birth">
@@ -141,11 +143,11 @@ Check your answers personal details
                 Address
               </dt>
               <dd class="govuk-summary-list__value">
-                <!-- {{ data['address-line-1'] }}--> 22 Hill Top Road<br> 
-                <!-- {{ data['address-line-2'] }} --> Newtown<br> 
-                <!-- {{ data['address-town'] }}--> Cityville<br> 
-                <!-- {{ data['address-county'] }}--> West Yorkshire<br> 
-                <!-- {{ data['address-postcode'] }}--> CT11 3BQ<br> 
+                <!-- {{ data['address-line-1'] }}--> 22 Hill Top Road<br>
+                <!-- {{ data['address-line-2'] }} --> Newtown<br>
+                <!-- {{ data['address-town'] }}--> Cityville<br>
+                <!-- {{ data['address-county'] }}--> West Yorkshire<br>
+                <!-- {{ data['address-postcode'] }}--> CT11 3BQ<br>
                 <!-- {{ data['address-country'] }} --> United Kingdom
               </dd>
               <dd class="govuk-summary-list__actions">
@@ -403,7 +405,7 @@ Check your answers personal details
               </dd>
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
-            
+
             {% if data['alt-formats-other'] === 'Email' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -437,7 +439,7 @@ Check your answers personal details
             {% endif %}
           </dl>
 
-          <input type="submit" class="govuk-button" data-module="govuk-button" value="Continue with your appliication" id="submit">
+          <input type="submit" class="govuk-button" data-module="govuk-button" value="Continue your claim" id="submit">
 
         </div> <!-- govuk-grid-column-two-thirds-from-desktop -->
       </div> <!-- govuk-grid-row -->
