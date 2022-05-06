@@ -19,24 +19,11 @@
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds-from-desktop">
       
-              <h1 class="govuk-heading-l">Check your answers Moving around</h1>
-      
+              <h1 class="govuk-heading-l">Check your answers </h1>
+              <h2 class="govuk-heading-m">Moving around</h2>
              
       
               <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        How far can you walk using any aids or appliances you need?
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      {{ data['movingaround-info'] }}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                      <a class="govuk-link" href="planning-a-journey-detail">
-                        Change<span class="govuk-visually-hidden"> details</span>
-                      </a>
-                    </dd>
-                </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
                    Details how your condition or disability affects you moving around
@@ -50,9 +37,22 @@
                     </a>
                   </dd>
                 </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        How far can you walk using any aids or appliances you need?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data['movingaround-info'] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="planning-a-journey-detail">
+                        Change<span class="govuk-visually-hidden"> details</span>
+                      </a>
+                    </dd>
+                </div>                
                </dl> 
       
-              <form action="/form-handler" method="post" novalidate>
+              <form action="#" method="post" novalidate>
       
                 <input type="hidden" name="answers-checked" value="true">
       
