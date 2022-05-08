@@ -1,7 +1,7 @@
 {% extends "layout-signed-in-v7.html" %}
 
 {% block pageTitle %}
-  Moving around check answers
+  Additional information check answers
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,16 +20,16 @@
             <div class="govuk-grid-column-two-thirds-from-desktop">
       
               <h1 class="govuk-heading-l">Check your answers </h1>
-              <h2 class="govuk-heading-m">Moving around</h2>
+              <h2 class="govuk-heading-m">Additional information</h2>
              
       
               <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                   Details how your condition or disability affects you moving around
+                   Is there anything else you would like to tell us about?
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['movingaround-details'] }}
+                    {{ data['additional-information'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="planning-a-journey-detail">
@@ -37,22 +37,24 @@
                     </a>
                   </dd>
                 </div>
+                {% if data['additional-information'] === 'Yes' %}
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        How far can you walk using any aids or appliances you need?
+                        Additional information
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {{ data['movingaround-info'] }}
+                      {{ data['additionalinformation-details'] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                      <a class="govuk-link" href="planning-a-journey-detail">
+                      <a class="govuk-link" href="additiional-informatiion-detail">
                         Change<span class="govuk-visually-hidden"> details</span>
                       </a>
                     </dd>
-                </div>                
+                </div>
+                {% endif %}                
                </dl> 
       
-              <form action="/experimental/linear_journey/check-answers" method="post" novalidate>
+              <form action="/p5-v11/supporting-evidence/index" method="post" novalidate>
       
                 <input type="hidden" name="answers-checked" value="true">
       
