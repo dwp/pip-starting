@@ -27,64 +27,64 @@ module.exports = function (router) {
 
     router.post('/experimental/v11/intro-question', (req, res, next) => {
         const newOld = req.session.data['new-existing'];
-        if (newOld === 'Yes') {
+        if (newOld === 'yes') {
             res.redirect("/experimental/v11/save_and_return/sign-in");
         } else  {
             res.redirect('/experimental/v11/sign-in/register-start');
         }
     })
 
-    router.post('/experimental/v11/eligibility-start', (req, res) => {
-        res.redirect("/experimental/v11/over-16");
-    })
+    // router.post('/experimental/v11/eligibility-start', (req, res) => {
+    //     res.redirect("/experimental/v11/over-16");
+    // })
 
-    router.post('/experimental/v11/over-16', (req, res, next) => {
-        const over16 = req.session.data['over-16'];
-        if (over16 === 'Over State Pension age') {
-            res.redirect('/experimental/v11/over-spa');
-        } else {
-            res.redirect('/experimental/v11/health-condition');
-        }
-    });
+    // router.post('/experimental/v11/over-16', (req, res, next) => {
+    //     const over16 = req.session.data['over-16'];
+    //     if (over16 === 'Over State Pension age') {
+    //         res.redirect('/experimental/v11/over-spa');
+    //     } else {
+    //         res.redirect('/experimental/v11/health-condition');
+    //     }
+    // });
 
-    router.post('/experimental/v11/over-spa', (req, res, next) => {
-        res.redirect('/experimental/v11/health-condition');
-    });
+    // router.post('/experimental/v11/over-spa', (req, res, next) => {
+    //     res.redirect('/experimental/v11/health-condition');
+    // });
 
-    router.post('/experimental/v11/health-condition', (req, res, next) => {
-        const healthCondition = req.session.data['condition'];
-        if (healthCondition === 'Yes, all of the time or sometimes') {
-            res.redirect('/experimental/v11/over-9-months')
-        } else if (healthCondition === 'No, never') {
-            res.redirect('/experimental/v11/not-eligible');
-        } else if (healthCondition === 'Not sure') {
-            res.redirect('/experimental/v11/over-9-months');
-        }
-    });
+    // router.post('/experimental/v11/health-condition', (req, res, next) => {
+    //     const healthCondition = req.session.data['condition'];
+    //     if (healthCondition === 'Yes, all of the time or sometimes') {
+    //         res.redirect('/experimental/v11/over-9-months')
+    //     } else if (healthCondition === 'No, never') {
+    //         res.redirect('/experimental/v11/not-eligible');
+    //     } else if (healthCondition === 'Not sure') {
+    //         res.redirect('/experimental/v11/over-9-months');
+    //     }
+    // });
 
-    router.post('/experimental/v11/over-9-months', (req, res, next) => {
-        const eligible = isEligible(req);
-        const over9months = req.session.data['over-9-months'];
-        if (over9months === 'Less than 9 months') {
-            res.redirect('/experimental/v11/not-eligible')
-        } else if (over9months === 'At least 9 months') {
-            if (eligible) {
-                res.redirect('/experimental/v11/eligible')
-            } else {
-                res.redirect('/experimental/v11/not-eligible');
-            }
-        } else if (over9months === 'Not sure') {
-            if (eligible) {
-                res.redirect('/experimental/v11/eligible')
-            } else {
-                res.redirect('/experimental/v11/not-eligible');
-            }
-        }
-    });
+    // router.post('/experimental/v11/over-9-months', (req, res, next) => {
+    //     const eligible = isEligible(req);
+    //     const over9months = req.session.data['over-9-months'];
+    //     if (over9months === 'Less than 9 months') {
+    //         res.redirect('/experimental/v11/not-eligible')
+    //     } else if (over9months === 'At least 9 months') {
+    //         if (eligible) {
+    //             res.redirect('/experimental/v11/eligible')
+    //         } else {
+    //             res.redirect('/experimental/v11/not-eligible');
+    //         }
+    //     } else if (over9months === 'Not sure') {
+    //         if (eligible) {
+    //             res.redirect('/experimental/v11/eligible')
+    //         } else {
+    //             res.redirect('/experimental/v11/not-eligible');
+    //         }
+    //     }
+    // });
 
-    router.post('/experimental/v11/eligible', (req, res, next) => {
-        res.redirect('/p5/sign-in/register-start');
-    });
+    // router.post('/experimental/v11/eligible', (req, res, next) => {
+    //     res.redirect('/p5/sign-in/register-start');
+    // });
 
     // ELIGIBILITY QUESTIONS END
 
