@@ -47,10 +47,14 @@
       {
         href: "help-and-contacts",
         text: "Help and contact"
+      },
+      {
+        href: "/v7/signed-out",
+        text: "Sign out"
       }
       ]
     }) }}
-  
+
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
@@ -62,16 +66,16 @@
         items: [
         {
           href: "/mvp/info/accessibility.html",
-          text: "Accessibility" 
-        },  
+          text: "Accessibility"
+        },
         {
           href: "/mvp/info/cookies.html",
-          text: "Cookies" 
+          text: "Cookies"
         },
         {
           href: "https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter",
-          text: "Privacy"  
-        }, 
+          text: "Privacy"
+        },
           {
             href: "/prototype-admin/clear-data",
             text: "Clear data"
@@ -89,4 +93,3 @@
   {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 {% endblock %}
-
