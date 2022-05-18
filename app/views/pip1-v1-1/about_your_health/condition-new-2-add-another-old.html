@@ -4,7 +4,6 @@ Your health condition
 {% endblock %}
 {% block beforeContent %}
 {% include "includes/phase-banner.html" %}
-{% include "includes/back-link-v7.html" %}
 {% endblock %}
 {% set conditionsLength %}
 {{ data.conditions | length }}
@@ -51,7 +50,7 @@ Your health condition
                                data-name="conditions[%index%][condition_name]"
                                data-id="conditions[%index%][condition_name]">
                     </div> <!-- govuk-form-group -->
-                   
+
                     {% if conditionsLength > 1 %}
                     <button type="button" class="govuk-button govuk-button--secondary moj-add-another__remove-button">
                         Remove
@@ -76,7 +75,7 @@ Your health condition
                                data-name="conditions[%index%][condition_name]"
                                data-id="conditions[%index%][condition_name]">
                     </div> <!-- govuk-form-group -->
-                    
+
                     <button type="button" class="govuk-button govuk-button--secondary moj-add-another__remove-button">
                         Remove
                     </button>
