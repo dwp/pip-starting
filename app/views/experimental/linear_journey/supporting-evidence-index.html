@@ -1,6 +1,6 @@
 {% set pageTitle = "Supporting evidence" %}
 
-{% extends "layout-p5-v11.html" %}
+{% extends "layout-signed-in-v7.html" %}
 
 {% block pageTitle %}
   {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
@@ -8,7 +8,7 @@
 
 {% block beforeContent %}
 {% include "p5-v11/_beta-banner.html" %}
-{% include "includes/back-link-v7.html" %}
+{% include "includes/back-link-experimental.html" %}
 
 {% endblock %}
 
@@ -58,7 +58,7 @@
 
     </div><!-- govuk-form-group -->
 
-    <a href="/p5-v11/supporting-evidence/supporting-evidence" class="govuk-button">Continue</a>
+    <a href="supporting-evidence" class="govuk-button">Continue</a>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
