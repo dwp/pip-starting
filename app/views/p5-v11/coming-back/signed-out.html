@@ -1,42 +1,38 @@
-{% set status = "signed-out" %}
-{% set pageTitle = "You have signed out" %}
-
-{% extends "layout-p5-v11.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
+Signed out
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5-v11/_beta-banner.html" %}
+
+
 {% endblock %}
 
-
 {% block content %}
+<form id="form" method="post" action="#">
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          You have signed out
+        </h1>
+      </div> <!-- govuk-panel -->
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <!--<p>If you have not finished your claim your progress has been saved.</p>-->
+      <p>To complete your claim <a href="sign-in">sign in</a> again.</p>
+      <p>You will need your email address, mobile phone and password when you next sign in.</p>
+      <p>It is now safe to close this window.</p>
 
-{#       <div class="interruption"> #}
 
-            <div class="govuk-panel govuk-panel--confirmation">
-              <h1 class="govuk-panel__title">
-                You have signed out
-              </h1>
-            </div>
-            <p><a class="govuk-link" href="/p5-v11/coming-back/sign-in">Sign in</a> again if you need to upload any more evidence that might support your application.</p>
-            <p>You might find it useful to bookmark the sign in page in your internet browser.</p>
-            <p>You will need your email address, mobile phone and password to sign in.</p>
-            <p>You will not need to answer the questions about your daily living activities or mobility again.</p>
-            <p>It's now safe to close this window.</p>
+      <h2 class="govuk-heading-m">Give feedback</h2>
+      <p><a class="govuk-link" href="#" target="_blank">What did you think of this service? (opens in new tab)</a> takes 30 seconds</p>
 
-            <h2 class="govuk-heading-m">Give feedback</h2>
-            <p><a class="govuk-link" href="feedback/feedback" target="_blank">What did you think of this service? (opens in new tab)</a> takes 30 seconds</p>
-            <p><a class="govuk-link"href="https://getinvolved.dwp.gov.uk/digital/626599b1" target="_blank">Volunteer to take part in research about PIP (opens in new tab)</a></p>
-
-{#       </div> #}
-
-    </div>{# /govuk-grid-column-full #}
+      <p><a class="govuk-link"href="https://getinvolved.dwp.gov.uk/digital/626599b1" target="_blank">Volunteer to take part in research about PIP (opens in new tab)</a></p>
+      
+    </div>{# /govuk-grid-column-two-thirds #}
   </div>{# /govuk-grid-row #}
+</form>
 
 {% endblock %}
