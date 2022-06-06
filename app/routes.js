@@ -37,6 +37,7 @@ const pip1livev1 = require('./routes/live-pip1-v1-0')
 const pip2livev1 = require('./routes/live-pip2-v1-0')
 const pip1v1point1 = require('./routes/pip1-v1-1')
 const pip2v1point1 = require('./routes/pip2-v1-1')
+//const alternativeTasklist = require('./routes/alternative-tasklist')
 
 // ROUTES REDIRECT END
 
@@ -74,6 +75,7 @@ pip1livev1(router);
 pip2livev1(router);
 pip1v1point1(router);
 pip2v1point1(router);
+//alternativeTasklist(router);
 router.use('/', authRoutes)
 router.use('/', idvRoutes)
 // ROUTER LIST END
@@ -87,7 +89,7 @@ router.use('/', idvRoutes)
 //     conditions.push(condition);
 //     return conditions;
 //   }
-  
+
 //   // clear any temp condition data on add another
 //   router.get('/condition', (req, res, next) => {
 //     const { edit } = req.query;
@@ -100,14 +102,14 @@ router.use('/', idvRoutes)
 //     }
 //     res.render('v11/about_your_health/add-condition.html', { choice: originalChoice });
 //   })
-  
+
 //   // Add your routes here - above the module.exports line
-  
-  
+
+
 //   router.post('/select-size', (req, res, next) => {
 //     res.render('v11/about_your_health/condition-summary.html')
 //   })
-  
+
 //   router.get('/check-condition', (req, res, next) => {
 //     const { conditionId } = req.query;
 //     const { data } = req.session;
@@ -116,11 +118,11 @@ router.use('/', idvRoutes)
 //     const selectedCondition = condition[0];
 //     res.render('v11/about_your_health/add-condition.html', { condition: selectedCondition });
 //   })
-  
+
 //   router.post('/check-condition', (req, res, next) => {
 //     const { data } = req.session;
 //     const condition = data.condition;
-    
+
 //     if(condition.id) {
 //       amendCondition(data.conditionOrder, condition);
 //     } else {
@@ -128,15 +130,15 @@ router.use('/', idvRoutes)
 //       condition.id = data.conditionOrder.length + 1;
 //       data.conditionOrder.push(condition);
 //     }
-  
+
 //     res.render('v11/about_your_health/condition-summary.html', { condition: data.condition });
 //   })
-  
+
 //   // last page before submission
 //   router.get('/condition-summary', (req, res, next) => {
 //     res.render('v11/about_your_health/condition-summary.html');
 //   })
-  
+
 //   // remove condition from order
 //   router.get('/remove-condition', (req, res, next) => {
 //     const { conditionId } = req.query;
@@ -144,7 +146,7 @@ router.use('/', idvRoutes)
 //     const condition = data.conditionOrder.filter((p) => p.id === parseInt(conditionId));
 //     res.render('v11/about_your_health/remove-condition.html', { binnedCondition: condition[0] });
 //   })
-  
+
 //   router.post('/remove-condition', (req, res, next) => {
 //     const { binCondition, binnedConditionId } = req.body;
 //     const { data } = req.session;
@@ -154,13 +156,13 @@ router.use('/', idvRoutes)
 //     }
 //     res.render('v11/about_your_health/condition-summary.html');
 //   })
-  
-  
+
+
 //   router.get('/submit', (req, res, next) => {
 //     req.session.data.conditionOrder = [];
 //     req.session.data.condition = {};
 //     res.render('v11/about_your_health/consent.html');
-//   }) 
+//   })
 
   // Add another condition end
 
