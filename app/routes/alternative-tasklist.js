@@ -12,3 +12,14 @@ router.post('/experimental/alternative_tasklist_idea/activity_hints/preparing-fo
            res.redirect('/version-one/minimum-viable-product/case-selector/ready-for-review-success')
          }
 })
+
+router.post('/experimental/alternative_tasklist_idea/another', function(req, res) {
+
+  let condition2 = req.session.data['condition2']
+
+  if (condition2 === 'Yes') {
+      res.redirect('condition-2')
+    } else {
+      res.redirect('check')
+    }
+})
