@@ -10,10 +10,9 @@ Preparing food hint
 {% endblock %}
 
 {% block content %}
-<form id="form">
+<form id="form" action="#" method="post">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -42,8 +41,8 @@ Preparing food hint
 
             {{ govukRadios({
               classes: "govuk-radios--inline",
-              idPrefix: "prep-food-help",
-              name: "prep-food-help",
+              idPrefix: "preparing-food-help",
+              name: "preparing-food-help",
               fieldset: {
                 legend: {
                   text: "Do you ever have difficulties preparing food?",

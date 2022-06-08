@@ -37,7 +37,7 @@ const pip1livev1 = require('./routes/live-pip1-v1-0')
 const pip2livev1 = require('./routes/live-pip2-v1-0')
 const pip1v1point1 = require('./routes/pip1-v1-1')
 const pip2v1point1 = require('./routes/pip2-v1-1')
-//const alternativeTasklist = require('./routes/alternative-tasklist')
+const alternativeTasklist = require('./routes/alternative-tasklist')
 
 // ROUTES REDIRECT END
 
@@ -75,7 +75,7 @@ pip1livev1(router);
 pip2livev1(router);
 pip1v1point1(router);
 pip2v1point1(router);
-//alternativeTasklist(router);
+alternativeTasklist(router);
 router.use('/', authRoutes)
 router.use('/', idvRoutes)
 // ROUTER LIST END
