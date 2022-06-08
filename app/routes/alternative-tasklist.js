@@ -1,6 +1,8 @@
+const { compile } = require("nunjucks");
 const express = require('express')
 const router = express.Router()
 
+module.exports = function (router) {
 // route for checking if citizen needs to claim for an activity
 router.post('/experimental/alternative_tasklist_idea/activity_hints/preparing-food-hint', (req, res, next) => {
           // Checks radio options, if "Add a new caseload" is selected, route to "create-new-case-ready-review" page.
