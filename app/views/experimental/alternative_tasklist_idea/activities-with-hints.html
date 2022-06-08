@@ -11,7 +11,7 @@ Daily activity list
 
 {% block content %}
 
-<form id="form" method="post" action="/experimental/alternative_tasklist_idea/activity_hints/preparing-food-hint">
+<form id="form" method="post" action="#">
 
     <div class="govuk-width-container">
         <main class="govuk-main-wrapper " id="main-content" role="main">
@@ -48,7 +48,10 @@ Daily activity list
                                    <li>Moving around</li>
                                  </ul>
 
-                    <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+                    {{ govukButton({
+                      text: 'Save and continue',
+                      href: "/experimental/alternative_tasklist_idea/activity_hints/preparing-food-hint"
+                    }) }}
         </main>
    </div> <!-- govuk-width-container -->
 </form>
