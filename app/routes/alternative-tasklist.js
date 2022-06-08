@@ -3,13 +3,13 @@ const router = express.Router()
 
 module.exports = function (router) {
 
-router.post('/experimental/alternative_tasklist_idea/another', function(req, res) {
-    if (req.session.data['condition2'] == "yes") {
-               res.redirect('/experimental/alternative_tasklist_idea/condition')
-             } else {
-               res.redirect('/experimental/alternative_tasklist_idea/check')
-             }
-})
+// router.post('/experimental/alternative_tasklist_idea/another', function(req, res) {
+//     if (req.session.data['condition2'] == "yes") {
+//                res.redirect('/experimental/alternative_tasklist_idea/condition')
+//              } else {
+//                res.redirect('/experimental/alternative_tasklist_idea/check')
+//              }
+// })
 
 
 // route for checking if citizen needs to claim for an activity
