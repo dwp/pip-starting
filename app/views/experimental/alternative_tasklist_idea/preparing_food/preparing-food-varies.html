@@ -17,18 +17,17 @@
     <form action="#" method="post" novalidate>
 
       <h1 class="govuk-heading-l">Preparing food</h1>
+      <h2 class="govuk-heading-m">Enter how often you have difficulties preparing or cooking food?</h2>
 
         {{ govukTextarea({
         name: "more-detail",
-        id: "more-detail",
-        label: {
-          text: "How often do you have difficulties preparing or cooking food?"
-        }
+        id: "more-detail"
         }) }}
 
 
                   {{ govukButton({
-                    text: 'Continue'
+                    text: 'Continue',
+                    href: "preparing-food-anything-else"
                   }) }}
 
     </form>
