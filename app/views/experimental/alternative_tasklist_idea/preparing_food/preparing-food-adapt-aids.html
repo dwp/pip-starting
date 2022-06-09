@@ -18,47 +18,39 @@
 
       <h1 class="govuk-heading-l">Preparing food</h1>
 
-      <p class="govuk-body">Preparing food means making a simple, one course meal for one. This includes:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>peeling and chopping ingredients</li>
-            <li>opening tins</li>
-            <li>cooking or heating food on a standard hob or using a microwave</li>
-          </ul>
-
-          <br>
             {{ govukCheckboxes({
-              idPrefix: "prep-food",
-              name: "prep-food",
+              idPrefix: "prep-food-adapt-aids",
+              name: "prep-food-adapt-aids",
               fieldset: {
                 legend: {
-                  text: "What difficulties do you have preparing or cooking food?",
+                  text: "What aids or adaptations do you use?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--m"
                 }
               },
               hint: {
-                text: "Select all options that apply even if it’s only sometimes"
+                text: "Select all options that apply"
               },
               items: [
                 {
                   value: "option-one",
-                  text: "I cannot prepare or cook food at all"
+                  text: "Adapted food preparation board"
                 },
                 {
                   value: "option-two",
-                  text: "I need help from someone else "
+                  text: "Automatic tin opener"
                 },
                 {
                   value: "option-three",
-                  text: "I need help but do not get it"
+                  text: "Jar or bottle opener"
                 },
                 {
                   value: "option-four",
-                  text: "I need to use aids or adaptations"
+                  text: "Tap turner"
                 },
                 {
                   value: "option-five",
-                  text: "I need to sit down while preparing or cooking"
+                  text: "Kettle tipper"
                 },
                 {
                   value: "option-six",
@@ -66,29 +58,18 @@
                 },
                 {
                   value: "option-seven",
-                  text: "I need someone to remind, encourage or supervise me"
+                  text: "Perching stool"
                 },
                 {
                   value: "option-eight",
-                  text: "I need someone to check on me to make sure I’m safe"
-                },
-                {
-                  value: "option-nine",
-                  text: "I’m at risk of injury like burning or scalding"
-                },
-                {
-                  value: "option-ten",
-                  text: "I need help to read or understand numbers – such as, following simple recipes or using timers"
-                },
-                {
-                  value: "option-eleven",
                   text: "Other"
                 }
               ]
             }) }}
 
                   {{ govukButton({
-                    text: 'Continue'
+                    text: 'Continue',
+                    href: "preparing-food-difficulties"
                   }) }}
 
     </form>

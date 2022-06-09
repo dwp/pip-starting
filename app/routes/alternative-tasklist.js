@@ -109,4 +109,25 @@ router.post('/experimental/alternative_tasklist_idea/activity_hints/moving-aroun
            res.redirect('/experimental/alternative_tasklist_idea/additional_information/additional-information-question')
          }
 })
+
+////////// routes for preparing food, claiming for activity journey ///////////////
+    router.post('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-detail', (req, res, next) => {
+             if (req.session.data['prep-food'] == "option-eleven") {
+               res.redirect('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-other')
+             } else if (req.session.data['prep-food'] == "option-four") {
+               res.redirect('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-adapt-aids')
+             } else {
+               res.redirect('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-adapt-aids')
+             }
+    })
+    // routes for "How often do you have difficulties preparing or cooking food?" page
+    router.post('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-difficulties', (req, res, next) => {
+             if (req.session.data['prep-food-difficulties'] == "option-five") {
+               res.redirect('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-varies')
+             } else if (req.session.data['prep-food-difficulties'] == "option-six") {
+               res.redirect('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-varies')
+             } else {
+               res.redirect('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-varies')
+             }
+    })
 }
