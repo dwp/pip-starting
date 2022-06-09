@@ -10,7 +10,7 @@ Reading hint
 {% endblock %}
 
 {% block content %}
-<form id="form">
+<form id="form" action="#" method="post">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
@@ -18,7 +18,7 @@ Reading hint
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-                What we mean by reading
+                Reading
             </h1>
           </legend>
           <div id="mobility-activity-hint" class="govuk-hint">
@@ -32,7 +32,36 @@ Reading hint
 
       </div> <!-- govuk-form-group -->
 
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "reading-help",
+        name: "reading-help",
+        fieldset: {
+          legend: {
+            text: "Do you ever have difficulties reading?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Select yes if you need help from someone else or using extra equipment."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
 
+      <br>
+    <button class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
 
     </div> <!-- govuk-grid-column-two-thirds -->
   </div> <!-- govuk-grid-column-two-thirds -->
