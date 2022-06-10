@@ -14,7 +14,7 @@ module.exports = function (router) {
 
 // route for checking if citizen needs to claim for an activity
 router.post('/experimental/alternative_tasklist_idea/activity_hints/preparing-food-hint', (req, res, next) => {
-         if (req.session.data['preparing-food-help'] == "yes") {
+         if (req.session.data['preparing-food-help'] == "Yes") {
            res.redirect('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-detail')
          } else {
            res.redirect('/experimental/alternative_tasklist_idea/activity_hints/eating-and-drinking-hint')
@@ -112,13 +112,19 @@ router.post('/experimental/alternative_tasklist_idea/activity_hints/moving-aroun
 
 ////////// routes for preparing food, claiming for activity journey ///////////////
     router.post('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-detail', (req, res, next) => {
-             if (req.session.data['prep-food'] == "Other") {
-               res.redirect('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-other')
-             } else if (req.session.data['prep-food'] == "I need to use aids or adaptations") {
+      console.log('is-this-calling', req.session.data)
+
+             if (req.session.data['prep-food'] == null) {
                res.redirect('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-adapt-aids')
-             } else {
-               res.redirect('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-difficulties')
-             }
+             } else if (req.session.data['prep-food'].includes("Other")) {
+               res.redirect('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-other')
+             } else if (req.session.data['prep-food']) {
+             res.redirect('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-adapt-aids')
+           }
+
+             //else if (req.session.data['prep-food']) {
+             //   res.redirect('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-adapt-aids')
+             // }
     })
     // routes for "How often do you have difficulties preparing or cooking food?" page
     router.post('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-difficulties', (req, res, next) => {
@@ -132,10 +138,12 @@ router.post('/experimental/alternative_tasklist_idea/activity_hints/moving-aroun
     })
     //routes for "What aids or adaptations do you use?" page
     router.post('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-adapt-aids', (req, res, next) => {
-            if (req.session.data['prep-food-adapt-aids'] == "Other") {
+            if (req.session.data['prep-food-adapt-aids'] == null) {
+                res.redirect('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-anything-else')
+             }  else if (req.session.data['prep-food-adapt-aids'].includes("Other")) {
               res.redirect('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-often-other')
              } else {
-               res.redirect('/experimental/alternative_tasklist_idea/additional_information/additional-information-question')
+               res.redirect('/experimental/alternative_tasklist_idea/preparing_food/preparing-food-anything-else')
             }
    })
    //routes for "Do you want to tell us anything else about the difficulties you have preparing or cooking food? " page
