@@ -14,7 +14,7 @@ module.exports = function (router) {
 
 // route for checking if citizen needs to claim for an activity
 router.post('/experimental/alternative_tasklist_idea_1_1/activity_hints/preparing-food-hint', (req, res, next) => {
-         if (req.session.data['preparing-food-help'] == "Yes") {
+         if (req.session.data['preparing-food-help-1-1'] == "Yes") {
            res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-detail')
          } else {
            res.redirect('/experimental/alternative_tasklist_idea_1_1/activity_hints/eating-and-drinking-hint')
@@ -114,11 +114,11 @@ router.post('/experimental/alternative_tasklist_idea_1_1/activity_hints/moving-a
     router.post('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-detail', (req, res, next) => {
       console.log('is-this-calling', req.session.data)
 
-             if (req.session.data['prep-food'] == null) {
+             if (req.session.data['prep-food-1-1'] == null) {
                res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-difficulties')
-             } else if (req.session.data['prep-food'].includes("Other")) {
+             } else if (req.session.data['prep-food-1-1'].includes("Other")) {
                res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-other')
-             } else if (req.session.data['prep-food'] == "I need to use aids or adaptations") {
+             } else if (req.session.data['prep-food-1-1'] == "I need to use aids or adaptations") {
              res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-adapt-aids')
            } else {
              res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-difficulties')
@@ -130,9 +130,9 @@ router.post('/experimental/alternative_tasklist_idea_1_1/activity_hints/moving-a
     })
     // routes for "How often do you have difficulties preparing or cooking food?" page
     router.post('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-difficulties', (req, res, next) => {
-             if (req.session.data['prep-food-difficulties'] == "It varies") {
+             if (req.session.data['prep-food-difficulties-1-1'] == "It varies") {
                res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-varies')
-             } else if (req.session.data['prep-food-difficulties'] == "Other") {
+             } else if (req.session.data['prep-food-difficulties-1-1'] == "Other") {
                res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-varies')
              } else {
                res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-anything-else')
@@ -140,9 +140,9 @@ router.post('/experimental/alternative_tasklist_idea_1_1/activity_hints/moving-a
     })
     //routes for "What aids or adaptations do you use?" page
     router.post('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-adapt-aids', (req, res, next) => {
-            if (req.session.data['prep-food-adapt-aids'] == null) {
+            if (req.session.data['prep-food-adapt-aids-1-1'] == null) {
                 res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-difficulties')
-             }  else if (req.session.data['prep-food-adapt-aids'].includes("Other")) {
+             }  else if (req.session.data['prep-food-adapt-aids-1-1'].includes("Other")) {
               res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-often-other')
              } else {
                res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-difficulties')
@@ -150,7 +150,7 @@ router.post('/experimental/alternative_tasklist_idea_1_1/activity_hints/moving-a
    })
    //routes for "Do you want to tell us anything else about the difficulties you have preparing or cooking food? " page
    router.post('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-anything-else', (req, res, next) => {
-           if (req.session.data['prep-food-anything-else'] == "Yes") {
+           if (req.session.data['prep-food-anything-else-1-1'] == "Yes") {
              res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-other-anything-else')
             } else {
               res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-check')
