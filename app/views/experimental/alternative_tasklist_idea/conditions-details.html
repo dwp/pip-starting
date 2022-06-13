@@ -19,11 +19,11 @@
     <form action="#" method="post" novalidate>
 
       {{ govukTextarea({
-        name: "condition-detail-1",
-        id: "condition-detail-1",
+        name: "condition-1-detail",
+        id: "condition-1-detail",
         rows: "18",
         label: {
-          text: "About this condition or disability – " + data['conditions'][0]['condition_name'] | lower,
+          text: "About this condition or disability – " + data['condition-name-1'],
           isPageHeading: true,
         classes: "govuk-label--l"
         },
