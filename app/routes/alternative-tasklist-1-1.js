@@ -145,7 +145,7 @@ router.post('/experimental/alternative_tasklist_idea_1_1/activity_hints/moving-a
              }  else if (req.session.data['prep-food-adapt-aids'].includes("Other")) {
               res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-often-other')
              } else {
-               res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-anything-else')
+               res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-difficulties')
             }
    })
    //routes for "Do you want to tell us anything else about the difficulties you have preparing or cooking food? " page
