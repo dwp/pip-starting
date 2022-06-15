@@ -98,7 +98,7 @@ router.post('/experimental/alternative_tasklist_idea_1_1/activity_hints/planning
          if (req.session.data['planning-journey-help'] == "yes") {
            res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-detail')
          } else {
-           res.redirect('/experimental/alternative_tasklist_idea_1_1_1_1/activity_hints/moving-around-hint')
+           res.redirect('/experimental/alternative_tasklist_idea_1_1/activity_hints/moving-around-hint')
          }
 })
 // moving around routes
