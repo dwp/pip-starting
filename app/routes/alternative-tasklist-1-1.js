@@ -118,7 +118,7 @@ router.post('/experimental/alternative_tasklist_idea_1_1/activity_hints/moving-a
                res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-difficulties')
              } else if (req.session.data['prep-food-1-1'].includes("Other")) {
                res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-other')
-             } else if (req.session.data['prep-food-1-1'] == "I need to use aids or adaptations") {
+             } else if (req.session.data['prep-food-1-1'].includes("I need to use aids or adaptations")) {
              res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-adapt-aids')
            } else {
              res.redirect('/experimental/alternative_tasklist_idea_1_1/preparing_food/preparing-food-difficulties')
