@@ -730,6 +730,15 @@ module.exports = function (router) {
     // COMPLEX APPLICATION CONTACT DETAILS END
 
     // RETURNING USER FLOW START
+    router.post('/v11/sign-out-confirm', (req, res, next) => {
+        const signOut = req.session.data['sign-out-confirm'];
+        if (signOut === 'Yes') {
+            res.redirect('/v11/signed-out');
+        } else {
+            res.redirect('/v11/nationality');
+        }
+    });
+
     router.post('/v11/save_and_return/sign-in', (req, res, next) => {
         res.redirect('/v11/save_and_return/sign-in-2fa');
     });
