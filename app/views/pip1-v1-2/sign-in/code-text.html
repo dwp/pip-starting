@@ -18,9 +18,9 @@
     <div class="govuk-grid-column-two-thirds">
 
       {% if getData.next === "list" %}
-        <form action="/pip1-v1-1/sign-in/splash-message" method="POST" novalidate>
+        <form action="/pip1-v1-2/sign-in/splash-message" method="POST" novalidate>
       {% else %}
-        <form action="/pip1-v1-1/sign-in/create-password" method="POST" novalidate>
+        <form action="/pip1-v1-2/sign-in/create-password" method="POST" novalidate>
       {% endif %}
 
       {% if data['code'] == '123456' %}
@@ -41,16 +41,16 @@
         </div>
 
         {% if getData.scenario === "locked" %}
-          <a href="/pip1-v1-1/sign-in/create-new-password?scenario=locked" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
-          <p><a href="/pip1-v1-1/sign-in/code-text-get-another?scenario=locked">I did not get a code</a></p>
+          <a href="/pip1-v1-2/sign-in/create-new-password?scenario=locked" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
+          <p><a href="/pip1-v1-2/sign-in/code-text-get-another?scenario=locked">I did not get a code</a></p>
         {% elif getData.scenario === "active" %}
-          <a href="/pip1-v1-1/sign-in/splash-message" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
-          <p><a href="/pip1-v1-1/sign-in/code-text-get-another?scenario=active">I did not get a code</a></p>
-          <p><a href="/pip1-v1-1/sign-in/code-email?scenario=active">Get a code by email instead</a></p>
+          <a href="/pip1-v1-2/sign-in/splash-message" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
+          <p><a href="/pip1-v1-2/sign-in/code-text-get-another?scenario=active">I did not get a code</a></p>
+          <p><a href="/pip1-v1-2/sign-in/code-email?scenario=active">Get a code by email instead</a></p>
         {% else %}
-          <a href="/pip1-v1-1/sign-in/create-password" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
-          <p><a href="/pip1-v1-1/sign-in/code-text-get-another">I did not get a code</a></p>
-          <p><a href="/pip1-v1-1/sign-in/code-email">Get a code by email instead</a></p>
+          <a href="/pip1-v1-2/sign-in/create-password" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
+          <p><a href="/pip1-v1-2/sign-in/code-text-get-another">I did not get a code</a></p>
+          <p><a href="/pip1-v1-2/sign-in/code-email">Get a code by email instead</a></p>
         {% endif %}
 
 
