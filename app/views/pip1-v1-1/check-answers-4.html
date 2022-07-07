@@ -6,7 +6,7 @@ Check your answers about your health
 
 {% block beforeContent %}
 {% include "includes/phase-banner.html" %}
-{% include "includes/back-link-v11.html" %}
+{% include "includes/back-link-signed-in.html" %}
 {% endblock %}
 
 {% set conditionsLength %}
@@ -28,8 +28,8 @@ Check your answers about your health
           <h2 class="govuk-heading-m">Your health</h2>
 
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <!-- Coditions start -->
-            <!-- <div class="govuk-summary-list__row">
+            <!-- Conditions start -->
+           <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 What health condition or disability do you have?
               </dt>
@@ -41,7 +41,7 @@ Check your answers about your health
                   Change<span class="govuk-visually-hidden"> condition or disability</span>
                 </a>
               </dd>
-            </div> --> <!-- govuk-summary-list__row -->
+            </div> <!-- govuk-summary-list__row -->
 
             <!-- <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -58,11 +58,11 @@ Check your answers about your health
             </div> <!-- govuk-summary-list__row -->
             <!-- Conditions end  -->
 
-            {% if conditionsLength > 1 %}
+           <!--  {% if conditionsLength > 1 %}
             {% for condition in data.conditions %}
             {% if not loop.first %}
             <!-- Coditions start -->
-            <div class="govuk-summary-list__row">
+           <!--  <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 What other health condition or disability do you have?
               </dt>
@@ -74,11 +74,11 @@ Check your answers about your health
                   Change<span class="govuk-visually-hidden"> condition or disability</span>
                 </a>
               </dd>
-            </div> <!-- govuk-summary-list__row -->
+            </div> --> <!-- govuk-summary-list__row -->
             <!-- Conditions end  -->
-            {% endif %}
+           <!--  {% endif %}
             {% endfor %}
-            {% endif %}
+            {% endif %}  -->
 
             <!-- <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -318,7 +318,7 @@ Check your answers about your health
                 When did you go into hospital?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['hospital-admission'] }}
+                {{ data['hospital-admission-day'] }} - {{ data['hospital-admission-month'] }} - {{ data['hospital-admission-year'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="hospital-admission.html">
@@ -355,7 +355,7 @@ Check your answers about your health
                 When did you go into the hospice?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['hospice-admission'] }}
+                {{ data['hospice-admission-day'] }} - {{ data['hospice-admission-month'] }} - {{ data['hospice-admission-year'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="hospice-admission.html">
@@ -391,7 +391,7 @@ Check your answers about your health
                 When did you go into this accommodation?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['care-home-admission'] }}
+                {{ data['care-home-admission-day'] }} - {{ data['care-home-admission-month'] }} - {{ data['care-home-admission-year'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="care-home-admission">
@@ -426,7 +426,7 @@ Check your answers about your health
                 When did you go into this accommodation?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['care-home-admission'] }}
+                {{ data['care-home-admission-day'] }} - {{ data['care-home-admission-month'] }} - {{ data['care-home-admission-year'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="care-home-admission">
