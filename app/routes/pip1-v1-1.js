@@ -196,7 +196,7 @@ module.exports = function (router) {
         if (addSupport === 'Yes') {
             res.redirect('/pip1-v1-1/add-support-help');
         } else {
-            res.redirect('/pip1-v1-1/name');
+            res.redirect('/pip1-v1-1/check-answers-1');
         }
     });
 
@@ -205,11 +205,15 @@ module.exports = function (router) {
         if (addsupportHelp === 'Yes') {
             res.redirect('/pip1-v1-1/add-support-name');
         } else {
-            res.redirect('/pip1-v1-1/name');
+            res.redirect('/pip1-v1-1/check-answers-1');
         }
     });
 
     router.post('/pip1-v1-1/add-support-name', (req, res, next) => {
+        res.redirect('/pip1-v1-1/check-answers-1');
+    });
+
+    router.post('/pip1-v1-1/check-answers-1', (req, res, next) => {
         res.redirect('/pip1-v1-1/name');
     });
 
@@ -291,12 +295,13 @@ module.exports = function (router) {
     router.post('/pip1-v1-1/contact-details', (req, res, next) => {
         res.redirect('/pip1-v1-1/alt-formats');
     });
+
     router.post('/pip1-v1-1/alt-formats', (req, res, next) => {
         const altFormats = req.session.data['communication-format'];
         if (altFormats === 'Yes') {
             res.redirect('/pip1-v1-1/alt-formats-choice');
         } else {
-            res.redirect('/pip1-v1-1/nationality');
+            res.redirect('/pip1-v1-1/check-answers-2');
         }
     })
 
@@ -320,15 +325,15 @@ module.exports = function (router) {
     });
 
     router.post('/pip1-v1-1/alt-format-braille', (req, res, next) => {
-        res.redirect('/pip1-v1-1/nationality');
+        res.redirect('/pip1-v1-1/check-answers-2');
     });
 
     router.post('/pip1-v1-1/alt-format-sign-language', (req, res, next) => {
-        res.redirect('/pip1-v1-1/nationality');
+        res.redirect('/pip1-v1-1/check-answers-2');
     });
 
     router.post('/pip1-v1-1/alt-format-audio', (req, res, next) => {
-        res.redirect('/pip1-v1-1/nationality');
+        res.redirect('/pip1-v1-1/check-answers-2');
     });
 
     router.post('/pip1-v1-1/alt-formats-paper', (req, res, next) => {
@@ -340,16 +345,16 @@ module.exports = function (router) {
             res.redirect('/pip1-v1-1/alt-formats-paper-custom-font');
         }
         else {
-            res.redirect('/pip1-v1-1/nationality');
+            res.redirect('/pip1-v1-1/check-answers-2');
         }
     });
 
     router.post('/pip1-v1-1/alt-formats-paper-colour', (req, res, next) => {
-        res.redirect('/pip1-v1-1/nationality');
+        res.redirect('/pip1-v1-1/check-answers-2');
     });
 
     router.post('/pip1-v1-1/alt-formats-paper-custom-font', (req, res, next) => {
-        res.redirect('/pip1-v1-1/nationality');
+        res.redirect('/pip1-v1-1/check-answers-2');
     });
 
     router.post('/pip1-v1-1/alt-formats-other', (req, res, next) => {
@@ -361,15 +366,19 @@ module.exports = function (router) {
             res.redirect('/pip1-v1-1/alt-formats-other-other');
         }
         else {
-            res.redirect('/pip1-v1-1/nationality');
+            res.redirect('/pip1-v1-1/check-answers-2');
         }
     });
 
     router.post('/pip1-v1-1/alt-formats-other-email', (req, res, next) => {
-        res.redirect('/pip1-v1-1/nationality');
+        res.redirect('/pip1-v1-1/check-answers-2');
     });
 
     router.post('/pip1-v1-1/alt-formats-other-other', (req, res, next) => {
+        res.redirect('/pip1-v1-1/check-answers-2');
+    });
+
+    router.post('/pip1-v1-1/check-answers-2', (req, res, next) => {
         res.redirect('/pip1-v1-1/nationality');
     });
 
@@ -430,9 +439,17 @@ module.exports = function (router) {
                 res.redirect('/pip1-v1-1/eu-question')
             }
         } else if (nationality === 'Another nationality') {
-            res.redirect('/pip1-v1-1/about_your_health/condition-new-2')
+            res.redirect('/pip1-v1-1/check-answers-3')
         }
     })
+
+    router.post('/pip1-v1-1/eu-question', (req, res, next) => {
+        res.redirect('/pip1-v1-1/check-answers-3');
+    });
+
+    router.post('/pip1-v1-1/check-answers-3', (req, res, next) => {
+        res.redirect('/pip1-v1-1/about_your_health/condition-new-2');
+    });
 
     // router.post('/pip1-v1-1/eu-question', (req, res, next) => {
     //     res.redirect('/pip1-v1-1/eu-worked');
@@ -451,9 +468,7 @@ module.exports = function (router) {
 
     // ABOUT YOUR HEALTH START
 
-    router.post('/pip1-v1-1/eu-question', (req, res, next) => {
-        res.redirect('/pip1-v1-1/about_your_health/condition-new-2');
-    });
+    
 
     router.post('/pip1-v1-1/about_your_health/condition-new-2', (req, res, next) => {
         res.redirect('/pip1-v1-1/about_your_health/consent');
@@ -546,7 +561,7 @@ module.exports = function (router) {
         } else if (inHospital === 'Other') {
               res.redirect('/pip1-v1-1/care-home-admission');
         } else {
-            res.redirect('/pip1-v1-1/check-answers');
+            res.redirect('/pip1-v1-1/check-answers-4');
         }
     });
 
@@ -555,7 +570,7 @@ module.exports = function (router) {
     });
 
     router.post('/pip1-v1-1/hospital-address', (req, res, next) => {
-        res.redirect('/pip1-v1-1/check-answers');
+        res.redirect('/pip1-v1-1/check-answers-4');
     });
 
     router.get('/pip1-v1-1/hospital-address', (req, res, next) => {
@@ -573,7 +588,7 @@ module.exports = function (router) {
     });
 
     router.post('/pip1-v1-1/hospice-address', (req, res, next) => {
-        res.redirect('/pip1-v1-1/check-answers');
+        res.redirect('/pip1-v1-1/check-answers-4');
     });
 
     router.get('/pip1-v1-1/hospice-address', (req, res, next) => {
@@ -590,7 +605,7 @@ module.exports = function (router) {
         res.redirect('/pip1-v1-1/care-home-address');
     });
     router.post('/pip1-v1-1/care-home-address', (req, res, next) => {
-        res.redirect('/pip1-v1-1/check-answers');
+        res.redirect('/pip1-v1-1/check-answers-4');
     });
 
     router.get('/pip1-v1-1/care-home-address', (req, res, next) => {
@@ -624,12 +639,12 @@ module.exports = function (router) {
     //     res.redirect('/p5/list');
     // });
 
-    router.post('/pip1-v1-1/check-answers', (req, res, next) => {
+    router.post('/pip1-v1-1/check-answers-4', (req, res, next) => {
         res.redirect('/pip1-v1-1/confirmation');
     });
 
     router.post('/pip1-v1-1/remove-hcp-confirmation', (req, res, next) => {
-        res.redirect('/pip1-v1-1/check-answers');
+        res.redirect('/pip1-v1-1/check-answers-4');
     });
 
     // CHECK ANSWERS END
