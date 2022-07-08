@@ -643,7 +643,7 @@ module.exports = function (router) {
         res.redirect('/pip1-v1-1/confirmation');
     });
 
-    router.post('/pip1-v1-1/remove-hcp-confirmation', (req, res, next) => {
+    router.post('/pip1-v1-1/about_your_health/remove-hcp-confirmation', (req, res, next) => {
         res.redirect('/pip1-v1-1/check-answers-4');
     });
 
