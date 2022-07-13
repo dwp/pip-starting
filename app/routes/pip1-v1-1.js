@@ -418,7 +418,7 @@ module.exports = function (router) {
     router.post('/pip1-v1-1/living-in-uk', (req, res, next) => {
         const livingUk = req.session.data['living-in-uk'];
         if (livingUk === 'No') {
-            res.redirect('/pip1-v1-1/about_your_health/condition-new-2');
+            res.redirect('/pip1-v1-1/check-answers-3');
         } else {
             res.redirect('/pip1-v1-1/living-in-gb');
         }
@@ -433,7 +433,7 @@ module.exports = function (router) {
             nationality === 'A nationality of the European Economic Area (EEA) or Switzerland'
         ) {
             if (gb === 'No') {
-                res.redirect('/pip1-v1-1/about_your_health/condition-new-2')
+                res.redirect('/pip1-v1-1/check-answers-3')
             }
             if (gb === 'Yes' || gb === 'Not sure') {
                 res.redirect('/pip1-v1-1/eu-question')
