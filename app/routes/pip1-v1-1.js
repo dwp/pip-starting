@@ -679,6 +679,19 @@ module.exports = function (router) {
     // COMPLEX APPLICATION CONTACT DETAILS END
 
     // RETURNING USER FLOW START
+    router.post('/pip1-v1-1/save_and_return/intro-question', (req, res, next) => {
+        const returnSingin = req.session.data['new-existing'];
+        if (returnSingin === 'Yes') {
+            res.redirect('/pip1-v1-1/save_and_return/sign-in');
+        } else {
+            res.redirect('/pip1-v1-1/sign-in/register-start');
+        }
+    });
+
+    // router.post('/pip1-v1-1/save_and_return/intro-question', (req, res, next) => {
+    //     res.redirect('/pip1-v1-1/save_and_return/sign-in');
+    // });
+    
     router.post('/pip1-v1-1/save_and_return/sign-in', (req, res, next) => {
         res.redirect('/pip1-v1-1/save_and_return/sign-in-2fa');
     });
