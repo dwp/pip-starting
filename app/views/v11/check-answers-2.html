@@ -6,7 +6,7 @@ Check your answers personal details
 
 {% block beforeContent %}
 {% include "includes/phase-banner.html" %}
-{% include "includes/back-link-v11.html" %}
+<!-- {% include "includes/back-link-v11.html" %} -->
 {% endblock %}
 
 {% set conditionsLength %}
@@ -371,6 +371,8 @@ Check your answers personal details
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
           </dl>
+
+          <p>Make sure you've checked your answers before you save and continue.</p>
 
           <input type="submit" class="govuk-button" data-module="govuk-button" value="Save and continue" id="submit">
 

@@ -6,7 +6,7 @@ Check your answers personal details
 
 {% block beforeContent %}
 {% include "includes/phase-banner.html" %}
-{% include "includes/back-link-signed-in.html" %}
+
 {% endblock %}
 
 {% set conditionsLength %}
@@ -132,7 +132,7 @@ Check your answers personal details
                 {{ data['phone-number'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="contact-details">
+                <a class="govuk-link" href="contact-details#phone-number">
                   Change<span class="govuk-visually-hidden"> phone number</span>
                 </a>
               </dd>
@@ -146,7 +146,7 @@ Check your answers personal details
                 {{ data['alternative-phone-number'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="contact-details">
+                <a class="govuk-link" href="contact-details#alternative-phone-number">
                   Change<span class="govuk-visually-hidden"> alternative phone number</span>
                 </a>
               </dd>
@@ -160,7 +160,7 @@ Check your answers personal details
                 {{ data['textphone'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="contact-details">
+                <a class="govuk-link" href="contact-details#textphone">
                   Change<span class="govuk-visually-hidden"> textphone number</span>
                 </a>
               </dd>
@@ -174,7 +174,7 @@ Check your answers personal details
                 {{ data['sms-updates'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="contact-details">
+                <a class="govuk-link" href="contact-details#sms-updates-1">
                   Change<span class="govuk-visually-hidden"> if you want to receive sms updates on the progress of your
                     claim</span>
                 </a>

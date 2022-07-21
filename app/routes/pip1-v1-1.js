@@ -418,7 +418,7 @@ module.exports = function (router) {
     router.post('/pip1-v1-1/living-in-uk', (req, res, next) => {
         const livingUk = req.session.data['living-in-uk'];
         if (livingUk === 'No') {
-            res.redirect('/pip1-v1-1/about_your_health/condition-new-2');
+            res.redirect('/pip1-v1-1/check-answers-3');
         } else {
             res.redirect('/pip1-v1-1/living-in-gb');
         }
@@ -433,7 +433,7 @@ module.exports = function (router) {
             nationality === 'A nationality of the European Economic Area (EEA) or Switzerland'
         ) {
             if (gb === 'No') {
-                res.redirect('/pip1-v1-1/about_your_health/condition-new-2')
+                res.redirect('/pip1-v1-1/check-answers-3')
             }
             if (gb === 'Yes' || gb === 'Not sure') {
                 res.redirect('/pip1-v1-1/eu-question')
@@ -679,6 +679,19 @@ module.exports = function (router) {
     // COMPLEX APPLICATION CONTACT DETAILS END
 
     // RETURNING USER FLOW START
+    router.post('/pip1-v1-1/save_and_return/intro-question', (req, res, next) => {
+        const returnSingin = req.session.data['new-existing'];
+        if (returnSingin === 'Yes') {
+            res.redirect('/pip1-v1-1/save_and_return/sign-in');
+        } else {
+            res.redirect('/pip1-v1-1/sign-in/register-start');
+        }
+    });
+
+    // router.post('/pip1-v1-1/save_and_return/intro-question', (req, res, next) => {
+    //     res.redirect('/pip1-v1-1/save_and_return/sign-in');
+    // });
+    
     router.post('/pip1-v1-1/save_and_return/sign-in', (req, res, next) => {
         res.redirect('/pip1-v1-1/save_and_return/sign-in-2fa');
     });
