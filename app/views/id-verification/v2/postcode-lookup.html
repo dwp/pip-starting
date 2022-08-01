@@ -1,6 +1,6 @@
 {% extends "layout-idv-signed-in.html" %}
 
-{% set pageQuestion = "Enter a recent Tax Credits payment from your current claim" %}
+{% set pageQuestion = "What is your home address?" %}
 
 {% block pageTitle %}
   {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -21,34 +21,29 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">About your tax credits</span>
+      <h1 class="govuk-heading-xl">{{ pageQuestion }}</h1>
 
-      <form class="form" action="/id-verification/v1/documents/tax-credits-q2" method="post">
+      <form class="form" action="/id-verification/v2/postcode-select" method="post">
 
         {{ govukInput({
-          id: "tax-credits",
-          name: "tax-credits",
           label: {
-            text: "Enter a recent Tax Credits payment from your current claim",
-            classes: "govuk-label--xl",
-            isPageHeading: true
+            text: "Postcode",
+            classes: "govuk-label--m"
           },
           hint: {
-            text: "For example 36.75"
-          },
-          prefix: {
-            text: "£"
+            text: "Enter your UK postcode"
           },
           classes: "govuk-input--width-10",
-          spellcheck: false
+          id: "postcode",
+          name: "postcode"
         }) }}
 
-        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+        <button class="govuk-button" data-module="govuk-button">Find address</button>
 
       </form>
 
       <p>
-        <a href="#">I don't have that information</a>
+        <a href="/id-verification/v2/address">Enter address manually</a>
       </p>
 
     </div>

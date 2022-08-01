@@ -1,6 +1,6 @@
 {% extends "layout-idv.html" %}
 
-{% set pageQuestion = "Verify your account" %}
+{% set pageQuestion = "Verify your email address" %}
 
 {% block pageTitle %}
   {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -21,9 +21,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">We have sent you a text message with your security code</h1>
+      <h1 class="govuk-heading-xl">We have sent you an email with your security code</h1>
 
-      <form class="form" action="/id-verification/v1/name" method="post">
+      <form class="form" action="/id-verification/v2/create-password" method="post">
 
         <p>It should only take one minute to arrive.</p>
 
@@ -33,8 +33,8 @@
             classes: "govuk-label--m",
             isPageHeading: false
           },
-          id: "mobile-security-code",
-          name: "mobile-security-code",
+          id: "email-security-code",
+          name: "email-security-code",
           type: "text",
           classes: "govuk-input--width-10"
         }) }}
@@ -42,10 +42,6 @@
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
-
-      <p>
-        <a href="#">I did not get a text message</a>
-      </p>
 
     </div>
   </div>
