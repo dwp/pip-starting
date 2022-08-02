@@ -1,6 +1,6 @@
 {% extends "layout-idv-signed-in.html" %}
 
-{% set pageQuestion = "What is your home address?" %}
+{% set pageQuestion = "What is your postcode?" %}
 
 {% block pageTitle %}
   {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -23,28 +23,21 @@
 
       <h1 class="govuk-heading-xl">{{ pageQuestion }}</h1>
 
-      <form class="form" action="/id-verification/v2/postcode-select" method="post">
+      <form class="form" action="/id-verification/v2/id-verification-start" method="post">
 
         {{ govukInput({
           label: {
             text: "Postcode",
             classes: "govuk-label--m"
           },
-          hint: {
-            text: "Enter your UK postcode"
-          },
           classes: "govuk-input--width-10",
           id: "postcode",
           name: "postcode"
         }) }}
 
-        <button class="govuk-button" data-module="govuk-button">Find address</button>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
       </form>
-
-      <p>
-        <a href="/id-verification/v2/address">Enter address manually</a>
-      </p>
 
     </div>
   </div>
