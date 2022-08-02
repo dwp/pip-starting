@@ -65,7 +65,11 @@ Do you need help to fill in forms
       <input type="submit" class="govuk-button" value="Save and continue" id="submit">
 
     </div> <!-- govuk-grid-column-two-thirds -->
-  </div> <!-- govuk-grid-column-two-thirds -->
+    <div class="govuk-grid-column-one-third">
+      {% include "includes/help-one-third.html" %}
+    </div> <!-- govuk-grid-column-one-third -->
+
+  </div> <!-- govuk-grid-row -->
 </form>
 
 {% endblock %}
