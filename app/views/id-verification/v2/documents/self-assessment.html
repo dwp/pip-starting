@@ -30,6 +30,30 @@
         <li>If a pension or benefit does not apply to you, enter 0</li>
       </ul>
 
+      <details class="govuk-details" data-module="govuk-details" open="">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Where to find these details on your tax return
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">Enter the information from your tax return using the numbered boxes to help you.</p>
+          <p class="govuk-body">For example, on your tax return:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>State Pension is box 8</li>
+            <li>Pensions (other than State Pensions), retirement annuities and taxable lump sums treated as pensions is
+              box 11</li>
+            <li>Taxable Incapacity Benefit and contribution-based Employment and Support Allowance (ESA) is box 13</li>
+            <li>Jobseeker’s allowance is box 15</li>
+            <li>Total of any other taxable State Pensions and benefits is box 16</li>
+          </ul>
+          <h4 class="govuk-heading-s">Online submissions</h4>
+          <img src="/public/images/sa-pension-online.png" alt="Photo of online self assessment submission showing described boxes">
+          <h4 class="govuk-heading-s govuk-!-margin-top-6">Paper submissions</h4>
+          <img src="/public/images/sa-pension-paper.png" alt="Photo of paper self assessment submission form showing described boxes" width="605" height="303">
+        </div>
+      </details>
+
       <form class="form" action="/id-verification/v2/documents/tax-credits-q1" method="post">
 
         {{ govukInput({
