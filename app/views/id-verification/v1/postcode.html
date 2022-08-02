@@ -1,6 +1,6 @@
 {% extends "layout-idv-signed-in.html" %}
 
-{% set pageQuestion = "What is your date of birth?" %}
+{% set pageQuestion = "What is your postcode?" %}
 
 {% block pageTitle %}
   {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -21,21 +21,18 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/id-verification/v1/postcode" method="post">
+      <h1 class="govuk-heading-xl">{{ pageQuestion }}</h1>
 
-        {{ govukDateInput({
-          id: "passport-issued",
-          namePrefix: "passport-issued",
-          fieldset: {
-            legend: {
-              text: "What is your date of birth?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
-            }
+      <form class="form" action="/id-verification/v1/id-verification-start" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Postcode",
+            classes: "govuk-label--m"
           },
-          hint: {
-            text: "For example, 27 3 2007"
-          }
+          classes: "govuk-input--width-10",
+          id: "postcode",
+          name: "postcode"
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
