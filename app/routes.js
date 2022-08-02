@@ -40,6 +40,7 @@ const pip2v1point1 = require('./routes/pip2-v1-1')
 const alternativeTasklist = require('./routes/alternative-tasklist')
 const alternativeTasklistTwo = require('./routes/alternative-tasklist-1-1')
 const idVerification = require('./routes/id-verification')
+const addsupport = require('./routes/addsupport')
 
 // ROUTES REDIRECT END
 
@@ -80,6 +81,7 @@ pip2v1point1(router);
 alternativeTasklist(router);
 alternativeTasklistTwo(router);
 idVerification(router);
+addsupport(router);
 router.use('/', authRoutes)
 router.use('/', idvRoutes)
 // ROUTER LIST END
