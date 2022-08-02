@@ -1,0 +1,77 @@
+{% extends "layout-signed-in-v11.html" %}
+
+{% block pageTitle %}
+Do you need help to complete yur claim
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link-v11.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+      <div class="govuk-width-container">
+       
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+      
+              <h1 class="govuk-heading-xl">
+                Difficulties understanding information or communicating
+              </h1>
+      
+              <p class="govuk-body">We understand that some people might find it difficult to complete their claim due to the following conditions or disabilities:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Mental health conditions, for example, depression, anxiety, post-traumatic stress disorder (PTSD), obsessive-compulsive disorder (OCD), psychosis, schizophrenia, bipolar or a personality disorder</li>
+                <li>Behavioural conditions, for example, attention deficit hyperactivity disorder (ADHD) or conduct disorder</li>
+                <li>Learning difficulties, for example, Down’s syndrome or fragile X syndrome</li>
+                <li>Developmental disorders, for example, autistic spectrum disorder, developmental delay, speech or language disorders</li>
+                <li>Memory problems, for example, due to a brain injury, or any form of dementia – like Alzheimer’s or vascular dementia</li>
+              </ul>
+      
+              <form action="#" method="post" novalidate>
+      
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      Do you have a condition like this?
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="add-support-condition-1" name="add-support-condition" type="radio" value="Yes">
+                        <label class="govuk-label govuk-radios__label" for="add-support-condition-1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="add-support-condition-2" name="add-support-condition" type="radio" value="No">
+                        <label class="govuk-label govuk-radios__label" for="add-support-condition-2">
+                          No
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="add-support-condition-3" name="add-support-condition" type="radio" value="Not sure">
+                        <label class="govuk-label govuk-radios__label" for="add-support-condition-3">
+                          Not sure
+                        </label>
+                      </div>
+                    </div>
+      
+                  </fieldset>
+                </div> <!-- govuk-form-group -->
+                <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+              </form>
+      
+       
+
+     
+
+    </div> <!-- govuk-grid-column-two-thirds -->
+  </div> <!-- govuk-grid-column-two-thirds -->
+
+</main>
+</div>
+
+{% endblock %}
