@@ -1,6 +1,6 @@
 {% extends "layout-idv-signed-in.html" %}
 
-{% set pageQuestion = "Enter a recent Tax Credits payment from your current claim" %}
+{% set pageQuestion = "Enter the 'Total for year' figure on your P60" %}
 
 {% block pageTitle %}
   {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -21,20 +21,28 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">About your tax credits</span>
+      <span class="govuk-caption-xl">About your P60</span>
+      <h1 class="govuk-heading-xl">{{ pageQuestion }}</h1>
 
-      <form class="form" action="/id-verification/v1/documents/tax-credits-q2" method="post">
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Use a P60 from the financial year 2020 to 2021</li>
+        <li>Get the figure from the 'Pay column' in the 'Pay and Income Tax details' section</li>
+        <li>Enter the 'Total for the year' figure exactly, including pence</li>
+        <li>The 'Total for year' figure must be more than 0.00</li>
+      </ul>
+
+      <form class="form" action="/id-verification/v2/documents/p60-q2" method="post">
 
         {{ govukInput({
-          id: "tax-credits",
-          name: "tax-credits",
+          id: "total-year-anount",
+          name: "total-year-anount",
           label: {
-            text: "Enter a recent Tax Credits payment from your current claim",
-            classes: "govuk-label--xl",
+            text: "'Total for year' figure",
+            classes: "govuk-label--m",
             isPageHeading: true
           },
           hint: {
-            text: "For example 36.75"
+            text: "For example 21350.75"
           },
           prefix: {
             text: "£"

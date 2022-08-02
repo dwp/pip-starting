@@ -1,6 +1,6 @@
 {% extends "layout-idv.html" %}
 
-{% set pageQuestion = "Verify your account" %}
+{% set pageQuestion = "Enter your mobile phone number" %}
 
 {% block pageTitle %}
   {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -21,31 +21,33 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">We have sent you a text message with your security code</h1>
+      <h1 class="govuk-heading-xl">{{ pageQuestion }}</h1>
 
-      <form class="form" action="/id-verification/v1/name" method="post">
+      <form class="form" action="/id-verification/v2/mobile-phone-verification" method="post">
 
-        <p>It should only take one minute to arrive.</p>
+        <p>We will send a security code to this number.</p>
+
+        <p>Whenever you sign in to this service we will send a new security code.</p>
 
         {{ govukInput({
           label: {
-            text: "Enter your 6-digit security code",
+            text: "Mobile phone number",
             classes: "govuk-label--m",
-            isPageHeading: false
+            isPageHeading: true
           },
-          id: "mobile-security-code",
-          name: "mobile-security-code",
-          type: "text",
-          classes: "govuk-input--width-10"
+          hint: {
+            text: "For international numbers include the country code"
+          },
+          id: "telephone-number",
+          name: "telephone-number",
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-input--width-20"
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
-
-      <p>
-        <a href="#">I did not get a text message</a>
-      </p>
 
     </div>
   </div>

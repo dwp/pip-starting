@@ -1,6 +1,6 @@
 {% extends "layout-idv-signed-in.html" %}
 
-{% set pageQuestion = "Enter a recent Tax Credits payment from your current claim" %}
+{% set pageQuestion = "Enter the last 4 digits of the account your Tax credits are paid into" %}
 
 {% block pageTitle %}
   {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -23,23 +23,20 @@
 
       <span class="govuk-caption-xl">About your tax credits</span>
 
-      <form class="form" action="/id-verification/v1/documents/tax-credits-q2" method="post">
+      <form class="form" action="/id-verification/v2/documents/tax-credits-q3" method="post">
 
         {{ govukInput({
           id: "tax-credits",
           name: "tax-credits",
           label: {
-            text: "Enter a recent Tax Credits payment from your current claim",
+            text: "Enter the last 4 digits of the account your Tax credits are paid into",
             classes: "govuk-label--xl",
             isPageHeading: true
           },
           hint: {
-            text: "For example 36.75"
+            text: "Get your account number from a bank card, statement, paying in book or cheque book"
           },
-          prefix: {
-            text: "£"
-          },
-          classes: "govuk-input--width-10",
+          classes: "govuk-input--width-5",
           spellcheck: false
         }) }}
 
