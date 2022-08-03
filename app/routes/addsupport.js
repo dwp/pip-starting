@@ -23,24 +23,24 @@ router.post('/additional_support/add-support-help', function(req, res) {
             if (req.session.data['add-support'] == "Yes") {
                        res.redirect('/additional_support/add-support-someone-helping')
                      } else if (req.session.data['add-support'] == "No") {
-                       res.redirect('#')
+                       res.redirect('check-answers-1')
                      }
         })
 router.post('/additional_support/add-support-someone-helping', function(req, res) {
-            if (req.session.data['add-support-help'] == "Yes") {
+            if (req.session.data['add-support-help'] == "No") {
                        res.redirect('/additional_support/add-support-continue-claim')
-                     } else if (req.session.data['add-support-help'] == "No") {
-                       res.redirect('#')
+                     } else if (req.session.data['add-support-help'] == "Yes") {
+                       res.redirect('check-answers-1')
                      }
         })
 router.post('/additional_support/add-support-continue-claim', function(req, res) {
-            if (req.session.data['add-support-professional'] == "Yes") {
-                       res.redirect('#')
+            if (req.session.data['add-support-continue'] == "Yes") {
+                       res.redirect('check-answers-1')
                     }
-                    else if (req.session.data['add-support-professional'] == "No") {
+                    else if (req.session.data['add-support-continue'] == "No") {
                       res.redirect('add-support-we-need-to-get-in-touch')
                     }
-                    else if (req.session.data['add-support-professional'] == "not sure") {
+                    else if (req.session.data['add-support-continue'] == "not sure") {
                       res.redirect('add-support-we-need-to-get-in-touch')
                     }
         })
