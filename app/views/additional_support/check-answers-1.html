@@ -30,27 +30,42 @@ Check your answers help with applying
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Do you need help from someone else to communicate with us?
+                Do you have any of these conditions?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['add-support-communicating'] }}
+                {{ data['add-support-condition'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="add-support-communicating">
-                  Change<span class="govuk-visually-hidden"> if you need help communicating</span>
+                <a class="govuk-link" href="add-support-condition">
+                  Change<span class="govuk-visually-hidden"> if you have one of these conditions</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Do you usually need help from someone else to fill in forms or understand letters?
+                Do you see a psychiatrist, psychiatric nurse, psychologist, counsellor, or other mental health or care
+              professional?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['add-support-professional'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="add-support-professional">
+                  Change<span class="govuk-visually-hidden"> if you see one these health profesionals </span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you need help to fill in forms or understand letters?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['add-support'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="add-support">
+                <a class="govuk-link" href="add-support-help">
                   Change<span class="govuk-visually-hidden"> if you need help </span>
                 </a>
               </dd>
@@ -65,25 +80,24 @@ Check your answers help with applying
                 {{ data['add-support-help'] }}<br>
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="add-support-help">
+                <a class="govuk-link" href="add-support-someone-helping">
                   Change<span class="govuk-visually-hidden"> is someone helping you</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
 
-            {% if data['add-support-help'] === 'Yes' %}
+            {% if data['add-support-help'] === 'No' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Helper's name
+                Do you think you can complete your claim online by yourself?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['add-support-first-name'] }}<br>
-                {{ data['add-support-last-name'] }}
+                {{ data['add-support-continue'] }} 
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="add-support-name">
-                  Change<span class="govuk-visually-hidden"> fisrt name</span>
+                <a class="govuk-link" href="add-support-continue-claim.html">
+                  Change<span class="govuk-visually-hidden"> if you can continue the claim</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
