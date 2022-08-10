@@ -29,9 +29,9 @@ module.exports = function (router) {
     router.post('/live-pip1-v1-0/intro-question', (req, res, next) => {
         const newOld = req.session.data['new-existing'];
         if (newOld === 'Yes') {
-            res.redirect("/live-pip1-v1-0/save_and_return/sign-in");
+            res.redirect("/live-pip1-v1-0/sign-in/register-start");
         } else  {
-            res.redirect('/live-pip1-v1-0/sign-in/register-start');
+            res.redirect('/live-pip1-v1-0/save_and_return/sign-in');
         }
     })
 
