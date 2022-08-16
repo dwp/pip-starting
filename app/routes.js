@@ -42,6 +42,7 @@ const alternativeTasklist = require('./routes/alternative-tasklist')
 const alternativeTasklistTwo = require('./routes/alternative-tasklist-1-1')
 const idVerification = require('./routes/id-verification')
 const addsupport = require('./routes/addsupport')
+const conditionQuestion = require('./routes/condition-question')
 
 // ROUTES REDIRECT END
 
@@ -84,6 +85,7 @@ alternativeTasklist(router);
 alternativeTasklistTwo(router);
 idVerification(router);
 addsupport(router);
+conditionQuestion(router);
 router.use('/', authRoutes)
 router.use('/', idvRoutes)
 // ROUTER LIST END
