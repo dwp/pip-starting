@@ -226,3 +226,23 @@ body .interruption{
     color: black
   }
 }
+
+// email layout styles
+.govuk-container-centred {
+  margin: 0 auto;
+  float: none;
+}
+
+.govuk-email-container {
+  border: 1px solid $govuk-border-colour;
+  padding: 0;
+
+  .govuk-width-container {
+    padding-left: govuk-spacing(6);
+    padding-right: govuk-spacing(6);
+  }
+
+  .govuk-email-content {
+    padding-top: govuk-spacing(6);
+  }
+}

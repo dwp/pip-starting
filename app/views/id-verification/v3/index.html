@@ -1,0 +1,77 @@
+{% extends "layout-email.html" %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-container-centred">
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">From</th>
+            <td class="govuk-table__cell">DWP PIP</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">To</th>
+            <td class="govuk-table__cell">((email address))</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Subject</th>
+            <td class="govuk-table__cell">Start your Personal Independence Payment claim</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-container-centred govuk-email-container">
+
+      {{ govukHeader({
+        homepageUrl: "#"
+      }) }}
+
+      <div class="govuk-width-container govuk-email-content">
+
+        <p>Dear ((full name))</p>
+
+        <p>Thank you for agreeing to claim Personal Independence Payment (PIP).</p>
+
+        <p>This is a new service. By using it you'll help us to develop and improve it.</p>
+
+        <h2 class="govuk-heading-m">Make a claim</h2>
+
+        <p>You'll need to register and create a password before you start your claim.</p>
+
+        <div class="govuk-inset-text">
+          Register and claim at <a href="create-pip-account">link</a>
+        </div>
+
+        <h2 class="govuk-heading-m">When you need to submit your claim by</h2>
+
+        <p>Register and complete the first stage of the claim as soon as you can.</p>
+
+        <h2 class="govuk-heading-m">Get help</h2>
+
+        <div class="govuk-inset-text">
+          Telephone: 0800 121 6279
+        </div>
+
+        <p>Yours sincerely,</p>
+
+        <p>Office manager</p>
+
+      </div>
+
+      {{ govukFooter({}) }}
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
