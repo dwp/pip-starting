@@ -42,6 +42,49 @@ router.post('/v12/condition-questions/option-two/condition', function(req, res) 
   req.session.data.queriesCondition[req.session.data.queriesCondition.length - 1].action
 
  res.redirect('/v12/condition-questions/option-two/another-condition')
- 
+
+})
+
+// routes for option 1a.
+router.post('/v12/condition-questions/option-three/condition', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const condition = req.session.data['condition-name-1']
+  const section = req.session.data.source
+  const queriesCondition = req.session.data.queriesCondition || []
+  queriesCondition.push({ condition, section })
+  req.session.data.queriesCondition = queriesCondition
+
+//  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
+  req.session.data.queriesCondition[req.session.data.queriesCondition.length - 1].action
+
+ res.redirect('/v12/condition-questions/option-three/medication')
+
+})
+
+// routes for controlling medication radio buttons
+router.post('/v12/condition-questions/option-three/medication', function(req, res) {
+    if (req.session.data['do-you-take-medication'] == "Yes") {
+               res.redirect('/v12/condition-questions/option-three/your-medication')
+             } else {
+               res.redirect('/v12/condition-questions/option-three/further-treatments')
+             }
+})
+
+// routes for controlling treatments radio buttons
+router.post('/v12/condition-questions/option-three/further-treatments', function(req, res) {
+    if (req.session.data['further-treatments'] == "Yes") {
+               res.redirect('/v12/condition-questions/option-three/your-treatment')
+             } else {
+               res.redirect('/v12/condition-questions/option-three/list-1')
+             }
+})
+
+// routes for controlling side effects radio buttons
+router.post('/v12/condition-questions/option-three/side-effects', function(req, res) {
+    if (req.session.data['do-you-get-side-effects'] == "Yes") {
+               res.redirect('/v12/condition-questions/option-three/side-effects-detail')
+             } else {
+               res.redirect('/v12/condition-questions/option-three/list-1')
+             }
 })
 }
