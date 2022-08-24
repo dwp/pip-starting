@@ -1,0 +1,44 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "layout-p5-v11.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v11/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">What other treatments have you had, are having, or have planned?</h1>
+        <p class="govuk-hint">For example, physiotherapy, kidney dialysis or radio therapy.
+                              Include NHS and privately funded treatment.</p>
+
+      {{ govukInput({
+        id: 'treatments',
+        name: "treatment-name-1",
+        label: {
+          html: 'Treatment name'
+        }
+      }) }}
+
+
+      {{ govukButton({
+        text: 'Save and continue',
+        href: "side-effects"
+      }) }}
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
