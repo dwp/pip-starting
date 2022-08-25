@@ -17,19 +17,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/live-pip2-v1-0/moving-around/details" method="post" novalidate>
+    <form action="/live-pip2-v1-0/moving-around/why-it-varies" method="post" novalidate>
 
-      {% set variesHtml %}
-      {{ govukTextarea({
-        name: "movingaround-info-varies",
-        id: "movingaround-info-varies",
-        rows: "6",
-        value: data['movingaround-info-varies'],
-        label: {
-          text: "Please tell us why"
-        }
-      }) }}
-      {% endset -%}
 
       {{ govukRadios({
         name: "movingaround-info",
@@ -76,10 +65,7 @@
           {
             value: "It varies",
             text: "It varies",
-            checked: checked("movingaround-info", "It varies"),
-            conditional: {
-              html: variesHtml
-            }
+            checked: checked("movingaround-info", "It varies")
           }
         ]
       }) }}
