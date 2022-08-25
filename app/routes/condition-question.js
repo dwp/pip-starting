@@ -65,9 +65,9 @@ router.post('/v12/condition-questions/option-three/condition', function(req, res
 router.post('/v12/condition-questions/option-three/your-medication', function(req, res) {
   console.log('is-this-calling', req.session.data)
   const medication = req.session.data['medication-name']
-  const section = req.session.data.source
+  const dosage = req.session.data['dosage-name']
   const queriesMedication = req.session.data.queriesMedication || []
-  queriesMedication.push({ medication, section })
+  queriesMedication.push({ medication, dosage })
   req.session.data.queriesMedication = queriesMedication
 
 //  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']

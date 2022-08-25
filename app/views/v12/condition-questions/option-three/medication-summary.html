@@ -15,7 +15,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
+{% for query in data['queriesMedication'] %}
     <form action="#" method="post" novalidate>
 
       <dl class="govuk-summary-list">
@@ -45,11 +45,18 @@
         </a>
       </dd>
     </div>
-    
+      {% endfor %}
 
+    <br>
       {{ govukButton({
         text: 'Save and continue'
       }) }}
+
+      {{ govukButton({
+      text: "Add another",
+      classes: "govuk-button--secondary",
+      href: "your-medication"
+    }) }}
 
     </form>
 
