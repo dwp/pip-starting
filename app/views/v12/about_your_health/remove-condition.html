@@ -1,4 +1,4 @@
-{% extends "layout-signed-in-v11.html" %}
+{% extends "layout-signed-in-v12.html" %}
 
 {% block pageTitle %}
   Remove condition - GOV.UK Prototype Kit
@@ -7,7 +7,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      
+
       <form action="/remove-condition" method="post" novalidate>
 
         <input type="hidden" id="binnedConditionId" name="binnedConditionId" value="{{ binnedCondition.id }}">

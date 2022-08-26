@@ -1,4 +1,4 @@
-{% extends "layout-signed-in-v11.html" %}
+{% extends "layout-signed-in-v12.html" %}
 
 {% block pageTitle %}
 Check your answers about your health
@@ -6,7 +6,7 @@ Check your answers about your health
 
 {% block beforeContent %}
 {% include "includes/phase-banner.html" %}
-<!-- {% include "includes/back-link-v11.html" %} -->
+<!-- {% include "includes/back-link-v12.html" %} -->
 {% endblock %}
 
 {% set conditionsLength %}
@@ -121,7 +121,7 @@ Check your answers about your health
                 {{ data['hcp-1-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v11/about_your_health/remove-hcp-confirmation">
+                <a class="govuk-link" href="/v12/about_your_health/remove-hcp-confirmation">
                   Remove<span class="govuk-visually-hidden"> health or care professional name</span>
                 </a>
               </dd>
@@ -176,7 +176,7 @@ Check your answers about your health
                 {{ data['hcp-2-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v11/about_your_health/remove-hcp-confirmation">
+                <a class="govuk-link" href="/v12/about_your_health/remove-hcp-confirmation">
                   Remove
                 </a>
               </dd>
@@ -231,7 +231,7 @@ Check your answers about your health
                 {{ data['hcp-3-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v11/about_your_health/remove-hcp-confirmation">
+                <a class="govuk-link" href="/v12/about_your_health/remove-hcp-confirmation">
                   Remove<span class="govuk-visually-hidden"> health or care professional name</span>
                 </a>
               </dd>
@@ -400,7 +400,7 @@ Check your answers about your health
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            
+
             {% endif %}
 
             {% if data['hospital'] === 'Other' %}
@@ -437,7 +437,7 @@ Check your answers about your health
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
-            
+
             {% endif %}
           </dl>
 
