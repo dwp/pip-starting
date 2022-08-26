@@ -71,7 +71,7 @@ router.post('/v12/condition-questions/option-three/your-medication', function(re
   req.session.data.queriesMedication = queriesMedication
 
 //  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
-  req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action
+  //req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action = req.session.data['medication-name']
     res.redirect('/v12/condition-questions/option-three/medication-summary')
 })
 

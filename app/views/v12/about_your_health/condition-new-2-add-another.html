@@ -1,10 +1,10 @@
-{% extends "layout-signed-in-v11.html" %}
+{% extends "layout-signed-in-v12.html" %}
 {% block pageTitle %}
 Your health condition
 {% endblock %}
 {% block beforeContent %}
 {% include "includes/phase-banner.html" %}
-{% include "includes/back-link-v11.html" %}
+{% include "includes/back-link-v12.html" %}
 {% endblock %}
 {% set conditionsLength %}
 {{ data.conditions | length }}
@@ -69,7 +69,7 @@ Your health condition
                                        data-id="conditions[%index%][date]">
                             </div> <!-- govuk-form-group -->
                         <!-- </div> <!-- govuk-date-input__item -->
-                    <!-- </div> <!-- govuk-form-group --> 
+                    <!-- </div> <!-- govuk-form-group -->
                     {% if conditionsLength > 1 %}
                     <button type="button" class="govuk-button govuk-button--secondary moj-add-another__remove-button">
                         Remove
@@ -114,7 +114,7 @@ Your health condition
                                        value="condition.date">
                             </div> <!-- govuk-form-group -->
                         </div> <!-- govuk-date-input__item -->
-                    </div> <!-- govuk-form-group --> 
+                    </div> <!-- govuk-form-group -->
                     <button type="button" class="govuk-button govuk-button--secondary moj-add-another__remove-button">
                         Remove
                     </button>
