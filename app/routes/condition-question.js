@@ -75,6 +75,19 @@ router.post('/v12/condition-questions/option-three/your-medication', function(re
     res.redirect('/v12/condition-questions/option-three/medication-summary')
 })
 
+// routes for controlling treatment details radio buttons
+router.post('/v12/condition-questions/option-three/your-treatment', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const treatment = req.session.data['treatment-name']
+  const queriesTreatment = req.session.data.queriesTreatment || []
+  queriesTreatment.push({ treatment })
+  req.session.data.queriesTreatment = queriesTreatment
+
+//  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
+  //req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action = req.session.data['medication-name']
+    res.redirect('/v12/condition-questions/option-three/treatment-summary')
+})
+
 
 // routes for controlling medication radio buttons
 router.post('/v12/condition-questions/option-three/medication', function(req, res) {
