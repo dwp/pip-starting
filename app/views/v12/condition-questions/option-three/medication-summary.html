@@ -1,14 +1,14 @@
 {% set pageTitle = "What health conditions or disabilities do you have?" %}
 
-{% extends "layout-p5-v11.html" %}
+{% extends "layout-p5-v12.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5-v11/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5-v11/_beta-banner.html" %}
-  {% include "includes/back-link-v7.html" %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
 {% endblock %}
 
 {% block content %}
@@ -17,7 +17,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <form action="#" method="post" novalidate>
-      <dl class="govuk-summary-list">
+      <!-- <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       {% for query in data['queriesMedication'] %}
       <dt class="govuk-summary-list__key">
@@ -40,13 +40,32 @@
         {{ query.dosage }}
       </dd>
           {% endfor %}
-
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="#">
           Change<span class="govuk-visually-hidden">dosage</span>
         </a>
       </dd>
-    </div>
+    </div> -->
+
+<!-- table for medications and dosage -->
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+
+  <tbody class="govuk-table__body">
+    {% for query in data['queriesMedication'] %}
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Medication name</th>
+      <td class="govuk-table__cell">{{ query.medication }}</td>
+      <td class="govuk-table__cell"><a href="#">Change</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Dosage</th>
+      <td class="govuk-table__cell">{{ query.dosage }}</td>
+      <td class="govuk-table__cell"><a href="#">Change</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
     <br>
       {{ govukButton({
@@ -54,7 +73,7 @@
       }) }}
 
       {{ govukButton({
-      text: "Add another",
+      text: "Add another medication",
       classes: "govuk-button--secondary",
       href: "your-medication"
     }) }}
