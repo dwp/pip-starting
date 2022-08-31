@@ -18,9 +18,9 @@
 
     <form action="#" method="post" novalidate>
 
-      <h1 class="govuk-heading-l">What other treatments have you had, are having, or have planned?</h1>
+      <h1 class="govuk-heading-l">What other treatments have you had, are having, or expecting?</h1>
         <p class="govuk-hint">For example, physiotherapy, kidney dialysis or radio therapy.
-                              Include NHS and privately funded treatment.</p>
+                                Include NHS and privately funded treatment.</p>
 
       {{ govukInput({
         id: 'treatments',
@@ -29,6 +29,16 @@
           html: 'Treatment name'
         }
       }) }}
+
+      <div class="govuk-form-group">
+           <label class="govuk-label" for="width-10">
+             Side effects (if you know)
+           </label>
+           <div id="event-name-hint" class="govuk-hint">
+                  For example, dizziness, drowsiness or confusion
+          </div>
+           <input class="govuk-input govuk-input--width-10" id="doseage" name="dosage-name" type="text">
+      </div>
 
 
       {{ govukButton({
