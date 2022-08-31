@@ -48,7 +48,7 @@ router.post('/v12/condition-questions/option-two/condition', function(req, res) 
 // routes for option 1a.
 router.post('/v12/condition-questions/option-three/condition', function(req, res) {
   console.log('is-this-calling', req.session.data)
-  const condition = req.session.data['condition-name-1']
+  const condition = req.session.data['condition-name']
   const section = req.session.data.source
   const queriesCondition = req.session.data.queriesCondition || []
   queriesCondition.push({ condition, section })
