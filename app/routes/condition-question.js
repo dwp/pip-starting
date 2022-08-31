@@ -75,6 +75,19 @@ router.post('/v12/condition-questions/option-three/your-medication', function(re
     res.redirect('/v12/condition-questions/option-three/medication-summary')
 })
 
+// routes for controlling condition name in option 1
+router.post('/v12/condition-questions/condition', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const condition = req.session.data['condition-name']
+  const queriesCondition = req.session.data.queriesCondition || []
+  queriesCondition.push({ condition })
+  req.session.data.queriesCondition = queriesCondition
+
+//  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
+  //req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action = req.session.data['medication-name']
+    res.redirect('/v12/condition-questions/conditions-details')
+})
+
 // routes for controlling treatment details radio buttons
 router.post('/v12/condition-questions/option-three/your-treatment', function(req, res) {
   console.log('is-this-calling', req.session.data)
