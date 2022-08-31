@@ -34,64 +34,7 @@
   {% include "includes/head.html" %}
 {% endblock %}
 
-{% block pageTitle %}
-  Apply for Personal Independent Payment (PIP) – GOV.UK Prototype Kit
-{% endblock %}
-
-{% from "govuk/components/header/macro.njk" import govukHeader %}
-{% block header %}
-{# Set serviceName in config.js. #}
-{{ govukHeader({
-  homepageUrl: "/id-verification/v1/sign-in",
-  serviceName: "Apply for Personal Independent Payment (PIP)",
-  serviceUrl: "/",
-  containerClasses: "govuk-width-container",
-  navigation: [
-    {
-      href: "#1",
-      text: "Help and contact"
-    },
-    {
-      href: "#2",
-      text: "Privacy policy"
-    },
-    {
-      href: "#3",
-      text: "Sign out"
-    }
-  ]
-}) }}
-{% endblock %}
-
-{% block beforeContent %}
-{{ govukPhaseBanner({
-tag: {
-  text: "prototype"
-},
-html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
-{% endblock %}
-
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
-
-{% if useAutoStoreData %}
-  {% block footer %}
-    {{ govukFooter({
-      meta: {
-        items: [
-          {
-            href: "https://govuk-prototype-kit.herokuapp.com/",
-            text: "GOV.UK Prototype Kit " + releaseVersion
-          },
-          {
-            href: "/prototype-admin/clear-data",
-            text: "Clear data"
-          }
-        ]
-      }
-    }) }}
-  {% endblock %}
-{% endif %}
 
 {% block bodyEnd %}
   {% block scripts %}

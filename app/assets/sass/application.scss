@@ -226,3 +226,66 @@ body .interruption{
     color: black
   }
 }
+
+// email layout styles
+.govuk-container-centred {
+  margin: 0 auto;
+  float: none;
+}
+
+.govuk-email-container {
+  border: 1px solid $govuk-border-colour;
+  padding: 0;
+
+  .govuk-width-container {
+    padding-left: govuk-spacing(6);
+    padding-right: govuk-spacing(6);
+  }
+
+  .govuk-email-content {
+    padding-top: govuk-spacing(6);
+  }
+}
+
+// Magic link we can use during UR sessions
+.usability-testing-link {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: govuk-colour("orange");
+  &:hover {
+    width: 37px;
+    height: 37px;
+  }
+  &:focus {
+    width: 37px;
+    height: 37px;
+    background-color: $govuk-focus-colour;
+  }
+}
+
+// Overlay and popup
+body.overlay {
+  overflow: hidden;
+
+  .overlay-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.85);
+    z-index: 100;
+  }
+
+  .popup {
+    width: 50%;
+    background-color: white;
+    z-index: 1000;
+    padding: govuk-spacing(6);
+    margin: 60px auto;
+  }
+}
