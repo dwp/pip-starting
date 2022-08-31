@@ -54,7 +54,9 @@
         </div>
       </details>
 
-      <form class="form" action="/id-verification/v1/documents/tax-credits-q1" method="post">
+      <form class="form" method="post" action={% if tcKbv === "true" %} "./tax-credits-question-1"
+         {% elif tuKbv === "true" %} "./tu-question-1" {% elif voiceId === "true" %} "./voice-id"
+          {% else %} "./id-verification-finish" {% endif %}>
 
         {{ govukInput({
           id: "state-pension",
@@ -151,7 +153,7 @@
       </form>
 
       <p>
-        <a href="#">I don't have that information</a>
+        <a href="more-information">I don't have that information</a>
       </p>
 
     </div>

@@ -1,6 +1,6 @@
 {% extends "layout-idv-signed-in.html" %}
 
-{% set pageQuestion = "Enter the amount of National Insurance from a payslip" %}
+{% set pageQuestion = "Enter the amount of tax deducted on a payslip" %}
 
 {% block pageTitle %}
   {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -25,21 +25,26 @@
       <h1 class="govuk-heading-xl">{{ pageQuestion }}</h1>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>Use a payslip dated after 22 May 2021</li>
-        <li>Get the figure from the 'Deductions' section</li>
+        <li>Use a payslip dated after May 20, 2020</li>
+        <li>Get the figure from the 'Deductions' section. It may be called 'PAYE' or 'Income Tax'</li>
         <li>Do not use the 'Year To Date' figure</li>
-        <li>The amount of National Insurance you paid must be more than 0.00</li>
+        <li>The amount of tax deducted must be more than 0.00</li>
       </ul>
 
-      <form class="form" action="/id-verification/v1/documents/payslip-q2" method="post">
+      <form class="form" method="post" action={% if tcKbv === "true" %} "./tax-credits-question-1"
+          {% elif selfassessment === "true" %} "./self-assessment" {% elif tuKbv === "true" %} "./tu-question-1" {% elif voiceId === "true" %} "./voice-id"
+          {% else %} "./id-verification-finish" {% endif %}>
 
         {{ govukInput({
-          id: "ni-anount",
-          name: "ni-anount",
+          id: "tax-anount",
+          name: "tax-anount",
           label: {
-            text: "National Insurance contribution",
+            text: "Amount of tax deducted",
             classes: "govuk-label--m",
             isPageHeading: true
+          },
+          hint: {
+            text: "For example 191.27"
           },
           prefix: {
             text: "£"
@@ -53,7 +58,7 @@
       </form>
 
       <p>
-        <a href="#">I don't have that information</a>
+        <a href="more-information">I don't have that information</a>
       </p>
 
     </div>

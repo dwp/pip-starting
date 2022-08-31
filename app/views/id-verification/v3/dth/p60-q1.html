@@ -31,7 +31,10 @@
         <li>The 'Total for year' figure must be more than 0.00</li>
       </ul>
 
-      <form class="form" action="/id-verification/v1/documents/p60-q2" method="post">
+      <form class="form" method="post" action={% if tcKbv === "true" %} "./p60-question-2?tcKbv=true"
+          {% elif selfassessment === "true" %} "./p60-q2?self-assessment=true" {% elif tuKbv === "true" %} "./p60-q2?tuKbv=true"
+          {% elif voiceId === "true" %} "./p60-q2?voiceId=true" {% else %} "./p60-q2"
+          {% endif %}>
 
         {{ govukInput({
           id: "total-year-anount",
@@ -56,7 +59,7 @@
       </form>
 
       <p>
-        <a href="#">I don't have that information</a>
+        <a href="more-information">I don't have that information</a>
       </p>
 
     </div>

@@ -24,7 +24,9 @@
       <span class="govuk-caption-xl">About your UK passport</span>
       <h1 class="govuk-heading-xl">{{ pageQuestion }}</h1>
 
-      <form class="form" action="/id-verification/v1/documents/payslip-q1" method="post">
+      <form class="form" method="post" action={% if payslip === "true" %} "./payslip"
+        {% elif p60 === "true" %} "./p60" {% elif tcKbv === "true" %} "./tcKbv"
+        {% elif tuKbv === "true" %} "./tuKbv" {% elif voiceId === "true" %} "./voice-id" {% else %} "./self-assessment" {% endif %}>
 
         {{ govukInput({
           label: {
@@ -96,7 +98,7 @@
       </form>
 
       <p>
-        <a href="#">I don't have that information</a>
+        <a href="more-information">I don't have that information</a>
       </p>
 
     </div>

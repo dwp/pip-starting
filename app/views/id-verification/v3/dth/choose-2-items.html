@@ -22,27 +22,14 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-      {{ govukErrorSummary({
-        titleText: "There is a problem",
-        errorList: [
-          {
-            text: "Please select two options",
-            href: "#checkbox-error"
-          }
-        ]
-      }) }}
-
-      <h1 class="govuk-heading-xl ">
+      <h1 class="govuk-heading-xl">
         Choose 2 items we can ask you about
       </h1>
 
       <form method="post" action="/id-verification/v3/idvselection">
-        <div class="govuk-form-group govuk-form-group--error">
+        <div class="govuk-form-group">
           <fieldset data-minimum-options="2" data-error-multi="Select at least x options" class="govuk-fieldset"
             data-error="Select an option">
-            <span id="checkbox-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Please select two options
-            </span>
 
             <!-- cycle around the radios -->
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -108,7 +95,7 @@
               </div>
 
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="self-assessment" name="ivQuestionLogic" type="checkbox" value="self-assessment" aria-describedby="selfassessment-item-hint">
+                <input class="govuk-checkboxes__input" id="self-assessment" name="self-assessment" type="checkbox" value="true" aria-describedby="selfassessment-item-hint">
                 <label class="govuk-label govuk-checkboxes__label" for="self-assessment">
                   Self Assessment
                 </label>
@@ -199,5 +186,4 @@
       </form>
     </div>
   </div>
-
 {% endblock %}
