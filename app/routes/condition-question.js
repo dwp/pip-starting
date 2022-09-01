@@ -6,11 +6,19 @@ module.exports = function (router) {
 
   router.post('/v12/condition-questions/another-condition', function(req, res) {
       if (req.session.data['condition2'] == "Yes") {
-                 res.redirect('/v12/condition-questions/condition')
+                 res.redirect('/v12/condition-questions/condition-additional')
                } else {
                  res.redirect('/v12/condition-questions/check-answers')
                }
   })
+
+  // router.post('/v12/condition-questions/condition-additional', function(req, res) {
+  //     if (req.session.data['condition2'] == "Yes") {
+  //                res.redirect('/v12/condition-questions/condition-another')
+  //              } else {
+  //                res.redirect('/v12/condition-questions/check-answers')
+  //              }
+  // })
 
 
 router.post('/v12/condition-questions/option-two/another-condition', function(req, res) {
@@ -61,9 +69,22 @@ router.post('/v12/condition-questions/option-three/condition', function(req, res
 
 })
 
+// routes for controlling adding another condition name in option 1
+router.post('/v12/condition-questions/option-three/condition-additional', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const condition = req.session.data['condition-name']
+  const queriesCondition = req.session.data.queriesCondition || []
+  queriesCondition.push({ condition })
+  req.session.data.queriesCondition = queriesCondition
+
+//  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
+  //req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action = req.session.data['medication-name']
+    res.redirect('/v12/condition-questions/option-three/another-condition')
+})
+
 router.post('/v12/condition-questions/option-three/another-condition', function(req, res) {
     if (req.session.data['condition2'] == "Yes") {
-               res.redirect('/v12/condition-questions/option-three/condition')
+               res.redirect('/v12/condition-questions/option-three/condition-additional')
              } else {
                res.redirect('/v12/condition-questions/option-three/check-answers')
              }
@@ -99,6 +120,32 @@ router.post('/v12/condition-questions/option-three/your-medication-another', fun
 
 // routes for controlling condition name in option 1
 router.post('/v12/condition-questions/condition', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const condition = req.session.data['condition-name']
+  const queriesCondition = req.session.data.queriesCondition || []
+  queriesCondition.push({ condition })
+  req.session.data.queriesCondition = queriesCondition
+
+//  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
+  //req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action = req.session.data['medication-name']
+    res.redirect('/v12/condition-questions/conditions-details')
+})
+
+// routes for controlling condition name in option 1
+router.post('/v12/condition-questions/condition', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const condition = req.session.data['condition-name']
+  const queriesCondition = req.session.data.queriesCondition || []
+  queriesCondition.push({ condition })
+  req.session.data.queriesCondition = queriesCondition
+
+//  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
+  //req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action = req.session.data['medication-name']
+    res.redirect('/v12/condition-questions/conditions-details')
+})
+
+// routes for controlling adding another condition name in option 1
+router.post('/v12/condition-questions/condition-additional', function(req, res) {
   console.log('is-this-calling', req.session.data)
   const condition = req.session.data['condition-name']
   const queriesCondition = req.session.data.queriesCondition || []
