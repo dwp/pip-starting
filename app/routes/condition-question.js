@@ -57,12 +57,34 @@ router.post('/v12/condition-questions/option-three/condition', function(req, res
 //  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
   req.session.data.queriesCondition[req.session.data.queriesCondition.length - 1].action
 
- res.redirect('/v12/condition-questions/option-three/medication')
+ res.redirect('/v12/condition-questions/option-three/another-condition')
 
+})
+
+router.post('/v12/condition-questions/option-three/another-condition', function(req, res) {
+    if (req.session.data['condition2'] == "Yes") {
+               res.redirect('/v12/condition-questions/option-three/condition')
+             } else {
+               res.redirect('/v12/condition-questions/option-three/check-answers')
+             }
 })
 
 // routes for controlling medication details radio buttons
 router.post('/v12/condition-questions/option-three/your-medication', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const medication = req.session.data['medication-name']
+  const dosage = req.session.data['dosage-name']
+  const queriesMedication = req.session.data.queriesMedication || []
+  queriesMedication.push({ medication, dosage })
+  req.session.data.queriesMedication = queriesMedication
+
+//  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
+  //req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action = req.session.data['medication-name']
+    res.redirect('/v12/condition-questions/option-three/medication-summary')
+})
+
+// routes for controlling adding another medication
+router.post('/v12/condition-questions/option-three/your-medication-another', function(req, res) {
   console.log('is-this-calling', req.session.data)
   const medication = req.session.data['medication-name']
   const dosage = req.session.data['dosage-name']
@@ -90,6 +112,19 @@ router.post('/v12/condition-questions/condition', function(req, res) {
 
 // routes for controlling treatment details radio buttons
 router.post('/v12/condition-questions/option-three/your-treatment', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const treatment = req.session.data['treatment-name']
+  const queriesTreatment = req.session.data.queriesTreatment || []
+  queriesTreatment.push({ treatment })
+  req.session.data.queriesTreatment = queriesTreatment
+
+//  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
+  //req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action = req.session.data['medication-name']
+    res.redirect('/v12/condition-questions/option-three/treatment-summary')
+})
+
+// routes for controlling treatment add another button
+router.post('/v12/condition-questions/option-three/your-treatment-another', function(req, res) {
   console.log('is-this-calling', req.session.data)
   const treatment = req.session.data['treatment-name']
   const queriesTreatment = req.session.data.queriesTreatment || []
