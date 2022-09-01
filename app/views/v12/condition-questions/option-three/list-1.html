@@ -57,15 +57,39 @@
                   </span>
                 </a>
                 {% elif sectionStatus.aboutyourhealth === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5-v12/about-your-health/condition">
+                <a class="app-task-list__task-name " href="condition">
                   About your health
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="aboutyourhealth">Not complete</strong>
                   </span>
                 </a>
                 {% else %}
-                <a class="app-task-list__task-name" href="condition-pip2">
+                <a class="app-task-list__task-name" href="condition">
                   About your health
+                  <span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="aboutyourhealth">Not started</strong>
+                  </span>
+                </a>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              {% if sectionStatus.aboutyourhealth === "completed" %}
+                <a class="app-task-list__task-name "href="/v12/conditions-questions/option-three/medications">
+                  About your medications and treatments
+                  <span>
+                    <strong class="govuk-tag app-task-list__task-completed" id="aboutyourhealth">Completed</strong>
+                  </span>
+                </a>
+                {% elif sectionStatus.aboutyourhealth === "inprogress" %}
+                <a class="app-task-list__task-name " href="medication">
+                  About your medications and treatments
+                  <span>
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="aboutyourhealth">Not complete</strong>
+                  </span>
+                </a>
+                {% else %}
+                <a class="app-task-list__task-name" href="medication">
+                 About your medications and treatments
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="aboutyourhealth">Not started</strong>
                   </span>

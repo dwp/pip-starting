@@ -57,6 +57,17 @@ module.exports = function (app) {
       req.session.sectionStatus.aboutyourhealth = req.query.aboutyourhealth
     };
 
+    // about your medications and treatments
+    if (req.query.medicationsTreatments == 'completed') {
+      if (req.session.sectionStatus.medicationsTreatments != 'completed') {
+        req.session.sectionCount = (req.session.sectionCount + 1);
+      }
+      req.session.sectionStatus.medicationsTreatments = req.query.medicationsTreatments
+    };
+    if (req.query.medicationsTreatments == 'inprogress') {
+      req.session.sectionStatus.medicationsTreatments = req.query.medicationsTreatments
+    };
+
     // aboutyourhealthprofessionals
     if (req.query.aboutyourhealthprofessionals == 'completed') {
       if (req.session.sectionStatus.aboutyourhealthprofessionals != 'completed') {
