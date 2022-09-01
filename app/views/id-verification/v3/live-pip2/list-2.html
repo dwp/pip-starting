@@ -217,13 +217,18 @@
               <a class="app-task-list__task-name " href="#">
                Upload supporting evidence and apply
                 <span>
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="uploadsupportingevidenceandapply">Not started</strong>
+                  <strong class="govuk-tag govuk-tag app-task-list__task-completed" id="uploadsupportingevidenceandapply">Completed</strong>
                 </span>
               </a>
             </li>
           </ul>
         </li>
       </ol>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/id-verification/v3/live-pip2/apply/declaration"
+      }) }}
 
     </div>
   </div>

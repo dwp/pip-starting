@@ -32,7 +32,7 @@
       </ul>
 
       <form class="form" method="post" action={% if tcKbv === "true" %} "./payslip-q2?tcKbv=true"
-          {% elif selfassessment === "true" %} "./payslip-q2?self-assessment=true" {% elif tuKbv === "true" %} "./payslip-q2?tuKbv=true"
+          {% elif selfassessment === "true" %} "./payslip-q2?selfassessment=true" {% elif tuKbv === "true" %} "./payslip-q2?tuKbv=true"
           {% elif voiceId === "true" %} "./payslip-q2?voiceId=true" {% else %} "./payslip-q2"
           {% endif %}>
 

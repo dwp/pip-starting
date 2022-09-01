@@ -31,8 +31,8 @@
         <li>The 'Total for year' figure must be more than 0.00</li>
       </ul>
 
-      <form class="form" method="post" action={% if tcKbv === "true" %} "./p60-question-2?tcKbv=true"
-          {% elif selfassessment === "true" %} "./p60-q2?self-assessment=true" {% elif tuKbv === "true" %} "./p60-q2?tuKbv=true"
+      <form class="form" method="post" action={% if tcKbv === "true" %} "./p60-q2?tcKbv=true"
+          {% elif selfassessment === "true" %} "./p60-q2?selfassessment=true" {% elif tuKbv === "true" %} "./p60-q2?tuKbv=true"
           {% elif voiceId === "true" %} "./p60-q2?voiceId=true" {% else %} "./p60-q2"
           {% endif %}>
 
