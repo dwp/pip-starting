@@ -31,9 +31,9 @@
         <li>The amount of tax deducted must be more than 0.00</li>
       </ul>
 
-      <form class="form" method="post" action={% if tcKbv === "true" %} "./tax-credits-question-1"
-          {% elif selfassessment === "true" %} "./self-assessment" {% elif tuKbv === "true" %} "./tu-question-1" {% elif voiceId === "true" %} "./voice-id"
-          {% else %} "./id-verification-finish" {% endif %}>
+      <form class="form" method="post" action={% if tcKbv === "true" %} "./tax-credits-q1"
+          {% elif selfassessment === "true" %} "./self-assessment" {% elif tuKbv === "true" %} "./tuKbv" {% elif voiceId === "true" %} "./voice-id"
+          {% else %} "./doc-verification-finish" {% endif %}>
 
         {{ govukInput({
           id: "tax-anount",

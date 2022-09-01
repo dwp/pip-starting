@@ -24,7 +24,7 @@
       <span class="govuk-caption-xl">About your tax credits</span>
 
       <form class="form" method="post" action={% if tuKbv === "true" %} "./tax-credits-q2?tuKbv=true"
-          {% else %} "./tax-credits-q2.html" {% endif %}>
+          {% else %} "./tax-credits-q2" {% endif %}>
 
         {{ govukInput({
           id: "tax-credits",

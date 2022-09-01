@@ -29,7 +29,17 @@ module.exports = function (router) {
       const saveExit = req.session.data['sign-out'];
       if (saveExit === 'Yes') {
           res.redirect('/id-verification/v3/sign-out');
-      } else  {
+      } else if (saveExit === 'No') {
+          res.redirect("/id-verification/v3/live-pip1/about_your_health/hcp-1");
+      } else {
+        res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
+      }
+  })
+  router.post('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error', (req, res, next) => {
+      const saveExit = req.session.data['sign-out'];
+      if (saveExit === 'Yes') {
+          res.redirect('/id-verification/v3/sign-out');
+      } else {
           res.redirect("/id-verification/v3/live-pip1/about_your_health/hcp-1");
       }
   })
@@ -42,8 +52,6 @@ module.exports = function (router) {
     const voiceID = req.session.data['tcOptions'];
     const tuConsent = req.session.data['cra-consent'];
 
-    console.log(selfassessment);
-
     //Passport and payslip
     if (passportConsent == 'true' && payslipOrP60 == 'payslip') {
       res.redirect('./dth/passport-details?payslip=true')
@@ -54,7 +62,7 @@ module.exports = function (router) {
     }
     //Passport and Self assessment
     else if (passportConsent == 'true' && selfassessment == 'true') {
-      res.redirect('./dth/passport-details?self-assessment')
+      res.redirect('./dth/passport-details?selfassessment=true')
     }
     //Passport and tax credits KBV
     else if (passportConsent == 'true' && voiceID == 'voiceIdNo') {
@@ -68,6 +76,10 @@ module.exports = function (router) {
     else if (passportConsent == 'true' && tuConsent == 'true') {
       res.redirect('./dth/passport-details?tuKbv=true')
     }
+    //Payslip and Self assessment
+    else if (payslipOrP60 == 'payslip' && selfassessment == 'true') {
+      res.redirect('./dth/payslip-q1?selfassessment=true')
+    }
     //Payslip and tax credits KBV
     else if (payslipOrP60 == 'payslip' && voiceID == 'voiceIdNo') {
       res.redirect('./dth/payslip-q1?tcKbv=true');
@@ -80,6 +92,10 @@ module.exports = function (router) {
     else if (payslipOrP60 == 'payslip' && tuConsent == 'true') {
       res.redirect('./dth/payslip-q1?tuKbv=true');
     }
+    //P60 and Self assessment
+    else if (payslipOrP60 == 'p60' && selfassessment == 'true') {
+      res.redirect('./dth/p60-q1?selfassessment=true')
+    }
     //P60 and tax credits KBV
     else if (payslipOrP60 == 'p60' && voiceID == 'voiceIdNo') {
       res.redirect('./dth/p60-q1?tcKbv=true');
@@ -91,6 +107,18 @@ module.exports = function (router) {
     //P60 and Transunion
     else if (payslipOrP60 == 'p60' && tuConsent == 'true') {
       res.redirect('./dth/p60-q1?tuKbv=true');
+    }
+    //Self assessment and tax credits KBV
+    else if (selfassessment == 'true' && voiceID == 'voiceIdNo') {
+      res.redirect('./dth/self-assessment?tcKbv=true')
+    }
+    //Self assessment and tax credits voice ID
+    else if (selfassessment == 'true' && voiceID == 'voiceIdYes') {
+      res.redirect('./dth/self-assessment?voiceId=true')
+    }
+    //Self assessment and Transunion
+    else if (selfassessment == 'true' && tuConsent == 'true') {
+      res.redirect('./dth/self-assessment?tuKbv=true')
     }
     //Tax credits KBV and Transunion
     else if (voiceID == 'voiceIdNo' && tuConsent == 'true') {
@@ -112,6 +140,10 @@ module.exports = function (router) {
 
   router.post('/id-verification/v3/dth/p60', (req, res) => {
     res.redirect('./p60-q1');
+  })
+
+  router.post('/id-verification/v3/dth/selfassessment', (req, res) => {
+    res.redirect('./self-assessment');
   })
 
   router.post('/id-verification/v3/dth/tcKbv', (req, res) => {
@@ -190,13 +222,13 @@ module.exports = function (router) {
     req.session.data['tcOptions'] = "";
     req.session.data['cra-consent'] = "";
     req.session.data['passport-consent'] = "";
-    //req.session.data['self-assessment'] = "";
+    req.session.data['self-assessment'] = "";
     req.session.payslip = false;
     req.session.p60 = false;
     req.session.tcKbv = false;
     req.session.tuKbv = false;
     req.session.voiceId = false;
-    //req.session.selfassessment = false;
+    req.session.selfassessment = false;
   }
 
   // Address
