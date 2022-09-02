@@ -21,7 +21,7 @@
       {% call govukFieldset({
         classes: 'moj-add-another__item',
         legend: {
-          text: 'Enter your first condition or disability – you can add more later',
+          text: 'Enter your first condition or disability – you can add more in the next step',
           classes: "govuk-fieldset__legend--l",
           isPageHeading: true
         }
@@ -51,7 +51,7 @@
         id: 'condition-name-1',
         name: 'condition-name',
         label: {
-          html: 'Name of your condition or disability',
+          html: 'Name of your first condition or disability',
           classes: 'govuk-!-font-weight-bold'
         },
         hint: {
@@ -80,7 +80,7 @@
 
     </form>
 
-    {% include "p5-v12/about-your-health/_return-link.html" %}
+    <!-- {% include "p5-v12/about-your-health/_return-link.html" %} -->
 
 
   </div>{# /govuk-grid-column-two-thirds #}
