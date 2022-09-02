@@ -23,22 +23,25 @@
     <div class="govuk-grid-column-two-thirds">
 
       <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--xl" for="name">
-            Your name
-          </label>
-        </h1>
-        <div id="account-number-hint" class="govuk-hint">
-          First name
-        </div>
-        <input class="govuk-input govuk-input--width-30" id="first-name" name="first-name" type="text">
-      </div>
-
-      <div class="govuk-form-group">
-        <div id="account-number-hint" class="govuk-hint">
-          Last name
-        </div>
-        <input class="govuk-input govuk-input--width-30" id="last-name" name="last-name" type="text">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              {{ pageQuestion }}
+            </h1>
+          </legend>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="first-name">
+              First name
+            </label>
+            <input class="govuk-input govuk-input--width-30" id="first-name" name="first-name" type="text" spellcheck="false" autocomplete="name">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="last-name">
+              Last name
+            </label>
+            <input class="govuk-input govuk-input--width-30" id="last-name" name="last-name" type="text" spellcheck="false" autocomplete="name">
+          </div>
+        </fieldset>
       </div> <!-- govuk-form-group -->
 
       <input type="submit" class="govuk-button" value="Save and continue" id="submit">

@@ -26,7 +26,7 @@
         We have sent an email to:<br><b>emailaddress@email.com</b>
       </div>
 
-      <p>It might take up to a minute to arrive.</p>
+      <p>It should take 1 minute to arrive.</p>
 
       <p>The email will come from DWP login and includes a security code. If you do not get an email, check your spam folder.</p>
 
@@ -36,8 +36,9 @@
 
         {{ govukInput({
           label: {
-            text: "Enter your security code",
-            isPageHeading: false
+            text: "6-digit security code",
+            isPageHeading: false,
+            classes: "govuk-label--s"
           },
           id: "email-security-code",
           name: "email-security-code",
