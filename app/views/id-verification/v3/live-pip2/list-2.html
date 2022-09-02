@@ -1,6 +1,6 @@
 {% extends "layout-idv-signed-in.html" %}
 
-{% set pageQuestion = "Tell us how your health condition or disability affects you" %}
+{% set pageQuestion = "Progress summary" %}
 
 {% block pageTitle %}
   {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -22,14 +22,14 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l" style="margin-bottom: 40px;">
-        Tell us how your health condition or disability affects you
+        {{ pageQuestion }}
       </h1>
 
       <p class="govuk-heading">Download and read the instructions <a href="#" download>Help with answering questions and providing evidence (PDF)</a></p>
 
       <p>You can download a copy of your completed application when you've finished.</p>
 
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application completed</h2>
       <p class="govuk-body govuk-!-margin-bottom-7">You have completed all sections.</p>
 
       <ol class="app-task-list">
