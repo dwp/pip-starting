@@ -1,6 +1,6 @@
 {% extends "layout-idv.html" %}
 
-{% set pageQuestion = "We have sent you a text message with your security code" %}
+{% set pageQuestion = "Check your phone" %}
 
 {% block pageTitle %}
   {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -22,14 +22,17 @@
 
       <h1 class="govuk-heading-l">{{ pageQuestion }}</h1>
 
-      <p>It should only take one minute to arrive.</p>
+      <p>We’ve sent you a text message with a security code.</p>
+
+      <p>It should take 1 minute to arrive.</p>
 
       <form class="form" action="registration-complete" method="post">
 
         {{ govukInput({
           label: {
             text: "Security code",
-            isPageHeading: false
+            isPageHeading: false,
+            classes: "govuk-label--s"
           },
           id: "mobile-security-code",
           name: "mobile-security-code",
