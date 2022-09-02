@@ -23,7 +23,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Choose 2 items we can ask you about
+        Choose 2 things we can ask you about
       </h1>
 
       <form method="post" action="/id-verification/v3/idvselection">
@@ -39,11 +39,8 @@
                   value="ukPassport" aria-controls="target-ukPassport" aria-expanded="false">
 
                 <label class="govuk-label govuk-checkboxes__label" for="ukPassport">
-                  UK passport
+                  Your valid UK passport
                 </label>
-                <span id="ukPassport-hint" class="govuk-hint govuk-radios__hint">
-                  You need a valid UK passport
-                </span>
               </div>
 
               <!-- Start the reveal panel -->
@@ -70,7 +67,7 @@
                   value="payslipsP60" aria-controls="target-payslipsP60" aria-expanded="false">
 
                 <label class="govuk-label govuk-checkboxes__label" for="payslipsP60">
-                  Payslip or P60
+                  A payslip or P60
                 </label>
                 <span id="payslipsP60-hint" class="govuk-hint govuk-radios__hint">
                   Use a payslip dated after 17 April 2020, or your most recent P60.
@@ -95,13 +92,10 @@
               </div>
 
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="self-assessment" name="self-assessment" type="checkbox" value="true" aria-describedby="selfassessment-item-hint">
+                <input class="govuk-checkboxes__input" id="self-assessment" name="self-assessment" type="checkbox" value="true">
                 <label class="govuk-label govuk-checkboxes__label" for="self-assessment">
-                  Self Assessment
+                  A recent Self Assessment tax return
                 </label>
-                <div id="selfassessment-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                  You need details from your recent Self Assessment returns
-                </div>
               </div>
 
               <div class="govuk-radios__item">
@@ -109,11 +103,8 @@
                   value="taxCreditsPayments" aria-controls="target-taxCreditsPayments" aria-expanded="false">
 
                 <label class="govuk-label govuk-checkboxes__label" for="taxCreditsPayments">
-                  Tax credits (including Voice ID)
+                  Tax credit claim details - this can include Voice ID
                 </label>
-                <span id="taxCreditsPayments-hint" class="govuk-hint govuk-radios__hint">
-                  You need your claim details, you can use Voice ID
-                </span>
               </div>
 
               <!-- Start the reveal panel -->
@@ -142,7 +133,7 @@
                   value="transunion" aria-controls="target-transunion" aria-expanded="false">
 
                 <label class="govuk-label govuk-checkboxes__label" for="transunion">
-                  Credit reference questions
+                  Your credit record
                 </label>
                 <span id="transunion-hint" class="govuk-hint govuk-radios__hint">
                   For example, the year you took out a credit card or phone contract.
