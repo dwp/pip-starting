@@ -101,7 +101,7 @@ router.post('/v12/condition-questions/option-three/your-medication', function(re
 
 //  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
   //req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action = req.session.data['medication-name']
-    res.redirect('/v12/condition-questions/option-three/medication-summary')
+    res.redirect('/v12/condition-questions/option-three/check-answers')
 })
 
 // routes for controlling adding another medication
@@ -109,13 +109,14 @@ router.post('/v12/condition-questions/option-three/your-medication-another', fun
   console.log('is-this-calling', req.session.data)
   const medication = req.session.data['medication-name']
   const dosage = req.session.data['dosage-name']
+  const sideEffects = req.session.data['side-effects-name']
   const queriesMedication = req.session.data.queriesMedication || []
-  queriesMedication.push({ medication, dosage })
+  queriesMedication.push({ medication, dosage, sideEffects })
   req.session.data.queriesMedication = queriesMedication
 
 //  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
   //req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action = req.session.data['medication-name']
-    res.redirect('/v12/condition-questions/option-three/medication-summary')
+    res.redirect('/v12/condition-questions/option-three/check-answers')
 })
 
 // routes for controlling condition name in option 1

@@ -50,7 +50,7 @@
     <h1 class="govuk-heading-l">Treatment summary</h1>
 
 <!-- table for medications and dosage -->
-<table class="govuk-table">
+<!-- <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--m"></caption>
 
   <tbody class="govuk-table__body">
@@ -62,7 +62,36 @@
     </tr>
     {% endfor %}
   </tbody>
-</table>
+</table> -->
+
+{% for query in data['queriesTreatment'] %}
+
+{{ govukSummaryList({
+classes: 'govuk-!-margin-bottom-9',
+rows: [
+  {
+    key: {
+      text: query.treatment
+    },
+
+    actions: {
+      items: [
+        {
+          href: "/check-condition?conditionId=" + condition.id,
+          text: "Change",
+          visuallyHiddenText: condition.type + "'s condition"
+        },
+        {
+          href: "/remove-condition?conditionId=" + condition.id,
+          text: "Remove",
+          visuallyHiddenText: condition.type + "'s condition"
+        }
+      ]
+    }
+  }
+]
+}) }}
+{% endfor %}
 
     <br>
       {{ govukButton({
@@ -71,7 +100,7 @@
       }) }}
 
       {{ govukButton({
-      text: "Add another medication",
+      text: "Add another treatment",
       classes: "govuk-button--secondary",
       href: "your-treatment-another"
     }) }}
