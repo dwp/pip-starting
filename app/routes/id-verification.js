@@ -25,7 +25,7 @@ module.exports = function (router) {
   })
 
   // Sign out pop up
-  router.post('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup', (req, res, next) => {
+  router.post('/id-verification/v3/savepopup', (req, res, next) => {
       const saveExit = req.session.data['sign-out'];
       if (saveExit === 'Yes') {
           res.redirect('/id-verification/v3/sign-out');
@@ -35,14 +35,20 @@ module.exports = function (router) {
         res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
       }
   })
-  router.post('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error', (req, res, next) => {
-      const saveExit = req.session.data['sign-out'];
-      if (saveExit === 'Yes') {
-          res.redirect('/id-verification/v3/sign-out');
-      } else {
-          res.redirect("/id-verification/v3/live-pip1/about_your_health/hcp-1");
-      }
-  })
+
+  router.use((req, res, next) => {
+    popupReset(req);
+    if (req.query.saveExit) {
+      req.session.saveExit = req.query.saveExit;
+    }
+    res.locals.saveExit = req.session.saveExit;
+    next();
+  });
+
+  const popupReset = req => {
+    req.session.data['sign-out'] = "";
+    req.session.saveExit = false;
+  }
 
   //ID verification
   router.post('/id-verification/v3/idvselection', (req, res) => {
@@ -242,6 +248,10 @@ module.exports = function (router) {
     res.locals.nationalities = nationalities;
     res.render('id-verification/v1/live-pip1/nationality.html')
   })
+  router.get('/id-verification/v3/live-pip1/nationality', (req, res, next) => {
+    res.locals.nationalities = nationalities;
+    res.render('id-verification/v3/live-pip1/nationality.html')
+  })
 
   // Countries database
   router.get('/id-verification/v1/live-pip1/about_your_health/hcp-1', (req, res, next) => {
@@ -251,6 +261,10 @@ module.exports = function (router) {
   router.get('/id-verification/v3/live-pip1/about_your_health/hcp-1', (req, res, next) => {
       res.locals.countries = countries;
       res.render('id-verification/v3/live-pip1/about_your_health/hcp-1.html')
+  })
+  router.get('/id-verification/v3/live-pip1/about_your_health/hcp-1-2', (req, res, next) => {
+      res.locals.countries = countries;
+      res.render('id-verification/v3/live-pip1/about_your_health/hcp-1-2.html')
   })
 
 }
