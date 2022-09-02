@@ -22,20 +22,28 @@
 
       <span class="govuk-caption-l">Confirm your identity</span>
 
-      <form class="form" method="post" action="kbv-post-office">
+      <form class="form" method="post" action="id-verification-finish">
 
-        {{ govukInput({
-          label: {
-            text: "What is the address of the post office where you receive your current benefit?",
-            classes: "govuk-label--l",
-            isPageHeading: true
+        {{ govukRadios({
+          idPrefix: "single-post-office",
+          name: "single-post-office",
+          fieldset: {
+            legend: {
+              text: "Are you restricted to the use of a single post office?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
           },
-          hint: {
-            text: "Enter a postcode to search for the address."
-          },
-          id: "post-office-address",
-          name: "post-office-address",
-          classes: "govuk-input--width-10"
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
         }) }}
 
         <details class="govuk-details" data-module="govuk-details">
@@ -56,7 +64,7 @@
       </form>
 
       <p>
-        <a href="kbv-post-office">I cannot answer this question</a>
+        <a href="id-verification-finish">I cannot answer this question</a>
       </p>
 
     </div>
