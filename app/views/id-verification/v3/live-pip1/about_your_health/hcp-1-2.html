@@ -1,7 +1,5 @@
 {% extends "layout-idv-sign-out-popup.html" %}
 
-{% set bodyClasses = "overlay" %}
-
 {% set pageQuestion = "Health or care professional details" %}
 
 {% block pageTitle %}
@@ -20,42 +18,6 @@
 
 {% block content %}
 
-  <div class="overlay-container">
-    <div class="popup">
-      <form class="form" action="/id-verification/v3/savepopup" method="post">
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading">
-                Have you saved your information?
-              </h1>
-            </legend>
-            <div id="contact-hint" class="govuk-hint">
-              If you did not enter any information on the last screen, it's safe to sign out.
-            </div>
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="sign-out-yes" name="sign-out" type="radio" value="Yes" >
-                <label class="govuk-label govuk-radios__label" for="sign-out-yes">
-                  Yes, sign me out
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="sign-out-no" name="sign-out" type="radio" value="No">
-                <label class="govuk-label govuk-radios__label" for="sign-out-no">
-                  No, take me back so I can save my information
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-        {{ govukButton({
-          text: "Confirm"
-        }) }}
-      </form>
-    </div>
-  </div>
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
@@ -72,7 +34,7 @@
           <label class="govuk-label" for="hcp-1-name">
             Name
           </label>
-          <input class="govuk-input" id="hcp-1-name" name="data['hcp-1-name']" type="text">
+          <input class="govuk-input" id="hcp-1-name" name="hcp-1-name" type="text">
         </div> <!-- govuk-form-group -->
 
         <div class="govuk-form-group">
@@ -82,14 +44,14 @@
             <div id="event-name-hint" class="govuk-hint">
                 For example, GP, hospital doctor, specialist nurse, community psychiatric nurse, occupational therapist, physiotherapist, social worker, counsellor or support worker.
             </div>
-          <input class="govuk-input" id="hcp-1-profession" name="data['hcp-1-profession']" type="text">
+          <input class="govuk-input" id="hcp-1-profession" name="hcp-1-profession" type="text">
         </div> <!-- govuk-form-group -->
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="hcp-1-phone">
             Phone number, including dialling code
           </label>
-          <input class="govuk-input govuk-input--width-20" id="hcp-1-phone" name="data['hcp-1-phone']" type="text">
+          <input class="govuk-input govuk-input--width-20" id="hcp-1-phone" name="hcp-1-phone" type="text">
         </div> <!-- govuk-form-group -->
 
         <fieldset class="govuk-fieldset">
@@ -107,7 +69,7 @@
             <label class="govuk-label" for="hcp-1-address-line-1">
               Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
             </label>
-            <input class="govuk-input" id="hcp-1-address-line-1" name="data['hcp-1-address-line-1']" type="text"
+            <input class="govuk-input" id="hcp-1-address-line-1" name="hcp-1-address-line-1" type="text"
               autocomplete="hcp-1-address-line1">
           </div> <!-- govuk-form-group -->
 
@@ -115,7 +77,7 @@
             <label class="govuk-label" for="hcp-1-address-line-2">
               <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
             </label>
-            <input class="govuk-input" id="hcp-1-address-line-2" name="data['hcp-1-address-line-2']" type="text"
+            <input class="govuk-input" id="hcp-1-address-line-2" name="hcp-1-address-line-2" type="text"
               autocomplete="hcp-1-address-line2">
           </div> <!-- govuk-form-group -->
 
@@ -123,7 +85,7 @@
             <label class="govuk-label" for="hcp-1-address-town">
               Town or city
             </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="hcp-1-address-town" name="data['hcp-1-address-town']"
+            <input class="govuk-input govuk-!-width-two-thirds" id="hcp-1-address-town" name="hcp-1-address-town"
               type="text" autocomplete="hcp-1-address-level2">
           </div> <!-- govuk-form-group -->
 
@@ -131,7 +93,7 @@
             <label class="govuk-label" for="hcp-1-address-county">
               County
             </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="hcp-1-address-county" name="data['hcp-1-address-county']"
+            <input class="govuk-input govuk-!-width-two-thirds" id="hcp-1-address-county" name="hcp-1-address-county"
               type="text">
           </div> <!-- govuk-form-group -->
 
@@ -139,7 +101,7 @@
             <label class="govuk-label" for="hcp-1-address-postcode">
               Postcode
             </label>
-            <input class="govuk-input govuk-input--width-10" id="hcp-1-address-postcode" name="data['hcp-1-address-postcode']"
+            <input class="govuk-input govuk-input--width-10" id="hcp-1-address-postcode" name="hcp-1-address-postcode"
               type="text" autocomplete="hcp-1-postal-code">
           </div> <!-- govuk-form-group-->
 
@@ -147,7 +109,7 @@
             <label class="govuk-label" for="hcp-1-address-country">
               Country
             </label>
-            <select class="govuk-select" id="hcp-1-address-country" name="data['hcp-1-address-country']">
+            <select class="govuk-select" id="hcp-1-address-country" name="hcp-1-address-country">
               <option value="updated" selected>Select a country</option>
               {% for country in countries %}
               <option value="{{country}}">{{country}}</option>
@@ -173,7 +135,7 @@
                   Month
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hcp-1-last-contact-month"
-                  name="data['hcp-1-last-contact-month']" type="text" pattern="[0-9]*" inputmode="numeric">
+                  name="hcp-1-last-contact-month" type="text" pattern="[0-9]*" inputmode="numeric">
               </div> <!-- govuk-form-group -->
             </div> <!-- govuk-date-input__item -->
             <div class="govuk-date-input__item">
@@ -181,7 +143,7 @@
                 <label class="govuk-label govuk-date-input__label" for="hcp-1-last-contact-year">
                   Year
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="hcp-1-last-contact-year" name="data['hcp-1-last-contact-year']"
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="hcp-1-last-contact-year" name="hcp-1-last-contact-year"
                   type="text" pattern="[0-9]*" inputmode="numeric">
               </div> <!-- govuk-form-group -->
             </div> <!-- govuk-date-input__item -->
