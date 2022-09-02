@@ -49,26 +49,34 @@
 
     <h1 class="govuk-heading-l">Medication summary</h1>
 
-<!-- table for medications and dosage -->
-<table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+  {% for query in data['queriesMedication'] %}
 
-  <tbody class="govuk-table__body">
-    {% for query in data['queriesMedication'] %}
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Medication name</th>
-      <td class="govuk-table__cell">{{ query.medication }}</td>
-      <td class="govuk-table__cell"><a href="#">Change</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> {{ query.medication }} dosage</th>
-      <td class="govuk-table__cell">{{ query.dosage }}</td>
-      <td class="govuk-table__cell"><a href="#">Change</a></td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+    {
+      key: {
+        text: query.medication
+      },
 
+      actions: {
+        items: [
+          {
+            href: "/check-condition?conditionId=" + condition.id,
+            text: "Change",
+            visuallyHiddenText: condition.type + "'s condition"
+          },
+          {
+            href: "/remove-condition?conditionId=" + condition.id,
+            text: "Remove",
+            visuallyHiddenText: condition.type + "'s condition"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+  {% endfor %}
     <br>
       {{ govukButton({
         text: 'Save and continue',
