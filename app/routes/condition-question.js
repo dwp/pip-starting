@@ -57,9 +57,10 @@ router.post('/v12/condition-questions/option-two/condition', function(req, res) 
 router.post('/v12/condition-questions/option-three/condition', function(req, res) {
   console.log('is-this-calling', req.session.data)
   const condition = req.session.data['condition-name']
+  const startDate = req.session.data['condition-start-date']
   const section = req.session.data.source
   const queriesCondition = req.session.data.queriesCondition || []
-  queriesCondition.push({ condition, section })
+  queriesCondition.push({ condition, startDate })
   req.session.data.queriesCondition = queriesCondition
 
 //  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
@@ -73,8 +74,9 @@ router.post('/v12/condition-questions/option-three/condition', function(req, res
 router.post('/v12/condition-questions/option-three/condition-additional', function(req, res) {
   console.log('is-this-calling', req.session.data)
   const condition = req.session.data['condition-name']
+  const startDate = req.session.data['condition-start-date']
   const queriesCondition = req.session.data.queriesCondition || []
-  queriesCondition.push({ condition })
+  queriesCondition.push({ condition, startDate })
   req.session.data.queriesCondition = queriesCondition
 
 //  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
@@ -86,7 +88,7 @@ router.post('/v12/condition-questions/option-three/another-condition', function(
     if (req.session.data['condition2'] == "Yes") {
                res.redirect('/v12/condition-questions/option-three/condition-additional')
              } else {
-               res.redirect('/v12/condition-questions/option-three/check-answers')
+               res.redirect('/v12/condition-questions/option-three/check-answers-condition')
              }
 })
 
