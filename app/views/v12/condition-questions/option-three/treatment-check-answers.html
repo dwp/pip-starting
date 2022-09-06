@@ -54,22 +54,18 @@
   <caption class="govuk-table__caption govuk-table__caption--m"></caption>
 
   <tbody class="govuk-table__body">
-    {% for query in data['queriesMedication'] %}
+    {% for query in data['queriesTreatment'] %}
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Medication name</th>
-      <td class="govuk-table__cell">{{ query.medication }}</td>
+      <th scope="row" class="govuk-table__header">Treatment name</th>
+      <td class="govuk-table__cell">{{ query.treatment }}</td>
       <td class="govuk-table__cell"><a href="#">Change</a></td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">{{ query.medication }} dosage</th>
-      <td class="govuk-table__cell">{{ query.dosage }}</td>
+      <th scope="row" class="govuk-table__header">Side effect</th>
+      <td class="govuk-table__cell">{{ query.treatmentSideEffect }}</td>
       <td class="govuk-table__cell"><a href="#">Change</a></td>
     </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Side effects</th>
-      <td class="govuk-table__cell">{{ query.sideEffects }}</td>
-      <td class="govuk-table__cell"><a href="#">Change</a></td>
-    </tr>
+
     <!-- <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">{{ query.medication }} side effects</th>
       <td class="govuk-table__cell">{{ query.sideEffects }}</td>
@@ -82,7 +78,7 @@
     <br>
       {{ govukButton({
         text: 'Save and continue',
-        href: "medication-summary"
+        href: "treatment-summary"
       }) }}
 
     </form>
