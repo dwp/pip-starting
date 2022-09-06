@@ -311,4 +311,23 @@ router.post('/v12/condition-questions/option-three/side-effects', function(req, 
 //   })
 
   // Add another condition end
+
+// // edit medications
+// router.post('/check-medication', (req, res, next) => {
+//   const { data } = req.session;
+//   const medication = data.medication;
+//   console.log('is-this-calling', data.medication)
+//
+//   if(medication.id) {
+//   amendMedication(data.medCheck, medication);
+//   } else {
+//   // give pizza an id - to find in amend step
+//   medication.id = data.medCheck.length + 1;
+//   data.medCheck.push(medication);
+//   console.log('is-this-calling', medication.id)
+//   }
+//
+//   res.render('v12/condition-questions/option-three/your-medication.html', { medication: data.medication });
+//   })
+
 }

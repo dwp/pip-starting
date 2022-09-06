@@ -20,9 +20,10 @@
 
       <h1 class="govuk-heading-l">Enter a treatment – you can add more later</h1>
 
-      {{ govukInput({
+      <!-- {{ govukInput({
         id: 'treatments',
         name: "treatment-name",
+        value: "treatment[name]",
         hint: {
           text: "For example, physiotherapy, kidney dialysis or radio therapy.
                                   Include NHS and privately funded treatment."
@@ -30,7 +31,15 @@
         label: {
           html: 'Treatment name'
         }
-      }) }}
+      }) }} -->
+
+      <div class="govuk-form-group">
+          <div id="event-name-hint" class="govuk-hint">
+            For example, physiotherapy, kidney dialysis or radio therapy.
+                                    Include NHS and privately funded treatment.
+          </div>
+          <input class="govuk-input" id="event-name" name="treatment-name" value="{{ data['treatment-name'] }}" type="text" aria-describedby="event-name-hint">
+    </div>
 
       <div class="govuk-form-group">
            <label class="govuk-label" for="width-10">
@@ -39,7 +48,7 @@
            <div id="event-name-hint" class="govuk-hint">
                   For example, dizziness, drowsiness or confusion.
           </div>
-           <input class="govuk-input govuk-input--width-10" id="side-effect-treatment" name="treatment-side-effect" type="text">
+           <input class="govuk-input govuk-input--width-10" id="side-effect-treatment" name="treatment-side-effect"  value="{{ data['treatment-side-effect'] }}" type="text">
       </div>
 
 

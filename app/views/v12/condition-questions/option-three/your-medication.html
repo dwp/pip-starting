@@ -16,7 +16,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="#" method="post" novalidate>
+  <form action="#" method="post" novalidate>
 
       {% call govukFieldset({
         classes: 'moj-add-another__item',
@@ -53,7 +53,7 @@
           <label class="govuk-label" for="event-name">
             Medication name
           </label>
-          <input class="govuk-input" id="medications" name="medication-name" type="text">
+          <input class="govuk-input" id="medications" name="medication-name" value="{{ data['medication-name'] }}" type="text">
      </div>
 
      <div class="govuk-form-group">
@@ -63,7 +63,8 @@
           <div id="event-name-hint" class="govuk-hint">
                  For example, 50mg 3 times a day.
           </div>
-          <input class="govuk-input govuk-input--width-10" id="doseage" name="dosage-name" type="text">
+          <input class="govuk-input govuk-input--width-10" id="doseage" name="dosage-name" value="{{ data['dosage-name'] }}" type="text">
+
     </div>
 
     <div class="govuk-form-group">
@@ -73,8 +74,9 @@
          <div id="event-name-hint" class="govuk-hint">
                 For example, dizziness, drowsiness or confusion.
         </div>
-         <input class="govuk-input govuk-input--width-10" id="effects-one" name="side-effects-name" type="text">
+         <input class="govuk-input govuk-input--width-10" id="effects-one" name="side-effects-name" value="{{ data['side-effects-name'] }}" type="text">
    </div>
+
 
 
       {{ govukButton({
