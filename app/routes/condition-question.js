@@ -97,8 +97,9 @@ router.post('/v12/condition-questions/option-three/your-medication', function(re
   console.log('is-this-calling', req.session.data)
   const medication = req.session.data['medication-name']
   const dosage = req.session.data['dosage-name']
+  const sideEffects = req.session.data['side-effects-name']
   const queriesMedication = req.session.data.queriesMedication || []
-  queriesMedication.push({ medication, dosage })
+  queriesMedication.push({ medication, dosage, sideEffects })
   req.session.data.queriesMedication = queriesMedication
 
 //  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
@@ -119,6 +120,19 @@ router.post('/v12/condition-questions/option-three/your-medication-another', fun
 //  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
   //req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action = req.session.data['medication-name']
     res.redirect('/v12/condition-questions/option-three/check-answers')
+})
+
+// routes for controlling check answers treatments
+router.post('/v12/condition-questions/option-three/your-treatment', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const treatment = req.session.data['treatment-name']
+  const treatmentSideEffect = req.session.data['treatment-side-effect']
+
+  const queriesTreatment = req.session.data.queriesTreatment || []
+  queriesTreatment.push({ treatment, treatmentSideEffect })
+  req.session.data.queriesTreatment = queriesTreatment
+
+    res.redirect('/v12/condition-questions/option-three/treatment-check-answers')
 })
 
 // routes for controlling condition name in option 1
@@ -177,13 +191,14 @@ router.post('/v12/condition-questions/option-three/your-treatment', function(req
 router.post('/v12/condition-questions/option-three/your-treatment-another', function(req, res) {
   console.log('is-this-calling', req.session.data)
   const treatment = req.session.data['treatment-name']
+  const treatmentSideEffect = req.session.data['treatment-side-effect']
   const queriesTreatment = req.session.data.queriesTreatment || []
-  queriesTreatment.push({ treatment })
+  queriesTreatment.push({ treatment, treatmentSideEffect })
   req.session.data.queriesTreatment = queriesTreatment
 
 //  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
   //req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action = req.session.data['medication-name']
-    res.redirect('/v12/condition-questions/option-three/treatment-summary')
+    res.redirect('/v12/condition-questions/option-three/treatment-check-answers')
 })
 
 
@@ -213,4 +228,87 @@ router.post('/v12/condition-questions/option-three/side-effects', function(req, 
                res.redirect('/v12/condition-questions/option-three/list-1')
              }
 })
+
+//DWP add another pattern for medication -- amend medication
+
+// const amendMedication = (medications, medication) => {
+//     const index = medication.findIndex(p => p.id === medication.id);
+//     medications.splice(index, 1);
+//     medications.push(medication);
+//     return medications;
+//   }
+//
+//   // clear any temp condition data on add another
+//   router.get('/medication', (req, res, next) => {
+//     const { edit } = req.query;
+//     const { data } = req.session;
+//     let originalChoice;
+//     if(edit) {
+//       originalChoice = data?.medication?.type;
+//     } else {
+//       req.session.data.medication = {};
+//     }
+//     res.render('v12/condition-questions/option-three/your-medication-another', { choice: originalChoice });
+//   })
+//
+// //message when no medications exist
+//   router.post('/select-size', (req, res, next) => {
+//     res.render('v11/about_your_health/condition-summary.html')
+//   })
+//
+//   router.get('/check-medication', (req, res, next) => {
+//     const { medicationId } = req.query;
+//     const { data } = req.session;
+//     const medication = data.medicationOrder.filter((p) => p.id === parseInt(medicationId));
+//     data.medication = medication[0];
+//     const selectedMedication = medication[0];
+//     res.render('/v12/condition-questions/option-three/your-medication-another.html', { medication: selectedMedication });
+//   })
+//
+//   router.post('/check-medication', (req, res, next) => {
+//     const { data } = req.session;
+//     const medication = data.medication;
+//
+//     if(medication.id) {
+//       amendMedication(data.medicationOrder, medication);
+//     } else {
+//       // give condition an id - to find in amend step
+//       medication.id = data.conditionOrder.length + 1;
+//       data.medicationOrder.push(medication);
+//     }
+//
+//     res.render('v12/condition-questions/option-three/medication-summary.html', { medication: data.medication });
+//   })
+//
+//   // last page before submission
+//   router.get('/condition-summary', (req, res, next) => {
+//     res.render('v12/condition-questions/option-three/medication-summary.html');
+//   })
+//
+//   // remove condition from order
+//   router.get('/remove-condition', (req, res, next) => {
+//     const { conditionId } = req.query;
+//     const { data } = req.session;
+//     const condition = data.conditionOrder.filter((p) => p.id === parseInt(conditionId));
+//     res.render('v12/condition-questions/option-three/remove-condition.html', { binnedCondition: condition[0] });
+//   })
+//
+//   router.post('/remove-condition', (req, res, next) => {
+//     const { binCondition, binnedConditionId } = req.body;
+//     const { data } = req.session;
+//     if(binCondition === "yes"){
+//       const index = data.conditionOrder.findIndex(p => p.id === parseInt(binnedConditionId));
+//       data.conditionOrder.splice(index, 1)
+//     }
+//     res.render('v12/condition-questions/option-three/medication-summary.html');
+//   })
+//
+//
+//   router.get('/submit', (req, res, next) => {
+//     req.session.data.conditionOrder = [];
+//     req.session.data.condition = {};
+//     res.render('v11/about_your_health/consent.html');
+//   })
+
+  // Add another condition end
 }
