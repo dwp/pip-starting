@@ -17,7 +17,7 @@ module.exports = function (app) {
 
   // Code for the list screen
 
-  app.get('/p5-v12/list-1', (req, res, next) => {
+  app.get('/v12/condition-questions/option-three/list-1', (req, res, next) => {
 
     if (!req.session.sectionStatus){
       // console.log('no session');
@@ -229,7 +229,7 @@ module.exports = function (app) {
     //   req.session.sectionStatus.supportingevidence = req.query.supportingevidence
     // };
 
-    res.render('p5-v12/list-1.html', {sectionStatus: req.session.sectionStatus, sectionCount: req.session.sectionCount});
+    res.render('v12/condition-questions/option-three/list-1', {sectionStatus: req.session.sectionStatus, sectionCount: req.session.sectionCount});
   });
 
   // Clear data on the 'application cancelled' screen

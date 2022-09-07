@@ -75,10 +75,12 @@
 </table>
 
     <br>
-      {{ govukButton({
+      <!-- {{ govukButton({
         text: 'Save and continue',
         href: "list-1"
-      }) }}
+      }) }} -->
+
+          <p><a href="list-1?aboutyourhealth=completed" class="govuk-button">Save and continue</a></p>
 
     </form>
     {% include "v12/condition-questions/option-three/_return-link.html" %}
