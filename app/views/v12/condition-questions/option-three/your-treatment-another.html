@@ -18,13 +18,15 @@
 
     <form action="#" method="post" novalidate>
 
-      <h1 class="govuk-heading-l">Enter another treatment – you can add more later</h1>
+      <h1 class="govuk-heading-l">Enter another treatment – you can add more in the next step</h1>
+
+      <p>This can be a treatment you have had, are having, or are waiting for.</p>
 
       {{ govukInput({
         id: 'treatments',
         name: "treatment-name",
         hint: {
-          text: "For example, physiotherapy, kidney dialysis or radio therapy.
+          text: "For example, physiotherapy, counselling, talking therapy, kidney dialysis or radio therapy.
                                   Include NHS and privately funded treatment."
        },
         label: {
