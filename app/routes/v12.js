@@ -755,4 +755,13 @@ module.exports = function (router) {
         res.redirect('/v12/nationality');
     });
     // RETURNING USER FLOW END
+
+    // route for moving around 'it varies'
+    router.post('/p5-v12/moving-around/info', function(req, res) {
+        if (req.session.data['movingaround-info'] == "It varies") {
+                   res.redirect('/p5-v12/moving-around/varies')
+                 } else {
+                   res.redirect('/p5-v12/moving-around/details')
+                 }
+    })
 };
