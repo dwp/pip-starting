@@ -48,7 +48,7 @@
                 text: "How far can you walk using any aids or appliances you need?"
               },
               value: {
-                html: 'It varies: <br>' + data['movingaround-info-varies']
+                html: 'It varies'
               },
               actions: {
                 items: [
@@ -56,6 +56,40 @@
                     href: "/live-pip2-v1-0/moving-around/info",
                     text: "Change",
                     visuallyHiddenText: " your answer to how well can you stand and how far can you walk using any aids or appliances you need"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Why does the distance you can walk vary?"
+              },
+              value: {
+                html: data['moving-around-varies']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/live-pip2-v1-0/moving-around/info",
+                    text: "Change",
+                    visuallyHiddenText: " your answer to how well can you stand and how far can you walk using any aids or appliances you need"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Difficulties you have with moving around and how you manage them"
+              },
+              value: {
+                html: data['movingaround-details']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/live-pip2-v1-0/moving-around/details",
+                    text: "Change",
+                    visuallyHiddenText: " your answer to difficulties you have with moving around and how you manage them"
                   }
                 ]
               }

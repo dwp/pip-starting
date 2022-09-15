@@ -764,4 +764,13 @@ module.exports = function (router) {
                    res.redirect('/p5-v12/moving-around/details')
                  }
     })
+
+    // route for moving around 'it varies within 'live' version of prototype
+    router.post('/live-pip2-v1-0/moving-around/info', function(req, res) {
+        if (req.session.data['movingaround-info'] == "It varies") {
+                   res.redirect('/live-pip2-v1-0/moving-around/varies')
+                 } else {
+                   res.redirect('/live-pip2-v1-0/moving-around/details')
+                 }
+    })
 };
