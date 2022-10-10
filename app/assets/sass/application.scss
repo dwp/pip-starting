@@ -306,18 +306,18 @@ body .interruption{
 .usability-testing-link {
   position: fixed;
   bottom: 30px;
-  right: 30px;
-  width: 35px;
-  height: 35px;
+  left: 30px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   background-color: govuk-colour("orange");
   &:hover {
-    width: 37px;
-    height: 37px;
+    width: 47px;
+    height: 47px;
   }
   &:focus {
-    width: 37px;
-    height: 37px;
+    width: 47px;
+    height: 47px;
     background-color: $govuk-focus-colour;
   }
 }

@@ -23,6 +23,14 @@ module.exports = function (router) {
           res.redirect("/id-verification/v3/sign-in-2");
       }
   })
+  router.post('/id-verification/v4/intro-question', (req, res, next) => {
+      const newOld = req.session.data['new-existing'];
+      if (newOld === 'Yes') {
+          res.redirect('/id-verification/v4/register-start');
+      } else  {
+          res.redirect("/id-verification/v4/sign-in");
+      }
+  })
 
   // Sign out pop up
   router.post('/id-verification/v3/savepopup', (req, res, next) => {
