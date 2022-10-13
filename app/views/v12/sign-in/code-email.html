@@ -20,23 +20,16 @@
 
         <h1 class="govuk-heading-l">We have sent you an email with your <br>6-digit security code</h1>
 
-        <p>It should only take one minute to arrive.</p>
+        <p>The code expires after 5 minutes.</p>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="code" >Enter your 6-digit security code</label>
           <input class="govuk-input govuk-input--width-5 input-capitals" id="code" name="code" maxlength="6" data-hj-suppress type="text" pattern="[0-9]*" inputmode="numeric" value="">
         </div>
-
-        {% if getData.scenario === "locked" %}
-          <a href="/p5-v11/sign-in/code-text?scenario=locked" class="govuk-button">Continue</a>
-          <p><a href="/p5-v11/sign-in/code-email-get-another?scenario=locked">I did not get a code</a></p>
-        {% elif getData.scenario === "active" %}
-          <a href="/p5-v11/list" class="govuk-button">Continue</a>
-          <p><a href="/p5-v11/sign-in/code-email-get-another?scenario=active">I did not get a code</a></p>
-        {% else %}
-          <a href="/p5-v11/sign-in/create-password" class="govuk-button">Continue</a>
-          <p><a href="/p5-v11/sign-in/code-email-get-another">I did not get a code</a></p>
-        {% endif %}
+      
+          <a href="create-password" class="govuk-button">Continue</a>
+          <p><a href="code-email-get-another">I did not get a code by email</a></p>
+        
 
       </form>
 
