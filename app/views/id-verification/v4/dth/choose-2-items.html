@@ -23,10 +23,10 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Choose 2 things we can ask you about
+        {{ pageQuestion }}
       </h1>
 
-      <form method="post" action="/id-verification/v3/idvselection">
+      <form method="post" action="">
         <div class="govuk-form-group">
           <fieldset data-minimum-options="2" data-error-multi="Select at least x options" class="govuk-fieldset"
             data-error="Select an option">
@@ -36,11 +36,14 @@
 
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="ukPassport" name="ivQuestionLogic" type="checkbox"
-                  value="ukPassport" aria-controls="target-ukPassport" aria-expanded="false">
+                  value="ukPassport" aria-controls="target-ukPassport" aria-expanded="false" aria-describedby="passport-item-hint">
 
                 <label class="govuk-label govuk-checkboxes__label" for="ukPassport">
-                  Your valid UK passport
+                  UK passport
                 </label>
+                <div id="passport-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                  You need a valid UK passport
+                </div>
               </div>
 
               <!-- Start the reveal panel -->
@@ -67,10 +70,10 @@
                   value="payslipsP60" aria-controls="target-payslipsP60" aria-expanded="false">
 
                 <label class="govuk-label govuk-checkboxes__label" for="payslipsP60">
-                  A payslip or P60
+                  Payslip or P60
                 </label>
                 <span id="payslipsP60-hint" class="govuk-hint govuk-radios__hint">
-                  Use a payslip dated after 17 April 2020, or your most recent P60.
+                  You need a payslip dated after 7 Jul 2022 or your most recent P60
                 </span>
               </div>
 
@@ -92,19 +95,25 @@
               </div>
 
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="self-assessment" name="self-assessment" type="checkbox" value="true">
+                <input class="govuk-checkboxes__input" id="self-assessment" name="self-assessment" type="checkbox" value="true" aria-describedby="selfassessment-item-hint">
                 <label class="govuk-label govuk-checkboxes__label" for="self-assessment">
-                  A recent Self Assessment tax return
+                  Self Assessment
                 </label>
+                <div id="selfassessment-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                  You need details from your recent Self Assessment returns
+                </div>
               </div>
 
               <div class="govuk-radios__item">
                 <input class="govuk-checkboxes__input" id="taxCreditsPayments" name="ivQuestionLogic" type="checkbox"
-                  value="taxCreditsPayments" aria-controls="target-taxCreditsPayments" aria-expanded="false">
+                  value="taxCreditsPayments" aria-controls="target-taxCreditsPayments" aria-expanded="false" aria-describedby="taxcredit-item-hint">
 
                 <label class="govuk-label govuk-checkboxes__label" for="taxCreditsPayments">
-                  Tax credit claim details - this can include Voice ID
+                  Tax credit claim details (including Voice ID)
                 </label>
+                <div id="taxcredit-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                  You need your claim details, you can use Voice ID
+                </div>
               </div>
 
               <!-- Start the reveal panel -->
@@ -133,7 +142,7 @@
                   value="transunion" aria-controls="target-transunion" aria-expanded="false">
 
                 <label class="govuk-label govuk-checkboxes__label" for="transunion">
-                  Your credit record
+                  Credit reference questions
                 </label>
                 <span id="transunion-hint" class="govuk-hint govuk-radios__hint">
                   For example, the year you took out a credit card or phone contract.
@@ -169,7 +178,7 @@
         </div>
 
         <p>
-          <a href="more-information">I don't have any of these</a>
+          <a href="more-information">I do not have 2 of these items</a>
         </p>
 
         <input class="govuk-button " type="submit" value="Continue">

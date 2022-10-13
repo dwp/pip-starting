@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+We need more information before we can confirm your identity
+{% endblock %}
+
+{% block serviceName %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'includes/phase-banner.njk' %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+        We have been unable to verify your identity
+    </h1>
+
+    <p class="govuk-body">We have been unable to verify your identity. If you think you may have entered your details incorrectly, you can start again.</p>
+
+    {{ govukButton({
+      text: "Start again",
+      href: "choose-2-items"
+    }) }}
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          I have checked my details and still cannot sign in
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+       <p class="govuk-body">
+         [Peregrine content]
+       </p>
+      </div>
+    </details>
+
+{% endblock %}

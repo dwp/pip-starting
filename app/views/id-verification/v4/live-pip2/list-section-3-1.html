@@ -1,6 +1,6 @@
 {% extends "layout-idv-signed-in.html" %}
 
-{% set pageQuestion = "Progress summary" %}
+{% set pageQuestion = "Tell us how your health condition or disability affects you" %}
 
 {% block pageTitle %}
   {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
@@ -31,7 +31,7 @@
       <p>You can download a copy of your completed application when you've finished.</p>
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 12 of 18 sections.</p>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 13 of 18 sections.</p>
 
       <ol class="app-task-list">
         <li>
@@ -152,52 +152,20 @@
           </h2>
           <ul class="app-task-list__items govuk-!-margin-bottom-7">
             <li class="app-task-list__item">
-              {% if sectionStatus.planningandfollowingajourney === "completed" %}
-                <a class="app-task-list__task-name " href="/live-pip2-v1-0/planning-and-following-a-journey/check">
-                  Planning and following a journey
-                  <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="planningandfollowingajourney">Completed</strong>
-                  </span>
-                </a>
-              {% elif sectionStatus.planningandfollowingajourney === "inprogress" %}
-                <a class="app-task-list__task-name " href="/live-pip2-v1-0/planning-and-following-a-journey/">
-                  Planning and following a journey
-                  <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="planningandfollowingajourney">In progress</strong>
-                  </span>
-                </a>
-              {% else %}
-                <a class="app-task-list__task-name " href="/live-pip2-v1-0/planning-and-following-a-journey/">
-                  Planning and following a journey
-                  <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="planningandfollowingajourney">Not started</strong>
-                  </span>
-                </a>
-              {% endif %}
+              <a class="app-task-list__task-name " href="#">
+                Planning and following a journey
+                <span>
+                  <strong class="govuk-tag app-task-list__task-completed" id="planningandfollowingajourney">Completed</strong>
+                </span>
+              </a>
             </li>
             <li class="app-task-list__item">
-              {% if sectionStatus.movingaround === "completed" %}
-                <a class="app-task-list__task-name " href="/live-pip2-v1-0/moving-around/check">
-                  Moving around
-                  <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="movingaround">Completed</strong>
-                  </span>
-                </a>
-              {% elif sectionStatus.movingaround === "inprogress" %}
-                <a class="app-task-list__task-name " href="/live-pip2-v1-0/moving-around/">
-                  Moving around
-                  <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="movingaround">In progress</strong>
-                  </span>
-                </a>
-              {% else %}
-                <a class="app-task-list__task-name " href="/live-pip2-v1-0/moving-around/">
-                  Moving around
-                  <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="movingaround">Not started</strong>
-                  </span>
-                </a>
-              {% endif %}
+              <a class="app-task-list__task-name " href="moving-around/">
+                Moving around
+                <span>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="movingaround">Not started</strong>
+                </span>
+              </a>
             </li>
             <li class="app-task-list__item">
               <a class="app-task-list__task-name " href="#">
@@ -228,12 +196,12 @@
         {# Bank details #}
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">5. </span> Bank details
+            <span class="app-task-list__section-number">5. </span> Tell us your bank details
           </h2>
           <ul class="app-task-list__items govuk-!-margin-bottom-7">
             <li class="app-task-list__item">
               <a class="app-task-list__task-name " href="#">
-                Bank details
+                Bank or building society account details
                 <span>
                   <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="bankdetails">Not started</strong>
                 </span>

@@ -1,6 +1,6 @@
-{% extends "layout-idv-signed-in.html" %}
+{% extends "layout-idv.html" %}
 
-{% set pageQuestion = "What is your postcode?" %}
+{% set pageQuestion = "Check your phone" %}
 
 {% block pageTitle %}
   {{ pageQuestion }} – GOV.UK Prototype Kit
@@ -27,32 +27,36 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="hmrc-iv" method="post">
+      <h1 class="govuk-heading-l">{{ pageQuestion }}</h1>
 
-        <fieldset class="govuk-fieldset">
+      <div class="govuk-inset-text">
+        We have sent a code to:<br><b>07123456789</b>
+      </div>
 
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <p>It might take up to a minute to arrive.</p>
 
-            <h1 class="govuk-fieldset__heading">
-              {{ pageQuestion }}
-            </h1>
+      <p>The code will expire in 5 minutes.</p>
 
-          </legend>
-
-        </fieldset>
+      <form class="form" action="registration-complete" method="post">
 
         {{ govukInput({
           label: {
-            text: "Postcode"
+            text: "Enter your security code",
+            isPageHeading: false
           },
-          classes: "govuk-input--width-10",
-          id: "postcode",
-          name: "postcode"
+          id: "mobile-security-code",
+          name: "mobile-security-code",
+          type: "text",
+          classes: "govuk-input--width-10"
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
+
+      <p>
+        <a href="">I did not get a text message</a>
+      </p>
 
     </div>
   </div>

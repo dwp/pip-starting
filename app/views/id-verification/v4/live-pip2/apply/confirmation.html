@@ -13,7 +13,6 @@
   },
   html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -22,7 +21,7 @@
     <div class="govuk-grid-column-full">
 
       {{ govukPanel({
-        titleText: "Information sent"
+        titleText: "Stage 2 submitted"
       }) }}
 
     </div>{# /govuk-grid-column-full #}
@@ -31,27 +30,21 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <p class="govuk-body">We have sent a confirmation email to <strong>email@gmail.com</strong>.</p>
+      <p class="govuk-body">We have sent a confirmation email to <strong>jerry.bakewell@gmail.com</strong>.</p>
 
       <h2 class="govuk-heading-m">What happens next</h2>
 
-      <p>We will keep you up to date about your PIP claim by text message if you have agreed for us to do this.</p>
+      <p>Before we can make a decision about your claim we need to check your identity. We check everyone's identity to protect from fraud.</p>
 
-      <p>You might be contacted to arrange an assessment with a health professional if more information is needed. </p>
-
-      <p>You may not need a consultation if you have provided enough information for us to make a decision.</p>
+      <p>If you cannot confirm your identity online you can do it another way</p>
 
       <h2 class="govuk-heading-m">Download a copy of your completed form</h2>
 
-      <p>You can download a copy of your completed form using this link: <a href="#">David Smith PIP application.pdf</a></p>
+      <p>You can download a copy of your completed form using this link: <a href="#">Jerry Bakewell PIP application.pdf</a></p>
 
       <p>You will not be able to download your completed form after you leave this page.</p>
 
-      <h2 class="govuk-heading-m">You have finished your application</h2>
-
-      <p>Sign out to keep your information secure.</p>
-
-      <a href="/id-verification/v1/sign-out" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Sign out</a>
+      <a href="/id-verification/v4/dth/register" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Confirm my identity</a>
 
     </div>
   </div>

@@ -1,15 +1,20 @@
-{% set pageTitle = "Does your condition affect you moving around?" %}
+{% extends "layout-idv-signed-in.html" %}
 
-{% extends "layout-live-pip2-v1-0.html" %}
+{% set pageQuestion = "Does your condition affect you moving around?" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "live-pip2-v1-0/_page-title-slug.html" %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "live-pip2-v1-0/_beta-banner.html" %}
-  {% include "includes/back-link-v7.html" %}
-
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  {% include "includes/sign-out-button.html" %}
 {% endblock %}
 
 {% block content %}
@@ -17,7 +22,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/live-pip2-v1-0/moving-around/index-answer" method="post" novalidate>
+    <form action="" method="post" novalidate>
 
       {{ govukRadios({
         name: "movingaround-question",
@@ -53,7 +58,7 @@
 
     </form>
 
-    {% include "live-pip2-v1-0/moving-around/_return-link.html" %}
+    <p><a href="/id-verification/v4/live-pip2/list-section-3-1">Return to list</a></p>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->

@@ -2,8 +2,15 @@
 
 {% set pageQuestion = "Sign in" %}
 
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
 {% block pageTitle %}
-  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ pageQuestion }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -13,7 +20,7 @@
 
       <h1 class="govuk-heading-l">{{ pageQuestion }}</h1>
 
-      <form class="form" action="sign-in-verification" method="post">
+      <form class="form" action="re-sign-in-verification" method="post">
 
         {{ govukInput({
           label: {
@@ -41,6 +48,10 @@
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
+
+      <p>
+        <a href="register-start">Register now</a> if you have not used the service before.
+      </p>
 
       <h2 class="govuk-heading-m">Problems signing in</h2>
 

@@ -1,6 +1,6 @@
-{% extends "layout-idv-signed-in.html" %}
+{% extends "layout-idv.html" %}
 
-{% set pageQuestion = "What is your date of birth?" %}
+{% set pageQuestion = "Enter your email address" %}
 
 {% block pageTitle %}
   {{ pageQuestion }} – GOV.UK Prototype Kit
@@ -27,21 +27,22 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="postcode" method="post">
+      <h1 class="govuk-heading-l">{{ pageQuestion }}</h1>
 
-        {{ govukDateInput({
-          id: "passport-issued",
-          namePrefix: "passport-issued",
-          fieldset: {
-            legend: {
-              text: "What is your date of birth?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
+      <form class="form" action="email-address-verification" method="post">
+
+        <p>We will send a security code to this email address.</p>
+
+        {{ govukInput({
+          label: {
+            text: "Email address",
+            isPageHeading: false
           },
-          hint: {
-            text: "For example, 27 3 2007"
-          }
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>

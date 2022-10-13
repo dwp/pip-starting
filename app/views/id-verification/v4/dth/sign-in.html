@@ -2,8 +2,15 @@
 
 {% set pageQuestion = "Sign in" %}
 
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
 {% block pageTitle %}
-  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ pageQuestion }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -41,6 +48,10 @@
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
+
+      <p>
+        <a href="register-start">Register now</a> if you have not used the service before.
+      </p>
 
       <h2 class="govuk-heading-m">Problems signing in</h2>
 

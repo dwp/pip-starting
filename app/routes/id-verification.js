@@ -275,4 +275,45 @@ module.exports = function (router) {
       res.render('id-verification/v3/live-pip1/about_your_health/hcp-1-2.html')
   })
 
+  //PIP2 - Planning and following a journey
+  router.post('/id-verification/v4/live-pip2/planning-and-following-a-journey', (req, res) => {
+    const qplanning = req.session.data['planningandfollowingajourney-question'];
+
+    if (qplanning == 'Yes') {
+      res.redirect('details')
+    } else {
+      res.redirect('check')
+    }
+  })
+
+  //PIP2 - Moving around
+  router.post('/id-verification/v4/live-pip2/moving-around', (req, res) => {
+    const qmoving = req.session.data['movingaround-question'];
+
+    if (qmoving == 'Yes') {
+      res.redirect('info')
+    } else {
+      res.redirect('check')
+    }
+  })
+  router.post('/id-verification/v4/live-pip2/moving-around/info', (req, res) => {
+    const qmovinginfo = req.session.data['movingaround-info'];
+
+    if (qmovinginfo == 'It varies') {
+      res.redirect('varies')
+    } else {
+      res.redirect('details')
+    }
+  })
+
+  //PIP2 - Sign back in
+  router.post('/id-verification/v4/pip2-next-step', (req, res, next) => {
+      const nextStep = req.session.data['next-step'];
+      if (nextStep === 'upload') {
+          res.redirect('/id-verification/v4/live-pip2/supporting-evidence');
+      } else if (nextStep === 'confirm') {
+          res.redirect("/id-verification/v4/dth/re-sign-in");
+      }
+  })
+
 }
