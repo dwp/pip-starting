@@ -6,7 +6,13 @@
   {{ pageQuestion }}  – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Confirm your identity",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">

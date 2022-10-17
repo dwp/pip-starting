@@ -6,6 +6,14 @@
   {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Tell us who you are",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
 {% block beforeContent %}
   {{ govukPhaseBanner({
   tag: {
@@ -22,7 +30,7 @@
 
       <span class="govuk-caption-xl">Check your identity</span>
 
-      <form class="form" action="id-verification-start-2" method="post">
+      <form class="form" action="id-verification-start" method="post">
 
         {{ govukInput({
           label: {
