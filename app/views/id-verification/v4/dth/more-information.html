@@ -16,8 +16,12 @@ We need to ask some questions to prove your identity
 {% endblock %}
 
 {% block beforeContent %}
-{% include 'includes/phase-banner.njk' %}
-
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
 {% endblock %}
 
 {% block content %}
