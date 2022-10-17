@@ -6,6 +6,14 @@
   {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
 {% block beforeContent %}
   {{ govukPhaseBanner({
   tag: {

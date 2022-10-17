@@ -4,6 +4,14 @@
 We need to ask some questions to prove your identity
 {% endblock %}
 
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
 {% block serviceName %}
 {% endblock %}
 

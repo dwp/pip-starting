@@ -1,9 +1,17 @@
 {% extends "layout-idv.html" %}
 
-{% set pageQuestion = "What is you National Insurance number" %}
+{% set pageQuestion = "What is your National Insurance number" %}
 
 {% block pageTitle %}
   {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Tell us who you are",
+    containerClasses: "govuk-width-container"
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,11 +30,11 @@
 
       <span class="govuk-caption-xl">Check your identity</span>
 
-      <form class="form" action="id-verification-start-2" method="post">
+      <form class="form" action="id-verification-start" method="post">
 
         {{ govukInput({
           label: {
-            text: "What is you National Insurance number?",
+            text: "What is your National Insurance number?",
             classes: "govuk-label--xl",
             isPageHeading: true
           },

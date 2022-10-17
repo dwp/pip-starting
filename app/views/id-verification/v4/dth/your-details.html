@@ -6,6 +6,14 @@
   {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Tell us who you are",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
 {% block beforeContent %}
   {{ govukPhaseBanner({
   tag: {
