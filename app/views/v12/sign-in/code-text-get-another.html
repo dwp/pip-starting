@@ -29,16 +29,13 @@
 
       <h1 class="govuk-heading-l">Get another 6-digit security code sent to mobile number ending 789</h1>
 
-      {% if getData.scenario === "locked" %}
-        <a href="/p5/sign-in/code-text?scenario=locked" class="govuk-button">Continue</a>
+     
+        <a href="code-text-op3" class="govuk-button">Get another code</a>
+      
+        <p><a href="code-email" class="govuk-button govuk-button--secondary">Get a code by email instead</a></p>
+
         {% include "p5-v11/sign-in/_problems.html" %}
-      {% elif getData.scenario === "active" %}
-        <a href="/p5/sign-in/code-text?scenario=active" class="govuk-button">Get another code</a>
-        {% include "p5-v11/sign-in/_problems.html" %}
-      {% else %}
-        <a href="/p5/sign-in/code-text" class="govuk-button">Get another code</a>
-        {% include "p5-v11/sign-in/_problems.html" %}
-      {% endif %}
+       
 
     </div>{# /govuk-grid-column-two-thirds #}
   </div>{# /govuk-grid-row #}

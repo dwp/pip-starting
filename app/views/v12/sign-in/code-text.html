@@ -17,22 +17,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-
-
-        <form action="/v12/sign-in/create-password" method="POST" novalidate>
-
-
-      {% if data['code'] == '123456' %}
-      <script>
-          window.location.href = 'create-password'
-      </script>
-      {% endif %}
-
         <h1 class="govuk-heading-l">We have texted your 6-digit security code to mobile number ending 789</h1>
 
-        <p>This is the mobile number you gave us when you first called to apply for PIP.</p>
-
-        <p>The text should take one minute to arrive.</p>
+        <p>The code expires after 5 minutes.</p>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="code" >Enter your 6-digit security code</label>
@@ -41,12 +28,10 @@
 
 
 
-          <a href="/v12/sign-in/create-password" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
-          <p><a href="/v12/sign-in/code-text-get-another">I did not get a code</a></p>
-          <p><a href="/v12/sign-in/code-email">Get a code by email instead</a></p>
-
-
-
+          <a href="create-password" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
+          <button class="govuk-button govuk-button--secondary" href="code-email" data-module="govuk-button">Get a code by email instead</button>
+          <p><a href="code-text-get-another">I did not get a code by text</a></p>
+          <!-- <p><a href="/v12/sign-in/code-email">Get a code by email instead</a></p> -->
 
       </form>
 

@@ -53,10 +53,6 @@
     },
     {
       href: "#2",
-      text: "Privacy policy"
-    },
-    {
-      href: "#3",
       text: "Sign out"
     }
   ]
@@ -64,12 +60,13 @@
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukPhaseBanner({
-tag: {
-  text: "prototype"
-},
-html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {% include "includes/sign-out-button.html" %}
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
