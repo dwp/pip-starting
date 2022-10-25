@@ -31,6 +31,7 @@ const mvprev1 = require('./routes/mvp-rev-1')
 const p5rev1 = require('./routes/p5-rev-1')
 const p5v11 = require('./routes/p5-v11')
 const p5v12 = require('./routes/p5-v12')
+const p5v12v2 = require('./routes/p5-v12v2')
 const pip2 = require('./routes/p5.js')
 const p5v10 = require('./routes/p5-v10.js')
 const mvpp5 = require('./routes/mvp-p5.js')
@@ -80,6 +81,7 @@ pip2(router);
 p5v10(router);
 p5v11(router);
 p5v12(router);
+p5v12v2(router);
 mvpp5(router);
 pip1livev1(router);
 pip2livev1(router);
