@@ -1,6 +1,6 @@
 {% set pageTitle = "Check your answers: eating and drinking" %}
 
-{% extends "layout-p5-v12.html" %}
+{% extends "layout-p5-v11.html" %}
 
 {% block pageTitle %}
   {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
@@ -8,7 +8,7 @@
 
 {% block beforeContent %}
   {% include "p5-v12/_beta-banner.html" %}
-  {% include "includes/back-link-v12.html" %}
+  {% include "includes/back-link-v7.html" %}
 {% endblock %}
 
 {% block content %}
@@ -16,7 +16,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <form id="form" method="post" action="/p5-v12/list-1">
+    <form id="form" method="post" action="/p5-v12v2/list-1">
 
       <h1 class="govuk-heading-l">Check your answers: eating and drinking</h1>
 
@@ -34,7 +34,7 @@
             actions: {
               items: [
                 {
-                  href: "/p5-v12/eating-and-drinking/",
+                  href: "/p5-v12v2/eating-and-drinking/",
                   text: "Change",
                   visuallyHiddenText: " your answer for whether your condition affects you eating and drinking"
                 }
@@ -51,7 +51,7 @@
             actions: {
               items: [
                 {
-                  href: "/p5-v12/eating-and-drinking/feeding-tube",
+                  href: "/p5-v12v2/eating-and-drinking/feeding-tube",
                   text: "Change",
                   visuallyHiddenText: " your answer for whether you use a feeding tube or similar device to eat or drink"
                 }
@@ -68,7 +68,7 @@
             actions: {
               items: [
                 {
-                  href: "/p5-v12/eating-and-drinking/details",
+                  href: "/p5-v12v2/eating-and-drinking/details",
                   text: "Change",
                   visuallyHiddenText: " your answer for difficulties you have with eating and drinking and how you manage them"
                 }
@@ -92,7 +92,7 @@
             actions: {
               items: [
                 {
-                  href: "/p5-v12/eating-and-drinking/",
+                  href: "/p5-v12v2/eating-and-drinking/",
                   text: "Change",
                   visuallyHiddenText: " your answer for whether your condition affects you eating and drinking"
                 }
@@ -104,7 +104,7 @@
 
       {% endif %}
 
-      <a href="/p5-v12/list-1?eatinganddrinking=completed" class="govuk-button">Confirm and save</a>
+      <a href="/v12v2/condition-questions/option-three/list-1/?eatinganddrinking=completed" class="govuk-button">Confirm and save</a>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
