@@ -17,7 +17,7 @@ module.exports = function (app) {
 
   // Code for the list screen
 
-  app.get('/v12/condition-questions/option-three/list-1', (req, res, next) => {
+  app.get('/v12v2/condition-questions/option-three/list-1', (req, res, next) => {
 
     if (!req.session.sectionStatus){
       // console.log('no session');
@@ -229,7 +229,7 @@ module.exports = function (app) {
     //   req.session.sectionStatus.supportingevidence = req.query.supportingevidence
     // };
 
-    res.render('v12/condition-questions/option-three/list-1', {sectionStatus: req.session.sectionStatus, sectionCount: req.session.sectionCount});
+    res.render('v12v2/condition-questions/option-three/list-1', {sectionStatus: req.session.sectionStatus, sectionCount: req.session.sectionCount});
   });
 
   // Clear data on the 'application cancelled' screen
@@ -322,7 +322,7 @@ module.exports = function (app) {
 
   // Preparing food
 
-  app.get('/p5-v12/preparing-food/index-answer', function(req, res) {
+  app.get('/p5-v12v2/preparing-food/index-answer', function(req, res) {
 
     let question = req.session.data['preparingfood-question']
 
@@ -335,7 +335,7 @@ module.exports = function (app) {
 
   // Eating and drinking
 
-  app.get('/p5-v12/eating-and-drinking/index-answer', function(req, res) {
+  app.get('/p5-v12v2/eating-and-drinking/index-answer', function(req, res) {
 
     let question = req.session.data['eatinganddrinking-question']
 
@@ -348,7 +348,7 @@ module.exports = function (app) {
 
   // Managing treatments
 
-  app.get('/p5-v12/managing-treatments/index-answer', function(req, res) {
+  app.get('/p5-v12v2/managing-treatments/index-answer', function(req, res) {
 
     let question = req.session.data['managingtreatments-question']
 
@@ -361,7 +361,7 @@ module.exports = function (app) {
 
   // Washing and bathing
 
-  app.get('/p5-v12/washing-and-bathing/index-answer', function(req, res) {
+  app.get('/p5-v12v2/washing-and-bathing/index-answer', function(req, res) {
 
     let question = req.session.data['washingandbathing-question']
 
@@ -374,7 +374,7 @@ module.exports = function (app) {
 
   // Managing toilet needs
 
-  app.get('/p5-v12/managing-toilet-needs/index-answer', function(req, res) {
+  app.get('/p5-v12v2/managing-toilet-needs/index-answer', function(req, res) {
 
     let question = req.session.data['managingtoiletneeds-question']
 
@@ -387,7 +387,7 @@ module.exports = function (app) {
 
   // Dressing and undressing
 
-  app.get('/p5-v12/dressing-and-undressing/index-answer', function(req, res) {
+  app.get('/p5-v12v2/dressing-and-undressing/index-answer', function(req, res) {
 
     let question = req.session.data['dressingandundressing-question']
 
@@ -400,7 +400,7 @@ module.exports = function (app) {
 
   // Talking and listening
 
-  app.get('/p5-v12/talking-and-listening/index-answer', function(req, res) {
+  app.get('/p5-v12v2/talking-and-listening/index-answer', function(req, res) {
 
     let question = req.session.data['talkingandlistening-question']
 
@@ -413,7 +413,7 @@ module.exports = function (app) {
 
   // Reading
 
-  app.get('/p5-v12/reading/index-answer', function(req, res) {
+  app.get('/p5-v12v2/reading/index-answer', function(req, res) {
 
     let question = req.session.data['reading-question']
 
@@ -426,7 +426,7 @@ module.exports = function (app) {
 
   // Mixing with other people
 
-  app.get('/p5-v12/mixing-with-other-people/index-answer', function(req, res) {
+  app.get('/p5-v12v2/mixing-with-other-people/index-answer', function(req, res) {
 
     let question = req.session.data['mixingwithotherpeople-question']
 
@@ -439,7 +439,7 @@ module.exports = function (app) {
 
   // Managing money
 
-  app.get('/p5-v12/managing-money/index-answer', function(req, res) {
+  app.get('/p5-v12v2/managing-money/index-answer', function(req, res) {
 
     let question = req.session.data['managingmoney-question']
 
@@ -452,7 +452,7 @@ module.exports = function (app) {
 
   // Planning and following a journey
 
-  app.get('/p5-v12/planning-and-following-a-journey/index-answer', function(req, res) {
+  app.get('/p5-v12v2/planning-and-following-a-journey/index-answer', function(req, res) {
 
     let question = req.session.data['planningandfollowingajourney-question']
 
@@ -465,7 +465,7 @@ module.exports = function (app) {
 
   // Moving around
 
-  app.get('/p5-v12/moving-around/index-answer', function(req, res) {
+  app.get('/p5-v12v2/moving-around/index-answer', function(req, res) {
 
     let question = req.session.data['movingaround-question']
 
@@ -478,7 +478,7 @@ module.exports = function (app) {
 
   // Additional information
 
-  app.get('/p5-v12/additional-information/index-answer', function(req, res) {
+  app.get('/p5-v12v2/additional-information/index-answer', function(req, res) {
 
     let question = req.session.data['additionalinformation-question']
 
