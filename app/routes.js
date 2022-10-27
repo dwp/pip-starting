@@ -24,12 +24,14 @@ const v9 = require('./routes/v9')
 const v10 = require('./routes/v10')
 const v11 = require('./routes/v11')
 const v12 = require('./routes/v12')
+const v12v2 = require('./routes/v12v2')
 const expv11 = require('./routes/expv11')
 const mvp = require('./routes/mvp')
 const mvprev1 = require('./routes/mvp-rev-1')
 const p5rev1 = require('./routes/p5-rev-1')
 const p5v11 = require('./routes/p5-v11')
 const p5v12 = require('./routes/p5-v12')
+const p5v12v2 = require('./routes/p5-v12v2')
 const pip2 = require('./routes/p5.js')
 const p5v10 = require('./routes/p5-v10.js')
 const mvpp5 = require('./routes/mvp-p5.js')
@@ -44,6 +46,7 @@ const alternativeTasklistTwo = require('./routes/alternative-tasklist-1-1')
 const idVerification = require('./routes/id-verification')
 const addsupport = require('./routes/addsupport')
 const conditionQuestion = require('./routes/condition-question')
+const conditionQuestionv12v2 = require('./routes/condition-questionv12v2')
 
 // ROUTES REDIRECT END
 
@@ -70,6 +73,7 @@ v9(router);
 v10(router);
 v11(router);
 v12(router);
+v12v2(router);
 expv11(router);
 mvp(router);
 mvprev1(router);
@@ -78,6 +82,7 @@ pip2(router);
 p5v10(router);
 p5v11(router);
 p5v12(router);
+p5v12v2(router);
 mvpp5(router);
 pip1livev1(router);
 pip2livev1(router);
@@ -88,6 +93,7 @@ alternativeTasklistTwo(router);
 idVerification(router);
 addsupport(router);
 conditionQuestion(router);
+conditionQuestionv12v2(router);
 router.use('/', authRoutes)
 router.use('/', idvRoutes)
 // ROUTER LIST END
