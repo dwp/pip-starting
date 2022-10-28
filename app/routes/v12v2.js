@@ -23,6 +23,19 @@ module.exports = function (router) {
     //     )
     //   }
 
+
+    // Sign out pop up
+    router.post('/v12v2/signout-popup', (req, res, next) => {
+        const saveExit = req.session.data['sign-out'];
+        if (saveExit === 'Yes') {
+            res.redirect('/v12v2/signed-out');
+        } else if (saveExit === 'No') {
+            res.redirect("/v12v2/start");
+        } else {
+          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
+        }
+    })
+
     // ELIGIBILITY QUESTIONS
 
     router.post('/v12v2/intro-question', (req, res, next) => {

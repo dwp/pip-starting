@@ -29,30 +29,20 @@
       </script>
       {% endif %}
 
-        <h1 class="govuk-heading-l">We have texted your 6-digit security code to mobile number ending 789</h1>
+      <h1 class="govuk-heading-l">A 6-digit code has been texted to mobile number ending 789</h1>
 
-        <p>This is the mobile number you gave us when you first called to apply for PIP.</p>
+      <p>The code expires after 5 minutes.</p>
 
-        <p>The text should take one minute to arrive.</p>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="code" >Enter your 6-digit code</label>
+        <input class="govuk-input govuk-input--width-5 input-capitals" id="code" name="code" maxlength="6" data-hj-suppress type="text" pattern="[0-9]*" inputmode="numeric" value="">
+      </div>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="code" >Enter your 6-digit security code</label>
-          <input class="govuk-input govuk-input--width-5 input-capitals" id="code" name="code" maxlength="6" data-hj-suppress type="text" pattern="[0-9]*" inputmode="numeric" value="">
-        </div>
 
-        {% if getData.scenario === "locked" %}
-          <a href="/live-pip2-v1-0/sign-in/create-new-password?scenario=locked" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
-          <p><a href="/live-pip2-v1-0/sign-in/code-text-get-another?scenario=locked">I did not get a code</a></p>
-        {% elif getData.scenario === "active" %}
-          <a href="/live-pip2-v1-0/sign-in/splash-message" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
-          <p><a href="/live-pip2-v1-0/sign-in/code-text-get-another?scenario=active">I did not get a code</a></p>
-          <p><a href="/live-pip2-v1-0/sign-in/code-email?scenario=active">Get a code by email instead</a></p>
-        {% else %}
-          <a href="/live-pip2-v1-0/sign-in/create-password" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
-          <p><a href="/live-pip2-v1-0/sign-in/code-text-get-another">I did not get a code</a></p>
-          <p><a href="/live-pip2-v1-0/sign-in/code-email">Get a code by email instead</a></p>
-        {% endif %}
 
+        <a href="/live-pip1-v1-0/sign-in/create-password" class="govuk-button" role="button" draggable="false" data-module="govuk-button">Continue</a>
+        <p><a href="/live-pip1-v1-0/sign-in/code-text-get-another">Get another code by text</a></p>
+        <p><a href="/live-pip1-v1-0/sign-in/code-email">Get another code by email</a></p>
 
 
       </form>
