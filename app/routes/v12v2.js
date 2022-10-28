@@ -25,12 +25,24 @@ module.exports = function (router) {
 
 
     // Sign out pop up
-    router.post('/v12v2/signout-popup', (req, res, next) => {
+    router.post('/v12v2/about_your_health/signout-popup-hcp', (req, res, next) => {
         const saveExit = req.session.data['sign-out'];
         if (saveExit === 'Yes') {
             res.redirect('/v12v2/signed-out');
         } else if (saveExit === 'No') {
-            res.redirect("/v12v2/start");
+            res.redirect("/v12v2/about_your_health/hcp-1");
+        } else {
+          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
+        }
+    })
+
+    // Sign out pop up
+    router.post('/p5-v12v2/preparing-food/signout-popup-preparing-food', (req, res, next) => {
+        const saveExit = req.session.data['sign-out'];
+        if (saveExit === 'Yes') {
+            res.redirect('/v12v2/signed-out');
+        } else if (saveExit === 'No') {
+            res.redirect("/p5-v12v2/preparing-food/details");
         } else {
           res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
