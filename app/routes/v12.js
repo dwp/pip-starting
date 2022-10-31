@@ -23,6 +23,163 @@ module.exports = function (router) {
     //     )
     //   }
 
+
+    // Sign out pop up
+    router.post('/v12/about_your_health/signout-popup-hcp', (req, res, next) => {
+        const saveExit = req.session.data['sign-out'];
+        if (saveExit === 'Yes') {
+            res.redirect('/v12/signed-out');
+        } else if (saveExit === 'No') {
+            res.redirect("/v12/about_your_health/hcp-1");
+        } else {
+          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
+        }
+    })
+
+    // Sign out pop up for activities
+    router.post('/p5-v12/preparing-food/signout-popup-preparing-food', (req, res, next) => {
+        const saveExit = req.session.data['sign-out'];
+        if (saveExit === 'Yes') {
+            res.redirect('/v12/signed-out');
+        } else if (saveExit === 'No') {
+            res.redirect("/p5-v12/preparing-food/details");
+        } else {
+          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
+        }
+    })
+
+    router.post('/p5-v12/eating-and-drinking/signout-popup-eating', (req, res, next) => {
+        const saveExit = req.session.data['sign-out'];
+        if (saveExit === 'Yes') {
+            res.redirect('/v12/signed-out');
+        } else if (saveExit === 'No') {
+            res.redirect("/p5-v12/eating-and-drinking/details");
+        } else {
+          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
+        }
+    })
+
+    router.post('/p5-v12/managing-treatments/signout-popup-treatments', (req, res, next) => {
+        const saveExit = req.session.data['sign-out'];
+        if (saveExit === 'Yes') {
+            res.redirect('/v12/signed-out');
+        } else if (saveExit === 'No') {
+            res.redirect("/p5-v12/managing-treatments/details");
+        } else {
+          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
+        }
+    })
+
+    router.post('/p5-v12/washing-and-bathing/signout-popup-washing', (req, res, next) => {
+        const saveExit = req.session.data['sign-out'];
+        if (saveExit === 'Yes') {
+            res.redirect('/v12/signed-out');
+        } else if (saveExit === 'No') {
+            res.redirect("/p5-v12/washing-and-bathing/details");
+        } else {
+          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
+        }
+    })
+
+    router.post('/p5-v12/managing-toilet-needs/signout-popup-toilet-needs', (req, res, next) => {
+        const saveExit = req.session.data['sign-out'];
+        if (saveExit === 'Yes') {
+            res.redirect('/v12/signed-out');
+        } else if (saveExit === 'No') {
+            res.redirect("/p5-v12/managing-toilet-needs/details");
+        } else {
+          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
+        }
+    })
+
+    router.post('/p5-v12/dressing-and-undressing/signout-popup-dressing', (req, res, next) => {
+        const saveExit = req.session.data['sign-out'];
+        if (saveExit === 'Yes') {
+            res.redirect('/v12/signed-out');
+        } else if (saveExit === 'No') {
+            res.redirect("/p5-v12/dressing-and-undressing/details");
+        } else {
+          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
+        }
+    })
+
+    router.post('/p5-v12/talking-and-listening/signout-popup-talking', (req, res, next) => {
+        const saveExit = req.session.data['sign-out'];
+        if (saveExit === 'Yes') {
+            res.redirect('/v12/signed-out');
+        } else if (saveExit === 'No') {
+            res.redirect("/p5-v12/talking-and-listening/details");
+        } else {
+          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
+        }
+    })
+
+    router.post('/p5-v12/reading/signout-popup-reading', (req, res, next) => {
+        const saveExit = req.session.data['sign-out'];
+        if (saveExit === 'Yes') {
+            res.redirect('/v12/signed-out');
+        } else if (saveExit === 'No') {
+            res.redirect("/p5-v12/reading/details");
+        } else {
+          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
+        }
+    })
+
+    router.post('/p5-v12/mixing-with-other-people/signout-popup-mixing', (req, res, next) => {
+        const saveExit = req.session.data['sign-out'];
+        if (saveExit === 'Yes') {
+            res.redirect('/v12/signed-out');
+        } else if (saveExit === 'No') {
+            res.redirect("/p5-v12/mixing-with-other-people/details");
+        } else {
+          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
+        }
+    })
+
+    router.post('/p5-v12/managing-money/signout-popup-money', (req, res, next) => {
+        const saveExit = req.session.data['sign-out'];
+        if (saveExit === 'Yes') {
+            res.redirect('/v12/signed-out');
+        } else if (saveExit === 'No') {
+            res.redirect("/p5-v12/managing-money/details");
+        } else {
+          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
+        }
+    })
+
+    router.post('/p5-v12/planning-and-following-a-journey/signout-popup-planning-journey', (req, res, next) => {
+        const saveExit = req.session.data['sign-out'];
+        if (saveExit === 'Yes') {
+            res.redirect('/v12/signed-out');
+        } else if (saveExit === 'No') {
+            res.redirect("/p5-v12/planning-and-following-a-journey/details");
+        } else {
+          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
+        }
+    })
+
+    router.post('/p5-v12/moving-around/signout-popup-moving-around', (req, res, next) => {
+        const saveExit = req.session.data['sign-out'];
+        if (saveExit === 'Yes') {
+            res.redirect('/v12/signed-out');
+        } else if (saveExit === 'No') {
+            res.redirect("/p5-v12/moving-around/details");
+        } else {
+          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
+        }
+    })
+
+    router.post('/p5-v12/additional-information/signout-popup-additional-info', (req, res, next) => {
+        const saveExit = req.session.data['sign-out'];
+        if (saveExit === 'Yes') {
+            res.redirect('/v12/signed-out');
+        } else if (saveExit === 'No') {
+            res.redirect("/p5-v12/additional-information/details");
+        } else {
+          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
+        }
+    })
+
     // ELIGIBILITY QUESTIONS
 
     router.post('/v12/intro-question', (req, res, next) => {
