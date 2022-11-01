@@ -1,0 +1,90 @@
+{% set pageTitle = "Check your answers: moving around" %}
+
+{% extends "layout-live-pip2-v1-0.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "live-pip2-v1-0/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "live-pip2-v1-0/_beta-banner.html" %}
+  {% include "includes/back-link-v7.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="/live-pip2-v1-0/list-1">
+
+      <h1 class="govuk-heading-l">Check your answers: moving around</h1>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Does your condition affect you moving around?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['movingaround-question'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="index">
+              Change<span class="govuk-visually-hidden"> does your condition affect you moving around</span>
+            </a>
+          </dd>
+        </div>
+        {% if data['movingaround-question'] === 'Yes' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            How far can you walk using any aids or appliances you need?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['movingaround-info'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="info">
+              Change<span class="govuk-visually-hidden"> how far you can walk using any aids or appicvance you need</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+        {% if data['movingaround-info'] === 'It varies' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Why does the distance you can walk vary?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['more-detail'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> why does the distance you can walk vary</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+        {% if data['movingaround-question'] === 'Yes' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Tell us more about the difficulties you have with moving around and how you manage them
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['movingaround-details'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> tell us more about the difficulties you have with moving around and how you manage them</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+      </dl>
+     
+
+      <a href="/live-pip2-v1-0/list-1?movingaround=completed" class="govuk-button">Confirm and save</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

@@ -465,6 +465,16 @@ module.exports = function (app) {
       }
   });
 
+  // MOVING AROUND - EXAMPLE OF REDIRECT LOGIC FOR ROUTING TO A DIFFERENT QUESTION
+
+  app.post('/live-pip2-v1-0/moving-around/info', function(req, res) {
+    if (req.body["movingaround-info"]==="It varies"){
+      res.redirect("/live-pip2-v1-0/moving-around/why-it-varies")
+    } else {
+      res.redirect("/live-pip2-v1-0/moving-around/details")
+    }
+  });
+ 
   // Additional information
 
   app.get('/live-pip2-v1-0/additional-information/index-answer', function(req, res) {
