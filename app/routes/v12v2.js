@@ -43,8 +43,6 @@ module.exports = function (router) {
             res.redirect('/v12v2/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12v2/preparing-food/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -54,8 +52,6 @@ module.exports = function (router) {
             res.redirect('/v12v2/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12v2/eating-and-drinking/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -65,8 +61,6 @@ module.exports = function (router) {
             res.redirect('/v12v2/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12v2/managing-treatments/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -76,8 +70,6 @@ module.exports = function (router) {
             res.redirect('/v12v2/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12v2/washing-and-bathing/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -87,8 +79,6 @@ module.exports = function (router) {
             res.redirect('/v12v2/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12v2/managing-toilet-needs/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -98,8 +88,6 @@ module.exports = function (router) {
             res.redirect('/v12v2/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12v2/dressing-and-undressing/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -109,8 +97,6 @@ module.exports = function (router) {
             res.redirect('/v12v2/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12v2/talking-and-listening/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -120,8 +106,6 @@ module.exports = function (router) {
             res.redirect('/v12v2/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12v2/reading/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -131,8 +115,6 @@ module.exports = function (router) {
             res.redirect('/v12v2/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12v2/mixing-with-other-people/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -142,8 +124,6 @@ module.exports = function (router) {
             res.redirect('/v12v2/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12v2/managing-money/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -153,8 +133,6 @@ module.exports = function (router) {
             res.redirect('/v12v2/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12v2/planning-and-following-a-journey/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -164,8 +142,6 @@ module.exports = function (router) {
             res.redirect('/v12v2/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12v2/moving-around/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -175,8 +151,6 @@ module.exports = function (router) {
             res.redirect('/v12v2/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12v2/additional-information/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
