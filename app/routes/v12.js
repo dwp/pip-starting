@@ -31,8 +31,6 @@ module.exports = function (router) {
             res.redirect('/v12/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/v12/about_your_health/hcp-1");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -43,8 +41,6 @@ module.exports = function (router) {
             res.redirect('/v12/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12/preparing-food/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -54,8 +50,6 @@ module.exports = function (router) {
             res.redirect('/v12/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12/eating-and-drinking/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -65,8 +59,6 @@ module.exports = function (router) {
             res.redirect('/v12/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12/managing-treatments/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -76,8 +68,6 @@ module.exports = function (router) {
             res.redirect('/v12/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12/washing-and-bathing/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -87,8 +77,6 @@ module.exports = function (router) {
             res.redirect('/v12/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12/managing-toilet-needs/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -98,8 +86,6 @@ module.exports = function (router) {
             res.redirect('/v12/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12/dressing-and-undressing/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -109,8 +95,6 @@ module.exports = function (router) {
             res.redirect('/v12/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12/talking-and-listening/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -120,8 +104,6 @@ module.exports = function (router) {
             res.redirect('/v12/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12/reading/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -131,8 +113,6 @@ module.exports = function (router) {
             res.redirect('/v12/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12/mixing-with-other-people/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -142,8 +122,6 @@ module.exports = function (router) {
             res.redirect('/v12/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12/managing-money/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -153,8 +131,6 @@ module.exports = function (router) {
             res.redirect('/v12/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12/planning-and-following-a-journey/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -164,8 +140,6 @@ module.exports = function (router) {
             res.redirect('/v12/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12/moving-around/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
@@ -175,8 +149,6 @@ module.exports = function (router) {
             res.redirect('/v12/signed-out');
         } else if (saveExit === 'No') {
             res.redirect("/p5-v12/additional-information/details");
-        } else {
-          res.redirect('/id-verification/v3/live-pip1/about_your_health/hcp-1-popup-error')
         }
     })
 
