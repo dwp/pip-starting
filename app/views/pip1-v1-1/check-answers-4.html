@@ -38,7 +38,7 @@ Check your answers about your health
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="about_your_health/condition-new-2">
-                  Change<span class="govuk-visually-hidden"> condition or disability</span>
+                  Change<span class="govuk-visually-hidden"> what health condition or disability you have</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -105,7 +105,7 @@ Check your answers about your health
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="about_your_health/consent">
-                  Change<span class="govuk-visually-hidden"> health and care professional consent</span>
+                  Change<span class="govuk-visually-hidden"> if you agree that your health and care professionals can share relevant information about your health conditions to support your claim</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -121,8 +121,8 @@ Check your answers about your health
                 {{ data['hcp-1-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="about_your_health/remove-hcp-confirmation">
-                  Remove<span class="govuk-visually-hidden"> health or care professional name</span>
+                <a class="govuk-link" href="about_your_health/remove-hcp-confirmation-1">
+                  Remove<span class="govuk-visually-hidden"> the health or care professional, {{ data['hcp-1-name'] }}</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -144,7 +144,7 @@ Check your answers about your health
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="about_your_health/hcp-1">
-                  Change<span class="govuk-visually-hidden"> address</span>
+                  Change<span class="govuk-visually-hidden"> the health or care professional details for {{ data['hcp-1-name'] }}/</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -160,7 +160,7 @@ Check your answers about your health
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="about_your_health/hcp-another">
-                  Change<span class="govuk-visually-hidden"> another health or care professional</span>
+                  Change<span class="govuk-visually-hidden"> if there are any other health or care professionals we can contact</span>
                 </a>
 
               </dd>
@@ -176,8 +176,8 @@ Check your answers about your health
                 {{ data['hcp-2-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="about_your_health/remove-hcp-confirmation">
-                  Remove
+                <a class="govuk-link" href="about_your_health/remove-hcp-confirmation-2">
+                  Remove<span class="govuk-visually-hidden"> the health or care professional, {{ data['hcp-2-name'] }}</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -200,7 +200,7 @@ Check your answers about your health
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="about_your_health/hcp-2">
-                  Change<span class="govuk-visually-hidden"> address</span>
+                  Change<span class="govuk-visually-hidden"> the health or care professional details for {{ data['hcp-2-name'] }}</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -216,7 +216,7 @@ Check your answers about your health
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="about_your_health/hcp-another-2">
-                  Change<span class="govuk-visually-hidden"> another health or care professional</span>
+                  Change<span class="govuk-visually-hidden"> if there are any other health or care professionals we can contact</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -231,8 +231,8 @@ Check your answers about your health
                 {{ data['hcp-3-name'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="about_your_health/remove-hcp-confirmation">
-                  Remove<span class="govuk-visually-hidden"> health or care professional name</span>
+                <a class="govuk-link" href="about_your_health/remove-hcp-confirmation-3">
+                  Remove<span class="govuk-visually-hidden"> the health or care professional, {{ data['hcp-3-name'] }}</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -254,13 +254,13 @@ Check your answers about your health
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="about_your_health/hcp-3">
-                  Change<span class="govuk-visually-hidden"> address</span>
+                  Change<span class="govuk-visually-hidden"> the health or care professional details for {{ data['hcp-3-name'] }}</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
             {% endif %}
 
-            {% if data['hcp-4'] === 'No' %}
+            {% if data['hcp-3'] === 'No' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Are there any other health or care professionals we can contact?
@@ -270,7 +270,7 @@ Check your answers about your health
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="about_your_health/hcp-another-2">
-                  Change<span class="govuk-visually-hidden"> another health or care professional</span>
+                  Change<span class="govuk-visually-hidden"> if there are any other health or care professionals we can contact</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -286,7 +286,7 @@ Check your answers about your health
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="in-hospital">
-                  Change<span class="govuk-visually-hidden"> if you are in hospital</span>
+                  Change<span class="govuk-visually-hidden"> if you are currently staying in any of these places</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -301,7 +301,7 @@ Check your answers about your health
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="hospital-admission.html">
-                  Change<span class="govuk-visually-hidden"> date you went into to hospital</span>
+                  Change<span class="govuk-visually-hidden"> when you went into to hospital</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -321,7 +321,7 @@ Check your answers about your health
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="hospital-address">
-                  Change<span class="govuk-visually-hidden"> address</span>
+                  Change<span class="govuk-visually-hidden"> hospital address</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -337,7 +337,7 @@ Check your answers about your health
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="hospice-admission.html">
-                  Change<span class="govuk-visually-hidden"> date you went into the hospice</span>
+                  Change<span class="govuk-visually-hidden"> when you went into the hospice</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -357,7 +357,7 @@ Check your answers about your health
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="hospice-address">
-                  Change<span class="govuk-visually-hidden"> address</span>
+                  Change<span class="govuk-visually-hidden"> hospice address</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -373,7 +373,7 @@ Check your answers about your health
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="care-home-admission">
-                  Change<span class="govuk-visually-hidden"> date you went into to the care home</span>
+                  Change<span class="govuk-visually-hidden"> when you went into to this accommodation</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -393,10 +393,10 @@ Check your answers about your health
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="care-home-address">
-                  Change<span class="govuk-visually-hidden"> care home or nursing home address</span>
+                  Change<span class="govuk-visually-hidden"> accommodation address</span>
                 </a>
               </dd>
-            </div> <!-- govuk-summary-list__row -->      
+            </div> <!-- govuk-summary-list__row -->
             {% endif %}
 
             {% if data['hospital'] === 'Other' %}
@@ -409,7 +409,7 @@ Check your answers about your health
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="care-home-admission">
-                  Change<span class="govuk-visually-hidden"> date you went into the other accommodation</span>
+                  Change<span class="govuk-visually-hidden"> when you went into the other accommodation</span>
                 </a>
               </dd>
             </div> <!-- govuk-summary-list__row -->
@@ -432,7 +432,7 @@ Check your answers about your health
                   Change<span class="govuk-visually-hidden"> other accommodation address</span>
                 </a>
               </dd>
-            </div> <!-- govuk-summary-list__row -->       
+            </div> <!-- govuk-summary-list__row -->
             {% endif %}
           </dl>
 
