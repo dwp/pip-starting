@@ -293,6 +293,28 @@ module.exports = function (router) {
     })
 
     router.post('/pip1-v1-1/contact-details', (req, res, next) => {
+        res.redirect('/pip1-v1-1/your-account');
+    });
+
+    router.post('/pip1-v1-1/your-account', (req, res, next) => {
+        const yourAccount = req.session.data['your-account'];
+        if (yourAccount === 'Yes') {
+            res.redirect('/pip1-v1-1/account-details');
+        }
+        else if (yourAccount === 'No') {
+            res.redirect('/pip1-v1-1/no-account-details');
+        }
+    });
+
+    router.post('/pip1-v1-1/account-details', (req, res, next) => {
+        res.redirect('/pip1-v1-1/motability');
+    });
+
+    router.post('/pip1-v1-1/no-account-details', (req, res, next) => {
+        res.redirect('/pip1-v1-1/motability');
+    });
+
+    router.post('/pip1-v1-1/motability', (req, res, next) => {
         res.redirect('/pip1-v1-1/alt-formats');
     });
 
@@ -303,7 +325,7 @@ module.exports = function (router) {
         } else {
             res.redirect('/pip1-v1-1/check-answers-2');
         }
-    })
+    });
 
     router.post('/pip1-v1-1/alt-formats-choice', (req, res, next) => {
         const altFormat = req.session.data['alt-formats-choice'];
@@ -468,7 +490,7 @@ module.exports = function (router) {
 
     // ABOUT YOUR HEALTH START
 
-    
+
 
     router.post('/pip1-v1-1/about_your_health/condition-new-2', (req, res, next) => {
         res.redirect('/pip1-v1-1/about_your_health/consent');
@@ -691,7 +713,7 @@ module.exports = function (router) {
     // router.post('/pip1-v1-1/save_and_return/intro-question', (req, res, next) => {
     //     res.redirect('/pip1-v1-1/save_and_return/sign-in');
     // });
-    
+
     router.post('/pip1-v1-1/save_and_return/sign-in', (req, res, next) => {
         res.redirect('/pip1-v1-1/save_and_return/sign-in-2fa');
     });

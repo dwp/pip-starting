@@ -182,6 +182,89 @@ Check your answers personal details
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
+                Can you provide bank or building society account details?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['your-account'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="your-account.html">
+                  Change<span class="govuk-visually-hidden"> if you can provide bank or building society account details</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            {% if data['your-account'] === 'Yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name on account
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['account-name'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="your-account.html">
+                  Change<span class="govuk-visually-hidden"> name on account</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Sort code
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['sort-code'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="your-account.html">
+                  Change<span class="govuk-visually-hidden"> sort-code</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Account number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['account-number'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="your-account.html">
+                  Change<span class="govuk-visually-hidden"> account number</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Building society roll number (if you have one)
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['roll-number'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="your-account.html">
+                  Change<span class="govuk-visually-hidden"> building society roll number (if you have one)</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+            {% endif %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                If eligible, would you like the Motability Scheme to post you information about it?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['motability'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="motability.html">
+                  Change<span class="govuk-visually-hidden"> if would you like the Motability Scheme to post you information</span>
+                </a>
+              </dd>
+            </div> <!-- govuk-summary-list__row -->
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 Do you need communications in another format?
               </dt>
               <dd class="govuk-summary-list__value">
