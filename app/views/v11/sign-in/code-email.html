@@ -28,13 +28,28 @@
         </div>
 
         {% if getData.scenario === "locked" %}
-          <a href="/p5-v11/sign-in/code-text?scenario=locked" class="govuk-button">Continue</a>
+        <!--<a href="/p5-v11/sign-in/code-text?scenario=locked" class="govuk-button">Continue</a>-->
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukButton({
+              text: "Continue",
+              href: "/p5-v11/sign-in/code-text?scenario=locked"
+          }) }}
           <p><a href="/p5-v11/sign-in/code-email-get-another?scenario=locked">I did not get a code</a></p>
         {% elif getData.scenario === "active" %}
-          <a href="/p5-v11/list" class="govuk-button">Continue</a>
+          <!--<a href="/p5-v11/list" class="govuk-button">Continue</a>-->
           <p><a href="/p5-v11/sign-in/code-email-get-another?scenario=active">I did not get a code</a></p>
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukButton({
+              text: "Continue",
+              href: "/p5-v11/list"
+          }) }}
         {% else %}
-          <a href="/p5-v11/sign-in/create-password" class="govuk-button">Continue</a>
+          <!--<a href="/p5-v11/sign-in/create-password" class="govuk-button">Continue</a>-->
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukButton({
+              text: "Continue",
+              href: "/p5-v11/sign-in/create-password"
+          }) }}
           <p><a href="/p5-v11/sign-in/code-email-get-another">I did not get a code</a></p>
         {% endif %}
 

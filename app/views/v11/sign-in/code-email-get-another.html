@@ -30,11 +30,21 @@
       <h1 class="govuk-heading-l">Get another 6-digit security code sent to email@email.com</h1>
 
       {% if getData.scenario === "locked" %}
-        <a href="/p5-v11/sign-in/code-email?scenario=locked" class="govuk-button">Get another code</a>
+        {{ govukButton({
+            text: "Get another code",
+            href: "/p5-v11/sign-in/code-email?scenario=locked"
+        }) }}
       {% elif getData.scenario === "active" %}
-        <a href="/p5-v11/sign-in/code-email?scenario=active" class="govuk-button">Get another code</a>
+        {{ govukButton({
+            text: "Get another code",
+            href: "/p5-v11/sign-in/code-email?scenario=active"
+        }) }}
       {% else %}
-        <a href="/p5-v11/sign-in/code-email" class="govuk-button">Get another code</a>
+        <!-- <a href="/p5-v11/sign-in/code-email" class="govuk-button">Get another code</a> -->
+        {{ govukButton({
+            text: "Get another code",
+            href: "/p5-v11/sign-in/code-email"
+        }) }}
       {% endif %}
 
       {% include "p5-v11/sign-in/_problems.html" %}
