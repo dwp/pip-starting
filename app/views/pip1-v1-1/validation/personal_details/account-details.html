@@ -39,9 +39,12 @@ Your bank or building society account
       </div> <!-- govuk-form-group -->
 
       <div class="govuk-form-group">
-          <h1 class="govuk-heading-xl">
-            Bank or building society account details
-          </h1>
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Bank, building society or credit union account details
+            </h1>
+          </legend>
 
           <div class="govuk-form-group govuk-form-group--error">
             <label class="govuk-label govuk-label--m" for="account-name">
@@ -89,9 +92,11 @@ Your bank or building society account
             <input class="govuk-input govuk-input--width-10" id="roll-number" name="roll-number" type="text" aria-describedby="roll-number-hint">
           </div>
 
-        </div> <!-- govuk-form-group -->
+        </fieldset>
 
-        <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+      </div> <!-- govuk-form-group -->
+
+      <input type="submit" class="govuk-button" value="Save and continue" id="submit">
 
     </div>{# /govuk-grid-column-two-thirds #}
   </div>{# /govuk-grid-row #}
