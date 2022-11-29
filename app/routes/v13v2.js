@@ -294,7 +294,7 @@ module.exports = function (router) {
     })
 
     router.post('/v13v2/contact-details', (req, res, next) => {
-        res.redirect('/v13/bank-account.html')
+        res.redirect('/v13v2/bank-account.html')
     })
 
     router.post('/v13v2/bank-account', (req, res, next) => {
@@ -310,7 +310,7 @@ module.exports = function (router) {
       res.redirect('/v13v2/alt-formats');
     })
 
-    router.post('/v13v2/bank-account-details', (req, res, next) => {
+    router.post('/v13v2/continue-without-bank-details', (req, res, next) => {
       res.redirect('/v13v2/alt-formats');
     })
 
