@@ -50,24 +50,48 @@
           <ul class="app-task-list__items govuk-!-margin-bottom-7">
             <li class="app-task-list__item">
               {% if sectionStatus.aboutyourhealth === "completed" %}
-                <a class="app-task-list__task-name "href="/p5-v12/about-your-health/check">
+                <a class="app-task-list__task-name "href="check-answers-condition">
                   About your health
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="aboutyourhealth">Completed</strong>
                   </span>
                 </a>
                 {% elif sectionStatus.aboutyourhealth === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5-v12/about-your-health/condition">
+                <a class="app-task-list__task-name " href="check-answers-condition">
                   About your health
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="aboutyourhealth">Not complete</strong>
                   </span>
                 </a>
                 {% else %}
-                <a class="app-task-list__task-name " href="check-answers-condition">
+                <a class="app-task-list__task-name" href="check-answers-condition">
                   About your health
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="aboutyourhealth">Not started</strong>
+                  </span>
+                </a>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              {% if sectionStatus.medicationsTreatments === "completed" %}
+                <a class="app-task-list__task-name" href="/v12/condition-questions/option-three/medication">
+                  About your medications and treatments
+                  <span>
+                    <strong class="govuk-tag app-task-list__task-completed" id="medicationsTreatments">Completed</strong>
+                  </span>
+                </a>
+                {% elif sectionStatus.medicationsTreatments === "inprogress" %}
+                <a class="app-task-list__task-name" href="/v12/condition-questions/option-three/medication">
+                  About your medications and treatments
+                  <span>
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="medicationsTreatments">Not complete</strong>
+                  </span>
+                </a>
+                {% else %}
+                <a class="app-task-list__task-name" href="/v12/condition-questions/option-three/medication">
+                 About your medications and treatments
+                  <span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="medicationsTreatments">Not started</strong>
                   </span>
                 </a>
               {% endif %}
