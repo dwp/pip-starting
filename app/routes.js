@@ -49,6 +49,7 @@ const idVerification = require('./routes/id-verification')
 const addsupport = require('./routes/addsupport')
 const conditionQuestion = require('./routes/condition-question')
 const conditionQuestionv12v2 = require('./routes/condition-questionv12v2')
+const additionalSupportCondition = require('./routes/additional-support-conditon')
 
 // ROUTES REDIRECT END
 
@@ -98,6 +99,7 @@ idVerification(router);
 addsupport(router);
 conditionQuestion(router);
 conditionQuestionv12v2(router);
+additionalSupportCondition(router);
 router.use('/', authRoutes)
 router.use('/', idvRoutes)
 // ROUTER LIST END
