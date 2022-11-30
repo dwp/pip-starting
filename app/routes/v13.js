@@ -721,6 +721,10 @@ module.exports = function (router) {
     });
 
     router.post('/v13/check-answers-4', (req, res, next) => {
+        res.redirect('/v13/motability-scheme');
+    });
+
+    router.post('/v13/motability-scheme', (req, res, next) => {
         res.redirect('/v13/confirmation');
     });
 
