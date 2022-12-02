@@ -31,6 +31,14 @@ module.exports = function (router) {
           res.redirect("/id-verification/v4/sign-in");
       }
   })
+  router.post('/id-verification/v5/intro-question', (req, res, next) => {
+      const newOld = req.session.data['new-existing'];
+      if (newOld === 'Yes') {
+          res.redirect('/id-verification/v5/register-start');
+      } else  {
+          res.redirect("/id-verification/v5/sign-in");
+      }
+  })
 
   // Sign out pop up
   router.post('/id-verification/v3/savepopup', (req, res, next) => {
@@ -313,6 +321,15 @@ module.exports = function (router) {
           res.redirect('/id-verification/v4/live-pip2/supporting-evidence');
       } else if (nextStep === 'confirm') {
           res.redirect("/id-verification/v4/dth/re-sign-in");
+      }
+  })
+
+  router.post('/id-verification/v5/pip2-next-step', (req, res, next) => {
+      const nextStep = req.session.data['next-step'];
+      if (nextStep === 'upload') {
+          res.redirect('/id-verification/v5/live-pip2/supporting-evidence');
+      } else if (nextStep === 'confirm') {
+          res.redirect("/id-verification/v5/idv-intro");
       }
   })
 
