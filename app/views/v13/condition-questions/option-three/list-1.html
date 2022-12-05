@@ -1,4 +1,4 @@
-{% extends "layout-p5-v11.html" %}
+{% extends "layout-p5-v12.html" %}
 
 {% set pageTitle = "Tell us how your health condition or disability affects you" %}
 
@@ -8,7 +8,7 @@
 
 {% block beforeContent %}
   {% include "p5-v12/_beta-banner.html" %}
-  {% include "includes/back-link-v7.html" %}
+  {% include "includes/back-link-p5-v12.html" %}
 {% endblock %}
 
 {% block content %}
@@ -50,14 +50,14 @@
           <ul class="app-task-list__items govuk-!-margin-bottom-7">
             <li class="app-task-list__item">
               {% if sectionStatus.aboutyourhealth === "completed" %}
-                <a class="app-task-list__task-name "href="/v12v2/condition-questions/option-three/condition">
+                <a class="app-task-list__task-name "href="/v12/condition-questions/option-three/condition">
                   About your health
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="aboutyourhealth">Completed</strong>
                   </span>
                 </a>
                 {% elif sectionStatus.aboutyourhealth === "inprogress" %}
-                <a class="app-task-list__task-name " href="/v12v2/condition-questions/option-three/condition">
+                <a class="app-task-list__task-name " href="/v12/condition-questions/option-three/condition">
                   About your health
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="aboutyourhealth">Not complete</strong>
@@ -74,21 +74,21 @@
             </li>
             <li class="app-task-list__item">
               {% if sectionStatus.medicationsTreatments === "completed" %}
-                <a class="app-task-list__task-name" href="/v12v2/condition-questions/option-three/medication">
+                <a class="app-task-list__task-name" href="/v12/condition-questions/option-three/medication">
                   About your medications and treatments
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="medicationsTreatments">Completed</strong>
                   </span>
                 </a>
                 {% elif sectionStatus.medicationsTreatments === "inprogress" %}
-                <a class="app-task-list__task-name" href="/v12v2/condition-questions/option-three/medication">
+                <a class="app-task-list__task-name" href="/v12/condition-questions/option-three/medication">
                   About your medications and treatments
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="medicationsTreatments">Not complete</strong>
                   </span>
                 </a>
                 {% else %}
-                <a class="app-task-list__task-name" href="/v12v2/condition-questions/option-three/medication">
+                <a class="app-task-list__task-name" href="/v12/condition-questions/option-three/medication">
                  About your medications and treatments
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="medicationsTreatments">Not started</strong>
@@ -98,21 +98,21 @@
             </li>
             <li class="app-task-list__item">
               {% if sectionStatus.aboutyourhealthprofessionals === "completed" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/about-your-health-professionals/check">
+                <a class="app-task-list__task-name " href="/p5-v12/about-your-health-professionals/check">
                   About your health professionals
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="aboutyourhealthprofessionals">Completed</strong>
                   </span>
                 </a>
                 {% elif sectionStatus.aboutyourhealthprofessionals === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/about-your-health-professionals/check">
+                <a class="app-task-list__task-name " href="/p5-v12/about-your-health-professionals/check">
                   About your health professionals
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="aboutyourhealthprofessionals">Not complete</strong>
                   </span>
                 </a>
                 {% else %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/about-your-health-professionals/check">
+                <a class="app-task-list__task-name " href="/p5-v12/about-your-health-professionals/check">
                   About your health professionals
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="aboutyourhealthprofessionals">Not started</strong>
@@ -130,21 +130,21 @@
           <ul class="app-task-list__items govuk-!-margin-bottom-7">
             <li class="app-task-list__item">
               {% if sectionStatus.preparingfood === "completed" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/preparing-food/check">
+                <a class="app-task-list__task-name " href="/p5-v12/preparing-food/check">
                   Preparing food
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="preparingfood">Completed</strong>
                   </span>
                 </a>
               {% elif sectionStatus.preparingfood === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/preparing-food/">
+                <a class="app-task-list__task-name " href="/p5-v12/preparing-food/">
                   Preparing food
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="preparingfood">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/preparing-food/">
+                <a class="app-task-list__task-name " href="/p5-v12/preparing-food/">
                   Preparing food
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="preparingfood">Not started</strong>
@@ -154,21 +154,21 @@
             </li>
             <li class="app-task-list__item">
               {% if sectionStatus.eatinganddrinking === "completed" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/eating-and-drinking/check">
+                <a class="app-task-list__task-name " href="/p5-v12/eating-and-drinking/check">
                   Eating and drinking
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="eatinganddrinking">Completed</strong>
                   </span>
                 </a>
               {% elif sectionStatus.eatinganddrinking === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/eating-and-drinking/">
+                <a class="app-task-list__task-name " href="/p5-v12/eating-and-drinking/">
                   Eating and drinking
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="eatinganddrinking">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/eating-and-drinking/">
+                <a class="app-task-list__task-name " href="/p5-v12/eating-and-drinking/">
                   Eating and drinking
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eatinganddrinking">Not started</strong>
@@ -178,21 +178,21 @@
             </li>
             <li class="app-task-list__item">
               {% if sectionStatus.managingtreatments === "completed" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/managing-treatments/check">
+                <a class="app-task-list__task-name " href="/p5-v12/managing-treatments/check">
                   Managing treatments
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="managingtreatments">Completed</strong>
                   </span>
                 </a>
               {% elif sectionStatus.managingtreatments === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/managing-treatments/">
+                <a class="app-task-list__task-name " href="/p5-v12/managing-treatments/">
                   Managing treatments
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="managingtreatments">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/managing-treatments/">
+                <a class="app-task-list__task-name " href="/p5-v12/managing-treatments/">
                   Managing treatments
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="managingtreatments">Not started</strong>
@@ -202,21 +202,21 @@
             </li>
             <li class="app-task-list__item">
               {% if sectionStatus.washingandbathing === "completed" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/washing-and-bathing/check">
+                <a class="app-task-list__task-name " href="/p5-v12/washing-and-bathing/check">
                   Washing and bathing
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="washingandbathing">Completed</strong>
                   </span>
                 </a>
               {% elif sectionStatus.washingandbathing === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/washing-and-bathing/">
+                <a class="app-task-list__task-name " href="/p5-v12/washing-and-bathing/">
                   Washing and bathing
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="washingandbathing">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/washing-and-bathing/">
+                <a class="app-task-list__task-name " href="/p5-v12/washing-and-bathing/">
                   Washing and bathing
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="washingandbathing">Not started</strong>
@@ -226,21 +226,21 @@
             </li>
             <li class="app-task-list__item">
               {% if sectionStatus.managingtoiletneeds === "completed" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/managing-toilet-needs/check">
+                <a class="app-task-list__task-name " href="/p5-v12/managing-toilet-needs/check">
                   Using the toilet and managing incontinence
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="managingtoiletneeds">Completed</strong>
                   </span>
                 </a>
               {% elif sectionStatus.managingtoiletneeds === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/managing-toilet-needs/">
+                <a class="app-task-list__task-name " href="/p5-v12/managing-toilet-needs/">
                   Using the toilet and managing incontinence
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="managingtoiletneeds">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/managing-toilet-needs/">
+                <a class="app-task-list__task-name " href="/p5-v12/managing-toilet-needs/">
                   Using the toilet and managing incontinence
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="managingtoiletneeds">Not started</strong>
@@ -250,21 +250,21 @@
             </li>
             <li class="app-task-list__item">
               {% if sectionStatus.dressingandundressing === "completed" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/dressing-and-undressing/check">
+                <a class="app-task-list__task-name " href="/p5-v12/dressing-and-undressing/check">
                   Dressing and undressing
                   <span>
                     <strong class="govuk-tag tag-completed app-task-list__task-completed" id="dressingandundressing">Completed</strong>
                   </span>
                 </a>
               {% elif sectionStatus.dressingandundressing === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/dressing-and-undressing/">
+                <a class="app-task-list__task-name " href="/p5-v12/dressing-and-undressing/">
                   Dressing and undressing
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="dressingandundressing">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/dressing-and-undressing/">
+                <a class="app-task-list__task-name " href="/p5-v12/dressing-and-undressing/">
                   Dressing and undressing
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="dressingandundressing">Not started</strong>
@@ -274,21 +274,21 @@
             </li>
             <li class="app-task-list__item">
               {% if sectionStatus.talkingandlistening === "completed" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/talking-and-listening/check">
+                <a class="app-task-list__task-name " href="/p5-v12/talking-and-listening/check">
                   Talking, listening and understanding
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="talkingandlistening">Completed</strong>
                   </span>
                 </a>
               {% elif sectionStatus.talkingandlistening === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/talking-and-listening/">
+                <a class="app-task-list__task-name " href="/p5-v12/talking-and-listening/">
                   Talking,listening and understanding
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="talkingandlistening">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/talking-and-listening/">
+                <a class="app-task-list__task-name " href="/p5-v12/talking-and-listening/">
                   Talking,listening and understanding
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="talkingandlistening">Not started</strong>
@@ -298,21 +298,21 @@
             </li>
             <li class="app-task-list__item">
               {% if sectionStatus.reading === "completed" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/reading/check">
+                <a class="app-task-list__task-name " href="/p5-v12/reading/check">
                   Reading
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="reading">Completed</strong>
                   </span>
                 </a>
               {% elif sectionStatus.reading === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/reading/">
+                <a class="app-task-list__task-name " href="/p5-v12/reading/">
                   Reading
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="reading">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/reading/">
+                <a class="app-task-list__task-name " href="/p5-v12/reading/">
                   Reading
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="reading">Not started</strong>
@@ -322,21 +322,21 @@
             </li>
             <li class="app-task-list__item">
               {% if sectionStatus.mixingwithotherpeople === "completed" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/mixing-with-other-people/check">
+                <a class="app-task-list__task-name " href="/p5-v12/mixing-with-other-people/check">
                   Mixing with other people
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="mixingwithotherpeople">Completed</strong>
                   </span>
                 </a>
               {% elif sectionStatus.mixingwithotherpeople === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/mixing-with-other-people/">
+                <a class="app-task-list__task-name " href="/p5-v12/mixing-with-other-people/">
                   Mixing with other people
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="mixingwithotherpeople">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/mixing-with-other-people/">
+                <a class="app-task-list__task-name " href="/p5-v12/mixing-with-other-people/">
                   Mixing with other people
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="mixingwithotherpeople">Not started</strong>
@@ -346,21 +346,21 @@
             </li>
             <li class="app-task-list__item">
               {% if sectionStatus.managingmoney === "completed" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/managing-money/check">
+                <a class="app-task-list__task-name " href="/p5-v12/managing-money/check">
                   Managing money
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="managingmoney">Completed</strong>
                   </span>
                 </a>
               {% elif sectionStatus.managingmoney === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/managing-money/">
+                <a class="app-task-list__task-name " href="/p5-v12/managing-money/">
                   Managing money
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="managingmoney">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/managing-money/">
+                <a class="app-task-list__task-name " href="/p5-v12/managing-money/">
                   Managing money
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="managingmoney">Not started</strong>
@@ -378,21 +378,21 @@
           <ul class="app-task-list__items govuk-!-margin-bottom-7">
             <li class="app-task-list__item">
               {% if sectionStatus.planningandfollowingajourney === "completed" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/planning-and-following-a-journey/check">
+                <a class="app-task-list__task-name " href="/p5-v12/planning-and-following-a-journey/check">
                   Planning and following a journey
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="planningandfollowingajourney">Completed</strong>
                   </span>
                 </a>
               {% elif sectionStatus.planningandfollowingajourney === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/planning-and-following-a-journey/">
+                <a class="app-task-list__task-name " href="/p5-v12/planning-and-following-a-journey/">
                   Planning and following a journey
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="planningandfollowingajourney">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/planning-and-following-a-journey/">
+                <a class="app-task-list__task-name " href="/p5-v12/planning-and-following-a-journey/">
                   Planning and following a journey
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="planningandfollowingajourney">Not started</strong>
@@ -402,21 +402,21 @@
             </li>
             <li class="app-task-list__item">
               {% if sectionStatus.movingaround === "completed" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/moving-around/check">
+                <a class="app-task-list__task-name " href="/p5-v12/moving-around/check">
                   Moving around
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="movingaround">Completed</strong>
                   </span>
                 </a>
               {% elif sectionStatus.movingaround === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/moving-around/">
+                <a class="app-task-list__task-name " href="/p5-v12/moving-around/">
                   Moving around
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="movingaround">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/moving-around/">
+                <a class="app-task-list__task-name " href="/p5-v12/moving-around/">
                   Moving around
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="movingaround">Not started</strong>
@@ -434,21 +434,21 @@
           <ul class="app-task-list__items govuk-!-margin-bottom-7">
             <li class="app-task-list__item">
               {% if sectionStatus.additionalinformation === "completed" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/additional-information/check">
+                <a class="app-task-list__task-name " href="/p5-v12/additional-information/check">
                   Additional information
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="additionalinformation">Completed</strong>
                   </span>
                 </a>
               {% elif sectionStatus.additionalinformation === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/additional-information/">
+                <a class="app-task-list__task-name " href="/p5-v12/additional-information/">
                   Additional information
                   <span>
                     <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="additionalinformation">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/additional-information/">
+                <a class="app-task-list__task-name " href="/p5-v12/additional-information/">
                   Additional information
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="additionalinformation">Not started</strong>
@@ -480,7 +480,7 @@
                 sectionStatus.movingaround === "completed" and
                 sectionStatus.additionalinformation === "completed"
               %}
-                <a class="app-task-list__task-name " href="/p5-v12v2/supporting-evidence">
+                <a class="app-task-list__task-name " href="/p5-v12/supporting-evidence">
                  Upload supporting evidence and apply
                   <span>
                     <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="uploadsupportingevidenceandapply">Not started</strong>
@@ -499,7 +499,7 @@
         </li>
       </ol>
 
-{#       {% include "p5-v12v2/_prototype-shortcuts.html" %} #}
+{#       {% include "p5-v12/_prototype-shortcuts.html" %} #}
 
     </div>{# /govuk-grid-column-two-thirds #}
 
