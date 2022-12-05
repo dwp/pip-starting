@@ -1,6 +1,6 @@
 {% set pageTitle = "What health conditions or disabilities do you have?" %}
 
-{% extends "layout-p5-v11.html" %}
+{% extends "layout-p5-v12.html" %}
 
 {% block pageTitle %}
   {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
@@ -8,7 +8,7 @@
 
 {% block beforeContent %}
   {% include "p5-v12/_beta-banner.html" %}
-  {% include "includes/back-link-v7.html" %}
+  {% include "includes/back-link-v12.html" %}
 {% endblock %}
 
 {% block content %}
@@ -23,7 +23,7 @@
       name: "do-you-take-medication",
       fieldset: {
         legend: {
-          text: "Do you take any medication or have any planned?",
+          text: "Do you take or do you plan to take any medication?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
           }

@@ -1,4 +1,4 @@
-{% extends "layout-signed-in-v11.html" %}
+{% extends "layout-signed-in-v12.html" %}
 
 {% block pageTitle %}
 Check your answers about your health
@@ -6,7 +6,7 @@ Check your answers about your health
 
 {% block beforeContent %}
 {% include "includes/phase-banner.html" %}
-{% include "includes/back-link-v7.html" %}
+<!-- {% include "includes/back-link-v12.html" %} -->
 {% endblock %}
 
 {% set conditionsLength %}
@@ -441,7 +441,7 @@ Check your answers about your health
             {% endif %}
           </dl>
 
-          <p class="govuk-body">Make sure you've checked your answers before you save and continue.</p>
+          <p>Make sure you've checked your answers before you save and continue.</p>
 
           <input type="submit" class="govuk-button" data-module="govuk-button" value="Save and continue" id="submit">
 

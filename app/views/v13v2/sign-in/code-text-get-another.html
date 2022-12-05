@@ -28,17 +28,10 @@
 
       <h1 class="govuk-heading-l">Get another 6-digit security code sent to mobile number ending 789</h1>
 
-        {{ govukButton({
-            text: "Get another code",
-            href: "code-text-op3"
-        }) }}
-        <br>
 
-        <!-- {{ govukButton({
-            text: "Get a code by email instead",
-            classes: "govuk-button--secondary",
-            href: "code-email"
-        }) }} -->
+        <a href="code-text-op3" class="govuk-button">Get another code</a>
+
+        <p><a href="code-email" class="govuk-button govuk-button--secondary">Get a code by email instead</a></p>
 
         {% include "p5-v11/sign-in/_problems.html" %}
 
