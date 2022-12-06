@@ -83,6 +83,24 @@
       </div>
         {% endfor %}
 
+        {% if data['condition2'] === 'No' %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do you have another condition or disability?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['condition2'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/v12/about_your_health/consent">
+              Change<span class="govuk-visually-hidden"> health and care professional consent</span>
+            </a>
+          </dd>
+        </div> <!-- govuk-summary-list__row -->
+
+        {% endif %}
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Do you agree that your health and care professionals can share relevant information about your health conditions
