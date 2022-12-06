@@ -27,6 +27,7 @@ const v12 = require('./routes/v12')
 const v12v2 = require('./routes/v12v2')
 const v13 = require('./routes/v13')
 const v13v2 = require('./routes/v13v2')
+const v14 = require('./routes/v14')
 const expv11 = require('./routes/expv11')
 const mvp = require('./routes/mvp')
 const mvprev1 = require('./routes/mvp-rev-1')
@@ -50,6 +51,7 @@ const addsupport = require('./routes/addsupport')
 const conditionQuestion = require('./routes/condition-question')
 const conditionQuestionv12v2 = require('./routes/condition-questionv12v2')
 const additionalSupportCondition = require('./routes/additional-support-conditon')
+const additionalSupportConditionv14 = require('./routes/additional-support-conditon-v14')
 
 // ROUTES REDIRECT END
 
@@ -79,6 +81,7 @@ v12(router);
 v12v2(router);
 v13(router);
 v13v2(router);
+v14(router);
 expv11(router);
 mvp(router);
 mvprev1(router);
@@ -100,6 +103,7 @@ addsupport(router);
 conditionQuestion(router);
 conditionQuestionv12v2(router);
 additionalSupportCondition(router);
+additionalSupportConditionv14(router);
 router.use('/', authRoutes)
 router.use('/', idvRoutes)
 // ROUTER LIST END
