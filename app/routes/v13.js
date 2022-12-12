@@ -310,6 +310,10 @@ module.exports = function (router) {
       res.redirect('/v13/alt-formats');
     })
 
+    router.post('/v13/problem', (req, res, next) => {
+      res.redirect('/v13/alt-formats');
+    })
+
     router.post('/v13/continue-without-bank-details', (req, res, next) => {
       res.redirect('/v13/alt-formats');
     })
