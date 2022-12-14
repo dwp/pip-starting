@@ -70,6 +70,16 @@
       <td class="govuk-table__cell">{{ query.diagnosed }}</td>
       <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
     </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Symptoms</th>
+      <td class="govuk-table__cell">{{ query.undiagnosedCondition }}</td>
+      <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Are you waiting for test results</th>
+      <td class="govuk-table__cell">{{ query.testResults }}</td>
+      <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
+    </tr>
     <!-- <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">{{ query.medication }} side effects</th>
       <td class="govuk-table__cell">{{ query.sideEffects }}</td>

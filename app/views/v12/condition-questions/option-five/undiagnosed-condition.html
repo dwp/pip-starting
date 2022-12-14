@@ -1,0 +1,81 @@
+{% set pageTitle = "Enter details for your undiganosed condition" %}
+
+{% extends "layout-p5-v12.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5-v12/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5-v12/_beta-banner.html" %}
+  {% include "includes/back-link-v12.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="#" method="post" novalidate>
+
+      {% call govukFieldset({
+        classes: 'moj-add-another__item',
+        legend: {
+          text: 'Enter details for your undiagnosed condition or disability',
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      {{ govukInput({
+        id: 'undiagnosedCondition',
+        name: 'undiagnosed-condition',
+        label: {
+          html: 'Most common symptoms you experience',
+          classes: 'govuk-!-font-weight-bold'
+        },
+        hint: {
+          text: "For example"
+        }
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "test-results",
+        fieldset: {
+          legend: {
+            text: "Are you waiting for any test results",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "..."
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {% endcall %}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
+    </form>
+
+    {% include "v12/condition-questions/option-five/_return-link.html" %}
+
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
