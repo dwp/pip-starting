@@ -310,7 +310,7 @@ module.exports = function (router) {
       res.redirect('/v13/alt-formats');
     })
 
-    router.post('/v13/problem', (req, res, next) => {
+    router.post('/v13/cannot-save-account-details', (req, res, next) => {
       res.redirect('/v13/alt-formats');
     })
 

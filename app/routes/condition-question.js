@@ -450,25 +450,44 @@ router.post('/v12/condition-questions/option-five/condition', function(req, res)
   console.log('is-this-calling', req.session.data)
   const condition = req.session.data['condition-name']
   const startDate = req.session.data['condition-start-date']
+  const diagnosed = req.session.data['condition-diagnosed']
   const section = req.session.data.source
   const queriesCondition = req.session.data.queriesCondition || []
-  queriesCondition.push({ condition, startDate })
+  queriesCondition.push({ condition, startDate, diagnosed })
   req.session.data.queriesCondition = queriesCondition
 
 //  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
   req.session.data.queriesCondition[req.session.data.queriesCondition.length - 1].action
 
- res.redirect('/v12/condition-questions/option-five/another-condition')
-
+ if (req.session.data['condition-diagnosed'] == "Yes") {
+   res.redirect('/v12/condition-questions/option-five/another-condition')
+ } else {
+   res.redirect('/v12/condition-questions/option-five/undiagnosed-condition')
+ }
 })
+
+router.post('/v12/condition-questions/option-five/undiagnosed-condition', function(req, res) {
+  console.log('is-this-calling', req.session.data)
+  const undiagnosedCondition = req.session.data['undiagnosed-condition']
+  const testResults = req.session.data['test-results']
+  const queriesCondition = req.session.data.queriesCondition || []
+  queriesCondition.push({ undiagnosedCondition, testResults })
+  req.session.data.queriesCondition = queriesCondition
+
+//  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
+  //req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action = req.session.data['medication-name']
+    res.redirect('/v12/condition-questions/option-five/another-condition')
+})
+
 
 // routes for controlling adding another condition name in option 1
 router.post('/v12/condition-questions/option-five/condition-additional', function(req, res) {
   console.log('is-this-calling', req.session.data)
   const condition = req.session.data['condition-name']
   const startDate = req.session.data['condition-start-date']
+  const diagnosed = req.session.data['condition-diagnosed']
   const queriesCondition = req.session.data.queriesCondition || []
-  queriesCondition.push({ condition, startDate })
+  queriesCondition.push({ condition, startDate, diagnosed })
   req.session.data.queriesCondition = queriesCondition
 
 //  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
