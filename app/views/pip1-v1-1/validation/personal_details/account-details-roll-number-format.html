@@ -25,13 +25,7 @@ Your bank or building society account
           <div class="govuk-error-summary__body">
             <ul class="govuk-list govuk-error-summary__list">
               <li>
-                <a href="#account-name">Enter name on the account</a>
-              </li>
-              <li>
-                <a href="#sort-code">Enter sort code</a>
-              </li>
-              <li>
-                <a href="#account-number">Enter account number</a>
+                <a href="#roll-number">Building society roll number can only contain numbers 0 to 9, letters A to Z and symbols & / .</a>
               </li>
             </ul>
           </div>
@@ -46,50 +40,44 @@ Your bank or building society account
             </h1>
           </legend>
 
-          <div class="govuk-form-group govuk-form-group--error">
+          <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="account-name">
               Name on the account
             </label>
-            <span id="account-name-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter name on the account
-            </span>
-            <input class="govuk-input govuk-input--error govuk-input--width-30" id="account-name" name="account-name" type="text" aria-describedby="account-name-hint">
+            <input class="govuk-input govuk-input--width-30" id="account-name" name="account-name" type="text" aria-describedby="account-name-hint">
           </div>
 
-          <div class="govuk-form-group govuk-form-group--error">
+          <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="sort-code">
               Sort code
             </label>
-            <div id="account-number-hint" class="govuk-hint">
+            <div id="sort-code-hint" class="govuk-hint">
               Must be 6 digits long
             </div>
-            <span id="account-number-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter sort code
-            </span>
-            <input class="govuk-input govuk-input--error govuk-input--width-5" id="sort-code" name="sort-code" type="text" aria-describedby="sort-code-hint">
+            <input class="govuk-input govuk-input--width-5" id="sort-code" name="sort-code" type="text" aria-describedby="sort-code-hint">
           </div>
 
-          <div class="govuk-form-group govuk-form-group--error">
+          <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="account-number">
               Account number
             </label>
             <div id="account-number-hint" class="govuk-hint">
               Must be between 6 and 8 digits long
             </div>
-            <span id="account-number-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter account number
-            </span>
-            <input class="govuk-input govuk-input--error govuk-input--width-10" id="account-number" name="account-number" type="text" aria-describedby="account-number-hint">
+            <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" aria-describedby="account-number-hint">
           </div>
 
-          <div class="govuk-form-group">
+          <div class="govuk-form-group govuk-form-group--error">
             <label class="govuk-label govuk-label--m" for="roll-number">
               Building society roll number (if you have one)
             </label>
             <div id="role-number-hint" class="govuk-hint">
               You can find it on your card, statement or passbook
             </div>
-            <input class="govuk-input govuk-input--width-10" id="roll-number" name="roll-number" type="text" aria-describedby="roll-number-hint">
+              <span id="roll-number-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Building society roll number can only contain numbers 0 to 9, letters A to Z and symbols & / .
+              </span>
+            <input class="govuk-input govuk-input--error govuk-input--width-10" id="roll-number" name="roll-number" type="text" aria-describedby="roll-number-hint">
           </div>
 
         </fieldset>
