@@ -13,10 +13,17 @@
 
 {% block content %}
 
+<style>
+.link-position {
+width: 130%;
+}
+
+</style>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="#" method="post" novalidate>
+
       <!-- <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       {% for query in data['queriesMedication'] %}
@@ -47,10 +54,10 @@
       </dd>
     </div> -->
 
-    <h1 class="govuk-heading-l">Check your answers</h1>
+  <!--  <h1 class="govuk-heading-l">Check your answers</h1>
 
 <!-- table for medications and dosage -->
-<table class="govuk-table">
+<!--<table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--m"></caption>
 
   <tbody class="govuk-table__body">
@@ -58,12 +65,11 @@
       <th scope="row" class="govuk-table__header">Condition name</th>
       <td class="govuk-table__cell">Angina</td>
       <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Start date</th>
+      <td class="govuk-table__cell"><b>Start date</b></td>
       <td class="govuk-table__cell">April 2017</td>
       <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
     </tr>
+
     {% for query in data['queriesCondition'] %}
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Condition name</th>
@@ -75,21 +81,55 @@
       <td class="govuk-table__cell">{{ query.startDate }}</td>
       <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
     </tr>
-    <!-- <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">{{ query.medication }} side effects</th>
-      <td class="govuk-table__cell">{{ query.sideEffects }}</td>
-      <td class="govuk-table__cell"><a href="#">Change</a></td>
-    </tr> -->
     {% endfor %}
   </tbody>
-</table>
+</table>-->
+  <form action="#" method="post" novalidate>
+        <h1 class="govuk-heading-l">Check your answers</h1>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Condition name <br>
+              Start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Angina <br>
+              April 2017
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <div class="link-position">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="condition-additional"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change condition</span></a></li>
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove conditon</span></a></li>
+              </ul>
+              </div>
+            </dd>
+          </div>
+
+            {% for query in data['queriesCondition'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Condition name <br>
+              Start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.condition }} <br>
+              {{ query.startDate }}
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+                <div class="link-position">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="condition-additional"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change condition</span></a></li>
+                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove conditon</span></a></li>
+              </ul>
+              </div>
+            </dd>
+          </div>
+          {% endfor %}
+        </dl>
 
     <br>
-      <!-- {{ govukButton({
-        text: 'Save and continue',
-        href: "list-1"
-      }) }} -->
-
 
           {{ govukButton({
             text: "Save and continue",
