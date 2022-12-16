@@ -25,7 +25,7 @@ Your bank or building society account
           <div class="govuk-error-summary__body">
             <ul class="govuk-list govuk-error-summary__list">
               <li>
-                <a href="#sort-code">Sort code and account number don't match to an account</a>
+                <a href="#sort-code">Sort code and account number do not belong to the same account</a>
               </li>
             </ul>
           </div>
@@ -54,6 +54,9 @@ Your bank or building society account
             <div id="account-number-hint" class="govuk-hint">
               Must be 6 digits long
             </div>
+              <span id="account-number-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Sort code and account number do not belong to the same account
+              </span>
             <input class="govuk-input govuk-input--error govuk-input--width-5" id="sort-code" name="sort-code" type="text" aria-describedby="sort-code-hint">
           </div>
 
@@ -64,6 +67,9 @@ Your bank or building society account
             <div id="account-number-hint" class="govuk-hint">
               Must be between 6 and 8 digits long
             </div>
+              <span id="account-number-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Sort code and account number do not belong to the same account
+              </span>
             <input class="govuk-input govuk-input--error govuk-input--width-10" id="account-number" name="account-number" type="text" aria-describedby="account-number-hint">
           </div>
 
