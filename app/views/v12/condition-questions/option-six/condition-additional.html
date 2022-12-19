@@ -72,28 +72,6 @@
         }
       }) }}
 
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        name: "condition-diagnosed",
-        fieldset: {
-          legend: {
-            text: "Has it been diagnosed by a health or care professional?",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "Yes",
-            text: "Yes"
-          },
-          {
-            value: "No",
-            text: "No"
-          }
-        ]
-      }) }}
-
       {% endcall %}
 
       {{ govukButton({
