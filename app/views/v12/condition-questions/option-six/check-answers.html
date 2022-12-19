@@ -54,31 +54,31 @@
   <caption class="govuk-table__caption govuk-table__caption--m"></caption>
 
   <tbody class="govuk-table__body">
-    {% for query in data['queriesCondition'] %}
+    {% for query in data['queriesMedication'] %}
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Condition name</th>
-      <td class="govuk-table__cell">{{ query.condition }}</td>
-      <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
+      <th scope="row" class="govuk-table__header">Medication name</th>
+      <td class="govuk-table__cell">{{ query.medication }}</td>
+      <td class="govuk-table__cell"><a href="your-medication">Change</a></td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Start date</th>
-      <td class="govuk-table__cell">{{ query.startDate }}</td>
-      <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
+      <th scope="row" class="govuk-table__header">Medication start date</th>
+      <td class="govuk-table__cell">{{ query.medicationStartDate }}</td>
+      <td class="govuk-table__cell"><a href="your-medication">Change</a></td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Diagnosed?</th>
-      <td class="govuk-table__cell">{{ query.diagnosed }}</td>
-      <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
+      <th scope="row" class="govuk-table__header">{{ query.medication }} dosage</th>
+      <td class="govuk-table__cell">{{ query.dosage }}</td>
+      <td class="govuk-table__cell"><a href="your-medication">Change</a></td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Symptoms</th>
-      <td class="govuk-table__cell">{{ query.symptoms }}</td>
-      <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
+      <th scope="row" class="govuk-table__header">Side effects</th>
+      <td class="govuk-table__cell">{{ query.sideEffects }}</td>
+      <td class="govuk-table__cell"><a href="your-medication">Change</a></td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Are you waiting for test results?</th>
-      <td class="govuk-table__cell">{{ query.testResults }}</td>
-      <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
+      <th scope="row" class="govuk-table__header">Related conditions</th>
+      <td class="govuk-table__cell">{{ query.medicationRelatedCondition }}</td>
+      <td class="govuk-table__cell"><a href="your-medication-condition">Change</a></td>
     </tr>
     <!-- <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">{{ query.medication }} side effects</th>
@@ -90,15 +90,13 @@
 </table>
 
     <br>
-      <!-- {{ govukButton({
+      {{ govukButton({
         text: 'Save and continue',
-        href: "list-1"
-      }) }} -->
-
-          <p><a href="list-1?aboutyourhealth=completed" class="govuk-button">Save and continue</a></p>
+        href: "medication-summary"
+      }) }}
 
     </form>
-    {% include "v12/condition-questions/option-three/_return-link.html" %}
+    {% include "v12/condition-questions/option-four/_return-link.html" %}
 
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}

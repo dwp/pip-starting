@@ -23,9 +23,16 @@
         legend: {
           text: 'Enter a condition or disability – you can add more in the next step',
           classes: "govuk-fieldset__legend--l",
+          hint: {
+            text: "If you don’t know the name of your condition or are waiting for a diagnosis, you can tell us about your symptoms and any test results you are waiting for on the next page."
+          },
           isPageHeading: true
         }
       }) %}
+
+      <div id="more-detail-hint" class="govuk-hint">
+        If you don’t know the name of your condition or are waiting for a diagnosis, you can tell us about your symptoms and any test results you are waiting for in the next section.
+      </div>
 
       <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
@@ -45,7 +52,8 @@
                   <li>neurological conditions, like Parkinson's or epilepsy</li>
                 </ul>
           </div>
-    </details>
+       </details>
+
 
       {{ govukInput({
         id: 'condition-name-1',
@@ -72,28 +80,6 @@
         }
       }) }}
 
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        name: "condition-diagnosed",
-        fieldset: {
-          legend: {
-            text: "Has it been diagnosed by a health or care professional?",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "Yes",
-            text: "Yes"
-          },
-          {
-            value: "No",
-            text: "No"
-          }
-        ]
-      }) }}
-
       {% endcall %}
 
       {{ govukButton({
@@ -102,7 +88,7 @@
 
     </form>
 
-    {% include "p5-v12/about-your-health/_return-link.html" %}
+    {% include "v12/condition-questions/option-four/_return-link.html" %}
 
 
   </div>{# /govuk-grid-column-two-thirds #}

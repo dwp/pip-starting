@@ -1,4 +1,4 @@
-{% set pageTitle = "Enter details for your undiganosed condition" %}
+{% set pageTitle = "What symptoms do you experience with undiagnosed health problems?" %}
 
 {% extends "layout-p5-v12.html" %}
 
@@ -18,7 +18,7 @@
 
     <form action="#" method="post" novalidate>
 
-      {{ govukInput({
+      {{ govukTextarea({
         name: "symptoms",
         id: "symptoms",
         label: {
@@ -30,6 +30,7 @@
           text: "You will be able to provide further details on how your ability to do certain everyday tasks are affected later in the form."
         }
       }) }}
+
 
       {{ govukRadios({
         classes: "govuk-radios--inline",
@@ -52,6 +53,8 @@
           }
         ]
       }) }}
+
+
 
       {{ govukButton({
         text: 'Save and continue'
