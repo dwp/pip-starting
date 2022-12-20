@@ -74,6 +74,32 @@
   </tbody>
 </table>
 
+{% if data['undiagnosed-condition'] === 'Yes' %}
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Undiagnosed health problems</caption>
+
+  <tbody class="govuk-table__body">
+    {% for query in data['queriesConditionUndiagnosed'] %}
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Symptoms</th>
+      <td class="govuk-table__cell">{{ query.symptoms }}</td>
+      <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Outstanding test results?</th>
+      <td class="govuk-table__cell">{{ query.testResults }}</td>
+      <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
+    </tr>
+    <!-- <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">{{ query.medication }} side effects</th>
+      <td class="govuk-table__cell">{{ query.sideEffects }}</td>
+      <td class="govuk-table__cell"><a href="#">Change</a></td>
+    </tr> -->
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
     <br>
       <!-- {{ govukButton({
         text: 'Save and continue',

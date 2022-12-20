@@ -470,9 +470,9 @@ router.post('/v12/condition-questions/option-five/undiagnosed-condition', functi
   console.log('is-this-calling', req.session.data)
   const symptoms = req.session.data['symptoms']
   const testResults = req.session.data['test-results']
-  const queriesCondition = req.session.data.queriesCondition || []
-  queriesCondition.push({ symptoms, testResults })
-  req.session.data.queriesCondition = queriesCondition
+  const queriesCondition  = req.session.data.queriesCondition || []
+  queriesCondition .push({ symptoms, testResults })
+  req.session.data.queriesCondition  = queriesCondition
 
 //  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
   //req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action = req.session.data['medication-name']
@@ -651,11 +651,11 @@ router.post('/v12/condition-questions/option-six/undiagnosed-condition', functio
 // routes for controlling adding another condition name in option 1
 router.post('/v12/condition-questions/option-six/undiagnosed-symptoms', function(req, res) {
   console.log('is-this-calling', req.session.data)
-  const condition = req.session.data['condition-name']
-  const startDate = req.session.data['condition-start-date']
-  const queriesCondition = req.session.data.queriesCondition || []
-  queriesCondition.push({ condition, startDate })
-  req.session.data.queriesCondition = queriesCondition
+  const symptoms = req.session.data['symptoms']
+  const testResults = req.session.data['test-results']
+  const queriesConditionUndiagnosed  = req.session.data.queriesConditionUndiagnosed || []
+  queriesConditionUndiagnosed.push({ symptoms, testResults })
+  req.session.data.queriesConditionUndiagnosed = queriesConditionUndiagnosed
 
 //  req.session.data.queriesTakeNutrition[req.session.data.queriesTakeNutrition.length - 1].content = req.session.data['query-content']
   //req.session.data.queriesMedication[req.session.data.queriesMedication.length - 1].action = req.session.data['medication-name']
