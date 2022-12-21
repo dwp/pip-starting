@@ -1,7 +1,7 @@
 {% extends "layout-signed-in-mvp.html" %}
 
 {% block pageTitle %}
-Your bank or building society account
+Unable to validate account details
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,7 +25,7 @@ Your bank or building society account
           <div class="govuk-error-summary__body">
             <ul class="govuk-list govuk-error-summary__list">
               <li>
-                <a href="#sort-code">Sort code and account number do not belong to the same account</a>
+                <a href="#sort-code">Unable to validate account details. Check the details you entered, use details for another account or continue without saving.</a>
               </li>
             </ul>
           </div>
@@ -55,12 +55,10 @@ Your bank or building society account
               Must be 6 digits long
             </div>
               <span id="account-number-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> Sort code and account number do not belong to the same account
+                <span class="govuk-visually-hidden">Error: Unable to validate account details</span>
               </span>
             <input class="govuk-input govuk-input--error govuk-input--width-5" id="sort-code" name="sort-code" type="text" aria-describedby="sort-code-hint">
-          </div>
-
-          <div class="govuk-form-group govuk-form-group--error">
+            <br/><br/>
             <label class="govuk-label govuk-label--m" for="account-number">
               Account number
             </label>
@@ -68,9 +66,14 @@ Your bank or building society account
               Must be between 6 and 8 digits long
             </div>
               <span id="account-number-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> Sort code and account number do not belong to the same account
+                <span class="govuk-visually-hidden">Error: Unable to validate account details</span>
               </span>
             <input class="govuk-input govuk-input--error govuk-input--width-10" id="account-number" name="account-number" type="text" aria-describedby="account-number-hint">
+            <br/><br/>
+            <span id="account-number-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span>Unable to validate account details. Check the details you entered, use details for another account or continue without saving.
+            </span>
+
           </div>
 
           <div class="govuk-form-group">
