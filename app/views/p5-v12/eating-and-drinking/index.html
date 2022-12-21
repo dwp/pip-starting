@@ -18,37 +18,37 @@
 
     <form action="/p5-v12/eating-and-drinking/index-answer" method="post" novalidate>
 
+      <h1 class="govuk-heading-l">Eating and drinking</h1>
+
+      <p>This means:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>remembering when to eat</li>
+        <li>cutting food into pieces</li>
+        <li>putting food and drink in your mouth</li>
+        <li>chewing and swallowing food and drink</li>
+      </ul>
+      <p>Consider if you need help cutting up food, getting it to your mouth or if someone needs to prompt, encourage or remind you to eat.</p>
+
       {{ govukRadios({
+        classes: "govuk-radios--inline",
         name: "eatinganddrinking-question",
         fieldset: {
           legend: {
             text: "Does your condition affect you eating and drinking?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
           }
         },
-        hint: {
-          html: '
-          <p>This means:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>remembering when to eat</li>
-            <li>cutting food into pieces</li>
-            <li>putting food and drink in your mouth</li>
-            <li>chewing and swallowing food and drink</li>
-          </ul>
-          <p>Do consider if you need help cutting up food, getting it to your mouth or if someone needs to prompt, encourage or remind you to eat.</p>
-          '
-        },
         items: [
-          {
-            value: "No",
-            text: "No",
-            checked: checked("eatinganddrinking-question", "No")
-          },
           {
             value: "Yes",
             text: "Yes",
             checked: checked("eatinganddrinking-question", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("eatinganddrinking-question", "No")
           }
         ]
       }) }}
