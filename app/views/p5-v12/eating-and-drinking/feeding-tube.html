@@ -19,6 +19,7 @@
     <form action="/p5-v12/eating-and-drinking/details" method="post" novalidate>
 
       {{ govukRadios({
+        classes: "govuk-radios--inline",
         name: "eatinganddrinking-feedingtube",
         fieldset: {
           legend: {
@@ -29,14 +30,14 @@
         },
         items: [
           {
-            value: "No",
-            text: "No",
-            checked: checked("eatinganddrinking-feedingtube", "No")
-          },
-          {
             value: "Yes",
             text: "Yes",
             checked: checked("eatinganddrinking-feedingtube", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("eatinganddrinking-feedingtube", "No")
           }
         ]
       }) }}
