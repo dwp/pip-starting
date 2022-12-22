@@ -1,4 +1,4 @@
-{% set pageTitle = "Check your answers: planning and following a journey" %}
+{% set pageTitle = "Check your answers: planning and following journeys" %}
 
 {% extends "layout-p5-v12.html" %}
 
@@ -18,7 +18,7 @@
 
     <form id="form" method="post" action="/p5-v12/list-1">
 
-      <h1 class="govuk-heading-l">Check your answers: planning and following a journey</h1>
+      <h1 class="govuk-heading-l">Check your answers: planning and following journeys</h1>
 
       {% if data['planningandfollowingajourney-question'] === 'Yes' %}
 
@@ -36,14 +36,14 @@
                   {
                     href: "/p5-v12/planning-and-following-a-journey/",
                     text: "Change",
-                    visuallyHiddenText: " your answer to whether your condition affect you planning and following journeys"
+                    visuallyHiddenText: " if your condition affects you planning and following journeys."
                   }
                 ]
               }
             },
             {
               key: {
-                text: "Difficulties you have with planning and following journeys and how you manage them"
+                text: "Difficulties you have planning and following journeys and how you manage them"
               },
               value: {
                 html: data['planningandfollowingajourney-details']
@@ -53,7 +53,7 @@
                   {
                     href: "/p5-v12/planning-and-following-a-journey/details",
                     text: "Change",
-                    visuallyHiddenText: " your answer to difficulties you have with planning and following journeys and how you manage them"
+                    visuallyHiddenText: " the difficulties you have planning and following journeys, and how you manage them."
                   }
                 ]
               }
@@ -77,7 +77,7 @@
                   {
                     href: "/p5-v12/planning-and-following-a-journey/",
                     text: "Change",
-                    visuallyHiddenText: "your answer to whether your condition affect you planning and following journeys"
+                    visuallyHiddenText: " if your condition affect you planning and following journeys."
                   }
                 ]
               }
