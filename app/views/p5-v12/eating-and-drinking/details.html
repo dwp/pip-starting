@@ -1,4 +1,4 @@
-{% set pageTitle = "Tell us about the difficulties you have with eating and drinking and how you manage them" %}
+{% set pageTitle = "Difficulties eating and drinking" %}
 
 {% extends "includes/v12/sign-out-pop-up-eating.html" %}
 
@@ -19,7 +19,7 @@
 
     <form action="/p5-v12/eating-and-drinking/check" method="post" novalidate>
 
-      <h1 class="govuk-heading-l">Difficulties with eating and drinking</h1>
+      <h1 class="govuk-heading-l">Difficulties eating and drinking</h1>
 
       <p>For each difficulty tell us:</p>
       <ul class="govuk-list govuk-list--bullet">
@@ -41,7 +41,7 @@
         rows: "18",
         value: data['eatinganddrinking-details'],
         label: {
-          text: "Tell us about difficulties you have with eating and drinking and how you manage them",
+          text: "Tell us about difficulties you have eating and drinking and how you manage them",
           isPageHeading: false,
           classes: "govuk-label--m"
         }
