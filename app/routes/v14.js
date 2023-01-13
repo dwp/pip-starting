@@ -312,13 +312,25 @@ module.exports = function (router) {
     });
 
     router.post('/v14/check-answers-1', (req, res, next) => {
-        const addsupportHelp = req.session.data['add-support-help'];
-        if (addsupportHelp === 'Yes') {
-            res.redirect('/v14/name');
-        } else {
+        const addsupportComm = req.session.data['add-support-communicating'];
+        const addSupport = req.session.data['add-support'];
+        if (addsupportComm === 'Yes') {
             res.redirect('/v14/condition');
+        } else if (addSupport === 'Yes') {
+          res.redirect('/v14/condition');
+        } else{
+            res.redirect('/v14/name');
         }
     });
+
+    // router.post('/v14/check-answers-1', (req, res, next) => {
+    //     const addSupport = req.session.data['add-support'];
+    //     if (addSupport === 'Yes') {
+    //         res.redirect('/v14/condition');
+    //     } else {
+    //         res.redirect('/v14/name');
+    //     }
+    // });
 
     router.post('/v14/about_your_health/consent', (req, res, next) => {
         const conSent = req.session.data['consent'];
