@@ -1,0 +1,46 @@
+{% extends "layout-optionf-pip2-submitted.html" %}
+
+{% set pageQuestion = "Information sent" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Stage 2 submitted"
+      }) }}
+
+      <p class="govuk-body">We have received your stage 2 form within the time allowed. We have sent a confirmation email to <strong>jerry.bakewell@gmail.com</strong>.</p>
+
+      <h2 class="govuk-heading-m">Download a copy of your completed form</h2>
+
+      <p><a href="#">Download Jerry Bakewell completed form (PDF)</a></p>
+
+      <p>You will not be able to download your completed form after you leave this page.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p>Confirm your identity so we can pay you as soon as possible if your claim is successful.</p>
+
+      <a href="../../idv-intro" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Confirm my identity</a>
+
+      <p>Your stage 2 form is saved. You can <a href="/id-verification/optionf-v1/live-pip2/apply/signed-out">sign out</a> of the service and return to it later to confirm your identity, or to upload more evidence that might support your claim.</p>
+
+    </div>
+  </div>
+
+{% endblock %}
