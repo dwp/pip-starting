@@ -70,6 +70,7 @@
       <td class="govuk-table__cell">{{ query.diagnosed }}</td>
       <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
     </tr>
+    {% if query['diagnosed'] === 'No' %}
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Symptoms</th>
       <td class="govuk-table__cell">{{ query.symptoms }}</td>
@@ -80,6 +81,7 @@
       <td class="govuk-table__cell">{{ query.testResults }}</td>
       <td class="govuk-table__cell"><a href="condition-additional">Change</a></td>
     </tr>
+    {% endif %}
     {% endfor %}
 
   </tbody>
