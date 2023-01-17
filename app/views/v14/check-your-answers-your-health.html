@@ -50,10 +50,11 @@
     <h1 class="govuk-heading-l">Check your answers</h1>
 
 
-    <h2 class="govuk-heading-m">Your health</h2>
+    <!-- <h2 class="govuk-heading-m">Your health</h2> -->
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       {% for query in data['queriesCondition'] %}
+      <h2 class="govuk-heading-m">Condition</h2>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Condition name
@@ -81,9 +82,12 @@
           </a>
         </dd>
       </div>
+      <br>
+
         {% endfor %}
 
         {% if data['condition2'] === 'No' %}
+        <h2 class="govuk-heading-m">Your health</h2>
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
