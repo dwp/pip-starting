@@ -1,0 +1,56 @@
+{% extends "layout-idv.html" %}
+
+{% set pageQuestion = "Your identity has been confirmed" %}
+
+{% block pageTitle %}
+  {{ pageQuestion }}  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ pageQuestion }}
+      </h1>
+
+      <p>We will now start to assess your claim.</p>
+
+      <h2 class="govuk-heading-m">What to do next</h2>
+
+      <p>We will send your information to a health professional to consider before we make our decision. If we need more information about how your health condition or disability affects your daily life we may invite you to attend an assessment.</p>
+
+      <h3 class="govuk-heading-s">If you have uploaded any supporting evidence</h3>
+
+      <p>We will include this in your claim to PIP and will consider this before we make our decision.</p>
+
+      <h3 class="govuk-heading-s">If you need to upload more supporting evidence</h3>
+
+      <p>If you need to upload any more evidence that might support your claim you will need to <a href="">sign in</a>.</p>
+
+      <p>You will need your email address, mobile phone and password to sign in to PIP.</p>
+
+      <p>You will not need to answer the questions about your daily living activities or mobility again.</p>
+
+      <h3 class="govuk-heading-s">If anything changes or you need help</h3>
+
+      <p>Please contact the Department for Work and Pensions (DWP) if any of the details you gave us have changed or if you need help with your claim.</p>
+
+      <p>If you do not want to continue with your PIP claim, please let us know.</p>
+
+      <div class="govuk-inset-text">
+        <h3 class="govuk-heading-s">Contact DWP</h3>
+        <p>Telephone: 0800 917 2222<br>
+        Textphone: 0800 917 7777<br>
+        <a href="">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 917 2222<br>
+        British Sign Language (BSL) <a href="">video relay service</a> if you’re on a computer - find out how to <a href="">use the service on mobile or tablet</a><br>
+        Calling from abroad: +44 191 218 7766 <br>
+        Monday to Friday, 8am to 5pm<br>
+        <a href="">Find out about call charges</a></p>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

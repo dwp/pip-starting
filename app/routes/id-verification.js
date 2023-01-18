@@ -192,6 +192,123 @@ module.exports = function (router) {
     res.redirect("/v3b/address");
   })
 
+  router.post('/id-verification/optionf-v1/idvselection', (req, res) => {
+    const passportConsent = req.session.data['passport-consent'];
+    const payslipOrP60 = req.session.data['payslipOrP60'];
+    const selfassessment = req.session.data['self-assessment'];
+    const voiceID = req.session.data['tcOptions'];
+    const tuConsent = req.session.data['cra-consent'];
+
+    //Passport and payslip
+    if (passportConsent == 'true' && payslipOrP60 == 'payslip') {
+      res.redirect('./dth/passport-details?payslip=true')
+    }
+    //Passport and P60
+    else if (passportConsent == 'true' && payslipOrP60 == 'p60') {
+      res.redirect('./dth/passport-details?p60=true')
+    }
+    //Passport and Self assessment
+    else if (passportConsent == 'true' && selfassessment == 'true') {
+      res.redirect('./dth/passport-details?selfassessment=true')
+    }
+    //Passport and tax credits KBV
+    else if (passportConsent == 'true' && voiceID == 'voiceIdNo') {
+      res.redirect('./dth/passport-details?tcKbv=true')
+    }
+    //Passport and tax credits voice ID
+    else if (passportConsent == 'true' && voiceID == 'voiceIdYes') {
+      res.redirect('./dth/passport-details?voiceId=true')
+    }
+    //Passport and Transunion
+    else if (passportConsent == 'true' && tuConsent == 'true') {
+      res.redirect('./dth/passport-details?tuKbv=true')
+    }
+    //Payslip and Self assessment
+    else if (payslipOrP60 == 'payslip' && selfassessment == 'true') {
+      res.redirect('./dth/payslip-q1?selfassessment=true')
+    }
+    //Payslip and tax credits KBV
+    else if (payslipOrP60 == 'payslip' && voiceID == 'voiceIdNo') {
+      res.redirect('./dth/payslip-q1?tcKbv=true');
+    }
+    //Payslip and tax credits voice ID
+    else if (payslipOrP60 == 'payslip' && voiceID == 'voiceIdYes') {
+      res.redirect('./dth/payslip-q1?voiceId=true')
+    }
+    //Payslip and Transunion
+    else if (payslipOrP60 == 'payslip' && tuConsent == 'true') {
+      res.redirect('./dth/payslip-q1?tuKbv=true');
+    }
+    //P60 and Self assessment
+    else if (payslipOrP60 == 'p60' && selfassessment == 'true') {
+      res.redirect('./dth/p60-q1?selfassessment=true')
+    }
+    //P60 and tax credits KBV
+    else if (payslipOrP60 == 'p60' && voiceID == 'voiceIdNo') {
+      res.redirect('./dth/p60-q1?tcKbv=true');
+    }
+    //P60 and tax credits voice ID
+    else if (payslipOrP60 == 'p60' && voiceID == 'voiceIdYes') {
+      res.redirect('./dth/p60-q1?voiceId=true')
+    }
+    //P60 and Transunion
+    else if (payslipOrP60 == 'p60' && tuConsent == 'true') {
+      res.redirect('./dth/p60-q1?tuKbv=true');
+    }
+    //Self assessment and tax credits KBV
+    else if (selfassessment == 'true' && voiceID == 'voiceIdNo') {
+      res.redirect('./dth/self-assessment?tcKbv=true')
+    }
+    //Self assessment and tax credits voice ID
+    else if (selfassessment == 'true' && voiceID == 'voiceIdYes') {
+      res.redirect('./dth/self-assessment?voiceId=true')
+    }
+    //Self assessment and Transunion
+    else if (selfassessment == 'true' && tuConsent == 'true') {
+      res.redirect('./dth/self-assessment?tuKbv=true')
+    }
+    //Tax credits KBV and Transunion
+    else if (voiceID == 'voiceIdNo' && tuConsent == 'true') {
+      res.redirect('./dth/tax-credits-q1?tuKbv=true');
+    }
+    //Tax credits voice ID and Transunion
+    else if (voiceID == 'voiceIdYes' && tuConsent == 'true') {
+      res.redirect('./dth/voice-id?tuKbv=true')
+    }
+    // Fallback
+    else {
+      res.redirect('./dth/choose-2-items-error')
+    }
+  })
+
+  router.post('/id-verification/optionf-v1/dth/payslip', (req, res) => {
+    res.redirect('./payslip-q1');
+  })
+
+  router.post('/id-verification/optionf-v1/dth/p60', (req, res) => {
+    res.redirect('./p60-q1');
+  })
+
+  router.post('/id-verification/optionf-v1/dth/selfassessment', (req, res) => {
+    res.redirect('./self-assessment');
+  })
+
+  router.post('/id-verification/optionf-v1/dth/tcKbv', (req, res) => {
+    res.redirect('./tax-credits-q1');
+  })
+
+  router.post('/id-verification/optionf-v1/dth/tuKbv', (req, res) => {
+    res.redirect('./credit-ref-q1');
+  })
+
+  router.post('/id-verification/optionf-v1/voiceId', (req, res) => {
+    res.redirect("/carers/voice-id");
+  })
+
+  router.post('/id-verification/optionf-v1/success', (req, res) => {
+    res.redirect("/v3b/address");
+  })
+
 
   router.use((req, res, next) => {
     idvReset(req);
