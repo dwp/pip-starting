@@ -6,14 +6,6 @@
   {{ pageQuestion }} – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block header %}
-  {{ govukHeader({
-    homepageUrl: "#",
-    serviceName: "Confirm your identity",
-    containerClasses: "govuk-width-container"
-  }) }}
-{% endblock %}
-
 {% block beforeContent %}
   {{ govukPhaseBanner({
   tag: {
@@ -30,28 +22,38 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">
-        {{ pageQuestion }}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Please select two options",
+            href: "#checkbox-error"
+          }
+        ]
+      }) }}
+
+      <h1 class="govuk-heading-xl ">
+        Choose 2 things we can ask you about
       </h1>
 
       <form method="post" action="/id-verification/optionf-v1/idvselection">
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-form-group--error">
           <fieldset data-minimum-options="2" data-error-multi="Select at least x options" class="govuk-fieldset"
             data-error="Select an option">
+            <span id="checkbox-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Please select two options
+            </span>
 
             <!-- cycle around the radios -->
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="ukPassport" name="ivQuestionLogic" type="checkbox"
-                  value="ukPassport" aria-controls="target-ukPassport" aria-expanded="false" aria-describedby="passport-item-hint">
+                  value="ukPassport" aria-controls="target-ukPassport" aria-expanded="false">
 
                 <label class="govuk-label govuk-checkboxes__label" for="ukPassport">
-                  UK passport
+                  Your valid UK passport
                 </label>
-                <div id="passport-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                  You need a valid UK passport
-                </div>
               </div>
 
               <!-- Start the reveal panel -->
@@ -78,10 +80,10 @@
                   value="payslipsP60" aria-controls="target-payslipsP60" aria-expanded="false">
 
                 <label class="govuk-label govuk-checkboxes__label" for="payslipsP60">
-                  Payslip or P60
+                  A payslip or P60
                 </label>
                 <span id="payslipsP60-hint" class="govuk-hint govuk-radios__hint">
-                  You need a payslip dated after 7 Jul 2022 or your most recent P60
+                  Use a payslip dated after 17 April 2020, or your most recent P60.
                 </span>
               </div>
 
@@ -103,25 +105,19 @@
               </div>
 
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="self-assessment" name="self-assessment" type="checkbox" value="true" aria-describedby="selfassessment-item-hint">
+                <input class="govuk-checkboxes__input" id="self-assessment" name="self-assessment" type="checkbox" value="true">
                 <label class="govuk-label govuk-checkboxes__label" for="self-assessment">
-                  Self Assessment
+                  A recent Self Assessment tax return
                 </label>
-                <div id="selfassessment-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                  You need details from your recent Self Assessment returns
-                </div>
               </div>
 
               <div class="govuk-radios__item">
                 <input class="govuk-checkboxes__input" id="taxCreditsPayments" name="ivQuestionLogic" type="checkbox"
-                  value="taxCreditsPayments" aria-controls="target-taxCreditsPayments" aria-expanded="false" aria-describedby="taxcredit-item-hint">
+                  value="taxCreditsPayments" aria-controls="target-taxCreditsPayments" aria-expanded="false">
 
                 <label class="govuk-label govuk-checkboxes__label" for="taxCreditsPayments">
-                  Tax credit claim details (including Voice ID)
+                  Tax credit claim details - this can include Voice ID
                 </label>
-                <div id="taxcredit-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                  You need your claim details, you can use Voice ID
-                </div>
               </div>
 
               <!-- Start the reveal panel -->
@@ -150,7 +146,7 @@
                   value="transunion" aria-controls="target-transunion" aria-expanded="false">
 
                 <label class="govuk-label govuk-checkboxes__label" for="transunion">
-                  Credit reference questions
+                  Your credit record
                 </label>
                 <span id="transunion-hint" class="govuk-hint govuk-radios__hint">
                   For example, the year you took out a credit card or phone contract.
@@ -186,7 +182,7 @@
         </div>
 
         <p>
-          <a href="more-information">I do not have 2 of these items</a>
+          <a href="more-information">I don't have any of these</a>
         </p>
 
         <input class="govuk-button " type="submit" value="Continue">
@@ -194,4 +190,5 @@
       </form>
     </div>
   </div>
+
 {% endblock %}
