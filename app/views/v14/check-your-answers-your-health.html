@@ -13,6 +13,13 @@
 
 {% block content %}
 
+<style>
+.link-position {
+width: 130%;
+}
+
+</style>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -50,46 +57,41 @@
     <h1 class="govuk-heading-l">Check your answers</h1>
 
 
-    <!-- <h2 class="govuk-heading-m">Your health</h2> -->
+      <h2 class="govuk-heading-m">Condition</h2>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       {% for query in data['queriesCondition'] %}
-      <h2 class="govuk-heading-m">Condition</h2>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Condition name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ query.condition }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="add-support-name">
-            Change<span class="govuk-visually-hidden">condition name</span>
-          </a>
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
+          Condition name <br>
           Start date
         </dt>
         <dd class="govuk-summary-list__value">
+          {{ query.condition }} <br>
           {{ query.startDate }}
         </dd>
+        <div class="link-position">
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="add-support-name">
-            Change<span class="govuk-visually-hidden">start date</span>
-          </a>
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="condition-additional"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change condition</span></a></li>
+          <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove conditon</span></a></li>
         </dd>
+        </div>
       </div>
+
       <br>
 
         {% endfor %}
 
+        {{ govukButton({
+            text: "Add another condition",
+            classes: "govuk-button--secondary",
+            href: "condition-additional"
+        }) }}
+
         {% if data['condition2'] === 'No' %}
         <h2 class="govuk-heading-m">Your health</h2>
 
-        <div class="govuk-summary-list__row">
+        <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Do you have another condition or disability?
           </dt>
@@ -101,7 +103,7 @@
               Change<span class="govuk-visually-hidden"> health and care professional consent</span>
             </a>
           </dd>
-        </div> <!-- govuk-summary-list__row -->
+        </div> <!-- govuk-summary-list__row --> 
 
         {% endif %}
 
