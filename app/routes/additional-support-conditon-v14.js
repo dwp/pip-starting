@@ -140,7 +140,7 @@ router.post('/v14/condition', function(req, res) {
      if (req.session.data['condition2'] == "Yes") {
                 res.redirect('/v14/condition-additional')
               } else {
-                res.redirect('/v14/about_your_health/consent')
+                res.redirect('/v14/check-your-answers-your-conditions')
               }
 })
 
