@@ -13,93 +13,23 @@
 
 {% block content %}
 
+<style>
+.link-position {
+width: 130%;
+}
+
+</style>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <form action="#" method="post" novalidate>
-      <!-- <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      {% for query in data['queriesMedication'] %}
-      <dt class="govuk-summary-list__key">
-        Medication name
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ query.medication }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="#">
-          Change<span class="govuk-visually-hidden">medicaton name</span>
-        </a>
-      </dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-      Dosage
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ query.dosage }}
-      </dd>
-          {% endfor %}
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="#">
-          Change<span class="govuk-visually-hidden">dosage</span>
-        </a>
-      </dd>
-    </div> -->
-
-    <h1 class="govuk-heading-l">Check your answers</h1>
-
-
-    <h2 class="govuk-heading-m">Your health</h2>
+      <h1 class="govuk-heading-l">Check your answers</h1>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      {% for query in data['queriesCondition'] %}
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Condition name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ query.condition }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="add-support-name">
-            Change<span class="govuk-visually-hidden">condition name</span>
-          </a>
-        </dd>
-      </div>
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Start date
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ query.startDate }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="add-support-name">
-            Change<span class="govuk-visually-hidden">start date</span>
-          </a>
-        </dd>
-      </div>
-        {% endfor %}
 
-        {% if data['condition2'] === 'No' %}
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Do you have another condition or disability?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['condition2'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/v12/about_your_health/consent">
-              Change<span class="govuk-visually-hidden"> health and care professional consent</span>
-            </a>
-          </dd>
-        </div> <!-- govuk-summary-list__row -->
-
-        {% endif %}
+        <h2 class="govuk-heading-m">Your health</h2>
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">

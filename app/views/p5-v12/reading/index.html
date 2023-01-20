@@ -1,4 +1,4 @@
-{% set pageTitle = "Does your condition affect you reading?" %}
+{% set pageTitle = "Does your condition affect your ability to read?" %}
 
 {% extends "layout-p5-v12.html" %}
 
@@ -19,35 +19,35 @@
 
     <form action="/p5-v12/reading/index-answer" method="post" novalidate>
 
+      <h1 class="govuk-heading-l">Reading</h1>
+
+      <p>This means doing the following in your own language:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>reading written words and numbers both indoors and outdoors</li>
+        <li>reading signs and symbols (for example, a green exit sign on a door) </li>
+      </ul>
+      <p>For this question, you must be able to see the information. Using braille to read is not counted as reading and you should give more detail about how your condition affects your ability to read.</p>
+
       {{ govukRadios({
+        classes: "govuk-radios--inline",
         name: "reading-question",
         fieldset: {
           legend: {
             text: "Does your condition affect your ability to read?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
           }
         },
-        hint: {
-          html: '
-          <p>This means doing the following in your own language:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>reading written words and numbers both indoors and outdoors</li>
-            <li>reading signs and symbols (for example, a green exit sign on a door) </li>
-          </ul>
-          <p>For this question, you must be able to see the information. Using braille to read is not counted as reading and you should give more detail about how your condition affects your ability to read.</p>
-          '
-        },
         items: [
-          {
-            value: "No",
-            text: "No",
-            checked: checked("reading-question", "No")
-          },
           {
             value: "Yes",
             text: "Yes",
             checked: checked("reading-question", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("reading-question", "No")
           }
         ]
       }) }}

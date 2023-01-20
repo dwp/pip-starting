@@ -1,4 +1,4 @@
-{% set pageTitle = "How well can you stand and how far can you walk using any aids or appliances you need?" %}
+{% set pageTitle = "Distance you can walk using any aids or appliances you need" %}
 
 {% extends "layout-live-pip2-v1-0.html" %}
 
@@ -19,6 +19,14 @@
 
     <form action="#" method="post" novalidate>
 
+      <h1 class="govuk-heading-l">Distance you can walk using any aids or appliances you need</h1>
+
+        <p>To give you an idea of distance, 50 metres is about 5 buses parked end to end.</p>
+
+        <p>Walking aids and appliances include walking sticks, walking frames, crutches and artificial limbs.</p>
+
+        <p>A wheelchair or mobility scooter does not count as an aid or appliance for this question. If you use a wheelchair or mobility scooter, please answer this question by telling us how well you can stand and move without using it.</p>
+
 
       {{ govukRadios({
         name: "movingaround-info",
@@ -26,16 +34,10 @@
           legend: {
             text: "How far can you walk using any aids or appliances you need?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
+            classes: "govuk-fieldset__legend--m"
           }
         },
-        hint: {
-          html: '
-          <p>To give you an idea of distance, 50 metres is about 5 buses parked end to end.</p>
-          <p>Walking aids and appliances include walking sticks, walking frames, crutches and artificial limbs.</p>
-          <p>A wheelchair or mobility scooter does not count as an aid or appliance for this question. If you use a wheelchair or mobility scooter, please answer this question by telling us how well you can stand and move without using it.</p>
-        '
-        },
+
         items: [
           {
             value: "I cannot stand and move even using my aids or appliances",

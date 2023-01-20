@@ -1,4 +1,4 @@
-{% set pageTitle = "Does your condition affect you moving around?" %}
+{% set pageTitle = "Moving around" %}
 
 {% extends "layout-p5-v12.html" %}
 
@@ -19,30 +19,30 @@
 
     <form action="/p5-v12/moving-around/index-answer" method="post" novalidate>
 
+      <h1 class="govuk-heading-l">Moving around</h1>
+
+      <p>This means how well you can walk without any specialist equipment or support from another person. </p>
+
       {{ govukRadios({
+        classes: "govuk-radios--inline",
         name: "movingaround-question",
         fieldset: {
           legend: {
             text: "Does your condition affect you moving around?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
           }
         },
-        hint: {
-          html: '
-          <p>This means how well you can walk without any specialist equipment or support from another person </p>
-          '
-        },
         items: [
-          {
-            value: "No",
-            text: "No",
-            checked: checked("movingaround-question", "No")
-          },
           {
             value: "Yes",
             text: "Yes",
             checked: checked("movingaround-question", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("movingaround-question", "No")
           }
         ]
       }) }}

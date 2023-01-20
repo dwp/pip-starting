@@ -17,17 +17,20 @@
 
       <form action="#" method="POST" novalidate>
 
-        <h1 class="govuk-heading-l">We have sent you an email with your <br>6 digit security code</h1>
+        <h1 class="govuk-heading-l">A 6 digit code has been emailed to email@email.com</h1>
 
         <p>The code expires after 5 minutes.</p>
 
+        <p>Do not move away from this page before you enter your 6 digit code unless you do not get one within a few minutes.</p>
+
         <div class="govuk-form-group">
-          <label class="govuk-label" for="code" >Enter your 6 digit security code</label>
+          <label class="govuk-label" for="code" >Enter your 6 digit code</label>
           <input class="govuk-input govuk-input--width-5 input-capitals" id="code" name="code" maxlength="6" data-hj-suppress type="text" pattern="[0-9]*" inputmode="numeric" value="">
         </div>
 
           <a href="create-password" class="govuk-button">Continue</a>
           <p><a href="code-email-get-another">I did not get a code by email</a></p>
+          <p><a href="code-text-op3" class="govuk-button govuk-button--secondary">Get a code by text instead</a></p>
 
 
       </form>
