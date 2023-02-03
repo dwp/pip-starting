@@ -217,7 +217,7 @@ module.exports = function (router) {
         if (addsupportHelp === 'Yes') {
             res.redirect('/v13/add-support-name');
         } else {
-            res.redirect('/v13/condition');
+            res.redirect('/v13/check-answers-1');
         }
     });
 
