@@ -155,6 +155,172 @@ router.post('/PIP2/side-effects', function(req, res) {
              }
 })
 
+//ACTIVITIES
+// Preparing food
+  router.post('/PIP2/preparing-food/index-answer', function(req, res) {
+
+    let question = req.session.data['preparingfood-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
+  });
+
+  // Eating and drinking
+    router.post('/PIP2/eating-and-drinking/index-answer', function(req, res) {
+
+      let question = req.session.data['eatinganddrinking-question']
+
+      if (question === 'Yes') {
+          res.redirect('feeding-tube')
+        } else {
+          res.redirect('check')
+        }
+    });
+
+   // Managing treatments
+    router.post('/PIP2/managing-treatments/index-answer', function(req, res) {
+
+      let question = req.session.data['managingtreatments-question']
+
+      if (question === 'Yes') {
+          res.redirect('details')
+        } else {
+          res.redirect('check')
+        }
+    });
+
+     // Washing and bathing
+    router.post('/PIP2/washing-and-bathing/index-answer', function(req, res) {
+
+      let question = req.session.data['washingandbathing-question']
+
+      if (question === 'Yes') {
+          res.redirect('details')
+        } else {
+          res.redirect('check')
+        }
+    });
+
+     // Managing toilet needs
+    router.post('/PIP2/managing-toilet-needs/index-answer', function(req, res) {
+
+      let question = req.session.data['managingtoiletneeds-question']
+
+      if (question === 'Yes') {
+          res.redirect('details')
+        } else {
+          res.redirect('check')
+        }
+    });
+
+   // Dressing and undressing
+    router.post('/PIP2/dressing-and-undressing/index-answer', function(req, res) {
+
+      let question = req.session.data['dressingandundressing-question']
+
+      if (question === 'Yes') {
+          res.redirect('details')
+        } else {
+          res.redirect('check')
+        }
+    });
+
+  // Talking and listening
+      router.post('/PIP2/talking-and-listening/index-answer', function(req, res) {
+
+      let question = req.session.data['talkingandlistening-question']
+
+      if (question === 'Yes') {
+          res.redirect('details')
+        } else {
+          res.redirect('check')
+        }
+    });
+
+    // Reading
+    router.post('/PIP2/reading/index-answer', function(req, res) {
+
+      let question = req.session.data['reading-question']
+
+      if (question === 'Yes') {
+          res.redirect('details')
+        } else {
+          res.redirect('check')
+        }
+    });
+
+     // Mixing with other people
+    router.post('/PIP2/mixing-with-other-people/index-answer', function(req, res) {
+
+      let question = req.session.data['mixingwithotherpeople-question']
+
+      if (question === 'Yes') {
+          res.redirect('details')
+        } else {
+          res.redirect('check')
+        }
+    });
+
+   // Managing money
+    router.post('/PIP2/managing-money/index-answer', function(req, res) {
+
+      let question = req.session.data['managingmoney-question']
+
+      if (question === 'Yes') {
+          res.redirect('details')
+        } else {
+          res.redirect('check')
+        }
+    });
+
+   // Planning and following a journey
+    router.post('/PIP2/planning-and-following-a-journey/index-answer', function(req, res) {
+
+      let question = req.session.data['planningandfollowingajourney-question']
+
+      if (question === 'Yes') {
+          res.redirect('details')
+        } else {
+          res.redirect('check')
+        }
+    });
+
+    // Moving around
+    router.post('/PIP2/moving-around/index-answer', function(req, res) {
+
+      let question = req.session.data['movingaround-question']
+
+      if (question === 'Yes') {
+          res.redirect('info')
+        } else {
+          res.redirect('check')
+        }
+    });
+
+    // route for moving around 'it varies'
+    router.post('/PIP2/moving-around/info', function(req, res) {
+        if (req.session.data['movingaround-info'] == "It varies") {
+                   res.redirect('/PIP2/moving-around/varies')
+                 } else {
+                   res.redirect('/PIP2/moving-around/details')
+                 }
+    })
+
+    // Additional information
+    router.post('/PIP2/additional-information/index-answer', function(req, res) {
+
+      let question = req.session.data['additionalinformation-question']
+
+      if (question === 'Yes') {
+          res.redirect('details')
+        } else {
+          res.redirect('check')
+        }
+    });
+
 //   // Code for the list screen
 //
 //   app.get('/PIP2/list-1', (req, res, next) => {
@@ -473,161 +639,7 @@ router.post('/PIP2/side-effects', function(req, res) {
 //       }
 //   });
 //
-//   // Eating and drinking
 //
-//   app.get('/p5-v12/eating-and-drinking/index-answer', function(req, res) {
-//
-//     let question = req.session.data['eatinganddrinking-question']
-//
-//     if (question === 'Yes') {
-//         res.redirect('feeding-tube')
-//       } else {
-//         res.redirect('check')
-//       }
-//   });
-//
-//   // Managing treatments
-//
-//   app.get('/p5-v12/managing-treatments/index-answer', function(req, res) {
-//
-//     let question = req.session.data['managingtreatments-question']
-//
-//     if (question === 'Yes') {
-//         res.redirect('details')
-//       } else {
-//         res.redirect('check')
-//       }
-//   });
-//
-//   // Washing and bathing
-//
-//   app.get('/p5-v12/washing-and-bathing/index-answer', function(req, res) {
-//
-//     let question = req.session.data['washingandbathing-question']
-//
-//     if (question === 'Yes') {
-//         res.redirect('details')
-//       } else {
-//         res.redirect('check')
-//       }
-//   });
-//
-//   // Managing toilet needs
-//
-//   app.get('/p5-v12/managing-toilet-needs/index-answer', function(req, res) {
-//
-//     let question = req.session.data['managingtoiletneeds-question']
-//
-//     if (question === 'Yes') {
-//         res.redirect('details')
-//       } else {
-//         res.redirect('check')
-//       }
-//   });
-//
-//   // Dressing and undressing
-//
-//   app.get('/p5-v12/dressing-and-undressing/index-answer', function(req, res) {
-//
-//     let question = req.session.data['dressingandundressing-question']
-//
-//     if (question === 'Yes') {
-//         res.redirect('details')
-//       } else {
-//         res.redirect('check')
-//       }
-//   });
-//
-//   // Talking and listening
-//
-//   app.get('/p5-v12/talking-and-listening/index-answer', function(req, res) {
-//
-//     let question = req.session.data['talkingandlistening-question']
-//
-//     if (question === 'Yes') {
-//         res.redirect('details')
-//       } else {
-//         res.redirect('check')
-//       }
-//   });
-//
-//   // Reading
-//
-//   app.get('/p5-v12/reading/index-answer', function(req, res) {
-//
-//     let question = req.session.data['reading-question']
-//
-//     if (question === 'Yes') {
-//         res.redirect('details')
-//       } else {
-//         res.redirect('check')
-//       }
-//   });
-//
-//   // Mixing with other people
-//
-//   app.get('/p5-v12/mixing-with-other-people/index-answer', function(req, res) {
-//
-//     let question = req.session.data['mixingwithotherpeople-question']
-//
-//     if (question === 'Yes') {
-//         res.redirect('details')
-//       } else {
-//         res.redirect('check')
-//       }
-//   });
-//
-//   // Managing money
-//
-//   app.get('/p5-v12/managing-money/index-answer', function(req, res) {
-//
-//     let question = req.session.data['managingmoney-question']
-//
-//     if (question === 'Yes') {
-//         res.redirect('details')
-//       } else {
-//         res.redirect('check')
-//       }
-//   });
-//
-//   // Planning and following a journey
-//
-//   app.get('/p5-v12/planning-and-following-a-journey/index-answer', function(req, res) {
-//
-//     let question = req.session.data['planningandfollowingajourney-question']
-//
-//     if (question === 'Yes') {
-//         res.redirect('details')
-//       } else {
-//         res.redirect('check')
-//       }
-//   });
-//
-//   // Moving around
-//
-//   app.get('/p5-v12/moving-around/index-answer', function(req, res) {
-//
-//     let question = req.session.data['movingaround-question']
-//
-//     if (question === 'Yes') {
-//         res.redirect('info')
-//       } else {
-//         res.redirect('check')
-//       }
-//   });
-//
-//   // Additional information
-//
-//   app.get('/p5-v12/additional-information/index-answer', function(req, res) {
-//
-//     let question = req.session.data['additionalinformation-question']
-//
-//     if (question === 'Yes') {
-//         res.redirect('details')
-//       } else {
-//         res.redirect('check')
-//       }
-//   });
 //
 //   // Apply
 //
