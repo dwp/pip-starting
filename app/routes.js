@@ -51,6 +51,7 @@ const conditionQuestion = require('./routes/condition-question')
 const conditionQuestionv12v2 = require('./routes/condition-questionv12v2')
 const additionalSupportCondition = require('./routes/additional-support-conditon')
 const additionalSupportConditionv14 = require('./routes/additional-support-conditon-v14')
+const pipAppPart2 = require('./routes/pip2')
 
 // ROUTES REDIRECT END
 
@@ -102,6 +103,7 @@ conditionQuestion(router);
 conditionQuestionv12v2(router);
 additionalSupportCondition(router);
 additionalSupportConditionv14(router);
+pipAppPart2(router);
 router.use('/', authRoutes)
 router.use('/', idvRoutes)
 // ROUTER LIST END
