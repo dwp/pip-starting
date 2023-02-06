@@ -51,7 +51,7 @@ router.post('/PIP2/another-condition', function(req, res) {
     if (req.session.data['condition2'] == "Yes") {
                res.redirect('/PIP2/condition-additional')
              } else {
-               res.redirect('/PIP2/check-answers')
+               res.redirect('/PIP2/check-answers-condition')
              }
 })
 
