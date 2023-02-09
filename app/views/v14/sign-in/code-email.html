@@ -1,4 +1,4 @@
-{% set pageTitle = "A 6-digit code has been emailed to myemail@gmail.com" %}
+{% set pageTitle = "We have sent you an email with you 6 digit code" %}
 
 {% extends "layout-signed-in-v11.html" %}
 
@@ -17,9 +17,13 @@
 
       <form action="#" method="POST" novalidate>
 
-        <h1 class="govuk-heading-l">We have sent you an email with your <br>6-digit security code</h1>
+        <h1 class="govuk-heading-l">We have sent you an email with your <br>6 digit security code</h1>
+
+        <p>You should get an email within a few seconds if it has not arrived yet.</p>
 
         <p>The code expires after 5 minutes.</p>
+
+        <p>Do not close this page before you enter the code unless you need to request another.</p>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="code" >Enter your 6-digit security code</label>
